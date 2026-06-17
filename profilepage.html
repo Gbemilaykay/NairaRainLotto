@@ -1,0 +1,585 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Profile Page</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"/> 
+    <link rel="stylesheet" href="./profilepage.css">
+    <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+
+  <header class="header-navbar" >
+    <!-- <div class="mobile-menu-icon" id="mobileMenuIcon"> -->
+        <div class="mobile-menu-base" >
+            <div class="MenuCom">
+                <p class="mobile-menu-icon" id="openMobile" aria-label="Open menu" >Menu<span><i class="fa-solid fa-ellipsis-vertical"></i></span></p>
+                <div class="mobile-nav" id="mobileNav">
+                    <div class="mobileModal">
+                        <!-- <span class="close-menu">✖</span> -->
+                        <button aria-label="close" class="close-menu" id="closeMobile">✖</button>
+                        <nav class="mobile-links" aria-label="mobile-links">
+                            <a class="mobile-list"  href="./index.html">Home</a>
+                            <div>
+                              <button class="mobile-list"   onclick="toggleMobileSub('gamesMobile')">Games ▾</button>
+                              <div class="mobile-submenu" id="gamesMobile">
+                                <a id="NairaRain-dropdown" href="./GamesPage.html">NairaRain Lotto <span>₦2,000,000</span></a>
+                                <a id="Rapid500" href="./RapidGame3.html">NRL Rapid Game <span>₦500,000</span></a>
+                                <a id="Rapid250" href="./RapidGame2.html">NRL Rapid Game <span>₦250,000</span></a>
+                                <a id="Rapid150" href="./RapidGame1.html">NRL Rapid Game <span>₦150,000</span></a>
+                              </div>
+                            </div>
+                    
+                            <div>
+                              <button  class="mobile-list"  onclick="toggleMobileSub('resultsMobile')">Results ▾</button>
+                              <div class="mobile-submenu" id="resultsMobile">
+                                <a id="NairaRain-dropdown" href="./Result.html">NairaRain Lotto <span>Result</span></a>
+                                <a id="Rapid500" href="./ResultRapid5.html">NRL Rapid Game <span>Result</span></a>                               
+                              </div>
+                            </div>                            
+                            <a class="mobile-list"  href="./Community.html">Community</a>
+                            <a class="mobile-list"  href="./FAQ.html">FAQs</a>
+                            <!-- <a class="mobile-list"  href="#winners">Winners</a> -->
+                        </nav>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="profile" >
+                <div class="profile-icon" onclick="toggleProfileDropdown()">My account<i class="fa-solid fa-user"></i></div>
+                <!-- <a href="./loginPage.html"><span class="profile-icon">My account<i class="fa-solid fa-user"></i></span></a> -->
+                <div class="profileDropdown" id="profileDropdown" onclick="toggleProfileDropdown()">
+                    <div class="profile-dropdownModal">
+                        <div class="dropdown" >
+                            <a href="#">Wallet Amount: ₦100,000</a>
+                            <a href="./profilepage.html">My Profile</a> 
+                            <a href="./payment.html">Deposit</a>                        
+                            <a href="./Gamehistory.html">Games History</a>
+                            <a href="./transactionhis.html">Transactions</a>
+                            <a href="./withdrawpage.html">Withdrawal</a>
+                            <a href="./profilepage.html">User Profile</a>
+                            <a href="#" onclick="logout()">Logout</a>
+                        </div>
+                    </div>
+                </div>
+            </div>               
+        </div>                
+    <!-- </div> -->  
+               
+    <div class="navbar">
+        <div class="logo"> <a href="./index.html"><img src="./image/Naira rain lotto.png" alt="Logo"></a>
+        </div>            
+        <div class="nav-center" aria-label="Primary">
+            <div class="nav-item"><a class="nav-button" href="./index.html">Home</a></div>
+            <div class="nav-item"><a class="nav-button"  href="#games" onclick="toggleCenterDropdown(event,'games')">Games ▾</a>
+                <div class="drop-it">
+                    <div class="center-dropdown" id="gamesDropdown">
+                        <div class="dropdown-games">
+                            <a id="NairaRain-dropdown" href="./GamesPage.html">NairaRain Lotto <span>₦2,000,000</span> </a>
+                            <a id="Rapid500" href="./RapidGame3.html">Rapid Game <span>₦500,000</span></a>
+                            <a id="Rapid250" href="./RapidGame2.html">Rapid Game <span>₦250,000</span></a>
+                            <a id="Rapid150" href="./RapidGame1.html">Rapid Game <span>₦150,000</span></a>
+                        </div>                          
+                    </div>
+                </div>
+            </div>
+            <div class="nav-item"><a class="nav-button" href="./payment.html">Deposit</a></div>
+            <div class="nav-item"><a class="nav-button" href="#results" onclick="toggleCenterDropdown(event,'results')">Results ▾</a>  
+                <div class="drop-it">                    
+                    <div class="center-dropdown" id="resultsDropdown">
+                        <div class="dropdown-games" id="dropdown-result" >
+                            <a id="NairaRain-dropdown" href="./Result.html">NairaRain Lotto <span>Result</span></a>
+                            <a id="Rapid500"  href="./ResultRapid5.html">NRL Rapid Game <span>Result</span></a>                                
+                        </div>                                
+                    </div>
+                </div>                        
+            </div>                   
+            <!-- <div class="nav-item"><a class="nav-button" href="#testimonials">Testimonials</a></div> -->
+                              
+        </div>
+    
+        <div class="actions">
+            <div class="nav-logsign" >
+                <a href="./loginPage.html"><button id="nav-login" class="active">Login</button></a> 
+                <a href="./SignupPage.html"><button id="nav-signup" class="active">Sign Up</button></a>
+            </div>                
+            <div class="pro-wallet">
+                <div class="profile" onclick="toggleProfileDropdownx()">
+                    <!-- <div class="profile-icon"><i class="fa-solid fa-user"></i></div> -->
+                    <div class="profileDropdown1" id="profileDropdown1"> 
+                        <div class="profileDropdown1-modal">                               
+                            <div class="dropdown">
+                                <a href="#">Wallet Amount: ₦100,000</a>
+                                <a href="./profilepage.html">My Profile</a>
+                                <a href="./payment.html">Deposit</a>                         
+                                <a href="./Gamehistory.html">Games History</a>
+                                <a href="./transactionhis.html">Transactions</a>
+                                <a href="./withdrawpage.html">Result</a>
+                                <a href="./profilepage.html">User Profile</a>
+                                <a href="#" onclick="logout()">Logout</a>
+                            </div>
+                        </div>                               
+                    </div>
+                </div>                       
+
+                <!-- <div class="wallet" onclick="toggleWalletDropdown()">
+                    <i class="fa-solid fa-wallet"></i> <span id="walletAmount">₦12,000.00</span>
+                    <div class="wallet-dropdown" id="walletDropdown">
+                    <p>Available Balance: <span id="availableBalance">₦12,000.00</span></p>                            
+                </div> -->
+            </div>                     
+        </div>
+    </div>
+</header>          
+    
+<script>
+      
+function toggleProfileDropdown() {
+  var dropdown = document.getElementById("profileDropdown");
+  dropdown.style.display = dropdown.style.display === "flex" ? "none" : "flex";
+}
+function toggleProfileDropdownx() {
+  var dropdown = document.getElementById("profileDropdown1");
+  dropdown.style.display = dropdown.style.display === "flex" ? "none" : "flex";
+} 
+  // Toggle the profile dropdown visibility
+  function toggleMobileNav() {
+        const mobileNav = document.getElementById('mobileNav');
+        mobileNav.style.display = mobileNav.style.display === 'flex' ? 'none' : 'flex';
+      }              
+
+    //   function toggleMobileNavS() {
+    //     const mobileNavS = document.getElementById('mobileNavS');
+    //     mobileNavS.style.display = mobileNavS.style.display === 'flex' ? 'none' : 'flex';
+    //   }
+
+    // Center dropdown toggles (desktop)
+    
+// Center dropdown toggles (desktop)
+function toggleCenterDropdown(e, which){
+e.preventDefault();
+const games = document.getElementById('gamesDropdown');
+const results = document.getElementById('resultsDropdown');
+if(which === 'games'){
+const show = games.style.display !== 'block';
+games.style.display = show ? 'block' : 'none';
+results.style.display = 'none';
+}else if(which === 'results'){
+const show = results.style.display !== 'block';
+results.style.display = show ? 'block' : 'none';
+games.style.display = 'none';
+}
+}
+
+// Close dropdowns when clicking outside
+document.addEventListener('click', function(e){
+const isNav = e.target.closest('.nav-center');
+const isBtn = e.target.closest('.nav-button');
+if(!isNav && !isBtn){
+document.getElementById('gamesDropdown').style.display = 'none';
+document.getElementById('resultsDropdown').style.display = 'none';
+}
+});
+
+// Mobile panel controls & submenus
+document.getElementById('openMobile').addEventListener('click', ()=>{
+document.getElementById('mobileNav').style.display = 'block';
+});
+document.getElementById('closeMobile').addEventListener('click', ()=>{
+document.getElementById('mobileNav').style.display = 'none';
+});
+
+function toggleMobileSub(id){
+const el = document.getElementById(id);
+el.style.display = el.style.display === 'block' ? 'none' : 'block';
+}     
+      
+
+      function toggleWalletDropdown() {
+const walletDropdown = document.getElementById('walletDropdown');
+walletDropdown.style.display = walletDropdown.style.display === 'block' ? 'none' : 'block';
+}
+
+function updateWallet(amount, pending) {
+document.getElementById('walletAmount').textContent = `₦${amount.toFixed(2)}`;
+document.getElementById('availableBalance').textContent = `₦${amount.toFixed(2)}`;
+// document.getElementById('pendingWinnings').textContent = `₦${pending.toFixed(2)}`;
+}
+
+// Example update (this would be dynamically set based on real user data)
+//   updateWallet(1200.50, 250.00);
+
+// Close mobile nav when clicking outside the panel or pressing Escape
+document.getElementById('mobileNav').addEventListener('click', function(e){
+// if click target is the overlay (not the inner panel), close
+if(e.target === this) {
+this.style.display = 'none';
+}
+});
+document.addEventListener('keydown', function(e){
+if(e.key === 'Escape'){
+document.getElementById('mobileNav').style.display = 'none';
+closeAllPopups();
+}
+});
+</script> 
+
+
+<div class="Profilep-container">
+  <!-- Profile Header -->
+  <div class="profile-header">
+    <h1 class="myAccount" >My Account</h1>
+    <div class="profile-info">
+      <img src="./image/profile testimonal.png" alt="User Image">
+      <div class="profile-names" >
+        <h2>Ade Muyiwa</h2>
+        <p>Account I.D: Muyi123</p>
+        <!-- <p>Total Games Played: 25</p> -->
+      </div>
+    </div>
+    <!-- Balance Container -->
+      <div class="balance-backg" >
+        <div class="balance-container">
+          <span>Total Balance</span>
+          <span>₦50,000</span>
+        </div>
+        <!-- Transaction Buttons -->
+        <div class="transaction-buttons">
+          <a href="./payment.html">Deposit</a>
+          <!-- <button onclick="toggleDropdown('withdrawalDropdown')">Withdrawal</button> -->
+          <a href="./withdrawpage.html" class="withdrawal-btn">Withdrawal</a>
+        </div>
+      </div>
+  </div>
+  
+  <!-- Withdrawal Form Dropdown -->
+  <!-- <div id="withdrawalDropdown" class="dropdown-content">
+    <h3>Withdraw</h3>
+    <form onsubmit="return withdrawalForm()">
+      <div class="form-group">
+        <label for="mobileNumber">Your Mobile Number</label>
+        <input type="tel" id="mobileNumber" placeholder="e.g., +2347012345678" required>
+      </div>
+      <div class="form-group">
+        <label for="withdrawAmount">Amount to Withdraw (₦)</label>
+        <input type="number" id="withdrawAmount" placeholder="Enter amount" required>
+      </div>
+      <div class="form-group">
+        <label for="bankName">Bank Name</label>
+        <select id="bankName" required>
+          <option value="">Select Bank</option>
+          <option value="GTBank">GTBank</option>
+          <option value="Zenith Bank">Zenith Bank</option>
+          <option value="Access Bank">Access Bank</option>
+          <option value="UBA">UBA</option>
+          <option value="First Bank">First Bank</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <label for="accountNumber">Account Number</label>
+        <input type="text" id="accountNumber" placeholder="Enter account number" required>
+      </div>
+      <button type="submit" class="form-button">Withdraw</button>
+    </form>
+  </div> -->
+
+  <!-- My Account Info Dropdown -->
+  <button class="dropdown-button" onclick="toggleDropdown('accountInfoDropdown')">
+    My Account Info <span class="arrow">▼</span>
+  </button>
+  <div id="accountInfoDropdown" class="dropdown-content">
+    <h3 style="margin-bottom: 15px;">Account Information</h3>
+    <div class="account-info">
+      <p><strong>Name:</strong> Ade Muyiwa</p>
+      <p><strong>Account Identity:</strong> Muyi123</p>
+      <p><strong>Total Games Played:</strong> 25</p>
+      <p><strong>Email:</strong> ademuyiwa@gmail.com</p>
+      <p><strong>Phone:</strong> +23480 6412 4567</p>
+    </div>
+  </div>
+  
+  <!-- Games History Dropdown (Horizontal Card Layout) -->
+  <a href="./Gamehistory.html"><button class="dropdown-button">
+    Games History <span class="arrow">▼</span>
+  </button></a>
+  <!-- <button class="dropdown-button" onclick="toggleDropdown('gamesDropdown')">
+    Games History <span class="arrow">▼</span>
+  </button> -->
+  <!-- <div id="gamesDropdown" class="dropdown-content">
+    <h3>Games History</h3>
+    <div class="game-cards">
+    
+      <div class="game-card win">
+        <div class="game-details">
+          <h4>Rapid Games</h4>
+          <p><strong>Date:</strong> 2025-03-20</p>
+          <p><strong>Staked:</strong> ₦100</p>
+          <p><strong>Outcome:</strong> Win</p>
+        </div>
+        <div class="game-numbers">
+          <div class="draw-title">Draw Numbers</div>
+          <div class="number-row">
+            <span class="number-box">3</span>
+            <span class="number-box">7</span>
+            <span class="number-box">11</span>
+            <span class="number-box">19</span>
+            <span class="number-box">25</span>
+          </div>
+        </div>
+      </div>
+      
+      <div class="game-card loss">
+        <div class="game-details">
+          <h4>Rapid Games</h4>
+          <p><strong>Date:</strong> 2025-03-18</p>
+          <p><strong>Staked:</strong> ₦1,000</p>
+          <p><strong>Outcome:</strong> Loss</p>
+        </div>
+        <div class="game-numbers">
+          <div class="draw-title">Draw Numbers</div>
+          <div class="number-row">
+            <span class="number-box">2</span>
+            <span class="number-box">8</span>
+            <span class="number-box">10</span>
+            <span class="number-box">14</span>
+            <span class="number-box">22</span>
+          </div>
+        </div>
+      </div>
+      
+      <div class="game-card inprogress">
+        <div class="game-details">
+          <h4>Rapid Games</h4>
+          <p><strong>Date:</strong> 2025-03-25</p>
+          <p><strong>Staked:</strong> ₦2,000</p>
+          <p><strong>Outcome:</strong> In Progress</p>
+        </div>
+        <div class="game-numbers">
+          <div class="draw-title">Draw Numbers</div>
+          <div class="number-row">
+            <span class="number-box">5</span>
+            <span class="number-box">9</span>
+            <span class="number-box">13</span>
+            <span class="number-box">17</span>
+            <span class="number-box">21</span>
+          </div>
+        </div>
+      </div>
+      
+      <div class="game-card win">
+        <div class="game-details">
+          <h4>Salary4Life</h4>
+          <p><strong>Date:</strong> 2025-03-15</p>
+          <p><strong>Staked:</strong> ₦2,500</p>
+          <p><strong>Outcome:</strong> Win</p>
+        </div>
+        <div class="game-numbers">
+          <div class="draw-title">Draw Numbers</div>
+          <div class="number-row">
+            <span class="number-box">4</span>
+            <span class="number-box">8</span>
+            <span class="number-box">12</span>
+            <span class="number-box">16</span>
+            <span class="number-box">20</span>
+            <span class="number-box super">99</span>
+          </div>
+        </div>
+      </div>
+      
+      <div class="game-card loss">
+        <div class="game-details">
+          <h4>Salary4Life</h4>
+          <p><strong>Date:</strong> 2025-03-12</p>
+          <p><strong>Staked:</strong> ₦1,200</p>
+          <p><strong>Outcome:</strong> Loss</p>
+        </div>
+        <div class="game-numbers">
+          <div class="draw-title">Draw Numbers</div>
+          <div class="number-row">
+            <span class="number-box">1</span>
+            <span class="number-box">6</span>
+            <span class="number-box">11</span>
+            <span class="number-box">18</span>
+            <span class="number-box">23</span>
+            <span class="number-box super">77</span>
+          </div>
+        </div>
+      </div>
+     
+      <div class="game-card inprogress">
+        <div class="game-details">
+          <h4>Rapid Games</h4>
+          <p><strong>Date:</strong> 2025-03-28</p>
+          <p><strong>Staked:</strong> ₦800</p>
+          <p><strong>Outcome:</strong> In Progress</p>
+        </div>
+        <div class="game-numbers">
+          <div class="draw-title">Draw Numbers</div>
+          <div class="number-row">
+            <span class="number-box">7</span>
+            <span class="number-box">14</span>
+            <span class="number-box">21</span>
+            <span class="number-box">28</span>
+            <span class="number-box">35</span>
+          </div>
+        </div>
+      </div>
+      
+      <div class="game-card win">
+        <div class="game-details">
+          <h4>Salary4Life</h4>
+          <p><strong>Date:</strong> 2025-03-10</p>
+          <p><strong>Staked:</strong> ₦3,000</p>
+          <p><strong>Outcome:</strong> Win</p>
+        </div>
+        <div class="game-numbers">
+          <div class="draw-title">Draw Numbers</div>
+          <div class="number-row">
+            <span class="number-box">10</span>
+            <span class="number-box">15</span>
+            <span class="number-box">20</span>
+            <span class="number-box">25</span>
+            <span class="number-box">30</span>
+            <span class="number-box super">88</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>    -->
+  
+  <!-- Transaction History Dropdown (Card Layout) -->
+  <a href="./transactionhis.html"><button class="dropdown-button">
+    Transaction History <span class="arrow">▼</span>
+  </button></a>
+  <!-- <button class="dropdown-button" onclick="toggleDropdown('transactionHistoryDropdown')">
+    Transaction History <span class="arrow">▼</span>
+  </button> -->
+  <!-- <div id="transactionHistoryDropdown" class="dropdown-content">
+    <h3>Transaction History</h3>
+    <div class="transaction-history">
+      
+      <div class="transaction-card">
+        <p><strong>Date:</strong> 2025-03-22</p>
+        <p><strong>Type:</strong> Deposit</p>
+        <p><strong>Amount:</strong> ₦20,000</p>
+        <p><strong>Description:</strong> Deposit to the platform</p>
+      </div>
+      
+      <div class="transaction-card">
+        <p><strong>Date:</strong> 2025-03-20</p>
+        <p><strong>Type:</strong> Game Play</p>
+        <p><strong>Amount:</strong> ₦1,000</p>
+        <p><strong>Description:</strong> Rapid Games</p>
+      </div>
+      
+      <div class="transaction-card">
+        <p><strong>Date:</strong> 2025-03-18</p>
+        <p><strong>Type:</strong> Game Play</p>
+        <p><strong>Amount:</strong> ₦2,500</p>
+        <p><strong>Description:</strong> Salary4Life</p>
+      </div>
+      
+      <div class="transaction-card">
+        <p><strong>Date:</strong> 2025-03-18</p>
+        <p><strong>Type:</strong> Game Play</p>
+        <p><strong>Amount:</strong> ₦200</p>
+        <p><strong>Description:</strong> Rapid Games</p>
+      </div>
+    </div>
+  </div> -->
+
+   <!-- Reset Password Dropdown -->
+   <a href="./ResetPass.html"><button class="dropdown-button">
+    Reset Password<span class="arrow">▼</span>
+  </button></a>
+   <!-- <button class="dropdown-button" onclick="toggleDropdown('resetPasswordDropdown')">
+    Reset Password <span class="arrow">▼</span>
+  </button> -->
+  <!-- <div id="resetPasswordDropdown" class="dropdown-content">
+    <h3>Change Password</h3>
+    <p>Fill the form below to reset your password</p>
+    <form onsubmit="return resetPasswordForm()">
+      <div class="form-group">
+        <label for="currentPassword">Current Password</label>
+        <input type="password" id="currentPassword" placeholder="Enter current password" required>
+      </div>
+      <div class="form-group">
+        <label for="newPassword">New Password</label>
+        <input type="password" id="newPassword" placeholder="Enter new password" required>
+      </div>
+      <div class="form-group">
+        <label for="confirmPassword">Confirm New Password</label>
+        <input type="password" id="confirmPassword" placeholder="Re-enter new password" required>
+      </div>
+      <button type="submit" class="form-button">Reset Password</button>
+    </form>
+  </div> -->
+</div>
+
+<script>
+  // Toggle dropdown sections
+  function toggleDropdown(id) {
+    var dropdown = document.getElementById(id);
+    dropdown.style.display = (dropdown.style.display === "block") ? "none" : "block";
+  }
+  
+  // Simulate Withdrawal Form processing
+  function withdrawalForm() {
+    var mobile = document.getElementById('mobileNumber').value;
+    var amount = document.getElementById('withdrawAmount').value;
+    var bank = document.getElementById('bankName').value;
+    var accNumber = document.getElementById('accountNumber').value;
+    
+    if (!mobile || !amount || !bank || !accNumber) {
+      alert("Please fill in all fields.");
+      return false;
+    }
+    
+    alert("Withdrawal of ₦" + amount + " from " + bank + " (Account: " + accNumber + ") using mobile number " + mobile + " submitted.");
+    return false;
+  }
+  
+  // Simulate Reset Password Form processing
+  function resetPasswordForm() {
+    var current = document.getElementById('currentPassword').value;
+    var newPass = document.getElementById('newPassword').value;
+    var confirmPass = document.getElementById('confirmPassword').value;
+    
+    if (newPass !== confirmPass) {
+      alert("New passwords do not match!");
+      return false;
+    }
+    alert("Password reset successfully!");
+    return false;
+  }
+</script>
+
+
+ <!-- FOOTER DESIGN -->    
+ <footer class="">
+  <div class="Social">        
+      <a href="/"><i class="fa-brands fa-square-instagram fa-bounce"></i></a>
+      <a href="/"><i class="fa-brands fa-square-x-twitter fa-bounce"></i></a>
+      <a href="/"><i class="fa-brands fa-square-facebook fa-bounce"></i></a>
+  </div>
+  <ul class="ItemList">
+    <li><a href="./userlogin.html">Home</a></li>                  
+    <li><a href="./AboutUs.html">About Us</a></li>          
+    <li><a href="./Support.html">Support</a></li>
+    <li><a href="./FAQ.html">FAQs</a></li>  
+    <li><a href="./Rules.html">Terms</a></li>
+    <li><a href="./Privacy.html">Privacy Policy</a></li>
+    <li><a href="./ContactUs.html">Contact Us</a></li>
+    <li><a href="./Community.html">Community</a></li>
+  </ul>
+  <div class="FooterList">
+      <img src="./image/Naira rain lotto.png" alt="" class="">
+      <p class=""><a href="https://www.gambleaware.org/" target="_blank">begambleawear.org</a></p>
+      <p class="">© 2023 NairaRain Lotto | 18+</p>
+  </div>
+</footer>
+
+    
+</body>
+</html>

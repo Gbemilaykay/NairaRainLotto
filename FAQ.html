@@ -1,0 +1,441 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FAQ</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css">
+    <link rel="stylesheet" href="./FAQ.css">  
+    <link rel="stylesheet" href="./style.css">     
+</head>
+
+<body>
+
+    <header class="header-navbar" >
+        <!-- <div class="mobile-menu-icon" id="mobileMenuIcon"> -->
+            <div class="mobile-menu-base" >
+                <div class="MenuCom">
+                    <p class="mobile-menu-icon" id="openMobile" aria-label="Open menu" >Menu<span><i class="fa-solid fa-ellipsis-vertical"></i></span></p>
+                    <div class="mobile-nav" id="mobileNav">
+                        <div class="mobileModal">
+                            <!-- <span class="close-menu">✖</span> -->
+                            <button aria-label="close" class="close-menu" id="closeMobile">✖</button>
+                            <nav class="mobile-links" aria-label="mobile-links">
+                                <a class="mobile-list"  href="./index.html">Home</a>
+                                <div>
+                                  <button class="mobile-list"   onclick="toggleMobileSub('gamesMobile')">Games ▾</button>
+                                  <div class="mobile-submenu" id="gamesMobile">
+                                    <a id="NairaRain-dropdown" href="./GamesPage.html">NairaRain Lotto <span>₦2,000,000</span></a>
+                                    <a id="Rapid500" href="./RapidGame3.html">NRL Rapid Game <span>₦500,000</span></a>
+                                    <a id="Rapid250" href="./RapidGame2.html">NRL Rapid Game <span>₦250,000</span></a>
+                                    <a id="Rapid150" href="./RapidGame1.html">NRL Rapid Game <span>₦150,000</span></a>
+                                  </div>
+                                </div>
+                        
+                                <div>
+                                  <button  class="mobile-list"  onclick="toggleMobileSub('resultsMobile')">Results ▾</button>
+                                  <div class="mobile-submenu" id="resultsMobile">
+                                    <a id="NairaRain-dropdown" href="./Result.html">NairaRain Lotto <span>Result</span></a>
+                                    <a id="Rapid500" href="./ResultRapid5.html">NRL Rapid Game <span>Result</span></a>                               
+                                  </div>
+                                </div>                            
+                                <a class="mobile-list"  href="./Community.html">Community</a>
+                                <a class="mobile-list"  href="./FAQ.html">FAQs</a>
+                                <!-- <a class="mobile-list"  href="#winners">Winners</a> -->
+                            </nav>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="profile" >
+                    <div class="profile-icon" onclick="toggleProfileDropdown()">My account<i class="fa-solid fa-user"></i></div>
+                    <!-- <a href="./loginPage.html"><span class="profile-icon">My account<i class="fa-solid fa-user"></i></span></a> -->
+                    <div class="profileDropdown" id="profileDropdown" onclick="toggleProfileDropdown()">
+                        <div class="profile-dropdownModal">
+                            <div class="dropdown" >
+                                <a href="#">Wallet Amount: ₦100,000</a>
+                                <a href="./profilepage.html">My Profile</a> 
+                                <a href="./payment.html">Deposit</a>                        
+                                <a href="./Gamehistory.html">Games History</a>
+                                <a href="./transactionhis.html">Transactions</a>
+                                <a href="./withdrawpage.html">Withdrawal</a>
+                                <a href="./profilepage.html">User Profile</a>
+                                <a href="#" onclick="logout()">Logout</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>               
+            </div>                
+        <!-- </div> -->  
+                   
+        <div class="navbar">
+            <div class="logo"> <a href="./index.html"><img src="./image/Naira rain lotto.png" alt="Logo"></a>
+            </div>            
+            <div class="nav-center" aria-label="Primary">
+                <div class="nav-item"><a class="nav-button" href="./index.html">Home</a></div>
+                <div class="nav-item"><a class="nav-button"  href="#games" onclick="toggleCenterDropdown(event,'games')">Games ▾</a>
+                    <div class="drop-it">
+                        <div class="center-dropdown" id="gamesDropdown">
+                            <div class="dropdown-games">
+                                <a id="NairaRain-dropdown" href="./GamesPage.html">NairaRain Lotto <span>₦2,000,000</span> </a>
+                                <a id="Rapid500" href="./RapidGame3.html">Rapid Game <span>₦500,000</span></a>
+                                <a id="Rapid250" href="./RapidGame2.html">Rapid Game <span>₦250,000</span></a>
+                                <a id="Rapid150" href="./RapidGame1.html">Rapid Game <span>₦150,000</span></a>
+                            </div>                          
+                        </div>
+                    </div>
+                </div>
+                <div class="nav-item"><a class="nav-button" href="./payment.html">Deposit</a></div>
+                <div class="nav-item"><a class="nav-button" href="#results" onclick="toggleCenterDropdown(event,'results')">Results ▾</a>  
+                    <div class="drop-it">                    
+                        <div class="center-dropdown" id="resultsDropdown">
+                            <div class="dropdown-games" id="dropdown-result" >
+                                <a id="NairaRain-dropdown" href="./Result.html">NairaRain Lotto <span>Result</span></a>
+                                <a id="Rapid500"  href="./ResultRapid5.html">NRL Rapid Game <span>Result</span></a>                                
+                            </div>                                
+                        </div>
+                    </div>                        
+                </div>                   
+                <!-- <div class="nav-item"><a class="nav-button" href="#testimonials">Testimonials</a></div> -->
+                                  
+            </div>
+        
+            <div class="actions">
+                <div class="nav-logsign" >
+                    <a href="./loginPage.html"><button id="nav-login" class="active">Login</button></a> 
+                    <a href="./SignupPage.html"><button id="nav-signup" class="active">Sign Up</button></a>
+                </div>                
+                <div class="pro-wallet">
+                    <div class="profile" onclick="toggleProfileDropdownx()">
+                        <!-- <div class="profile-icon"><i class="fa-solid fa-user"></i></div> -->
+                        <div class="profileDropdown1" id="profileDropdown1"> 
+                            <div class="profileDropdown1-modal">                               
+                                <div class="dropdown">
+                                    <a href="#">Wallet Amount: ₦100,000</a>
+                                    <a href="./profilepage.html">My Profile</a>
+                                    <a href="./payment.html">Deposit</a>                         
+                                    <a href="./Gamehistory.html">Games History</a>
+                                    <a href="./transactionhis.html">Transactions</a>
+                                    <a href="./withdrawpage.html">Result</a>
+                                    <a href="./profilepage.html">User Profile</a>
+                                    <a href="#" onclick="logout()">Logout</a>
+                                </div>
+                            </div>                               
+                        </div>
+                    </div>                       
+    
+                    <!-- <div class="wallet" onclick="toggleWalletDropdown()">
+                        <i class="fa-solid fa-wallet"></i> <span id="walletAmount">₦12,000.00</span>
+                        <div class="wallet-dropdown" id="walletDropdown">
+                        <p>Available Balance: <span id="availableBalance">₦12,000.00</span></p>                            
+                    </div> -->
+                </div>                     
+            </div>
+        </div>
+    </header>          
+        
+    <script>
+          
+    function toggleProfileDropdown() {
+      var dropdown = document.getElementById("profileDropdown");
+      dropdown.style.display = dropdown.style.display === "flex" ? "none" : "flex";
+    }
+    function toggleProfileDropdownx() {
+      var dropdown = document.getElementById("profileDropdown1");
+      dropdown.style.display = dropdown.style.display === "flex" ? "none" : "flex";
+    } 
+      // Toggle the profile dropdown visibility
+      function toggleMobileNav() {
+            const mobileNav = document.getElementById('mobileNav');
+            mobileNav.style.display = mobileNav.style.display === 'flex' ? 'none' : 'flex';
+          }              
+    
+        //   function toggleMobileNavS() {
+        //     const mobileNavS = document.getElementById('mobileNavS');
+        //     mobileNavS.style.display = mobileNavS.style.display === 'flex' ? 'none' : 'flex';
+        //   }
+    
+        // Center dropdown toggles (desktop)
+        
+    // Center dropdown toggles (desktop)
+    function toggleCenterDropdown(e, which){
+    e.preventDefault();
+    const games = document.getElementById('gamesDropdown');
+    const results = document.getElementById('resultsDropdown');
+    if(which === 'games'){
+    const show = games.style.display !== 'block';
+    games.style.display = show ? 'block' : 'none';
+    results.style.display = 'none';
+    }else if(which === 'results'){
+    const show = results.style.display !== 'block';
+    results.style.display = show ? 'block' : 'none';
+    games.style.display = 'none';
+    }
+    }
+    
+    // Close dropdowns when clicking outside
+    document.addEventListener('click', function(e){
+    const isNav = e.target.closest('.nav-center');
+    const isBtn = e.target.closest('.nav-button');
+    if(!isNav && !isBtn){
+    document.getElementById('gamesDropdown').style.display = 'none';
+    document.getElementById('resultsDropdown').style.display = 'none';
+    }
+    });
+    
+    // Mobile panel controls & submenus
+    document.getElementById('openMobile').addEventListener('click', ()=>{
+    document.getElementById('mobileNav').style.display = 'block';
+    });
+    document.getElementById('closeMobile').addEventListener('click', ()=>{
+    document.getElementById('mobileNav').style.display = 'none';
+    });
+    
+    function toggleMobileSub(id){
+    const el = document.getElementById(id);
+    el.style.display = el.style.display === 'block' ? 'none' : 'block';
+    }     
+          
+    
+          function toggleWalletDropdown() {
+    const walletDropdown = document.getElementById('walletDropdown');
+    walletDropdown.style.display = walletDropdown.style.display === 'block' ? 'none' : 'block';
+    }
+    
+    function updateWallet(amount, pending) {
+    document.getElementById('walletAmount').textContent = `₦${amount.toFixed(2)}`;
+    document.getElementById('availableBalance').textContent = `₦${amount.toFixed(2)}`;
+    // document.getElementById('pendingWinnings').textContent = `₦${pending.toFixed(2)}`;
+    }
+    
+    // Example update (this would be dynamically set based on real user data)
+    //   updateWallet(1200.50, 250.00);
+    
+    // Close mobile nav when clicking outside the panel or pressing Escape
+    document.getElementById('mobileNav').addEventListener('click', function(e){
+    // if click target is the overlay (not the inner panel), close
+    if(e.target === this) {
+    this.style.display = 'none';
+    }
+    });
+    document.addEventListener('keydown', function(e){
+    if(e.key === 'Escape'){
+    document.getElementById('mobileNav').style.display = 'none';
+    closeAllPopups();
+    }
+    });
+    </script> 
+
+<div class="headerImagerX" >        
+    <img src="./image/heroImage16.png" alt="">        
+</div>
+
+
+
+
+    <div class="faq-containerd">
+        <div class="faq-headerd">
+            <h1>Frequently Asked Questions</h1>
+        </div>
+        <div class="faq-gridd">
+            <!-- FAQ Item -->
+            <div class="faqq">
+                <h3>What is this website about?</h3>
+                <p>This website provides gaming news, reviews, and a community for gamers worldwide. Whether you're into RPGs, FPS, or indie games, we've got something for you!</p>
+            </div>
+            <!-- FAQ Item -->
+            <div class="faqq">
+                <h3>How do I join the community?</h3>
+                <p>Create an account on our website to become a member of our vibrant gaming community. Enjoy exclusive perks, discussions, and updates!</p>
+            </div>
+            <!-- FAQ Item -->
+            <div class="faqq">
+                <h3>What games do you cover?</h3>
+                <p>We cover a wide variety of games, including popular titles in genres like RPG, FPS, MMOs, and much more. Explore our site for detailed reviews!</p>
+            </div>
+            <!-- FAQ Item -->
+            <div class="faqq">
+                <h3>Is there a mobile app?</h3>
+                <p>Yes! We have a mobile app available for Android and iOS devices, so you can stay updated on the go.</p>
+            </div>
+            <!-- Add more FAQs (repeat structure) -->
+            <div class="faqq">
+                <h3>Can I contribute content?</h3>
+                <p>Absolutely! Sign up to become a content contributor and share your reviews, opinions, or gaming tips with our audience.</p>
+            </div>
+            <div class="faqq">
+                <h3>How can I report an issue?</h3>
+                <p>If you encounter an issue, please contact our support team through the "Help" section on our website or email us directly.</p>
+            </div>
+            <div class="faqq">
+                <h3>Are there any premium memberships?</h3>
+                <p>Yes! Premium members enjoy ad-free browsing, exclusive content, and early access to updates. Sign up on our memberships page.</p>
+            </div>
+            <div class="faqq">
+                <h3>What is your refund policy?</h3>
+                <p>We offer a 30-day refund policy on all purchases made through our platform. Contact support for further details.</p>
+            </div>
+            <!-- Add as many FAQs as needed -->
+        </div>
+    </div>
+
+
+
+    <div class="faq-containered">
+        <div class="faq-headered">
+            <h1>More Questions</h1>
+        </div>
+        <div class="faq-grid">
+            <!-- 16 FAQs -->
+            <div class="faq" id="faq1">
+                <button class="faq-title">
+                    <h3>What is this website about?</h3>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" stroke="white" stroke-width="2"
+                        stroke-linecap="round" stroke-linejoin="round" class="feather feather-chevron-down">
+                        <polyline points="6 9 12 15 18 9"></polyline>
+                    </svg>
+                </button>
+                <div class="faq-content">
+                    <p>This website provides gaming news, reviews, and a community hub for gamers worldwide.</p>
+                </div>
+            </div>
+            <!-- Repeat similar FAQ blocks -->
+            <div class="faq" id="faq2">
+                <button class="faq-title">
+                    <h3>How can I join the community?</h3>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" stroke="white" stroke-width="2"
+                        stroke-linecap="round" stroke-linejoin="round" class="feather feather-chevron-down">
+                        <polyline points="6 9 12 15 18 9"></polyline>
+                    </svg>
+                </button>
+                <div class="faq-content">
+                    <p>Sign up by creating a profile in the member's section to become part of our community.</p>
+                </div>
+            </div>
+            <!-- Repeat for all FAQs -->
+            <div class="faq" id="faq3">
+                <button class="faq-title">
+                    <h3>What games do you cover?</h3>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" stroke="white" stroke-width="2"
+                        stroke-linecap="round" stroke-linejoin="round" class="feather feather-chevron-down">
+                        <polyline points="6 9 12 15 18 9"></polyline>
+                    </svg>
+                </button>
+                <div class="faq-content">
+                    <p>We cover a variety of genres like RPGs, FPS, MMOs, and more.</p>
+                </div>
+            </div>            
+            <div class="faq" id="faq4">
+                <button class="faq-title">
+                    <h3>What games do you cover?</h3>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" stroke="white" stroke-width="2"
+                        stroke-linecap="round" stroke-linejoin="round" class="feather feather-chevron-down">
+                        <polyline points="6 9 12 15 18 9"></polyline>
+                    </svg>
+                </button>
+                <div class="faq-content">
+                    <p>We cover a variety of genres like RPGs, FPS, MMOs, and more.</p>
+                </div>
+            </div>
+            <!-- Add up to 16 questions similarly -->
+            <div class="faq" id="faq1">
+                <button class="faq-title">
+                    <h3>What is this website about?</h3>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" stroke="white" stroke-width="2"
+                        stroke-linecap="round" stroke-linejoin="round" class="feather feather-chevron-down">
+                        <polyline points="6 9 12 15 18 9"></polyline>
+                    </svg>
+                </button>
+                <div class="faq-content">
+                    <p>This website provides gaming news, reviews, and a community hub for gamers worldwide.</p>
+                </div>
+            </div>
+            <!-- Repeat similar FAQ blocks -->
+            <div class="faq" id="faq2">
+                <button class="faq-title">
+                    <h3>How can I join the community?</h3>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" stroke="white" stroke-width="2"
+                        stroke-linecap="round" stroke-linejoin="round" class="feather feather-chevron-down">
+                        <polyline points="6 9 12 15 18 9"></polyline>
+                    </svg>
+                </button>
+                <div class="faq-content">
+                    <p>Sign up by creating a profile in the member's section to become part of our community.</p>
+                </div>
+            </div>
+            <!-- Repeat for all FAQs -->
+            <div class="faq" id="faq3">
+                <button class="faq-title">
+                    <h3>What games do you cover?</h3>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" stroke="white" stroke-width="2"
+                        stroke-linecap="round" stroke-linejoin="round" class="feather feather-chevron-down">
+                        <polyline points="6 9 12 15 18 9"></polyline>
+                    </svg>
+                </button>
+                <div class="faq-content">
+                    <p>We cover a variety of genres like RPGs, FPS, MMOs, and more.</p>
+                </div>
+            </div>            
+            <div class="faq" id="faq4">
+                <button class="faq-title">
+                    <h3>What games do you cover?</h3>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" stroke="white" stroke-width="2"
+                        stroke-linecap="round" stroke-linejoin="round" class="feather feather-chevron-down">
+                        <polyline points="6 9 12 15 18 9"></polyline>
+                    </svg>
+                </button>
+                <div class="faq-content">
+                    <p>We cover a variety of genres like RPGs, FPS, MMOs, and more.</p>
+                </div>
+            </div>
+           
+            
+        </div>
+    </div>
+
+    <script>
+        document.querySelectorAll('.faq-title').forEach(button => {
+            button.addEventListener('click', () => {
+                const faq = button.parentElement;
+
+                faq.classList.toggle('open');
+
+                document.querySelectorAll('.faq').forEach(otherFaq => {
+                    if (otherFaq !== faq) {
+                        otherFaq.classList.remove('open');
+                    }
+                });
+            });
+        });
+    </script>
+
+    
+<!-- FOOTER DESIGN -->    
+<footer class="">
+    <div class="Social">        
+        <a href="/"><i class="fa-brands fa-square-instagram fa-bounce"></i></a>
+        <a href="/"><i class="fa-brands fa-square-x-twitter fa-bounce"></i></a>
+        <a href="/"><i class="fa-brands fa-square-facebook fa-bounce"></i></a>
+    </div>
+    <ul class="ItemList">
+        <li><a href="./userlogin.html">Home</a></li>                  
+        <li><a href="./AboutUs.html">About Us</a></li>          
+        <li><a href="./Support.html">Support</a></li>
+        <li><a href="./FAQ.html">FAQs</a></li>  
+        <li><a href="./Rules.html">Terms</a></li>
+        <li><a href="./Privacy.html">Privacy Policy</a></li>
+        <li><a href="./ContactUs.html">Contact Us</a></li>
+        <li><a href="./Community.html">Community</a></li>
+    </ul>
+    <div class="FooterList">
+        <img src="./image/Naira rain lotto.png" alt="" class="">
+        <p class=""><a href="https://www.gambleaware.org/" target="_blank">begambleawear.org</a></p>
+        <p class="">© 2023 NairaRain Lotto | 18+</p>
+    </div>
+  </footer>
+
+
+</body>
+
+</html>

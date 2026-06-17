@@ -1,0 +1,776 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>About Us</title>
+  <link rel="stylesheet" href="./style.css">
+  <link rel="stylesheet" href="./AboutUs.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"/> 
+  <style></style>
+</head>
+<body>
+
+  <header class="header-navbar" >
+    <!-- <div class="mobile-menu-icon" id="mobileMenuIcon"> -->
+        <div class="mobile-menu-base" >
+            <div class="MenuCom">
+                <p class="mobile-menu-icon" id="openMobile" aria-label="Open menu" >Menu<span><i class="fa-solid fa-ellipsis-vertical"></i></span></p>
+                <div class="mobile-nav" id="mobileNav">
+                    <div class="mobileModal">
+                        <!-- <span class="close-menu">✖</span> -->
+                        <button aria-label="close" class="close-menu" id="closeMobile">✖</button>
+                        <nav class="mobile-links" aria-label="mobile-links">
+                            <a class="mobile-list"  href="./index.html">Home</a>
+                            <div>
+                              <button class="mobile-list"   onclick="toggleMobileSub('gamesMobile')">Games ▾</button>
+                              <div class="mobile-submenu" id="gamesMobile">
+                                <a id="NairaRain-dropdown" href="./GamesPage.html">NairaRain Lotto <span>₦2,000,000</span></a>
+                                <a id="Rapid500" href="./RapidGame3.html">NRL Rapid Game <span>₦500,000</span></a>
+                                <a id="Rapid250" href="./RapidGame2.html">NRL Rapid Game <span>₦250,000</span></a>
+                                <a id="Rapid150" href="./RapidGame1.html">NRL Rapid Game <span>₦150,000</span></a>
+                              </div>
+                            </div>
+                    
+                            <div>
+                              <button  class="mobile-list"  onclick="toggleMobileSub('resultsMobile')">Results ▾</button>
+                              <div class="mobile-submenu" id="resultsMobile">
+                                <a id="NairaRain-dropdown" href="./Result.html">NairaRain Lotto <span>Result</span></a>
+                                <a id="Rapid500" href="./ResultRapid5.html">NRL Rapid Game <span>Result</span></a>                               
+                              </div>
+                            </div>                            
+                            <a class="mobile-list"  href="./Community.html">Community</a>
+                            <a class="mobile-list"  href="./FAQ.html">FAQs</a>
+                            <!-- <a class="mobile-list"  href="#winners">Winners</a> -->
+                        </nav>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="profile" >
+                <div class="profile-icon" onclick="toggleProfileDropdown()">My account<i class="fa-solid fa-user"></i></div>
+                <!-- <a href="./loginPage.html"><span class="profile-icon">My account<i class="fa-solid fa-user"></i></span></a> -->
+                <div class="profileDropdown" id="profileDropdown" onclick="toggleProfileDropdown()">
+                    <div class="profile-dropdownModal">
+                        <div class="dropdown" >
+                            <a href="#">Wallet Amount: ₦100,000</a>
+                            <a href="./profilepage.html">My Profile</a> 
+                            <a href="./payment.html">Deposit</a>                        
+                            <a href="./Gamehistory.html">Games History</a>
+                            <a href="./transactionhis.html">Transactions</a>
+                            <a href="./withdrawpage.html">Withdrawal</a>
+                            <a href="./profilepage.html">User Profile</a>
+                            <a href="#" onclick="logout()">Logout</a>
+                        </div>
+                    </div>
+                </div>
+            </div>               
+        </div>                
+    <!-- </div> -->  
+               
+    <div class="navbar">
+        <div class="logo"> <a href="./index.html"><img src="./image/Naira rain lotto.png" alt="Logo"></a>
+        </div>            
+        <div class="nav-center" aria-label="Primary">
+            <div class="nav-item"><a class="nav-button" href="./index.html">Home</a></div>
+            <div class="nav-item"><a class="nav-button"  href="#games" onclick="toggleCenterDropdown(event,'games')">Games ▾</a>
+                <div class="drop-it">
+                    <div class="center-dropdown" id="gamesDropdown">
+                        <div class="dropdown-games">
+                            <a id="NairaRain-dropdown" href="./GamesPage.html">NairaRain Lotto <span>₦2,000,000</span> </a>
+                            <a id="Rapid500" href="./RapidGame3.html">Rapid Game <span>₦500,000</span></a>
+                            <a id="Rapid250" href="./RapidGame2.html">Rapid Game <span>₦250,000</span></a>
+                            <a id="Rapid150" href="./RapidGame1.html">Rapid Game <span>₦150,000</span></a>
+                        </div>                          
+                    </div>
+                </div>
+            </div>
+            <div class="nav-item"><a class="nav-button" href="./payment.html">Deposit</a></div>
+            <div class="nav-item"><a class="nav-button" href="#results" onclick="toggleCenterDropdown(event,'results')">Results ▾</a>  
+                <div class="drop-it">                    
+                    <div class="center-dropdown" id="resultsDropdown">
+                        <div class="dropdown-games" id="dropdown-result" >
+                            <a id="NairaRain-dropdown" href="./Result.html">NairaRain Lotto <span>Result</span></a>
+                            <a id="Rapid500"  href="./ResultRapid5.html">NRL Rapid Game <span>Result</span></a>                                
+                        </div>                                
+                    </div>
+                </div>                        
+            </div>                   
+            <!-- <div class="nav-item"><a class="nav-button" href="#testimonials">Testimonials</a></div> -->
+                              
+        </div>
+    
+        <div class="actions">
+            <div class="nav-logsign" >
+                <a href="./loginPage.html"><button id="nav-login" class="active">Login</button></a> 
+                <a href="./SignupPage.html"><button id="nav-signup" class="active">Sign Up</button></a>
+            </div>                
+            <div class="pro-wallet">
+                <div class="profile" onclick="toggleProfileDropdownx()">
+                    <!-- <div class="profile-icon"><i class="fa-solid fa-user"></i></div> -->
+                    <div class="profileDropdown1" id="profileDropdown1"> 
+                        <div class="profileDropdown1-modal">                               
+                            <div class="dropdown">
+                                <a href="#">Wallet Amount: ₦100,000</a>
+                                <a href="./profilepage.html">My Profile</a>
+                                <a href="./payment.html">Deposit</a>                         
+                                <a href="./Gamehistory.html">Games History</a>
+                                <a href="./transactionhis.html">Transactions</a>
+                                <a href="./withdrawpage.html">Result</a>
+                                <a href="./profilepage.html">User Profile</a>
+                                <a href="#" onclick="logout()">Logout</a>
+                            </div>
+                        </div>                               
+                    </div>
+                </div>                       
+
+                <!-- <div class="wallet" onclick="toggleWalletDropdown()">
+                    <i class="fa-solid fa-wallet"></i> <span id="walletAmount">₦12,000.00</span>
+                    <div class="wallet-dropdown" id="walletDropdown">
+                    <p>Available Balance: <span id="availableBalance">₦12,000.00</span></p>                            
+                </div> -->
+            </div>                     
+        </div>
+    </div>
+</header>          
+    
+<script>
+      
+function toggleProfileDropdown() {
+  var dropdown = document.getElementById("profileDropdown");
+  dropdown.style.display = dropdown.style.display === "flex" ? "none" : "flex";
+}
+function toggleProfileDropdownx() {
+  var dropdown = document.getElementById("profileDropdown1");
+  dropdown.style.display = dropdown.style.display === "flex" ? "none" : "flex";
+} 
+  // Toggle the profile dropdown visibility
+  function toggleMobileNav() {
+        const mobileNav = document.getElementById('mobileNav');
+        mobileNav.style.display = mobileNav.style.display === 'flex' ? 'none' : 'flex';
+      }              
+
+    //   function toggleMobileNavS() {
+    //     const mobileNavS = document.getElementById('mobileNavS');
+    //     mobileNavS.style.display = mobileNavS.style.display === 'flex' ? 'none' : 'flex';
+    //   }
+
+    // Center dropdown toggles (desktop)
+    
+// Center dropdown toggles (desktop)
+function toggleCenterDropdown(e, which){
+e.preventDefault();
+const games = document.getElementById('gamesDropdown');
+const results = document.getElementById('resultsDropdown');
+if(which === 'games'){
+const show = games.style.display !== 'block';
+games.style.display = show ? 'block' : 'none';
+results.style.display = 'none';
+}else if(which === 'results'){
+const show = results.style.display !== 'block';
+results.style.display = show ? 'block' : 'none';
+games.style.display = 'none';
+}
+}
+
+// Close dropdowns when clicking outside
+document.addEventListener('click', function(e){
+const isNav = e.target.closest('.nav-center');
+const isBtn = e.target.closest('.nav-button');
+if(!isNav && !isBtn){
+document.getElementById('gamesDropdown').style.display = 'none';
+document.getElementById('resultsDropdown').style.display = 'none';
+}
+});
+
+// Mobile panel controls & submenus
+document.getElementById('openMobile').addEventListener('click', ()=>{
+document.getElementById('mobileNav').style.display = 'block';
+});
+document.getElementById('closeMobile').addEventListener('click', ()=>{
+document.getElementById('mobileNav').style.display = 'none';
+});
+
+function toggleMobileSub(id){
+const el = document.getElementById(id);
+el.style.display = el.style.display === 'block' ? 'none' : 'block';
+}     
+      
+
+      function toggleWalletDropdown() {
+const walletDropdown = document.getElementById('walletDropdown');
+walletDropdown.style.display = walletDropdown.style.display === 'block' ? 'none' : 'block';
+}
+
+function updateWallet(amount, pending) {
+document.getElementById('walletAmount').textContent = `₦${amount.toFixed(2)}`;
+document.getElementById('availableBalance').textContent = `₦${amount.toFixed(2)}`;
+// document.getElementById('pendingWinnings').textContent = `₦${pending.toFixed(2)}`;
+}
+
+// Example update (this would be dynamically set based on real user data)
+//   updateWallet(1200.50, 250.00);
+
+// Close mobile nav when clicking outside the panel or pressing Escape
+document.getElementById('mobileNav').addEventListener('click', function(e){
+// if click target is the overlay (not the inner panel), close
+if(e.target === this) {
+this.style.display = 'none';
+}
+});
+document.addEventListener('keydown', function(e){
+if(e.key === 'Escape'){
+document.getElementById('mobileNav').style.display = 'none';
+closeAllPopups();
+}
+});
+</script> 
+
+
+
+<div class="wrap">
+  <header>
+    <!-- <div class="brand">
+      <div class="logo">NRL</div>
+      <div>
+        <h1>NairaRain Lotto</h1>
+        <div class="muted">Changing lives — fair, secure, and fun</div>
+      </div>
+    </div> -->
+    <nav aria-label="Primary navigation" class="nav-hidden">
+      <a href="#about">About</a>
+      <a href="#how">How it Works</a>
+      <a href="#prizes">Prizes</a>
+      <a href="#privacy">Privacy</a>
+      <a href="#terms">Terms</a>
+      <button class="btn" onclick="scrollToSection('how')">Play Guide</button>
+    </nav>
+    <!-- <div class="actions">
+      <button class="btn" onclick="scrollToSection('how')">Play Guide</button>
+      <button class="btn secondary" onclick="copyEmail()">privacy@nairarainlotto.com</button>
+    </div> -->
+  </header>
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="hero-card">
+      <h2 id="about">About NairaRain Lotto (NRL)</h2>
+      <!-- <div class="kicker">Started 2023 • Mobile-first • Nationwide</div> -->
+      <p>NairaRain Lotto (NRL) is a lottery game with a starting jackpot of <strong>₦25,000,000</strong> that rolls over until it is won. Players match five (5) numbers from <strong>1–47</strong> plus <strong>1 NairaBall</strong> from <strong>1–10</strong> to win the JACKPOT. There are <strong>10 prize tiers</strong> and winnings for matching one (1) main number + 0 NairaBall.</p>
+      <p class="small"><strong>NRL Rapid Games</strong> offers daily draws where players can win ₦500,000, ₦250,000, ₦150,000 and other tier prizes by picking 5 lucky numbers from 1–27, 1–25, or 1–21 numbers respectively.</p>
+      
+    </div>
+
+    <aside class="jackpot-card">
+      <div style="font-size:13pt;color:var(--muted)">Current Starting Jackpot</div>
+      <div class="jackpot-amount">₦25,000,000</div>      
+      <div class="draw-time">NairaRain Lotto draws: Tue &amp; Fri • 7:30PM (WAT)</div>
+      <div style="margin: 10px 0 10px 0"><button class="btn" onclick="scrollToSection('prizes')">See Prize Tiers</button></div>
+      <div class="jackpot-amount">₦500,000 <span>₦250,000</span><span>₦150,000</span> </div> 
+      <div class="draw-time">NRL Rapid Games draws: Daily • 7:30PM (WAT)</div>
+      <div style="margin: 10px 0 10px 0"><button class="btn" onclick="scrollToSection('Rapid-prizes')">See Prize Tiers</button></div>
+     
+    </aside>
+  </section>
+  <div  class="card">
+    <h2>Changing lives!</h2> 
+    <p>We believe everyone deserves a fair chance at life-changing winnings that bring real joy.
+    </p>
+    <!-- <div class="meta" title="Community giving">Community: 20% profits to charity</div>
+    <div class="meta" title="Responsible gaming">Responsible gaming tools available</div> -->
+  </div>
+
+  <!-- Values -->
+  <section id="values">
+    <h2 class="section-title">Core Values</h2>
+    <div class="values">
+      <div class="value-card">
+        <h3>Integrity</h3>
+        <p>We uphold fairness and transparency in every draw.</p>
+      </div>
+      <div class="value-card">
+        <h3>Community</h3>
+        <p>20% of our profits are allocated to charitable and community initiatives.</p>
+      </div>
+      <div class="value-card">
+        <h3>Innovation</h3>
+        <p>We leverage modern technology to deliver a secure and engaging experience.</p>
+      </div>
+      <div class="value-card">
+        <h3>Responsibility</h3>
+        <p>We advocate for responsible gaming and support player well-being.</p>
+      </div>
+    </div>
+  </section>
+
+
+
+
+
+  <!-- GRID: Left content + right sidebar -->
+  <section class="grid">
+    <div>
+      <div class="card">
+        <h3 id="how">Our Story</h3>
+        <p class="small">Launched in 2023 as a mobile subscription lottery, NairaRain quickly grew into a nationally recognized lottery brand as NairaRain Lotto (NRL). Today, millions of Nigerians play our daily and weekly draws..</p>        
+      </div>
+      <div class="card">
+        <h3 id="how">How It Works</h3>
+        <!-- <p class="small">Tickets: Buy online or from authorized retailers. Results are posted instantly on our official website after draws.</p> -->
+        <ul>
+          <li><strong>Tickets</strong>: Buy online or from authorized retailers.</strong></li>
+          <li><strong>Draw Time</strong>: For NairaRain Lotto and Rapid Games  </strong></li>
+          <li><strong>NairaRain Lotto</strong>: Tuesdays & Fridays at 7:30 PM (WAT) </li>
+          <li><strong>NRL Rapid Games</strong>: Every day at 7:30 PM (WAT) </li>
+          <li><strong>Results</strong>: Posted instantly on our official website.</li>         
+        </ul>
+      </div>
+      <div class="card">
+        <h3 id="how">How do I play NairaRain Lotto?</h3>
+        <ul> 
+          <li>Select five (5) lucky numbers from <strong>1–47</strong> + 1 NairaBall from <strong>1–10</strong>.</li>
+          <li>Starting Jackpot, N25 million with roll over and other prize tiers.  </li>
+          <li>Players choose their own numbers or Auto Pick option for random selections  </li>
+          <!-- <li><strong>NRL Rapid Games</strong>: Three variants — Pick 5 from 27, 25 or 21. Daily draws at 7:30PM (WAT).</li>
+          <li>Choose your own numbers or use <em>Auto Pick</em> for a random selection.</li> -->
+        </ul>
+      </div>
+      <div class="card" id="prizes" style="margin-top:12px">
+        <h3  >NairaRain Lotto — Prize Tier Structure</h3>
+        <p class="small">Game format:</p>
+        <ul> 
+          <li>Pick five (5) numbers from <strong>1 to 47</strong></li>
+          <li>Plus one (1) NairaBall from <strong>1 to 10</strong></li>           
+        </ul>
+       
+        <table aria-labelledby="prizes">
+          <thead><tr><th>Tier</th><th>Match</th><th>Example Prize</th></tr></thead>
+          <tbody>
+            <tr><td>1</td><td>5 + 1</td><td>₦25,000,000 (Jackpot)</td></tr>
+            <tr><td>2</td><td>5 + 0</td><td>₦250,000.00</td></tr>
+            <tr><td>3</td><td>4 + 1</td><td>₦12,500.00</td></tr>
+            <tr><td>4</td><td>4 + 0</td><td>₦5,000.00</td></tr>
+            <tr><td>5</td><td>3 + 1</td><td>₦1,000.00</td></tr>
+            <tr><td>6</td><td>3 + 0</td><td>₦500.00</td></tr>
+            <tr><td>7</td><td>2 + 1</td><td>₦300.00</td></tr>
+            <tr><td>8</td><td>2 + 0</td><td>Free Ticket</td></tr>
+            <tr><td>9</td><td>1 + 1</td><td>₦50.00</td></tr>
+            <tr><td>10</td><td>0 + 1</td><td>₦10.00</td></tr>
+          </tbody>
+        </table>
+        <p class="small muted" style="margin-top:10px">Notes:</p>
+        <ul> 
+          <li>Odds are, based on all possible number combinations.</li>
+          <li>Prizes are examples and may vary with ticket sales, rollovers, or promotional periods</li>           
+        </ul>
+      </div>
+
+      <div class="card" style="margin-top:12px">
+        <h3>Rapid Games — How to Play</h3>
+        <div class="rapid-grid">
+          <div class="rapid-card">
+            <h4>₦500,000 (5/27)</h4>            
+            <p class="small">Select five (5) numbers from <strong>1–27</strong></p>
+              <li>Players choose numbers or auto Pick for random selection.</li>
+              <li>Daily draw at 7:30PM</li>            
+          </div>
+          <div class="rapid-card">
+            <h4>₦250,000 (5/25)</h4>
+            <p class="small">Select five (5) numbers from <strong>1–25</strong></p>
+            <li>Players choose own numbers or auto Pick option for random selection.</li>
+            <li>Daily draw at 7:30PM</li>
+          </div>
+          <div class="rapid-card">
+            <h4>₦150,000 (5/21)</h4>
+            <p class="small">Select five (5) numbers from <strong>1–21</strong></p>
+            <li>Players choose numbers or auto Pick option for random number selection.</li>
+            <li>Daily draw at 7:30PM</li>
+          </div>
+        </div>
+
+        <div id="Rapid-prizes" style="margin-top:12px">
+          <strong>Prize examples (5/27):</strong>
+          <table style="margin-top:8px">
+            <thead><tr><th>Prize</th><th>Selection</th></tr></thead>
+            <tbody>
+              <tr><td>₦500,000</td><td>Pick 5 out of 27</td></tr>
+              <tr><td>₦3,000.00</td><td>Pick 4 out of 27</td></tr>
+              <tr><td>₦250.00</td><td>Pick 3 out of 27</td></tr>
+              <tr><td>₦100.00</td><td>Pick 2 out of 27</td></tr>
+              <tr><td>₦20.00</td><td>Pick 1 out of 27</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <div style="margin-top:12px">
+          <strong>Prize examples (5/25):</strong>
+          <table style="margin-top:8px">
+            <thead><tr><th>Prize</th><th>Selection</th></tr></thead>
+            <tbody>
+              <tr><td>₦250,000</td><td>Pick 5 out of 25</td></tr>
+              <tr><td>₦2,500.00</td><td>Pick 4 out of 25</td></tr>
+              <tr><td>₦125.00</td><td>Pick 3 out of 25</td></tr>
+              <tr><td>₦50.00</td><td>Pick 2 out of 25</td></tr>
+              <tr><td>₦10.00</td><td>Pick 1 out of 25</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <div style="margin-top:12px">
+          <strong>Prize examples (5/21):</strong>
+          <table style="margin-top:8px">
+            <thead><tr><th>Prize</th><th>Selection</th></tr></thead>
+            <tbody>
+              <tr><td>₦150,000</td><td>Pick 5 out of 21</td></tr>
+              <tr><td>₦1,500.00</td><td>Pick 4 out of 21</td></tr>
+              <tr><td>₦75.00</td><td>Pick 3 out of 21</td></tr>
+              <tr><td>₦30.00</td><td>Pick 2 out of 21</td></tr>
+              <tr><td>₦6.00</td><td>Pick 1 out of 21</td></tr>
+            </tbody>
+          </table>
+        </div>
+
+      </div>
+
+      <div class="card" style="margin-top:5px">
+        <h3>Giving Back</h3>
+        <p class="small">Every year, NairaRain Lotto (NRL) donates part of its profits to education, healthcare, and community projects across Nigeria.</p>
+      </div>
+
+      <div class="card" style="margin-top:12px">
+        <h3>Responsible Gaming</h3>
+        <p class="small">We encourage safe play and provide tools such as:</p>
+        <div style="display:flex;gap:8px;margin-top:10px;flex-wrap:wrap">
+          <button class="btn secondary" onclick="openModal('self-exclusion')">Self-Exclusion options</button>
+          <button class="btn secondary" onclick="openModal('limits')">Spending Limits</button>
+          <button class="btn secondary" onclick="scrollToSection('contact')">24/7 Customer support for responsible gaming assistance</button>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- RIGHT SIDEBAR -->
+    <aside>
+      <!-- <div class="card">
+        <h3>Core Values</h3>
+        <div class="values">
+          <div class="value"><div class="badge">I</div><div><strong>Integrity</strong><div class="muted">Fairness and transparency in every draw.</div></div></div>
+          <div class="value"><div class="badge">C</div><div><strong>Community</strong><div class="muted">20% of profits to charitable initiatives.</div></div></div>
+          <div class="value"><div class="badge">N</div><div><strong>Innovation</strong><div class="muted">Modern tech for secure, engaging play.</div></div></div>
+          <div class="value"><div class="badge">R</div><div><strong>Responsibility</strong><div class="muted">Tools for player well-being.</div></div></div>
+        </div>
+      </div> -->
+
+      <div class="card" style="margin-top:12px">
+        <!-- <h3>Quick Facts</h3>
+        <p class="small"><strong>Launched:</strong> 2023</p> -->
+        <p class="small"><strong>NairaRain Lotto-Draws:</strong> Tue &amp; Fri 7:30PM. <br> <strong>Daily Rapid Games:</strong> Daily draws at 7:30pm.</p>
+        <!-- <p class="small"><strong>Contact:</strong> <span id="contact">privacy@nairarainlotto.com</span></p> -->
+        <!-- <div style="margin-top:10px;display:flex;gap:8px">
+          <button class="btn" onclick="copyEmail()">Copy Email</button>
+          <button class="btn secondary" onclick="window.print()">Print</button>
+        </div> -->
+      </div>
+
+      <div class="card" style="margin-top:12px">
+        <h3 id="privacy">Privacy Policy</h3>
+        <P>We are committed to protecting your personal information. This policy outlines how your data is collected, used, and safeguarded.</P>
+        <div class="accordion">
+          <div class="acc-item">
+            <div class="acc-header" data-acc role="button" aria-expanded="false" aria-controls="acc1"><strong>Information We Collect</strong><span class="icon">+</span></div>
+            <div id="acc1" class="acc-body"> <p class="small">We may collect your: 
+                <ul>
+                  <li>Full name, gender, email address, date of birth, residential address</li>
+                  <li>Phone number, payment information, and game activity history</li>
+                </ul> </p>
+            </div>
+          </div>
+          <div class="acc-item">
+            <div class="acc-header" data-acc role="button" aria-expanded="false" aria-controls="acc2"><strong>How We Use It</strong><span class="icon">+</span></div>
+            <div id="acc2" class="acc-body"> <p class="small">Your information is used to: 
+                <ul>
+                  <li>Process transactions</li>
+                  <li>Send account notifications and updates</li>
+                  <li>Provide customer support</li>
+                  <li>Fulfil legal and regulatory obligations</li>
+                </ul> </p>
+            </div>
+          </div>
+          <div class="acc-item">
+            <div class="acc-header" data-acc role="button" aria-expanded="false" aria-controls="acc3"><strong>Cookies &amp; Tracking</strong><span class="icon">+</span></div>
+            <div id="acc3" class="acc-body"> <p class="small">We use cookies and similar technologies to: 
+                <ul>
+                  <li>Improve user experience</li>
+                  <li>Analyze website usage</li>
+                  <li>Provide personalized content and offers</li>                  
+                </ul> </p>
+            </div>
+          </div>
+          <div class="acc-item">
+            <div class="acc-header" data-acc role="button" aria-expanded="false" aria-controls="acc4"><strong>Data Security</strong><span class="icon">+</span></div>
+            <div id="acc4" class="acc-body"> <p class="small">We implement industry-standard security measures, including encryption and regular system monitoring, to safeguard your information and maintain its confidentiality. </p>
+            </div>
+          </div>
+          <div class="acc-item">
+            <div class="acc-header" data-acc role="button" aria-expanded="false" aria-controls="acc5"><strong>Third-Party Disclosure</strong><span class="icon">+</span></div>
+            <div id="acc5" class="acc-body"> <p class="small">Your data may, be shared with trusted service providers, regulatory bodies, and affiliate partners, only when necessary.</p>
+            </div>
+          </div>
+          <div class="acc-item">
+            <div class="acc-header" data-acc role="button" aria-expanded="false" aria-controls="acc6"><strong>Your Rights</strong><span class="icon">+</span></div>
+            <div id="acc6" class="acc-body"> <p class="small">You have the right to request changes or request deletion of your personal data. Contact us at privacy@nairarainlotto.com</p>
+            </div>
+          </div>
+          <div class="acc-item">
+            <div class="acc-header" data-acc role="button" aria-expanded="false" aria-controls="acc7"><strong>Policy Udates</strong><span class="icon">+</span></div>
+            <div id="acc7" class="acc-body"> <p class="small">This Privacy Policy may, be updated occasionally. All revisions will be posted with a new effective date.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="card" style="margin-top:12px">
+        <h3 id="terms">Terms &amp; Conditions (Summary)</h3>
+        <p class="small">By accessing or participating in the NairaRain Lotto, you agree to the following Terms and Conditions. Please review them carefully.</p>
+        <p class="small"><a class="link" href="#full-terms" onclick="toggleAcc(this);return false">Read full terms</a></p>
+      </div>
+
+    </aside>
+  </section>
+
+  <section class="card" style="margin-top:5px">
+    <h3 id="full-terms">Full Terms &amp; Conditions</h3>
+    <p class="small"><strong>1. Eligibility:</strong> 
+     <ul>
+      <li>You must be at least 18 years old and legally permitted to participate in lottery games under Nigerian law.</li>
+      <li>NairaRain lotto reserves the right to verify your age and identity at any time.</li>
+     </ul></p>
+    <p class="small"><strong>2. Game Participation:</strong> 
+     <ul>
+      <strong>NairaRain Lotto</strong>
+      <li>Choose 5 main numbers (1–47) + 1 NairaBall number (1–10).</li>
+      <li>Entries are be selected manually or via Auto Pick.</li>
+      <li>Tickets must, be purchased before 7:30 PM (WAT) on draw days </li>
+      <li>Draw days are Tuesdays and Fridays.</li>
+      <li>Draws occur at 7:30 PM (WAT).</li>
+      <li>10 prize tier payouts</li>
+     </ul>
+     <ul>
+      <strong>Rapid Games N500,000.00</strong>      
+      <li>Choose 5 main numbers 1–27</li>
+      <li>Select number manually or Auto Pick.</li>
+      <li>Tickets must, be purchased before 7:30 PM (WAT) on draw days </li>
+      <li>Draws are daily.</li>
+      <li>Draws occur at 7:30 PM (WAT).</li>
+      <li>5 prize tier payouts</li>
+     </ul>
+     <ul>
+      <strong>N250,000.00</strong>      
+      <li>Choose 5 main numbers 1–25 (5/25)</li>
+      <li>Choose number manually or use Auto Pick.</li>
+      <li>Tickets must, be purchased before 7:30 PM (WAT) on draw days </li>
+      <li>Draws are daily.</li>
+      <li>Draws occur at 7:30 PM (WAT).</li>
+      <li>5 prize tier payouts</li>
+     </ul>
+     <ul>
+      <strong>N150,000.00</strong>      
+      <li>Choose 5 main numbers 1–21 (5/21)</li>
+      <li>Choose number manually or use Auto Pick.</li>
+      <li>Tickets must, be purchased before 7:30 PM (WAT) on draw days </li>
+      <li>Draws are daily.</li>
+      <li>Draws occur at 7:30 PM (WAT).</li>
+      <li>5 prize tier payouts</li>
+     </ul>
+    </p>
+    <p class="small"><strong>3. Jackpot &amp; Prizes:</strong> 
+     <ul>
+      <strong>NairaRain Lotto</strong>
+      <li>The starting jackpot is ₦25 million, and it rolls over if not won.</li>
+      <li>A "Must Be Won" draw is, held after 24 consecutive rollovers.</li>
+      <li>Prize amounts depend on ticket sales and winning odds.</li>
+      <li>NairaRain lotto may revise prize tiers and amounts when necessary.</li>
+     </ul> 
+     <ul>
+      <strong>RAPID GAMES</strong>
+      <li>There are three different categories with Jackpots of N500, 000, N 250,000, N150, 000 with five (5) payout tiers in each game.</li>      
+     </ul>
+    </p>
+    
+    <p class="small"><strong>4. Ticket Validity:</strong> 
+      <ul>        
+        <li>Tickets are valid only for the selected draw date.</li> 
+        <li>All entries are final and non-refundable.</li>     
+      </ul>
+    </p>
+
+    <p class="small"><strong>5. Prize Claims:</strong> 
+      <ul>        
+        <li>Prizes must, be claimed within 180 days of the draw.</li> 
+        <li>•	Unclaimed prizes may, be reallocated in accordance with Nigerian regulations.</li>     
+      </ul>
+      <ul>
+        <strong>Claim procedures:</strong>
+        <li>₦300–₦500,000: Automatically credited or claimed in-store</li>
+        <li>₦500,001 and above: Claimable at designated lottery offices. Winners must present a valid form of identification.</li> 
+        <li>Jackpot: Paid via bank transfer or cheque following identity and claim verification</li>     
+       </ul>
+    </p>
+
+    <p class="small"><strong>6. Taxes:</strong> All winnings are <strong>subject to Nigerian tax laws.</strong>
+    </p>
+
+    <p class="small"><strong>7. Fraud &amp; Misconduct:</strong>
+      <ul>
+        <li>Any instance of fraud, misrepresentation, or identity falsification may result in account suspension and forfeiture of winnings.</li>
+        <li>NairaRain lotto reserves the right to audit player activity and transactions.</li>
+      </ul>
+    </p>
+    <p class="small"><strong>8. Modifications:</strong>These Terms may, be updated at any time. Continued participation signifies acceptance of the revised terms.</p>
+  </section>
+
+  <div>
+    <div class="muted"><span id="year"></span> </div>
+  </div>
+</div>
+
+<!-- Modal (simple) -->
+<div id="modal" style="position:fixed;inset:0;display:none;align-items:center;justify-content:center;padding:20px;z-index:60">
+  <div style="background:rgba(0,0,0,0.35);position:absolute;inset:0" onclick="closeModal()"></div>
+  <div style="position:relative;max-width:520px;width:100%;background:white;border-radius:12px;padding:18px;box-shadow:0 12px 40px rgba(2,6,23,0.4);z-index:62">
+    <h3 id="modal-title">Title</h3>
+    <p id="modal-body" class="small"></p>
+    <div style="text-align:right;margin-top:12px"><button class="btn" onclick="closeModal()">Close</button></div>
+  </div>
+</div>
+
+<!-- Back to top button -->
+<button id="backToTop" class="back-to-top" aria-label="Back to top" title="Back to top">↑</button>
+
+<script>
+  // set year
+  // document.getElementById('year').textContent = new Date().getFullYear();
+
+  // smooth scroll to section
+  function scrollToSection(id){
+    const el = document.getElementById(id);
+    if(!el) return;
+    el.scrollIntoView({behavior:'smooth',block:'start'});
+  }
+
+  // copy email
+  function copyEmail(){
+    const email = 'privacy@nairarainlotto.com';
+    navigator.clipboard?.writeText(email).then(()=>{
+      alert('Email copied to clipboard: ' + email);
+    }).catch(()=>{alert('Copy failed — please copy manually: ' + email)});
+  }
+
+  // Accordion with smooth animation
+  (function(){
+    document.querySelectorAll('.acc-item').forEach((item, idx) => {
+      const header = item.querySelector('.acc-header');
+      const body = item.querySelector('.acc-body');
+      // ensure accessible ids
+      const bodyId = body.id || ('acc-body-' + idx);
+      body.id = bodyId;
+      header.setAttribute('aria-controls', bodyId);
+      header.setAttribute('aria-expanded', 'false');
+
+      header.addEventListener('click', () => {
+        const isOpen = item.classList.contains('open');
+        // close any open item if you want accordion behaviour
+        document.querySelectorAll('.acc-item.open').forEach(openItem => {
+          if(openItem !== item){
+            openItem.classList.remove('open');
+            openItem.querySelector('.acc-header').setAttribute('aria-expanded','false');
+            const icon = openItem.querySelector('.icon'); if(icon) icon.textContent = '+';
+          }
+        });
+
+        if(isOpen){
+          // close
+          item.classList.remove('open');
+          header.setAttribute('aria-expanded','false');
+          const icon = header.querySelector('.icon'); if(icon) icon.textContent = '+';
+        } else {
+          // open
+          item.classList.add('open');
+          header.setAttribute('aria-expanded','true');
+          const icon = header.querySelector('.icon'); if(icon) icon.textContent = '−';
+        }
+      });
+
+      // keyboard support
+      header.addEventListener('keydown', e => {
+        if(e.key === 'Enter' || e.key === ' '){ e.preventDefault(); header.click(); }
+      });
+    });
+  })();
+
+  modal
+  function openModal(type){
+    const modal = document.getElementById('modal');
+    const title = document.getElementById('modal-title');
+    const body = document.getElementById('modal-body');
+    if(type==='self-exclusion'){ title.textContent='Self-Exclusion'; body.textContent='To self-exclude please contact support@nairarainlotto.com with your account details. We will process the request and provide confirmation.' }
+    else if(type==='limits'){ title.textContent='Set Spending Limits'; body.textContent='You can set daily, weekly or monthly spending limits via your account dashboard or contact support to request limits.' }
+    modal.style.display='flex';
+  }
+  function closeModal(){ document.getElementById('modal').style.display='none' }
+
+  // toggle full terms link
+  function toggleAcc(el){
+    const full = document.getElementById('full-terms');
+    full.scrollIntoView({behavior:'smooth',block:'start'});
+  }
+
+  // accessibility: keyboard close modal
+  document.addEventListener('keydown',e=>{ if(e.key==='Escape') closeModal() });
+
+ // Back to top - show/hide and action
+  (function(){
+    const btn = document.getElementById('backToTop');
+    function check(){
+      if(window.scrollY > 300) btn.classList.add('show'); else btn.classList.remove('show');
+    }
+    window.addEventListener('scroll', check);
+    // initial check
+    check();
+    btn.addEventListener('click', ()=>{ window.scrollTo({top:0,behavior:'smooth'}) });
+    btn.addEventListener('keydown', e=>{ if(e.key==='Enter' || e.key===' ') { e.preventDefault(); window.scrollTo({top:0,behavior:'smooth'}) } });
+  })();
+
+</script>
+
+
+  
+
+ 
+
+
+  <!-- FOOTER DESIGN -->    
+  <footer class="">
+    <div class="Social">        
+        <a href="/"><i class="fa-brands fa-square-instagram fa-bounce"></i></a>
+        <a href="/"><i class="fa-brands fa-square-x-twitter fa-bounce"></i></a>
+        <a href="/"><i class="fa-brands fa-square-facebook fa-bounce"></i></a>
+    </div>
+    <ul class="ItemList">
+      <li><a href="./userlogin.html">Home</a></li>                  
+      <li><a href="./AboutUs.html">About Us</a></li>          
+      <li><a href="./Support.html">Support</a></li>
+      <li><a href="./FAQ.html">FAQs</a></li>  
+      <li><a href="./Rules.html">Terms</a></li>
+      <li><a href="./Privacy.html">Privacy Policy</a></li>
+      <li><a href="./ContactUs.html">Contact Us</a></li>
+      <li><a href="./Community.html">Community</a></li>
+    </ul>
+    <div class="FooterList">
+        <img src="./image/Naira rain lotto.png" alt="" class="">
+        <p class=""><a href="https://www.gambleaware.org/" target="_blank">begambleawear.org</a></p>
+        <p class="">© 2023 NairaRain Lotto | 18+</p>
+    </div>
+  </footer>
+
+
+</body>
+</html>

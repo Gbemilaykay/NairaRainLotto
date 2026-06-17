@@ -1,0 +1,474 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Player Game History</title>
+  <link rel="stylesheet" href="./style.css">
+  <link rel="stylesheet" href="./Gamehistory.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"/> 
+  <style></style>
+</head>
+<body>
+  <header class="header-navbar" >
+    <!-- <div class="mobile-menu-icon" id="mobileMenuIcon"> -->
+        <div class="mobile-menu-base" >
+            <div class="MenuCom">
+                <p class="mobile-menu-icon" id="openMobile" aria-label="Open menu" >Menu<span><i class="fa-solid fa-ellipsis-vertical"></i></span></p>
+                <div class="mobile-nav" id="mobileNav">
+                    <div class="mobileModal">
+                        <!-- <span class="close-menu">✖</span> -->
+                        <button aria-label="close" class="close-menu" id="closeMobile">✖</button>
+                        <nav class="mobile-links" aria-label="mobile-links">
+                            <a class="mobile-list"  href="./index.html">Home</a>
+                            <div>
+                              <button class="mobile-list"   onclick="toggleMobileSub('gamesMobile')">Games ▾</button>
+                              <div class="mobile-submenu" id="gamesMobile">
+                                <a id="NairaRain-dropdown" href="./GamesPage.html">NairaRain Lotto <span>₦2,000,000</span></a>
+                                <a id="Rapid500" href="./RapidGame3.html">NRL Rapid Game <span>₦500,000</span></a>
+                                <a id="Rapid250" href="./RapidGame2.html">NRL Rapid Game <span>₦250,000</span></a>
+                                <a id="Rapid150" href="./RapidGame1.html">NRL Rapid Game <span>₦150,000</span></a>
+                              </div>
+                            </div>
+                    
+                            <div>
+                              <button  class="mobile-list"  onclick="toggleMobileSub('resultsMobile')">Results ▾</button>
+                              <div class="mobile-submenu" id="resultsMobile">
+                                <a id="NairaRain-dropdown" href="./Result.html">NairaRain Lotto <span>Result</span></a>
+                                <a id="Rapid500" href="./ResultRapid5.html">NRL Rapid Game <span>Result</span></a>                               
+                              </div>
+                            </div>                            
+                            <a class="mobile-list"  href="./Community.html">Community</a>
+                            <a class="mobile-list"  href="./FAQ.html">FAQs</a>
+                            <!-- <a class="mobile-list"  href="#winners">Winners</a> -->
+                        </nav>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="profile" >
+                <div class="profile-icon" onclick="toggleProfileDropdown()">My account<i class="fa-solid fa-user"></i></div>
+                <!-- <a href="./loginPage.html"><span class="profile-icon">My account<i class="fa-solid fa-user"></i></span></a> -->
+                <div class="profileDropdown" id="profileDropdown" onclick="toggleProfileDropdown()">
+                    <div class="profile-dropdownModal">
+                        <div class="dropdown" >
+                            <a href="#">Wallet Amount: ₦100,000</a>
+                            <a href="./profilepage.html">My Profile</a> 
+                            <a href="./payment.html">Deposit</a>                        
+                            <a href="./Gamehistory.html">Games History</a>
+                            <a href="./transactionhis.html">Transactions</a>
+                            <a href="./withdrawpage.html">Withdrawal</a>
+                            <a href="./profilepage.html">User Profile</a>
+                            <a href="#" onclick="logout()">Logout</a>
+                        </div>
+                    </div>
+                </div>
+            </div>               
+        </div>                
+    <!-- </div> -->  
+               
+    <div class="navbar">
+        <div class="logo"> <a href="./index.html"><img src="./image/Naira rain lotto.png" alt="Logo"></a>
+        </div>            
+        <div class="nav-center" aria-label="Primary">
+            <div class="nav-item"><a class="nav-button" href="./index.html">Home</a></div>
+            <div class="nav-item"><a class="nav-button"  href="#games" onclick="toggleCenterDropdown(event,'games')">Games ▾</a>
+                <div class="drop-it">
+                    <div class="center-dropdown" id="gamesDropdown">
+                        <div class="dropdown-games">
+                            <a id="NairaRain-dropdown" href="./GamesPage.html">NairaRain Lotto <span>₦2,000,000</span> </a>
+                            <a id="Rapid500" href="./RapidGame3.html">Rapid Game <span>₦500,000</span></a>
+                            <a id="Rapid250" href="./RapidGame2.html">Rapid Game <span>₦250,000</span></a>
+                            <a id="Rapid150" href="./RapidGame1.html">Rapid Game <span>₦150,000</span></a>
+                        </div>                          
+                    </div>
+                </div>
+            </div>
+            <div class="nav-item"><a class="nav-button" href="./payment.html">Deposit</a></div>
+            <div class="nav-item"><a class="nav-button" href="#results" onclick="toggleCenterDropdown(event,'results')">Results ▾</a>  
+                <div class="drop-it">                    
+                    <div class="center-dropdown" id="resultsDropdown">
+                        <div class="dropdown-games" id="dropdown-result" >
+                            <a id="NairaRain-dropdown" href="./Result.html">NairaRain Lotto <span>Result</span></a>
+                            <a id="Rapid500"  href="./ResultRapid5.html">NRL Rapid Game <span>Result</span></a>                                
+                        </div>                                
+                    </div>
+                </div>                        
+            </div>                   
+            <!-- <div class="nav-item"><a class="nav-button" href="#testimonials">Testimonials</a></div> -->
+                              
+        </div>
+    
+        <div class="actions">
+            <div class="nav-logsign" >
+                <a href="./loginPage.html"><button id="nav-login" class="active">Login</button></a> 
+                <a href="./SignupPage.html"><button id="nav-signup" class="active">Sign Up</button></a>
+            </div>                
+            <div class="pro-wallet">
+                <div class="profile" onclick="toggleProfileDropdownx()">
+                    <!-- <div class="profile-icon"><i class="fa-solid fa-user"></i></div> -->
+                    <div class="profileDropdown1" id="profileDropdown1"> 
+                        <div class="profileDropdown1-modal">                               
+                            <div class="dropdown">
+                                <a href="#">Wallet Amount: ₦100,000</a>
+                                <a href="./profilepage.html">My Profile</a>
+                                <a href="./payment.html">Deposit</a>                         
+                                <a href="./Gamehistory.html">Games History</a>
+                                <a href="./transactionhis.html">Transactions</a>
+                                <a href="./withdrawpage.html">Result</a>
+                                <a href="./profilepage.html">User Profile</a>
+                                <a href="#" onclick="logout()">Logout</a>
+                            </div>
+                        </div>                               
+                    </div>
+                </div>                       
+
+                <!-- <div class="wallet" onclick="toggleWalletDropdown()">
+                    <i class="fa-solid fa-wallet"></i> <span id="walletAmount">₦12,000.00</span>
+                    <div class="wallet-dropdown" id="walletDropdown">
+                    <p>Available Balance: <span id="availableBalance">₦12,000.00</span></p>                            
+                </div> -->
+            </div>                     
+        </div>
+    </div>
+</header>          
+    
+<script>
+      
+function toggleProfileDropdown() {
+  var dropdown = document.getElementById("profileDropdown");
+  dropdown.style.display = dropdown.style.display === "flex" ? "none" : "flex";
+}
+function toggleProfileDropdownx() {
+  var dropdown = document.getElementById("profileDropdown1");
+  dropdown.style.display = dropdown.style.display === "flex" ? "none" : "flex";
+} 
+  // Toggle the profile dropdown visibility
+  function toggleMobileNav() {
+        const mobileNav = document.getElementById('mobileNav');
+        mobileNav.style.display = mobileNav.style.display === 'flex' ? 'none' : 'flex';
+      }              
+
+    //   function toggleMobileNavS() {
+    //     const mobileNavS = document.getElementById('mobileNavS');
+    //     mobileNavS.style.display = mobileNavS.style.display === 'flex' ? 'none' : 'flex';
+    //   }
+
+    // Center dropdown toggles (desktop)
+    
+// Center dropdown toggles (desktop)
+function toggleCenterDropdown(e, which){
+e.preventDefault();
+const games = document.getElementById('gamesDropdown');
+const results = document.getElementById('resultsDropdown');
+if(which === 'games'){
+const show = games.style.display !== 'block';
+games.style.display = show ? 'block' : 'none';
+results.style.display = 'none';
+}else if(which === 'results'){
+const show = results.style.display !== 'block';
+results.style.display = show ? 'block' : 'none';
+games.style.display = 'none';
+}
+}
+
+// Close dropdowns when clicking outside
+document.addEventListener('click', function(e){
+const isNav = e.target.closest('.nav-center');
+const isBtn = e.target.closest('.nav-button');
+if(!isNav && !isBtn){
+document.getElementById('gamesDropdown').style.display = 'none';
+document.getElementById('resultsDropdown').style.display = 'none';
+}
+});
+
+// Mobile panel controls & submenus
+document.getElementById('openMobile').addEventListener('click', ()=>{
+document.getElementById('mobileNav').style.display = 'block';
+});
+document.getElementById('closeMobile').addEventListener('click', ()=>{
+document.getElementById('mobileNav').style.display = 'none';
+});
+
+function toggleMobileSub(id){
+const el = document.getElementById(id);
+el.style.display = el.style.display === 'block' ? 'none' : 'block';
+}     
+      
+
+      function toggleWalletDropdown() {
+const walletDropdown = document.getElementById('walletDropdown');
+walletDropdown.style.display = walletDropdown.style.display === 'block' ? 'none' : 'block';
+}
+
+function updateWallet(amount, pending) {
+document.getElementById('walletAmount').textContent = `₦${amount.toFixed(2)}`;
+document.getElementById('availableBalance').textContent = `₦${amount.toFixed(2)}`;
+// document.getElementById('pendingWinnings').textContent = `₦${pending.toFixed(2)}`;
+}
+
+// Example update (this would be dynamically set based on real user data)
+//   updateWallet(1200.50, 250.00);
+
+// Close mobile nav when clicking outside the panel or pressing Escape
+document.getElementById('mobileNav').addEventListener('click', function(e){
+// if click target is the overlay (not the inner panel), close
+if(e.target === this) {
+this.style.display = 'none';
+}
+});
+document.addEventListener('keydown', function(e){
+if(e.key === 'Escape'){
+document.getElementById('mobileNav').style.display = 'none';
+closeAllPopups();
+}
+});
+</script> 
+
+
+  <div class="game-his-container">
+    <!-- Player Profile -->
+    <div class="profile-header">
+      <img src="./image/profile testimonal.png" alt="Player Image">
+      <div class="profile-info">
+        <h2>Muyiwa Ade</h2>
+        <p>Account Id: Muyi123</p>
+      </div>
+    </div>
+    
+    <!-- Game Cards -->
+     <div class="game-card-container">
+      <h1>Game History</h1>
+        <div class="card-container">
+          <!-- Game Card 1: Win -->
+          <div class="game-card win">
+            <div class="game-details">
+              <h3>Rapid Games</h3>
+              <p><strong>Date:</strong> 2025-03-20</p>
+              <p><strong>Staked:</strong> ₦1,000</p>
+              <p><strong>Outcome:</strong> Win</p>
+            </div>
+            <div class="game-numbers">
+              <div class="draw-title">Draw Numbers</div>
+              <div class="number-row">
+                <div class="number-box">3</div>
+                <div class="number-box">7</div>
+                <div class="number-box">11</div>
+                <div class="number-box">19</div>
+                <div class="number-box">25</div>
+              </div>
+            </div>
+          </div>
+          <!-- Game Card 2: Lost -->
+          <div class="game-card lost">
+            <div class="game-details">
+              <h3>Rapid Games</h3>
+              <p><strong>Date:</strong> 2025-03-18</p>
+              <p><strong>Staked:</strong> ₦1,500</p>
+              <p><strong>Outcome:</strong> Lost</p>
+            </div>
+            <div class="game-numbers">
+              <div class="draw-title">Draw Numbers</div>
+              <div class="number-row">
+                <div class="number-box">2</div>
+                <div class="number-box">8</div>
+                <div class="number-box">10</div>
+                <div class="number-box">14</div>
+                <div class="number-box">22</div>
+              </div>
+            </div>
+          </div>
+          <!-- Game Card 3: In Progress -->
+          <div class="game-card inprogress">
+            <div class="game-details">
+              <h3>Rapid Games</h3>
+              <p><strong>Date:</strong> 2025-03-25</p>
+              <p><strong>Staked:</strong> ₦2,000</p>
+              <p><strong>Outcome:</strong> In Progress</p>
+            </div>
+            <div class="game-numbers">
+              <div class="draw-title">Draw Numbers</div>
+              <div class="number-row">
+                <div class="number-box">5</div>
+                <div class="number-box">9</div>
+                <div class="number-box">13</div>
+                <div class="number-box">17</div>
+                <div class="number-box">21</div>
+              </div>
+            </div>
+          </div>
+          <!-- Game Card 4: Win with Super Number -->
+          <div class="game-card win">
+            <div class="game-details">
+              <h3>NairaRain Lotto</h3>
+              <p><strong>Date:</strong> 2025-03-15</p>
+              <p><strong>Staked:</strong> ₦2,500</p>
+              <p><strong>Outcome:</strong> Win</p>
+            </div>
+            <div class="game-numbers">
+              <div class="draw-title">Draw Numbers</div>
+              <div class="number-row">
+                <div class="number-box">4</div>
+                <div class="number-box">8</div>
+                <div class="number-box">12</div>
+                <div class="number-box">16</div>
+                <div class="number-box">20</div>
+                <div class="number-box super">99</div>
+              </div>
+            </div>
+          </div>
+          <!-- Game Card 5: Lost with Super Number -->
+          <div class="game-card lost">
+            <div class="game-details">
+              <h3>NairaRain Lotto</h3>
+              <p><strong>Date:</strong> 2025-03-12</p>
+              <p><strong>Staked:</strong> ₦1,200</p>
+              <p><strong>Outcome:</strong> Lost</p>
+            </div>
+            <div class="game-numbers">
+              <div class="draw-title">Draw Numbers</div>
+              <div class="number-row">
+                <div class="number-box">1</div>
+                <div class="number-box">6</div>
+                <div class="number-box">11</div>
+                <div class="number-box">18</div>
+                <div class="number-box">23</div>
+                <div class="number-box super">77</div>
+              </div>
+            </div>
+          </div>
+          <!-- Game Card 6: In Progress -->
+          <div class="game-card inprogress">
+            <div class="game-details">
+              <h3>Rapid Games</h3>
+              <p><strong>Date:</strong> 2025-03-28</p>
+              <p><strong>Staked:</strong> ₦800</p>
+              <p><strong>Outcome:</strong> In Progress</p>
+            </div>
+            <div class="game-numbers">
+              <div class="draw-title">Draw Numbers</div>
+              <div class="number-row">
+                <div class="number-box">7</div>
+                <div class="number-box">14</div>
+                <div class="number-box">21</div>
+                <div class="number-box">28</div>
+                <div class="number-box">35</div>
+              </div>
+            </div>
+          </div>
+          <!-- Game Card 7: Win with Super Number -->
+          <div class="game-card win">
+            <div class="game-details">
+              <h3>NairaRain Lotto</h3>
+              <p><strong>Date:</strong> 2025-03-10</p>
+              <p><strong>Staked:</strong> ₦3,000</p>
+              <p><strong>Outcome:</strong> Win</p>
+            </div>
+            <div class="game-numbers">
+              <div class="draw-title">Draw Numbers</div>
+              <div class="number-row">
+                <div class="number-box">10</div>
+                <div class="number-box">15</div>
+                <div class="number-box">20</div>
+                <div class="number-box">25</div>
+                <div class="number-box">30</div>
+                <div class="number-box super">88</div>
+              </div>
+            </div>
+          </div>
+          <!-- Game Card 8: In Progress -->
+          <div class="game-card inprogress">
+            <div class="game-details">
+              <h3>Rapid Games</h3>
+              <p><strong>Date:</strong> 2025-03-30</p>
+              <p><strong>Staked:</strong> ₦900</p>
+              <p><strong>Outcome:</strong> In Progress</p>
+            </div>
+            <div class="game-numbers">
+              <div class="draw-title">Draw Numbers</div>
+              <div class="number-row">
+                <div class="number-box">12</div>
+                <div class="number-box">17</div>
+                <div class="number-box">22</div>
+                <div class="number-box">27</div>
+                <div class="number-box">32</div>
+              </div>
+            </div>
+          </div>
+        </div>
+    </div>
+  </div>
+  <script>
+    // Function to dynamically add a game card
+    function addGameCard() {
+      // Example game data; you can modify these values or obtain them dynamically.
+      const game = {
+        name: "Dynamic Game",
+        date: "2025-04-01",
+        staked: "₦1,750",
+        outcome: "win", // possible values: "win", "lost", "inprogress"
+        outcomeText: "Win",
+        numbers: [
+          { value: 8, super: false },
+          { value: 13, super: false },
+          { value: 21, super: false },
+          { value: 26, super: false },
+          { value: 34, super: false },
+          { value: 95, super: true }
+        ]
+      };
+
+      // Determine the card class based on outcome
+      let outcomeClass = "";
+      if (game.outcome === "win") outcomeClass = "win";
+      else if (game.outcome === "lost") outcomeClass = "lost";
+      else outcomeClass = "inprogress";
+
+      // Create a new card element
+      const card = document.createElement("div");
+      card.className = "game-card " + outcomeClass;
+      card.innerHTML = `
+        <div class="game-details">
+          <h3>${game.name}</h3>
+          <p><strong>Date:</strong> ${game.date}</p>
+          <p><strong>Staked:</strong> ${game.staked}</p>
+          <p><strong>Outcome:</strong> ${game.outcomeText}</p>
+        </div>
+        <div class="game-numbers">
+          <div class="draw-title">Draw Numbers</div>
+          <div class="number-row">
+            ${game.numbers.map(num => `<div class="number-box ${num.super ? 'super' : ''}">${num.value}</div>`).join('')}
+          </div>
+        </div>
+      `;
+
+      // Append the new card to the card container
+      document.getElementById("cardContainer").appendChild(card);
+    }
+  </script>
+
+  <!-- FOOTER DESIGN -->    
+  <footer class="">
+    <div class="Social">        
+        <a href="/"><i class="fa-brands fa-square-instagram fa-bounce"></i></a>
+        <a href="/"><i class="fa-brands fa-square-x-twitter fa-bounce"></i></a>
+        <a href="/"><i class="fa-brands fa-square-facebook fa-bounce"></i></a>
+    </div>
+    <ul class="ItemList">
+      <li><a href="./userlogin.html">Home</a></li>                  
+      <li><a href="./AboutUs.html">About Us</a></li>          
+      <li><a href="./Support.html">Support</a></li>
+      <li><a href="./FAQ.html">FAQs</a></li>  
+      <li><a href="./Rules.html">Terms</a></li>
+      <li><a href="./Privacy.html">Privacy Policy</a></li>
+      <li><a href="./ContactUs.html">Contact Us</a></li>
+      <li><a href="./Community.html">Community</a></li>
+    </ul>
+    <div class="FooterList">
+        <img src="./image/Naira rain lotto.png" alt="" class="">
+        <p class=""><a href="https://www.gambleaware.org/" target="_blank">begambleawear.org</a></p>
+        <p class="">© 2023 NairaRain Lotto | 18+</p>
+    </div>
+  </footer>
+</body>
+</html>

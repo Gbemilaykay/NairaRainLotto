@@ -1,0 +1,389 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>LotteryCo Support</title>
+  <link rel="stylesheet" href="./style.css">
+  <link rel="stylesheet" href="./Support.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"/> 
+  
+</head>
+<body>
+
+  <header class="header-navbar" >
+    <!-- <div class="mobile-menu-icon" id="mobileMenuIcon"> -->
+        <div class="mobile-menu-base" >
+            <div class="MenuCom">
+                <p class="mobile-menu-icon" id="openMobile" aria-label="Open menu" >Menu<span><i class="fa-solid fa-ellipsis-vertical"></i></span></p>
+                <div class="mobile-nav" id="mobileNav">
+                    <div class="mobileModal">
+                        <!-- <span class="close-menu">✖</span> -->
+                        <button aria-label="close" class="close-menu" id="closeMobile">✖</button>
+                        <nav class="mobile-links" aria-label="mobile-links">
+                            <a class="mobile-list"  href="./index.html">Home</a>
+                            <div>
+                              <button class="mobile-list"   onclick="toggleMobileSub('gamesMobile')">Games ▾</button>
+                              <div class="mobile-submenu" id="gamesMobile">
+                                <a id="NairaRain-dropdown" href="./GamesPage.html">NairaRain Lotto <span>₦2,000,000</span></a>
+                                <a id="Rapid500" href="./RapidGame3.html">NRL Rapid Game <span>₦500,000</span></a>
+                                <a id="Rapid250" href="./RapidGame2.html">NRL Rapid Game <span>₦250,000</span></a>
+                                <a id="Rapid150" href="./RapidGame1.html">NRL Rapid Game <span>₦150,000</span></a>
+                              </div>
+                            </div>
+                    
+                            <div>
+                              <button  class="mobile-list"  onclick="toggleMobileSub('resultsMobile')">Results ▾</button>
+                              <div class="mobile-submenu" id="resultsMobile">
+                                <a id="NairaRain-dropdown" href="./Result.html">NairaRain Lotto <span>Result</span></a>
+                                <a id="Rapid500" href="./ResultRapid5.html">NRL Rapid Game <span>Result</span></a>                               
+                              </div>
+                            </div>                            
+                            <a class="mobile-list"  href="./Community.html">Community</a>
+                            <a class="mobile-list"  href="./FAQ.html">FAQs</a>
+                            <!-- <a class="mobile-list"  href="#winners">Winners</a> -->
+                        </nav>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="profile" >
+                <div class="profile-icon" onclick="toggleProfileDropdown()">My account<i class="fa-solid fa-user"></i></div>
+                <!-- <a href="./loginPage.html"><span class="profile-icon">My account<i class="fa-solid fa-user"></i></span></a> -->
+                <div class="profileDropdown" id="profileDropdown" onclick="toggleProfileDropdown()">
+                    <div class="profile-dropdownModal">
+                        <div class="dropdown" >
+                            <a href="#">Wallet Amount: ₦100,000</a>
+                            <a href="./profilepage.html">My Profile</a> 
+                            <a href="./payment.html">Deposit</a>                        
+                            <a href="./Gamehistory.html">Games History</a>
+                            <a href="./transactionhis.html">Transactions</a>
+                            <a href="./withdrawpage.html">Withdrawal</a>
+                            <a href="./profilepage.html">User Profile</a>
+                            <a href="#" onclick="logout()">Logout</a>
+                        </div>
+                    </div>
+                </div>
+            </div>               
+        </div>                
+    <!-- </div> -->  
+               
+    <div class="navbar">
+        <div class="logo"> <a href="./index.html"><img src="./image/Naira rain lotto.png" alt="Logo"></a>
+        </div>            
+        <div class="nav-center" aria-label="Primary">
+            <div class="nav-item"><a class="nav-button" href="./index.html">Home</a></div>
+            <div class="nav-item"><a class="nav-button"  href="#games" onclick="toggleCenterDropdown(event,'games')">Games ▾</a>
+                <div class="drop-it">
+                    <div class="center-dropdown" id="gamesDropdown">
+                        <div class="dropdown-games">
+                            <a id="NairaRain-dropdown" href="./GamesPage.html">NairaRain Lotto <span>₦2,000,000</span> </a>
+                            <a id="Rapid500" href="./RapidGame3.html">Rapid Game <span>₦500,000</span></a>
+                            <a id="Rapid250" href="./RapidGame2.html">Rapid Game <span>₦250,000</span></a>
+                            <a id="Rapid150" href="./RapidGame1.html">Rapid Game <span>₦150,000</span></a>
+                        </div>                          
+                    </div>
+                </div>
+            </div>
+            <div class="nav-item"><a class="nav-button" href="./payment.html">Deposit</a></div>
+            <div class="nav-item"><a class="nav-button" href="#results" onclick="toggleCenterDropdown(event,'results')">Results ▾</a>  
+                <div class="drop-it">                    
+                    <div class="center-dropdown" id="resultsDropdown">
+                        <div class="dropdown-games" id="dropdown-result" >
+                            <a id="NairaRain-dropdown" href="./Result.html">NairaRain Lotto <span>Result</span></a>
+                            <a id="Rapid500"  href="./ResultRapid5.html">NRL Rapid Game <span>Result</span></a>                                
+                        </div>                                
+                    </div>
+                </div>                        
+            </div>                   
+            <!-- <div class="nav-item"><a class="nav-button" href="#testimonials">Testimonials</a></div> -->
+                              
+        </div>
+    
+        <div class="actions">
+            <div class="nav-logsign" >
+                <a href="./loginPage.html"><button id="nav-login" class="active">Login</button></a> 
+                <a href="./SignupPage.html"><button id="nav-signup" class="active">Sign Up</button></a>
+            </div>                
+            <div class="pro-wallet">
+                <div class="profile" onclick="toggleProfileDropdownx()">
+                    <!-- <div class="profile-icon"><i class="fa-solid fa-user"></i></div> -->
+                    <div class="profileDropdown1" id="profileDropdown1"> 
+                        <div class="profileDropdown1-modal">                               
+                            <div class="dropdown">
+                                <a href="#">Wallet Amount: ₦100,000</a>
+                                <a href="./profilepage.html">My Profile</a>
+                                <a href="./payment.html">Deposit</a>                         
+                                <a href="./Gamehistory.html">Games History</a>
+                                <a href="./transactionhis.html">Transactions</a>
+                                <a href="./withdrawpage.html">Result</a>
+                                <a href="./profilepage.html">User Profile</a>
+                                <a href="#" onclick="logout()">Logout</a>
+                            </div>
+                        </div>                               
+                    </div>
+                </div>                       
+
+                <!-- <div class="wallet" onclick="toggleWalletDropdown()">
+                    <i class="fa-solid fa-wallet"></i> <span id="walletAmount">₦12,000.00</span>
+                    <div class="wallet-dropdown" id="walletDropdown">
+                    <p>Available Balance: <span id="availableBalance">₦12,000.00</span></p>                            
+                </div> -->
+            </div>                     
+        </div>
+    </div>
+</header>          
+    
+<script>
+      
+function toggleProfileDropdown() {
+  var dropdown = document.getElementById("profileDropdown");
+  dropdown.style.display = dropdown.style.display === "flex" ? "none" : "flex";
+}
+function toggleProfileDropdownx() {
+  var dropdown = document.getElementById("profileDropdown1");
+  dropdown.style.display = dropdown.style.display === "flex" ? "none" : "flex";
+} 
+  // Toggle the profile dropdown visibility
+  function toggleMobileNav() {
+        const mobileNav = document.getElementById('mobileNav');
+        mobileNav.style.display = mobileNav.style.display === 'flex' ? 'none' : 'flex';
+      }              
+
+    //   function toggleMobileNavS() {
+    //     const mobileNavS = document.getElementById('mobileNavS');
+    //     mobileNavS.style.display = mobileNavS.style.display === 'flex' ? 'none' : 'flex';
+    //   }
+
+    // Center dropdown toggles (desktop)
+    
+// Center dropdown toggles (desktop)
+function toggleCenterDropdown(e, which){
+e.preventDefault();
+const games = document.getElementById('gamesDropdown');
+const results = document.getElementById('resultsDropdown');
+if(which === 'games'){
+const show = games.style.display !== 'block';
+games.style.display = show ? 'block' : 'none';
+results.style.display = 'none';
+}else if(which === 'results'){
+const show = results.style.display !== 'block';
+results.style.display = show ? 'block' : 'none';
+games.style.display = 'none';
+}
+}
+
+// Close dropdowns when clicking outside
+document.addEventListener('click', function(e){
+const isNav = e.target.closest('.nav-center');
+const isBtn = e.target.closest('.nav-button');
+if(!isNav && !isBtn){
+document.getElementById('gamesDropdown').style.display = 'none';
+document.getElementById('resultsDropdown').style.display = 'none';
+}
+});
+
+// Mobile panel controls & submenus
+document.getElementById('openMobile').addEventListener('click', ()=>{
+document.getElementById('mobileNav').style.display = 'block';
+});
+document.getElementById('closeMobile').addEventListener('click', ()=>{
+document.getElementById('mobileNav').style.display = 'none';
+});
+
+function toggleMobileSub(id){
+const el = document.getElementById(id);
+el.style.display = el.style.display === 'block' ? 'none' : 'block';
+}     
+      
+
+      function toggleWalletDropdown() {
+const walletDropdown = document.getElementById('walletDropdown');
+walletDropdown.style.display = walletDropdown.style.display === 'block' ? 'none' : 'block';
+}
+
+function updateWallet(amount, pending) {
+document.getElementById('walletAmount').textContent = `₦${amount.toFixed(2)}`;
+document.getElementById('availableBalance').textContent = `₦${amount.toFixed(2)}`;
+// document.getElementById('pendingWinnings').textContent = `₦${pending.toFixed(2)}`;
+}
+
+// Example update (this would be dynamically set based on real user data)
+//   updateWallet(1200.50, 250.00);
+
+// Close mobile nav when clicking outside the panel or pressing Escape
+document.getElementById('mobileNav').addEventListener('click', function(e){
+// if click target is the overlay (not the inner panel), close
+if(e.target === this) {
+this.style.display = 'none';
+}
+});
+document.addEventListener('keydown', function(e){
+if(e.key === 'Escape'){
+document.getElementById('mobileNav').style.display = 'none';
+closeAllPopups();
+}
+});
+</script> 
+
+
+
+  <div class="container-Support">
+    <div class="tabs">
+      <div class="tab active" data-target="game">Game Issues</div>
+      <div class="tab" data-target="wallet">Wallet Funding</div>
+      <div class="tab" data-target="cash">Cash Out</div>
+    </div>
+    <div class="forms">
+      <h1>Support</h1>
+      <!-- Game Issues Form -->
+      <form id="game" class="form-section active">
+        <div class="form-group">
+          <label for="game-name">Game Name</label>
+          <select id="game-name" name="gameName" required>
+            <option value="">Select a game</option>
+            <option value="RapidGame1">RapidGame ₦150,000</option>
+            <option value="RapidGame2">RapidGame ₦250,000</option>
+            <option value="RapidGame3">RapidGame ₦500,000</option>
+            <option value="Salary4Life">NairaRain Lotto ₦25,000,000</option>           
+          </select>
+          <div class="error" id="error-game-gameName"></div>
+        </div>
+        <div class="form-group">
+          <label for="game-issue">Describe Game Issue</label>
+          <textarea id="game-issue" name="issue" rows="4" required></textarea>
+          <div class="error" id="error-game-issue"></div>
+        </div>
+        <button type="button" class="btn" onclick="submitForm('game')">Submit</button>
+      </form>
+      <!-- <form id="game" class="form-section active">
+        <div class="form-group">
+          <label for="game-user">Game Name</label>
+          <input type="text" id="game-user" name="username" required>
+          <div class="error" id="error-game-username"></div>
+        </div>
+        <div class="form-group">
+          <label for="game-issue">Describe Game Issue</label>
+          <textarea id="game-issue" name="issue" rows="4" required></textarea>
+          <div class="error" id="error-game-issue"></div>
+        </div>
+        <button type="button" class="btn" onclick="submitForm('game')">Submit</button>
+      </form> -->
+
+      <!-- Wallet Funding Form -->
+      <form id="wallet" class="form-section">
+        <div class="form-group">
+          <label for="wallet-user">Depositor Name</label>
+          <input type="text" id="wallet-user" name="username" required>
+          <div class="error" id="error-wallet-username"></div>
+        </div>
+        <div class="form-group">
+          <label for="wallet-amount">Amount</label>
+          <input type="number" id="wallet-amount" name="amount" required>
+          <div class="error" id="error-wallet-amount"></div>
+        </div>
+        <div class="form-group">
+          <label for="wallet-channel">Payment Channel</label>
+          <select id="wallet-channel" name="channel" required>
+            <option value="">Select channel</option>
+            <option>Bank Card Payment</option>
+            <option>Bank Transfer</option>
+            <option>Mobile Money</option>
+            <option>Airtime Payment</option>
+            <option>USSD Payment</option>            
+          </select>
+          <div class="error" id="error-wallet-channel"></div>
+        </div>
+        <div class="form-group">
+          <label for="wallet-date">Payment Date</label>
+          <input type="date" id="wallet-date" name="date" required>
+          <div class="error" id="error-wallet-date"></div>
+        </div>
+        <div class="form-group">
+          <label for="wallet-ref">Transaction Reference</label>
+          <input type="text" id="wallet-ref" name="reference" required>
+          <div class="error" id="error-wallet-reference"></div>
+        </div>
+        <div class="form-group">
+          <label for="wallet-note">Notes (optional)</label>
+          <textarea id="wallet-note" name="note" rows="3"></textarea>
+        </div>
+        <button type="button" class="btn" onclick="submitForm('wallet')">Submit</button>
+      </form>
+      <!-- Cash Out Explanation -->
+      <div id="cash" class="form-section">
+        <div class="info">
+          <h2>How to Cash Out</h2>
+          <ol>
+            <li>Ensure your account has sufficient balance.</li>
+            <li>Navigate to the Cash Out section and enter the amount you wish to withdraw.</li>
+            <li>Provide your bank account or Mobile Money details accurately.</li>
+            <li>Review the withdrawal fees and estimated processing time.</li>
+            <li>Confirm your request. You will receive an email notification once processed.</li>
+          </ol>
+          <p>If you encounter any issues, please contact our support with your username and details.</p>
+        </div>
+      </div>
+      <div id="status"></div>
+    </div>
+  </div>
+
+  <script>
+    // Tab switching
+    document.querySelectorAll('.tab').forEach(tab => {
+      tab.addEventListener('click', () => {
+        document.querySelectorAll('.tab').forEach(t => t.classList.remove('active'));
+        document.querySelectorAll('.form-section').forEach(f => f.classList.remove('active'));
+        tab.classList.add('active');
+        document.getElementById(tab.dataset.target).classList.add('active');
+        document.getElementById('status').textContent = '';
+      });
+    });
+    // Form submission simulation
+    function submitForm(section) {
+      let valid = true;
+      const form = document.getElementById(section);
+      form.querySelectorAll('input, select, textarea').forEach(input => {
+        const err = document.getElementById('error-' + section + '-' + input.name);
+        if (input.hasAttribute('required') && !input.value.trim()) {
+          err.textContent = 'Required'; valid = false;
+        } else if (err) {
+          err.textContent = '';
+        }
+      });
+      if (!valid) return;
+      document.getElementById('status').textContent = 'Submitting...';
+      setTimeout(() => {
+        document.getElementById('status').textContent = 'Your request has been received.';
+        form.reset();
+      }, 800);
+    }
+  </script>
+
+      <!-- FOOTER DESIGN -->    
+ <footer class="">
+  <div class="Social">        
+      <a href="/"><i class="fa-brands fa-square-instagram fa-bounce"></i></a>
+      <a href="/"><i class="fa-brands fa-square-x-twitter fa-bounce"></i></a>
+      <a href="/"><i class="fa-brands fa-square-facebook fa-bounce"></i></a>
+  </div>
+  <ul class="ItemList">
+    <li><a href="./userlogin.html">Home</a></li>                  
+    <li><a href="./AboutUs.html">About Us</a></li>          
+    <li><a href="./Support.html">Support</a></li>
+    <li><a href="./FAQ.html">FAQs</a></li>  
+    <li><a href="./Rules.html">Terms</a></li>
+    <li><a href="./Privacy.html">Privacy Policy</a></li>
+    <li><a href="./ContactUs.html">Contact Us</a></li>
+    <li><a href="./Community.html">Community</a></li>
+  </ul>
+  <div class="FooterList">
+      <img src="./image/Naira rain lotto.png" alt="" class="">
+      <p class=""><a href="https://www.gambleaware.org/" target="_blank">begambleawear.org</a></p>
+      <p class="">© 2023 NairaRain Lotto | 18+</p>
+  </div>
+</footer>
+
+
+</body>
+</html>

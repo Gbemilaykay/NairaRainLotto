@@ -1,0 +1,949 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>Results</title>
+<link rel="stylesheet" href="./Result.css">
+<link rel="stylesheet" href="./style.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css">
+<link href="https://fonts.googleapis.com/css2?family=Zalando+Sans+SemiExpanded:ital,wght@0,200..900;1,200..900&display=swap" rel="stylesheet">
+<style> 
+
+</style>
+</head>
+<body>
+
+  <header class="header-navbar" >
+    <!-- <div class="mobile-menu-icon" id="mobileMenuIcon"> -->
+        <div class="mobile-menu-base" >
+            <div class="MenuCom">
+                <p class="mobile-menu-icon" id="openMobile" aria-label="Open menu" >Menu<span><i class="fa-solid fa-ellipsis-vertical"></i></span></p>
+                <div class="mobile-nav" id="mobileNav">
+                    <div class="mobileModal">
+                        <!-- <span class="close-menu">✖</span> -->
+                        <button aria-label="close" class="close-menu" id="closeMobile">✖</button>
+                        <nav class="mobile-links" aria-label="mobile-links">
+                            <a class="mobile-list"  href="./index.html">Home</a>
+                            <div>
+                              <button class="mobile-list"   onclick="toggleMobileSub('gamesMobile')">Games ▾</button>
+                              <div class="mobile-submenu" id="gamesMobile">
+                                <a id="NairaRain-dropdown" href="./GamesPage.html">NairaRain Lotto <span>₦2,000,000</span></a>
+                                <a id="Rapid500" href="./RapidGame3.html">NRL Rapid Game <span>₦500,000</span></a>
+                                <a id="Rapid250" href="./RapidGame2.html">NRL Rapid Game <span>₦250,000</span></a>
+                                <a id="Rapid150" href="./RapidGame1.html">NRL Rapid Game <span>₦150,000</span></a>
+                              </div>
+                            </div>
+                    
+                            <div>
+                              <button  class="mobile-list"  onclick="toggleMobileSub('resultsMobile')">Results ▾</button>
+                              <div class="mobile-submenu" id="resultsMobile">
+                                <a id="NairaRain-dropdown" href="./Result.html">NairaRain Lotto <span>Result</span></a>
+                                <a id="Rapid500" href="./ResultRapid5.html">NRL Rapid Game <span>Result</span></a>                               
+                              </div>
+                            </div>                            
+                            <a class="mobile-list"  href="./Community.html">Community</a>
+                            <a class="mobile-list"  href="./FAQ.html">FAQs</a>
+                            <!-- <a class="mobile-list"  href="#winners">Winners</a> -->
+                        </nav>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="profile" >
+                <div class="profile-icon" onclick="toggleProfileDropdown()">My account<i class="fa-solid fa-user"></i></div>
+                <!-- <a href="./loginPage.html"><span class="profile-icon">My account<i class="fa-solid fa-user"></i></span></a> -->
+                <div class="profileDropdown" id="profileDropdown" onclick="toggleProfileDropdown()">
+                    <div class="profile-dropdownModal">
+                        <div class="dropdown" >
+                            <a href="#">Wallet Amount: ₦100,000</a>
+                            <a href="./profilepage.html">My Profile</a> 
+                            <a href="./payment.html">Deposit</a>                        
+                            <a href="./Gamehistory.html">Games History</a>
+                            <a href="./transactionhis.html">Transactions</a>
+                            <a href="./withdrawpage.html">Withdrawal</a>
+                            <a href="./profilepage.html">User Profile</a>
+                            <a href="#" onclick="logout()">Logout</a>
+                        </div>
+                    </div>
+                </div>
+            </div>               
+        </div>                
+    <!-- </div> -->  
+               
+    <div class="navbar">
+        <div class="logo"> <a href="./index.html"><img src="./image/Naira rain lotto.png" alt="Logo"></a>
+        </div>            
+        <div class="nav-center" aria-label="Primary">
+            <div class="nav-item"><a class="nav-button" href="./index.html">Home</a></div>
+            <div class="nav-item"><a class="nav-button"  href="#games" onclick="toggleCenterDropdown(event,'games')">Games ▾</a>
+                <div class="drop-it">
+                    <div class="center-dropdown" id="gamesDropdown">
+                        <div class="dropdown-games">
+                            <a id="NairaRain-dropdown" href="./GamesPage.html">NairaRain Lotto <span>₦2,000,000</span> </a>
+                            <a id="Rapid500" href="./RapidGame3.html">Rapid Game <span>₦500,000</span></a>
+                            <a id="Rapid250" href="./RapidGame2.html">Rapid Game <span>₦250,000</span></a>
+                            <a id="Rapid150" href="./RapidGame1.html">Rapid Game <span>₦150,000</span></a>
+                        </div>                          
+                    </div>
+                </div>
+            </div>
+            <div class="nav-item"><a class="nav-button" href="./payment.html">Deposit</a></div>
+            <div class="nav-item"><a class="nav-button" href="#results" onclick="toggleCenterDropdown(event,'results')">Results ▾</a>  
+                <div class="drop-it">                    
+                    <div class="center-dropdown" id="resultsDropdown">
+                        <div class="dropdown-games" id="dropdown-result" >
+                            <a id="NairaRain-dropdown" href="./Result.html">NairaRain Lotto <span>Result</span></a>
+                            <a id="Rapid500"  href="./ResultRapid5.html">NRL Rapid Game <span>Result</span></a>                                
+                        </div>                                
+                    </div>
+                </div>                        
+            </div>                   
+            <!-- <div class="nav-item"><a class="nav-button" href="#testimonials">Testimonials</a></div> -->
+                              
+        </div>
+    
+        <div class="actions">
+            <div class="nav-logsign" >
+                <a href="./loginPage.html"><button id="nav-login" class="active">Login</button></a> 
+                <a href="./SignupPage.html"><button id="nav-signup" class="active">Sign Up</button></a>
+            </div>                
+            <div class="pro-wallet">
+                <div class="profile" onclick="toggleProfileDropdownx()">
+                    <!-- <div class="profile-icon"><i class="fa-solid fa-user"></i></div> -->
+                    <div class="profileDropdown1" id="profileDropdown1"> 
+                        <div class="profileDropdown1-modal">                               
+                            <div class="dropdown">
+                                <a href="#">Wallet Amount: ₦100,000</a>
+                                <a href="./profilepage.html">My Profile</a>
+                                <a href="./payment.html">Deposit</a>                         
+                                <a href="./Gamehistory.html">Games History</a>
+                                <a href="./transactionhis.html">Transactions</a>
+                                <a href="./withdrawpage.html">Result</a>
+                                <a href="./profilepage.html">User Profile</a>
+                                <a href="#" onclick="logout()">Logout</a>
+                            </div>
+                        </div>                               
+                    </div>
+                </div>                       
+
+                <!-- <div class="wallet" onclick="toggleWalletDropdown()">
+                    <i class="fa-solid fa-wallet"></i> <span id="walletAmount">₦12,000.00</span>
+                    <div class="wallet-dropdown" id="walletDropdown">
+                    <p>Available Balance: <span id="availableBalance">₦12,000.00</span></p>                            
+                </div> -->
+            </div>                     
+        </div>
+    </div>
+</header>          
+    
+<script>
+      
+function toggleProfileDropdown() {
+  var dropdown = document.getElementById("profileDropdown");
+  dropdown.style.display = dropdown.style.display === "flex" ? "none" : "flex";
+}
+function toggleProfileDropdownx() {
+  var dropdown = document.getElementById("profileDropdown1");
+  dropdown.style.display = dropdown.style.display === "flex" ? "none" : "flex";
+} 
+  // Toggle the profile dropdown visibility
+  function toggleMobileNav() {
+        const mobileNav = document.getElementById('mobileNav');
+        mobileNav.style.display = mobileNav.style.display === 'flex' ? 'none' : 'flex';
+      }              
+
+    //   function toggleMobileNavS() {
+    //     const mobileNavS = document.getElementById('mobileNavS');
+    //     mobileNavS.style.display = mobileNavS.style.display === 'flex' ? 'none' : 'flex';
+    //   }
+
+    // Center dropdown toggles (desktop)
+    
+// Center dropdown toggles (desktop)
+function toggleCenterDropdown(e, which){
+e.preventDefault();
+const games = document.getElementById('gamesDropdown');
+const results = document.getElementById('resultsDropdown');
+if(which === 'games'){
+const show = games.style.display !== 'block';
+games.style.display = show ? 'block' : 'none';
+results.style.display = 'none';
+}else if(which === 'results'){
+const show = results.style.display !== 'block';
+results.style.display = show ? 'block' : 'none';
+games.style.display = 'none';
+}
+}
+
+// Close dropdowns when clicking outside
+document.addEventListener('click', function(e){
+const isNav = e.target.closest('.nav-center');
+const isBtn = e.target.closest('.nav-button');
+if(!isNav && !isBtn){
+document.getElementById('gamesDropdown').style.display = 'none';
+document.getElementById('resultsDropdown').style.display = 'none';
+}
+});
+
+// Mobile panel controls & submenus
+document.getElementById('openMobile').addEventListener('click', ()=>{
+document.getElementById('mobileNav').style.display = 'block';
+});
+document.getElementById('closeMobile').addEventListener('click', ()=>{
+document.getElementById('mobileNav').style.display = 'none';
+});
+
+function toggleMobileSub(id){
+const el = document.getElementById(id);
+el.style.display = el.style.display === 'block' ? 'none' : 'block';
+}     
+      
+
+      function toggleWalletDropdown() {
+const walletDropdown = document.getElementById('walletDropdown');
+walletDropdown.style.display = walletDropdown.style.display === 'block' ? 'none' : 'block';
+}
+
+function updateWallet(amount, pending) {
+document.getElementById('walletAmount').textContent = `₦${amount.toFixed(2)}`;
+document.getElementById('availableBalance').textContent = `₦${amount.toFixed(2)}`;
+// document.getElementById('pendingWinnings').textContent = `₦${pending.toFixed(2)}`;
+}
+
+// Example update (this would be dynamically set based on real user data)
+//   updateWallet(1200.50, 250.00);
+
+// Close mobile nav when clicking outside the panel or pressing Escape
+document.getElementById('mobileNav').addEventListener('click', function(e){
+// if click target is the overlay (not the inner panel), close
+if(e.target === this) {
+this.style.display = 'none';
+}
+});
+document.addEventListener('keydown', function(e){
+if(e.key === 'Escape'){
+document.getElementById('mobileNav').style.display = 'none';
+closeAllPopups();
+}
+});
+</script>    
+
+
+
+
+
+    <div class="Main-Result" >
+              <!-- Header -->
+        <header id="mainHeader" role="banner"></header>
+
+              <div class="whole-Result">       
+
+                <!-- Panels -->
+                <div id="historyOnlyPanel" aria-hidden="true"></div>
+                <div id="drawDetailPanel" aria-hidden="true"></div>
+                <div id="pricePanel" aria-hidden="true"></div>
+
+                <!-- Main -->
+                <div class="page-wrap" id="mainWrap">
+                  <div class="header-controls" role="navigation" aria-label="Main controls">
+                   
+                    <div class="last-update" id="lastUpdate">Last update: —</div>
+                    <button class="btn" id="showCheckBtn" title="Show Checker view">Check my numbers</button>                   
+                    <button class="btn secondary" id="showHistoryBtn" title="Show Draw History (full page)">Draw History</button>
+                    <button id="backToCurrentHeaderBtn" class="btn ghost" title="Back to the current/latest result">Current Result</button>
+                    <button class="btn secondary" id="jumpLatestNairaBtn"> <a href="./ResultRapid5.html">Switch to Rapid Games</a></button>
+                  </div>                              
+
+                  <section class="hero anim-scale-in">
+                    <div class="hero-left">
+                      <div class="title">NairaRain Lotto</div>
+                      <div class="meta">Draw Schedule: Tuesdays & Thurdays <strong>@ 7:30 PM</strong></div>
+                    </div>
+                    <aside class="hero-right">
+                      <div class="small">Current Jackpot Amount</div>
+                      <div class="jack-amount" id="jackAmount">₦25,000,000</div>
+                      <div class="jack-status" id="jackStatus">Status: —</div>
+                      <div class="small" id="jackNote">Updated from latest draw</div>
+                    </aside>
+                  </section>
+
+                  <main class="main anim-slide-up" id="mainArea">
+                    <div>
+                      <div class="card">
+                        <div style="display:flex;justify-content:space-between;align-items:center">
+                          <div class="section-header">
+                            <div class="section-title" id="resultTitle">NairaRain Lotto</div>
+                            <div class="small" id="resultDate">Draw: —</div>
+                            <div class="small" id="resultId">ID: —</div>
+                          </div>
+                          <!-- <div style="text-align:right">
+                            <div class="small">Draw time</div>
+                            <div style="font-weight:800">07:30 PM</div>
+                          </div> -->
+                        </div>
+
+                        <div class="balls" id="ballsContainer" aria-live="polite">
+                          <div class="small">Loading latest NairaRain Lotto...</div>
+                        </div>
+
+                        <div class="checker" role="region" aria-labelledby="checkerTitle">
+                          <div class="row">
+                            <div>
+                              <h3 id="checkerTitle">Check my numbers</h3>
+                              <div class="small">Inputs your numbers in the empty boxes.</div>
+                            </div>
+                            <!-- <div class="small">Draw time: 7:30 PM</div> -->
+                          </div>
+
+                          <div class="inputs" id="ticketInputs" aria-label="Ticket number inputs"></div>
+
+                          <div class="checker-actions">
+                            <button class="btn" id="checkBtn">Check my numbers</button>
+                            <button class="btn secondary" id="clearInputs">Clear</button>
+                            <div style="margin-left:auto" class="small" id="checkerStatus">Inputs empty</div>
+                          </div>
+
+                          <div id="checkResult"></div>
+                        </div>
+                      </div>
+                    </div>
+
+                    <aside>
+                      <div class="card" id="price-tiers">
+                        <div style="font-weight:900">Prize tiers — NairaRain</div>
+                        <div class="small" style="margin-top:10px">5 numbers + NairaBall (NB)</div>
+                        <table style="width:100%;margin-top:12px;border-collapse:collapse">
+                          <thead>
+                            <tr style="background:#fbfdff">
+                              <th style="text-align:left;padding:10px">Match</th>
+                              <th style="text-align:left;padding:10px">Numbers</th>
+                              <th style="text-align:right;padding:10px">Prize (example)</th>
+                            </tr>
+                          </thead>
+                          <tbody>
+                            <tr><td style="padding:10px">Match 5 + NB</td><td style="padding:10px">5 / 5 + NB</td><td style="padding:10px;text-align:right">Jackpot</td></tr>
+                            <tr><td style="padding:10px">Match 5</td><td style="padding:10px">5 / 5</td><td style="padding:10px;text-align:right">₦250,000</td></tr>
+              
+                            <tr><td style="padding:10px">Match 4 + NB</td><td style="padding:10px">4 / 5 + NB</td><td style="padding:10px;text-align:right">₦15,000</td></tr>
+                            <tr><td style="padding:10px">Match 4</td><td style="padding:10px">4 / 5</td><td style="padding:10px;text-align:right">₦5,000</td></tr>
+              
+                            <tr><td style="padding:10px">Match 3 + NB</td><td style="padding:10px">3 / 5 + NB</td><td style="padding:10px;text-align:right">₦1,500</td></tr>
+                            <tr><td style="padding:10px">Match 3</td><td style="padding:10px">3 / 5</td><td style="padding:10px;text-align:right">₦1,000</td></tr>
+              
+                            <tr><td style="padding:10px">Match 2 + NB</td><td style="padding:10px">2 / 5 + NB</td><td style="padding:10px;text-align:right">₦500</td></tr>
+              
+                            <tr><td style="padding:10px">Match 1 + NB</td><td style="padding:10px">1 / 5 + NB</td><td style="padding:10px;text-align:right">₦250</td></tr>
+                            <tr><td style="padding:10px">Match 1</td><td style="padding:10px">1 / 5</td><td style="padding:10px;text-align:right">₦50</td></tr>
+                          </tbody>
+                        </table>
+                      </div>
+
+                      <div class="card quick">
+                        <div  class="small" id="head" >Quick info</div>
+                        <div class="small">NairaRain Lotto uses 5 of 49 numbers + <strong>NairaBall (1–10)</strong>.</div>
+                        <div class="small">The draw takes place every <strong>Tuesday</strong> and <strong>Thursday</strong>  at <strong>7:30 PM</strong>.</div>
+                        <div class="small"><strong>Note: </strong>No winners — Jackpot rolls over.</div>
+                      </div>
+                    </aside>
+                  </main>
+                </div>         
+              </div>
+    </div>
+
+     <!-- CONFETTI CANVAS -->
+     <canvas id="confettiCanvas" aria-hidden="true"></canvas>
+  
+  
+
+<script>
+
+(function(){
+  'use strict';
+
+  /* ---------- sample data with new Draw IDs (NRL30-450-xxx) and tier counts ---------- */
+  const SAMPLE_NAIRA_HISTORY = [
+    { id:'NRL30-450-001', date:'2025-10-28', numbers:[3,9,18,26,40], nairaBall:7, winners:false,
+      tiers:{ '5+NB':0, '5':2, '4+NB':3, '4':45, '3+NB':18, '3':420, '2+NB':120, '1+NB':450, '1':1300 } },
+    { id:'NRL30-450-002', date:'2025-10-26', numbers:[1,5,17,29,46], nairaBall:4, winners:true,
+      tiers:{ '5+NB':1, '5':0, '4+NB':2, '4':32, '3+NB':12, '3':380, '2+NB':90, '1+NB':340, '1':1100 } },
+    { id:'NRL30-450-003', date:'2025-10-23', numbers:[2,10,21,31,45], nairaBall:10, winners:false,
+      tiers:{ '5+NB':0, '5':1, '4+NB':1, '4':54, '3+NB':15, '3':410, '2+NB':60, '1+NB':300, '1':990 } },
+    { id:'NRL30-450-004', date:'2025-10-21', numbers:[4,8,13,27,44], nairaBall:2, winners:false,
+      tiers:{ '5+NB':0, '5':0, '4+NB':0, '4':22, '3+NB':6, '3':210, '2+NB':30, '1+NB':120, '1':630 } },
+    { id:'NRL30-450-005', date:'2025-10-16', numbers:[7,12,22,30,41], nairaBall:9, winners:true,
+      tiers:{ '5+NB':2, '5':1, '4+NB':4, '4':40, '3+NB':20, '3':360, '2+NB':140, '1+NB':520, '1':1200 } },
+    { id:'NRL30-450-006', date:'2025-10-14', numbers:[5,11,20,28,47], nairaBall:6, winners:false,
+      tiers:{ '5+NB':0, '5':0, '4+NB':0, '4':19, '3+NB':7, '3':180, '2+NB':24, '1+NB':100, '1':550 } },
+    { id:'NRL30-450-007', date:'2025-09-30', numbers:[6,14,19,33,39], nairaBall:3, winners:false,
+      tiers:{ '5+NB':0, '5':0, '4+NB':0, '4':11, '3+NB':3, '3':120, '2+NB':8, '1+NB':56, '1':420 } },
+    { id:'NRL30-450-008', date:'2025-09-25', numbers:[2,9,17,24,46], nairaBall:1, winners:true,
+      tiers:{ '5+NB':1, '5':0, '4+NB':2, '4':28, '3+NB':11, '3':290, '2+NB':72, '1+NB':380, '1':980 } }
+  ];
+
+  const JACKPOT_AMOUNT = 25000000;
+  const DRAW_TIME = '7:30 PM';
+
+  /* ---------- DOM ---------- */
+  const backToCurrentHeaderBtn = document.getElementById('backToCurrentHeaderBtn');
+  const showCheckBtn = document.getElementById('showCheckBtn');
+  const showHistoryBtn = document.getElementById('showHistoryBtn');
+  const historyOnlyPanel = document.getElementById('historyOnlyPanel');
+  const drawDetailPanel = document.getElementById('drawDetailPanel');
+  const pricePanel = document.getElementById('pricePanel');
+  const mainWrap = document.getElementById('mainWrap');
+
+  const resultTitle = document.getElementById('resultTitle');
+  const resultDate = document.getElementById('resultDate');
+  const resultId = document.getElementById('resultId');
+  const ballsContainer = document.getElementById('ballsContainer');
+
+  const jackAmount = document.getElementById('jackAmount');
+  const jackStatus = document.getElementById('jackStatus');
+  const jackNote = document.getElementById('jackNote');
+
+  const ticketInputs = document.getElementById('ticketInputs');
+  const checkBtn = document.getElementById('checkBtn');
+  const clearInputs = document.getElementById('clearInputs');
+  const checkerStatus = document.getElementById('checkerStatus');
+  const checkResult = document.getElementById('checkResult');
+
+  const lastUpdate = document.getElementById('lastUpdate');
+  const confettiCanvas = document.getElementById('confettiCanvas');
+
+  /* ---------- state ---------- */
+  let history = [];
+  let currentDraw = null;
+  let confettiCtx = null, confettiItems = [], confettiRAF = null, confettiActive = false;
+  let audioCtx = null;
+
+  /* ---------- helper functions (DMY formatting) ---------- */
+  function formatCurrency(n){ return '₦' + Number(n).toLocaleString(); }
+  function getWeekdayIso(iso){ return new Date(iso + 'T19:30:00').getDay(); } // 0 Sun ... 6 Sat
+  function weekdayLabel(iso){ const d = getWeekdayIso(iso); return d === 2 ? 'Tue' : (d === 4 ? 'Thu' : ''); }
+  function formatDateShort(iso){
+    const dt = new Date(iso + 'T19:30:00');
+    // short: "28 Oct" but respecting en-GB
+    return dt.toLocaleDateString('en-GB', { day:'2-digit', month:'short' });
+  }
+  function formatDateFull(iso){ const dt = new Date(iso + 'T19:30:00'); return dt.toLocaleDateString('en-GB') + ' • ' + DRAW_TIME; }
+
+  /* ---------- load + init ---------- */
+  function loadHistory(){
+    history = SAMPLE_NAIRA_HISTORY.slice().filter(d => {
+      const dow = getWeekdayIso(d.date);
+      return dow === 2 || dow === 4;
+    }).sort((a,b) => new Date(b.date) - new Date(a.date));
+  }
+
+  function updateJackpot(){
+    jackAmount.textContent = formatCurrency(JACKPOT_AMOUNT);
+    if(history.length === 0){ jackStatus.textContent='Status: —'; jackNote.textContent='No draws yet'; return; }
+    const latest = history[0];
+    jackStatus.textContent = latest.winners ? 'Status: Winner' : 'Status: Rollover';
+    jackNote.textContent = latest.winners ? `Latest draw (${latest.date}) had winners` : `No winners in latest draw (${latest.date}) — jackpot rolls over`;
+  }
+
+  function updateLastUpdateBadge(){
+    if(history.length === 0){ lastUpdate.textContent = 'Last update: —'; return; }
+    lastUpdate.textContent = 'Last update: ' + formatDateFull(history[0].date);
+  }
+
+  /* ---------- UI: builds ---------- */
+  function buildTicketInputs(){
+    ticketInputs.innerHTML = '';
+    for(let i=0;i<5;i++){
+      const inp = document.createElement('input'); inp.type='text'; inp.maxLength=2; inp.className='num-input'; inp.setAttribute('aria-label','Number ' + (i+1));
+      inp.addEventListener('input', e => { e.target.value = e.target.value.replace(/[^\d]/g,''); if(e.target.value.length>=2){ const next = e.target.nextElementSibling; if(next) next.focus(); } updateCheckerStatus(); });
+      ticketInputs.appendChild(inp);
+    }
+    const nb = document.createElement('input'); nb.type='text'; nb.maxLength=2; nb.className='num-input nb'; nb.setAttribute('aria-label','NairaBall (NB)');
+    nb.addEventListener('input', e => { e.target.value = e.target.value.replace(/[^\d]/g,''); updateCheckerStatus(); });
+    ticketInputs.appendChild(nb);
+    updateCheckerStatus();
+  }
+  function updateCheckerStatus(){ const vals = parseTicket(); const filled = vals.some(v => v !== null); checkerStatus.textContent = filled ? '' : ''; }
+  function parseTicket(){ const inputs = ticketInputs.querySelectorAll('input'); return Array.from(inputs).map(i => { const v = i.value.trim(); return v === '' ? null : parseInt(v,10); }); }
+
+  /* ---------- Ball loader (numbers only) ---------- */
+  function loadNumbersToBalls(draw){
+    if(!draw) return;
+    currentDraw = draw;
+    setTitleWithDay(draw);
+    updateLastUpdateBadge();
+
+    ballsContainer.classList.add('switching');
+    setTimeout(()=> {
+      ballsContainer.classList.remove('switching');
+      ballsContainer.innerHTML = '';
+      (draw.numbers || []).forEach(n => {
+        const el = document.createElement('div'); el.className = 'ball'; el.textContent = String(n).padStart(2,'0');
+        ballsContainer.appendChild(el);
+      });
+      if(draw.nairaBall !== undefined){
+        const nb = document.createElement('div'); nb.className = 'ball naira'; nb.textContent = String(draw.nairaBall).padStart(2,'0');
+        ballsContainer.appendChild(nb);
+      }
+      checkResult.innerHTML = '';
+      highlightCurrentDraw(draw.id);
+    }, 220);
+  }
+
+  function setTitleWithDay(draw){
+    const day = weekdayLabel(draw.date);
+    resultTitle.textContent = `NairaRain Lotto ${day ? ' — ' + day : ''}`;
+    resultDate.textContent = 'Draw: ' + formatDateFull(draw.date);
+    resultId.textContent = 'ID: ' + draw.id;
+  }
+
+  /* ---------- History rendering ---------- */
+  function groupHistoryByMonth(h){
+    const map = {};
+    h.forEach(d => {
+      const dt = new Date(d.date + 'T19:30:00');
+      const key = dt.toLocaleString('en-GB', { month:'long', year:'numeric' });
+      if(!map[key]) map[key] = [];
+      map[key].push(d);
+    });
+    Object.keys(map).forEach(k => map[k].sort((a,b) => new Date(b.date) - new Date(a.date)));
+    return map;
+  }
+
+  function renderHistoryOnly(){
+    const byMonth = groupHistoryByMonth(history);
+    const months = Object.keys(byMonth).sort((a,b) => {
+      const da = new Date(byMonth[a][0].date + 'T19:30:00'), db = new Date(byMonth[b][0].date + 'T19:30:00');
+      return db - da;
+    });
+
+    let html = `<div class="anim-fade-in" style="display:flex;justify-content:space-between;align-items:center"><div><h2 style="margin:0;font-size:12pt">Draw History</h2><div class="small"></div></div><div><button class="btn secondary" id="historyBackBtn">Check my Number</button></div></div><div style="margin-top:12px"></div>`;
+
+    months.forEach(month => {
+      html += `<div class="month-block anim-scale-in"><div class="month-title"><div class="tag">${month}</div></div>`;
+      html += `<table class="month-table" data-month="${month}"><thead><tr><th>Date</th><th>Day</th><th>Draw ID</th><th>Numbers</th><th>NairaBall</th></tr></thead><tbody>`;
+
+      byMonth[month].forEach(d => {
+        const dt = new Date(d.date + 'T19:30:00');
+        const dateText = dt.toLocaleDateString('en-GB'); // DMY format
+        const day = weekdayLabel(d.date);
+        // Desktop numbers separated by periods for clarity (with leading zeros)
+        const nums = (d.numbers||[]).map(n=>String(n).padStart(2,'0')).join('. ');
+        html += `<tr data-draw-id="${d.id}"><td>${dateText}</td><td>${day}</td><td>${d.id}</td><td class="numbers-period">${nums}</td><td><strong style="color:var(--gold)">${String(d.nairaBall).padStart(2,'0')}</strong></td><td><button class="btn secondary drawsDetailBtn" data-id="${d.id}">Draws Detail</button></td></tr>`;
+      });
+
+      html += `</tbody></table>`;
+
+      // mobile cards (numbers round; NB curvy)
+      html += `<div class="month-cards">`;
+      byMonth[month].forEach(d => {
+        const day = weekdayLabel(d.date);
+        const numsHtml = (d.numbers||[]).map(n=>`<div class="history-number">${String(n).padStart(2,'0')}</div>`).join('');
+        html += `<div class="day-card" data-draw-id="${d.id}">
+          <div class="day-header"><div><div style="font-weight:700;font-size:10pt;margin-bottom:6px;">${day} • ${new Date(d.date + 'T19:30:00').toLocaleDateString('en-GB')}</div><div class="small" style="font-size:10pt;">${d.id}</div></div><div class="day-label ${day === 'Tue' ? 'tue' : 'thu'}">${day}</div></div>
+
+          <div style="margin-top:8px;display:flex;align-items:center;flex-wrap:wrap">
+            ${numsHtml}
+            <div class="history-nb" role="img" aria-label="NairaBall"><span class="nb-label"></span><span class="nb-val">${String(d.nairaBall).padStart(2,'0')}</span></div>
+          </div>
+
+          <div style="display:flex;justify-content:flex-end;margin-top:10px"><button class="btn secondary drawsDetailBtn" data-id="${d.id}">Draws Detail</button></div>
+        </div>`;
+      });
+      html += `</div></div>`;
+    });
+
+    historyOnlyPanel.innerHTML = html;
+    historyOnlyPanel.style.display = 'block';
+    historyOnlyPanel.setAttribute('aria-hidden','false');
+
+    document.getElementById('historyBackBtn').addEventListener('click', ()=> { closeHistoryOnlyWithAnimation(); });
+
+    historyOnlyPanel.querySelectorAll('.drawsDetailBtn').forEach(btn => {
+      btn.addEventListener('click', ()=> {
+        const id = btn.dataset.id;
+        const draw = history.find(h => h.id === id);
+        if(draw) openDrawDetailWithAnimation(draw);
+      });
+    });
+
+    if(currentDraw) highlightCurrentDraw(currentDraw.id);
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  }
+
+  function closeHistoryOnly(){ historyOnlyPanel.innerHTML = ''; historyOnlyPanel.style.display = 'none'; historyOnlyPanel.setAttribute('aria-hidden','true'); }
+  function closeHistoryOnlyWithAnimation(){
+    const contentEls = historyOnlyPanel.children;
+    Array.from(contentEls).forEach(el => el.classList.remove('anim-fade-in'));
+    setTimeout(()=> { closeHistoryOnly(); mainWrap.style.display = 'flex'; mainWrap.classList.remove('anim-fade-out'); mainWrap.classList.add('anim-scale-in'); window.scrollTo({ top: 0, behavior: 'smooth' }); }, 180);
+  }
+
+  /* Draw Detail */
+  function openDrawDetailWithAnimation(draw){
+    const contentEls = historyOnlyPanel.children;
+    Array.from(contentEls).forEach(el => el.classList.remove('anim-fade-in'));
+    setTimeout(()=> { openDrawDetail(draw); }, 220);
+  }
+
+  function openDrawDetail(draw){
+    if(!draw) return;
+    historyOnlyPanel.style.display = 'none';
+    historyOnlyPanel.setAttribute('aria-hidden','true');
+
+    const dateText = new Date(draw.date + 'T19:30:00').toLocaleDateString('en-GB');
+    const day = weekdayLabel(draw.date);
+    const numbersHtml = (draw.numbers||[]).map(n => `<div class="detail-number">${String(n).padStart(2,'0')}</div>`).join('');
+    const detailHtml = `
+      <div class="anim-scale-in" style="display:flex;justify-content:space-between;align-items:center;gap:12px;margin-bottom:12px">
+        <div>
+          <h2 style="margin:0;font-size:12pt;">Draw Detail</h2>
+          <div class="small" style="margin-top:6px;font-size:10pt;">Date: ${dateText} • ${DRAW_TIME} • ${day}</div>
+          <div class="small" style="margin-top:6px;font-size:10pt;">ID: ${draw.id}</div>
+        </div>
+        <div style="text-align:right">
+          <button class="btn secondary" id="detailBackBtn">Draw History</button>
+          <button class="btn" id="detailPriceBtn" style="margin-left:8px" data-id="${draw.id}">Price Breakdown</button>
+        </div>
+      </div>
+
+      <div class="detail-card anim-fade-in">
+        <div style="display:flex;justify-content:space-between;align-items:center;gap:12px;">
+          <div>
+            <div style="font-weight:700;margin-top:6px;font-size:11pt;">Winning numbers</div>
+            <div class="detail-numbers">${numbersHtml}<div class="golden-number" style="">${String(draw.nairaBall).padStart(2,'0')}</div></div>
+          </div>
+          <div style="text-align:right">
+            <div style="font-weight:700">Jackpot</div>
+            <div class="small">Amount</div>
+            <div style="font-size:15pt;font-weight:700;margin-top:6px">${formatCurrency(JACKPOT_AMOUNT)}</div>
+          </div>
+        </div>        
+      </div>
+    `;
+    drawDetailPanel.innerHTML = detailHtml;
+    drawDetailPanel.style.display = 'block';
+    drawDetailPanel.setAttribute('aria-hidden','false');
+
+    document.getElementById('detailBackBtn').addEventListener('click', ()=> { closeDrawDetailWithAnimation(); });
+
+    document.getElementById('detailPriceBtn').addEventListener('click', (e) => {
+      const id = e.currentTarget.dataset.id;
+      const drawToShow = history.find(h => h.id === id);
+      if(drawToShow) {
+        drawDetailPanel.classList.remove('anim-scale-in'); drawDetailPanel.classList.add('anim-fade-out');
+        setTimeout(()=> {
+          closeDrawDetail();
+          openPricePanel(drawToShow);
+        }, 200);
+      }
+    });
+
+    highlightCurrentDraw(draw.id);
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  }
+
+  function closeDrawDetailWithAnimation(){
+    if(drawDetailPanel.style.display === 'block'){
+      drawDetailPanel.classList.remove('anim-scale-in'); drawDetailPanel.classList.add('anim-fade-out');
+      setTimeout(()=> { closeDrawDetail(); renderHistoryOnly(); }, 200);
+    } else renderHistoryOnly();
+  }
+  function closeDrawDetail(){ drawDetailPanel.innerHTML = ''; drawDetailPanel.style.display = 'none'; drawDetailPanel.setAttribute('aria-hidden','true'); }
+
+
+  /* ---------- Price Breakdown ---------- */
+   // prize constants for fixed tiers (non-NB)
+   const FIXED_PRIZES = { '5': 250000, '4': 5000, '3': 1000, '1': 10 };
+  const FIXED_PRIZES_NB = { '4+NB': 15000, '3+NB': 1500, '2+NB': 500, '1+NB': 50 };
+
+  function openPricePanel(draw){
+    if(!draw) return;
+    const tiers = draw.tiers || { '5+NB':0, '5':0, '4+NB':0, '4':0, '3+NB':0, '3':0, '2+NB':0, '2':0, '1+NB':0, '1':0 };
+    const rows = [];
+
+    const winnersJack = Number(tiers['5+NB'] || 0);
+    const jackpotPaidFund = winnersJack > 0 ? JACKPOT_AMOUNT : 0;
+    const jackpotPricePerWinner = winnersJack > 0 ? Math.floor(jackpotPaidFund / winnersJack) : null;
+    rows.push({ match: 'Match 5 + NB', winners: winnersJack, priceEach: jackpotPricePerWinner, fund: jackpotPaidFund, note: winnersJack === 0 ? 'Roll over' : '' });
+
+    rows.push({ match: 'Match 5', winners: Number(tiers['5'] || 0), priceEach: Number(tiers['5'] || 0) ? FIXED_PRIZES['5'] : null, fund: Number(tiers['5'] || 0) * FIXED_PRIZES['5'] || 0 });
+
+    // NB variants and regular tiers in descending order
+    const orderedTiers = [
+      { key: '4+NB', label: 'Match 4 + NB' },
+      { key: '4', label: 'Match 4' },
+      { key: '3+NB', label: 'Match 3 + NB' },
+      { key: '3', label: 'Match 3' },
+      { key: '2+NB', label: 'Match 2 + NB' },
+      { key: '2', label: 'Match 2' },
+      { key: '1+NB', label: 'Match 1 + NB' },
+      { key: '1', label: 'Match 1' }
+    ];
+
+    orderedTiers.forEach(t => {
+      const w = Number(tiers[t.key] || 0);
+      let p = null;
+      if(t.key.endsWith('+NB')) p = FIXED_PRIZES_NB[t.key] || null; else p = FIXED_PRIZES[t.key] || null;
+      const fund = (w && p) ? w * p : 0;
+      rows.push({ match: t.label, winners: w, priceEach: w > 0 ? p : null, fund });
+    });
+
+    // ['5','4','3','1'].forEach(k => {
+    //   const w = Number(tiers[k] || 0);
+    //   const priceEach = FIXED_PRIZES[k];
+    //   const fund = w * priceEach;
+    //   rows.push({ match: k === '5' ? 'Match 5' : (k === '4' ? 'Match 4' : (k === '3' ? 'Match 3' : 'Match 1')), winners: w, priceEach: w > 0 ? priceEach : null, fund });
+    // });
+
+    const totalWinners = rows.reduce((s,r)=> s + (Number(r.winners) || 0), 0);
+    const totalPaid = rows.reduce((s,r)=> s + (Number(r.fund) || 0), 0);
+
+    // Price panel HTML: added "Back to check my result" button beside "Open Checker"
+    let html = `
+      <div class="anim-fade-in" style="display:flex;justify-content:space-between;align-items:center">
+        <div>
+          <h2 style="margin:0">Price Breakdown</h2>
+          <div class="small">Draw: ${draw.id} • ${formatDateFull(draw.date)}</div>
+        </div>
+        <div>
+          <button class="btn secondary" id="priceBackBtn">Back</button>
+          <button class="btn" id="priceToCheckerBtn">Open in Checker</button>
+          <button class="btn ghost" id="priceBackToCurrentBtn">Check my Number</button>
+        </div>
+      </div>
+
+      <div class="price-card anim-scale-in" style="margin-top:12px">
+        <div style="display:flex;justify-content:space-between;align-items:center;gap:12px">
+          <div>
+            <div style="font-weight:600;font-size:11pt;">Prize breakdown for the draw</div>
+            <div class="small" style="margin-top:6px"></div>
+          </div>
+          <div style="text-align:right">
+            <div style="font-weight:600;font-size:11pt;">Jackpot amount</div>
+            <div class="small"></div>
+            <div style="font-size:12pt;font-weight:600;margin-top:6px">${formatCurrency(JACKPOT_AMOUNT)}</div>
+          </div>
+        </div>
+
+        <table class="price-table" aria-label="Price breakdown table">
+          <thead>
+            <tr><th>Number of matches</th><th>All winners</th><th>Price per winner</th><th>Payout</th></tr>
+          </thead>
+          <tbody>
+    `;
+    rows.forEach(r => {
+      html += `<tr>
+        <td style="padding:12px">${r.match}</td>
+        <td style="padding:12px">${r.winners}</td>
+        <td style="padding:12px">${r.priceEach === null ? '—' : formatCurrency(r.priceEach)}</td>
+        <td style="padding:12px">${formatCurrency(r.fund)}</td>
+      </tr>`;
+    });
+
+    html += `<tr class="total-row"><td style="padding:12px;font-weight:700;">Totals</td><td style="padding:12px;font-weight:700;">${totalWinners}</td><td style="padding:12px">—</td><td style="padding:12px;font-weight:700;">${formatCurrency(totalPaid)}</td></tr>`;
+
+    html += `</tbody></table>`;
+
+    html += `<div class="price-note">Notes: Jackpot is paid only when there are winners. If the Jackpot had no winners for this draw the Jackpot fund rolls over to the next draw.</div>`;
+
+    html += `</div>`; // price-card
+
+    pricePanel.innerHTML = html;
+    pricePanel.style.display = 'block';
+    pricePanel.setAttribute('aria-hidden','false');
+
+    document.getElementById('priceBackBtn').addEventListener('click', () => {
+      pricePanel.classList.remove('anim-fade-in'); pricePanel.classList.add('anim-fade-out');
+      setTimeout(()=> {
+        closePricePanel();
+        openDrawDetail(draw);
+      }, 180);
+    });
+
+    document.getElementById('priceToCheckerBtn').addEventListener('click', () => {
+      pricePanel.classList.remove('anim-fade-in'); pricePanel.classList.add('anim-fade-out');
+      setTimeout(()=> {
+        closePricePanel();
+        mainWrap.style.display = 'flex';
+        mainWrap.classList.remove('anim-fade-out'); mainWrap.classList.add('anim-scale-in');
+        loadNumbersToBalls(draw);
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+      }, 200);
+    });
+
+     // NEW: Back to check my result -> goes to current/latest draw on the main page
+     document.getElementById('priceBackToCurrentBtn').addEventListener('click', () => {
+      pricePanel.classList.remove('anim-fade-in'); pricePanel.classList.add('anim-fade-out');
+      setTimeout(()=> {
+        closePricePanel();
+        goToCurrentResult();
+      }, 180);
+    });
+
+    window.scrollTo({ top:0, behavior: 'smooth' });
+  }
+
+  function closePricePanel(){
+    pricePanel.innerHTML = '';
+    pricePanel.style.display = 'none';
+    pricePanel.setAttribute('aria-hidden','true');
+  }
+
+  /* ---------- highlights ---------- */
+  function clearActiveHighlights(){
+    document.querySelectorAll('.month-table tr.active-row').forEach(el => el.classList.remove('active-row'));
+    document.querySelectorAll('.day-card.active').forEach(el => el.classList.remove('active'));
+  }
+
+  function highlightCurrentDraw(drawId){
+    clearActiveHighlights();
+    if(!drawId) return;
+    historyOnlyPanel.querySelectorAll(`[data-draw-id="${drawId}"]`).forEach(el => {
+      if(el.tagName.toLowerCase() === 'tr') el.classList.add('active-row'); else el.classList.add('active');
+    });
+    document.querySelectorAll(`[data-draw-id="${drawId}"]`).forEach(el => {
+      if(el.closest('#historyOnlyPanel')) return;
+      if(el.tagName.toLowerCase() === 'tr') el.classList.add('active-row'); else el.classList.add('active');
+    });
+  }
+
+  /* ---------- checker & matching ---------- */
+  function validateTicket(vals){
+    const main = vals.slice(0,5), nb = vals[5];
+    for(const v of main){ if(v !== null && (v < 1 || v > 49)) return {ok:false, reason:'Numbers must be 1–49'}; }
+    if(nb !== null && (nb < 1 || nb > 10)) return {ok:false, reason:'NairaBall must be 1–10'}; 
+    const s = new Set(); for(const v of main){ if(v === null) continue; if(s.has(v)) return {ok:false, reason:'Duplicate numbers not allowed'}; s.add(v); }
+    return {ok:true};
+  }
+
+  function checkTicket(){
+    if(!currentDraw){ checkResult.innerHTML = '<div class="small">Load a draw from Draw History first.</div>'; return; }
+    const ticket = parseTicket();
+    const val = validateTicket(ticket);
+    if(!val.ok){ checkResult.innerHTML = `<div style="color:var(--danger);font-weight:600">${val.reason}</div>`; return; }
+
+    const main = ticket.slice(0,5).filter(v => v !== null);
+    const matched = main.filter(n => (currentDraw.numbers || []).includes(n));
+    const nb = ticket[5];
+    const nbMatch = nb !== null && nb === currentDraw.nairaBall;
+
+    document.querySelectorAll('#ballsContainer .ball').forEach(b => {
+      b.classList.remove('matched');
+      const v = parseInt(b.textContent,10);
+      if((currentDraw.numbers || []).includes(v) && matched.includes(v)) b.classList.add('matched');
+      if(b.classList.contains('naira') && nbMatch) b.classList.add('matched');
+    });
+
+    let prize = null;
+    if(matched.length === 5 && nbMatch) { prize = 'Jackpot'; }
+    else if(matched.length === 5) prize = 250000;
+    else if(matched.length === 4 && nbMatch) prize = FIXED_PRIZES_NB['4+NB'];
+    else if(matched.length === 4) prize = 5000;
+    else if(matched.length === 3 && nbMatch) prize = FIXED_PRIZES_NB['3+NB'];
+    else if(matched.length === 3) prize = 1000;
+    else if(matched.length === 2 && nbMatch) prize = FIXED_PRIZES_NB['2+NB'];
+    else if(matched.length === 2) prize = 100;
+    else if(matched.length === 1 && nbMatch) prize = FIXED_PRIZES_NB['1+NB'];
+    else if(matched.length === 1) prize = 10;
+
+    let html = `<div style="font-weight:700">Matches: ${matched.length}${nbMatch ? ' • NairaBall: Yes' : ' • NairaBall: No'}</div>`;
+    if(prize){
+      html += `<div style="margin-top:8px;color:#0a7f4a;font-weight:700">Price: ${typeof prize === 'number' ? formatCurrency(prize) : prize}</div>`;
+      if(prize === 'Jackpot'){ playVictory(); startConfettiFullScreen(); }
+    } else html += `<div class="small" style="margin-top:8px">No price matched</div>`;
+    checkResult.innerHTML = html;
+  }
+
+  /* ---------- confetti & sound (unchanged) ---------- */
+  function resizeCanvas(){ confettiCanvas.width = window.innerWidth; confettiCanvas.height = window.innerHeight; }
+  function ensureAudio(){ if(!audioCtx){ try{ audioCtx = new (window.AudioContext || window.webkitAudioContext)(); }catch(e){ audioCtx=null; } } return audioCtx; }
+  function playVictory(){ const ctx = ensureAudio(); if(!ctx) return; const now = ctx.currentTime; const master = ctx.createGain(); master.gain.value=0.0001; master.connect(ctx.destination); master.gain.linearRampToValueAtTime(0.24, now+0.02); master.gain.exponentialRampToValueAtTime(0.0001, now+1.9); const tone=(f,t,d)=>{ const o=ctx.createOscillator(); const g=ctx.createGain(); o.type='sine'; o.frequency.value=f; o.connect(g); g.connect(master); g.gain.setValueAtTime(0,now+t); g.gain.linearRampToValueAtTime(0.2,now+t+0.02); g.gain.linearRampToValueAtTime(0,now+t+d); o.start(now+t); o.stop(now+t+d+0.02); }; tone(660,0,0.36); tone(880,0.08,0.42); tone(990,0.18,0.5); }
+  function createConfettiPieces(amount=260){ confettiItems = []; const colors=['#ff3b3b','#ff7a00','#ffd400','#00c28a','#00a0ff','#c833ff','#ff4fb2']; for(let i=0;i<amount;i++){ confettiItems.push({ x:Math.random()*confettiCanvas.width, y:Math.random()*confettiCanvas.height - confettiCanvas.height*0.5, w:6+Math.random()*12, h:8+Math.random()*14, r:Math.random()*360, vx:(-2+Math.random()*4)*1.4, vy:2+Math.random()*6, spin:(Math.random()*8-4), color:colors[Math.floor(Math.random()*colors.length)], opacity:0.9 - Math.random()*0.3, gravity:0.03 + Math.random()*0.09 }); } }
+  function drawConfettiFrame(){ confettiCtx.clearRect(0,0,confettiCanvas.width, confettiCanvas.height); confettiItems.forEach(p=>{ confettiCtx.save(); confettiCtx.translate(p.x,p.y); confettiCtx.rotate(p.r*Math.PI/180); confettiCtx.globalAlpha = p.opacity; confettiCtx.fillStyle = p.color; confettiCtx.fillRect(-p.w/2, -p.h/2, p.w, p.h); confettiCtx.restore(); p.x += p.vx; p.y += p.vy; p.vy += p.gravity; p.vx *= 0.995; p.r += p.spin; if(p.x > confettiCanvas.width + 40) p.x = -40; if(p.x < -40) p.x = confettiCanvas.width + 40; }); if(!confettiItems.some(p => p.y < confettiCanvas.height + 80)){ stopConfetti(); return; } confettiRAF = requestAnimationFrame(drawConfettiFrame); }
+  function startConfettiFullScreen(){ if(confettiActive) return; confettiActive = true; confettiCanvas.style.display = 'block'; if(!confettiCtx) confettiCtx = confettiCanvas.getContext('2d'); resizeCanvas(); createConfettiPieces(320); drawConfettiFrame(); setTimeout(()=> stopConfetti(),9000); }
+  function stopConfetti(){ if(confettiRAF) cancelAnimationFrame(confettiRAF); confettiRAF=null; confettiActive=false; confettiCanvas.style.transition='opacity .9s ease'; confettiCanvas.style.opacity='0'; setTimeout(()=>{ confettiCanvas.style.display='none'; confettiCanvas.style.opacity='1'; confettiCanvas.style.transition=''; },920); }
+
+   /* navigation helpers requested by you */
+   function goToCurrentResult(){
+    // show main page and load latest draw as "current"
+    closePricePanel(); closeDrawDetail(); closeHistoryOnly();
+    mainWrap.style.display = 'flex';
+    mainWrap.classList.remove('anim-fade-out'); mainWrap.classList.add('anim-scale-in');
+    if(history && history.length) {
+      loadNumbersToBalls(history[0]); // latest draw
+    } else {
+      // nothing in history — clear main area
+      ballsContainer.innerHTML = '<div class="small">No draws available</div>';
+      resultDate.textContent = 'Draw: —';
+      resultId.textContent = 'ID: —';
+    }
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  }
+
+  /* events wiring */
+  function wire(){
+    // header nav
+    backToCurrentHeaderBtn.addEventListener('click', () => goToCurrentResult() );
+    showHistoryBtn.addEventListener('click', ()=> {
+      mainWrap.classList.remove('anim-scale-in'); mainWrap.classList.add('anim-fade-out');
+      setTimeout(()=> { mainWrap.style.display = 'none'; mainWrap.classList.remove('anim-fade-out'); renderHistoryOnly(); }, 180);
+    });
+    showCheckBtn.addEventListener('click', ()=> {
+      closePricePanel(); closeDrawDetail(); closeHistoryOnly();
+      mainWrap.style.display = 'flex';
+      mainWrap.classList.remove('anim-fade-out'); mainWrap.classList.add('anim-scale-in');
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    });
+
+    checkBtn.addEventListener('click', checkTicket);
+    clearInputs.addEventListener('click', ()=> { ticketInputs.querySelectorAll('input').forEach(i=>i.value=''); checkResult.innerHTML = ''; document.querySelectorAll('#ballsContainer .ball').forEach(b => b.classList.remove('matched')); updateCheckerStatus(); });
+
+    window.addEventListener('keydown', e => { if(e.key === 'Escape'){ closeHistoryOnly(); closeDrawDetail(); closePricePanel(); mainWrap.style.display = 'flex'; } });
+    window.addEventListener('resize', ()=> { if(confettiCanvas) resizeCanvas(); });
+  }
+
+  /* init */
+  function init(){
+    loadHistory();
+    updateJackpot();
+    updateLastUpdateBadge();
+    if(history.length) loadNumbersToBalls(history[0]); // default latest
+    buildTicketInputs();
+    wire();
+    if(confettiCanvas.getContext) confettiCtx = confettiCanvas.getContext('2d');
+    resizeCanvas();
+  }
+
+  init();
+
+  // expose for debugging
+  window.NR = { history, goToCurrentResult, openPricePanel, loadNumbersToBalls };
+
+})();
+</script>
+
+
+ <!-- FOOTER DESIGN -->    
+ <footer class="">
+  <div class="Social">        
+      <a href="/"><i class="fa-brands fa-square-instagram fa-bounce"></i></a>
+      <a href="/"><i class="fa-brands fa-square-x-twitter fa-bounce"></i></a>
+      <a href="/"><i class="fa-brands fa-square-facebook fa-bounce"></i></a>
+  </div>
+  <ul class="ItemList">
+    <li><a href="./userlogin.html">Home</a></li>                  
+    <li><a href="./AboutUs.html">About Us</a></li>          
+    <li><a href="./Support.html">Support</a></li>
+    <li><a href="./FAQ.html">FAQs</a></li>  
+    <li><a href="./Rules.html">Terms</a></li>
+    <li><a href="./Privacy.html">Privacy Policy</a></li>
+    <li><a href="./ContactUs.html">Contact Us</a></li>
+    <li><a href="./Community.html">Community</a></li>
+  </ul>
+  <div class="FooterList">
+      <img src="./image/Naira rain lotto.png" alt="" class="">
+      <p class=""><a href="https://www.gambleaware.org/" target="_blank">begambleawear.org</a></p>
+      <p class="">© 2023 NairaRain Lotto | 18+</p>
+  </div>
+</footer>
+</body>
+</html>

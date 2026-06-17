@@ -1,0 +1,746 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Rapid game</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"/> 
+  <link rel="stylesheet" href="./style.css">
+  <link rel="stylesheet" href="./Rapidgame.css">
+  
+</head>
+<body>
+
+  <header class="header-navbar" >
+    <!-- <div class="mobile-menu-icon" id="mobileMenuIcon"> -->
+        <div class="mobile-menu-base" >
+            <div class="MenuCom">
+                <p class="mobile-menu-icon" id="openMobile" aria-label="Open menu" >Menu<span><i class="fa-solid fa-ellipsis-vertical"></i></span></p>
+                <div class="mobile-nav" id="mobileNav">
+                    <div class="mobileModal">
+                        <!-- <span class="close-menu">✖</span> -->
+                        <button aria-label="close" class="close-menu" id="closeMobile">✖</button>
+                        <nav class="mobile-links" aria-label="mobile-links">
+                            <a class="mobile-list"  href="./index.html">Home</a>
+                            <div>
+                              <button class="mobile-list"   onclick="toggleMobileSub('gamesMobile')">Games ▾</button>
+                              <div class="mobile-submenu" id="gamesMobile">
+                                <a id="NairaRain-dropdown" href="./GamesPage.html">NairaRain Lotto <span>₦2,000,000</span></a>
+                                <a id="Rapid500" href="./RapidGame3.html">NRL Rapid Game <span>₦500,000</span></a>
+                                <a id="Rapid250" href="./RapidGame2.html">NRL Rapid Game <span>₦250,000</span></a>
+                                <a id="Rapid150" href="./RapidGame1.html">NRL Rapid Game <span>₦150,000</span></a>
+                              </div>
+                            </div>
+                    
+                            <div>
+                              <button  class="mobile-list"  onclick="toggleMobileSub('resultsMobile')">Results ▾</button>
+                              <div class="mobile-submenu" id="resultsMobile">
+                                <a id="NairaRain-dropdown" href="./Result.html">NairaRain Lotto <span>Result</span></a>
+                                <a id="Rapid500" href="./ResultRapid5.html">NRL Rapid Game <span>Result</span></a>                               
+                              </div>
+                            </div>                            
+                            <a class="mobile-list"  href="./Community.html">Community</a>
+                            <a class="mobile-list"  href="./FAQ.html">FAQs</a>
+                            <!-- <a class="mobile-list"  href="#winners">Winners</a> -->
+                        </nav>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="profile" >
+                <div class="profile-icon" onclick="toggleProfileDropdown()">My account<i class="fa-solid fa-user"></i></div>
+                <!-- <a href="./loginPage.html"><span class="profile-icon">My account<i class="fa-solid fa-user"></i></span></a> -->
+                <div class="profileDropdown" id="profileDropdown" onclick="toggleProfileDropdown()">
+                    <div class="profile-dropdownModal">
+                        <div class="dropdown" >
+                            <a href="#">Wallet Amount: ₦100,000</a>
+                            <a href="./profilepage.html">My Profile</a> 
+                            <a href="./payment.html">Deposit</a>                        
+                            <a href="./Gamehistory.html">Games History</a>
+                            <a href="./transactionhis.html">Transactions</a>
+                            <a href="./withdrawpage.html">Withdrawal</a>
+                            <a href="./profilepage.html">User Profile</a>
+                            <a href="#" onclick="logout()">Logout</a>
+                        </div>
+                    </div>
+                </div>
+            </div>               
+        </div>                
+    <!-- </div> -->  
+               
+    <div class="navbar">
+        <div class="logo"> <a href="./index.html"><img src="./image/Naira rain lotto.png" alt="Logo"></a>
+        </div>            
+        <div class="nav-center" aria-label="Primary">
+            <div class="nav-item"><a class="nav-button" href="./index.html">Home</a></div>
+            <div class="nav-item"><a class="nav-button"  href="#games" onclick="toggleCenterDropdown(event,'games')">Games ▾</a>
+                <div class="drop-it">
+                    <div class="center-dropdown" id="gamesDropdown">
+                        <div class="dropdown-games">
+                            <a id="NairaRain-dropdown" href="./GamesPage.html">NairaRain Lotto <span>₦2,000,000</span> </a>
+                            <a id="Rapid500" href="./RapidGame3.html">Rapid Game <span>₦500,000</span></a>
+                            <a id="Rapid250" href="./RapidGame2.html">Rapid Game <span>₦250,000</span></a>
+                            <a id="Rapid150" href="./RapidGame1.html">Rapid Game <span>₦150,000</span></a>
+                        </div>                          
+                    </div>
+                </div>
+            </div>
+            <div class="nav-item"><a class="nav-button" href="./payment.html">Deposit</a></div>
+            <div class="nav-item"><a class="nav-button" href="#results" onclick="toggleCenterDropdown(event,'results')">Results ▾</a>  
+                <div class="drop-it">                    
+                    <div class="center-dropdown" id="resultsDropdown">
+                        <div class="dropdown-games" id="dropdown-result" >
+                            <a id="NairaRain-dropdown" href="./Result.html">NairaRain Lotto <span>Result</span></a>
+                            <a id="Rapid500"  href="./ResultRapid5.html">NRL Rapid Game <span>Result</span></a>                                
+                        </div>                                
+                    </div>
+                </div>                        
+            </div>                   
+            <!-- <div class="nav-item"><a class="nav-button" href="#testimonials">Testimonials</a></div> -->
+                              
+        </div>
+    
+        <div class="actions">
+            <div class="nav-logsign" >
+                <a href="./loginPage.html"><button id="nav-login" class="active">Login</button></a> 
+                <a href="./SignupPage.html"><button id="nav-signup" class="active">Sign Up</button></a>
+            </div>                
+            <div class="pro-wallet">
+                <div class="profile" onclick="toggleProfileDropdownx()">
+                    <!-- <div class="profile-icon"><i class="fa-solid fa-user"></i></div> -->
+                    <div class="profileDropdown1" id="profileDropdown1"> 
+                        <div class="profileDropdown1-modal">                               
+                            <div class="dropdown">
+                                <a href="#">Wallet Amount: ₦100,000</a>
+                                <a href="./profilepage.html">My Profile</a>
+                                <a href="./payment.html">Deposit</a>                         
+                                <a href="./Gamehistory.html">Games History</a>
+                                <a href="./transactionhis.html">Transactions</a>
+                                <a href="./withdrawpage.html">Result</a>
+                                <a href="./profilepage.html">User Profile</a>
+                                <a href="#" onclick="logout()">Logout</a>
+                            </div>
+                        </div>                               
+                    </div>
+                </div>                       
+
+                <!-- <div class="wallet" onclick="toggleWalletDropdown()">
+                    <i class="fa-solid fa-wallet"></i> <span id="walletAmount">₦12,000.00</span>
+                    <div class="wallet-dropdown" id="walletDropdown">
+                    <p>Available Balance: <span id="availableBalance">₦12,000.00</span></p>                            
+                </div> -->
+            </div>                     
+        </div>
+    </div>
+</header>          
+    
+<script>
+      
+function toggleProfileDropdown() {
+  var dropdown = document.getElementById("profileDropdown");
+  dropdown.style.display = dropdown.style.display === "flex" ? "none" : "flex";
+}
+function toggleProfileDropdownx() {
+  var dropdown = document.getElementById("profileDropdown1");
+  dropdown.style.display = dropdown.style.display === "flex" ? "none" : "flex";
+} 
+  // Toggle the profile dropdown visibility
+  function toggleMobileNav() {
+        const mobileNav = document.getElementById('mobileNav');
+        mobileNav.style.display = mobileNav.style.display === 'flex' ? 'none' : 'flex';
+      }              
+
+    //   function toggleMobileNavS() {
+    //     const mobileNavS = document.getElementById('mobileNavS');
+    //     mobileNavS.style.display = mobileNavS.style.display === 'flex' ? 'none' : 'flex';
+    //   }
+
+    // Center dropdown toggles (desktop)
+    
+// Center dropdown toggles (desktop)
+function toggleCenterDropdown(e, which){
+e.preventDefault();
+const games = document.getElementById('gamesDropdown');
+const results = document.getElementById('resultsDropdown');
+if(which === 'games'){
+const show = games.style.display !== 'block';
+games.style.display = show ? 'block' : 'none';
+results.style.display = 'none';
+}else if(which === 'results'){
+const show = results.style.display !== 'block';
+results.style.display = show ? 'block' : 'none';
+games.style.display = 'none';
+}
+}
+
+// Close dropdowns when clicking outside
+document.addEventListener('click', function(e){
+const isNav = e.target.closest('.nav-center');
+const isBtn = e.target.closest('.nav-button');
+if(!isNav && !isBtn){
+document.getElementById('gamesDropdown').style.display = 'none';
+document.getElementById('resultsDropdown').style.display = 'none';
+}
+});
+
+// Mobile panel controls & submenus
+document.getElementById('openMobile').addEventListener('click', ()=>{
+document.getElementById('mobileNav').style.display = 'block';
+});
+document.getElementById('closeMobile').addEventListener('click', ()=>{
+document.getElementById('mobileNav').style.display = 'none';
+});
+
+function toggleMobileSub(id){
+const el = document.getElementById(id);
+el.style.display = el.style.display === 'block' ? 'none' : 'block';
+}     
+      
+
+      function toggleWalletDropdown() {
+const walletDropdown = document.getElementById('walletDropdown');
+walletDropdown.style.display = walletDropdown.style.display === 'block' ? 'none' : 'block';
+}
+
+function updateWallet(amount, pending) {
+document.getElementById('walletAmount').textContent = `₦${amount.toFixed(2)}`;
+document.getElementById('availableBalance').textContent = `₦${amount.toFixed(2)}`;
+// document.getElementById('pendingWinnings').textContent = `₦${pending.toFixed(2)}`;
+}
+
+// Example update (this would be dynamically set based on real user data)
+//   updateWallet(1200.50, 250.00);
+
+// Close mobile nav when clicking outside the panel or pressing Escape
+document.getElementById('mobileNav').addEventListener('click', function(e){
+// if click target is the overlay (not the inner panel), close
+if(e.target === this) {
+this.style.display = 'none';
+}
+});
+document.addEventListener('keydown', function(e){
+if(e.key === 'Escape'){
+document.getElementById('mobileNav').style.display = 'none';
+closeAllPopups();
+}
+});
+</script> 
+   
+
+  
+        <div class="headerImagerX" >        
+            <img src="./image/heroImage11.png" alt="">        
+        </div>
+        
+   <!-- Games Container -->
+          <div class="gamesContainer-main">
+                  <h1 class="gamesContainer-title" >Pick 5 of 21 numbers or use Auto Pick to randomly select numbers to win <span>₦150,000</span></h1>
+                  <div id="gamesContainer"></div>
+
+                  <!-- Redesigned Counter Section -->
+                  <div id="counterContainer">
+                    <div id="totalGamesCounter" class="counter-box">
+                      <h4>Total Tickets:</h4>
+                      <p id="gamesCount">0</p>
+                    </div>
+                    <div id="totalAmountCounter" class="counter-box">
+                      <h4>Total Amount:</h4>
+                      <p id="amountTotal">₦0</p>
+                    </div>
+                    <button id="moreGamesButton">More Tickets ▼</button>
+                  </div>
+                  <p class="infoP">Buy multiple tickets to stand a higher chance of winning!!!</p>
+
+                    <!-- Universal Buttons -->
+                    <div class="universalButtons">    
+                      <button id="universalPlayButton">Play</button>
+                    </div>
+
+                  <!-- Universal Number Picker Overlay -->
+                  <div id="universalPicker" onclick="closeUniversalPickerOnClick(event)">
+                    <div class="popup-content">
+                      <div class="picker-title">Select 5 Numbers</div>
+                      <div class="progress-container">
+                        <div class="progress-bar">
+                          <div id="uniProgressFill" class="progress-fill"></div>
+                        </div>
+                        <div id="uniProgressNumber" class="progress-number">0/5</div>
+                      </div>
+                      <div class="number-grid" id="uniNumberGrid"></div>
+                      <div class="button-row">
+                        <button class="confirm-btn" onclick="confirmUniversalPicker()">Confirm</button>
+                        <button class="reset-btn" onclick="resetUniversalPicker()">Reset</button>
+                        <button class="cancel-btn" onclick="closeUniversalPicker()">Cancel</button>       
+                      </div>
+                    </div>
+                  </div>
+
+                <!-- Universal Receipt Overlay -->
+                <div id="universalReceipt" onclick="closeUniversalReceiptOnClick(event)">
+                  <div class="popup-content receipt-content">
+                    <h3>TICKET</h3>    
+                    <p id="receiptSummary"></p>
+                    <div id="universalReceiptList" class="receipt-list"></div>
+                    <p id="deductionInfo">
+                      By confirming, ₦<span id="totalCostDisplay"></span> will be deducted from your account.
+                    </p>
+                    <div class="button-row receipt-buttons">
+                      <button class="confirm-btn" onclick="confirmAllGames()">Confirm</button>
+                      <button class="cancel-btn" onclick="closeUniversalReceipt()">Close</button>
+                    </div>
+                  </div>
+                </div>
+
+
+                  <!-- Game Instance Template -->
+                  <template id="gameTemplate">
+                    <div class="game-instance">
+                      <div class="game-header">
+                        <div class="numberer-title">
+                          <div class="number-container">
+                            <div class="number-box"></div>
+                            <div class="number-box"></div>
+                            <div class="number-box"></div>
+                            <div class="number-box"></div>
+                            <div class="number-box"></div>          
+                          </div>
+                        </div>
+                        <div class="header-right">                        
+                          <span class="edit-icon" onclick="openUniversalPicker(this)"><i class="fa-solid fa-pen-to-square"></i></span>
+                          <button class="delete-btn" onclick="deleteGame(this)"><i class="fa-solid fa-trash"></i></button>
+                        </div>
+                      </div>
+                      <div class="button-container">
+                        <button onclick="openUniversalPicker(this)" id="pick-numbers-btn" >Pick Numbers</button>
+                        <button onclick="generateLuckyNumbers(this)" id="generate-lucky-numbers-btn">Auto Pick</button>
+                        <button onclick="resetNumbers(this)" class="btn" >Clear</button>
+                        <!-- <span class="cost-label">Cost: ₦100</span> -->
+                      </div>
+                      
+                      <audio class="playSound" src="play-sound.mp3" preload="auto"></audio>
+                    </div>
+                  </template>
+          </div>
+
+  <script>
+    // Global wallet amount (simulate player's funds)
+    let wallet = 500;
+
+    // Global variable for the current game instance using the universal picker
+    let currentGame = null;
+    let universalSelectedNumbers = [];
+
+    // Initialize universal number grid (1 to 21)
+    const uniNumberGrid = document.getElementById("uniNumberGrid");
+    for (let i = 1; i <= 21; i++) {
+      const btn = document.createElement("button");
+      btn.textContent = i;
+      btn.onclick = function(e) { universalSelectNumber(this); };
+      uniNumberGrid.appendChild(btn);
+    }
+
+    // Update universal picker progress
+    function updateUniversalProgress() {
+      const progress = (universalSelectedNumbers.length / 5) * 100;
+      document.getElementById("uniProgressFill").style.width = progress + "%";
+      document.getElementById("uniProgressNumber").textContent = universalSelectedNumbers.length + "/5";
+    }
+
+    // Universal picker: select/deselect number
+    function universalSelectNumber(btn) {
+      const num = parseInt(btn.textContent);
+      if (universalSelectedNumbers.includes(num)) {
+        universalSelectedNumbers = universalSelectedNumbers.filter(n => n !== num);
+        btn.classList.remove("selected");
+      } else if (universalSelectedNumbers.length < 5) {
+        universalSelectedNumbers.push(num);
+        btn.classList.add("selected");
+      }
+      universalSelectedNumbers.sort((a, b) => a - b);
+      updateUniversalProgress();
+    }
+
+    function openUniversalPicker(trigger) {
+      // Only allow editing if numbers were manually picked (not generated)
+      const game = trigger.closest(".game-instance");
+      if (game.isGenerated) return;
+      currentGame = game;
+      universalSelectedNumbers = [...(game.selectedNumbers || [])];
+      updateUniversalProgress();
+      document.querySelectorAll("#uniNumberGrid button").forEach(btn => {
+        const num = parseInt(btn.textContent);
+        if (universalSelectedNumbers.includes(num)) {
+          btn.classList.add("selected");
+        } else {
+          btn.classList.remove("selected");
+        }
+      });
+      document.getElementById("universalPicker").style.display = "flex";
+    }
+
+    function closeUniversalPicker() {
+      universalSelectedNumbers = [];
+      document.getElementById("universalPicker").style.display = "none";
+    }
+
+    function closeUniversalPickerOnClick(event) {
+      if (event.target.id === "universalPicker") {
+        closeUniversalPicker();
+      }
+    }
+
+    function resetUniversalPicker() {
+      universalSelectedNumbers = [];
+      document.querySelectorAll("#uniNumberGrid button").forEach(btn => btn.classList.remove("selected"));
+      updateUniversalProgress();
+    }
+
+    function confirmUniversalPicker() {
+      if (universalSelectedNumbers.length !== 5) {
+        alert("Please select exactly 5 numbers.");
+        return;
+      }
+      currentGame.selectedNumbers = [...universalSelectedNumbers];
+      currentGame.isGenerated = false; // manually picked
+      updateNumberDisplay(currentGame);
+      updateEditButton(currentGame);
+      closeUniversalPicker();
+      updateCounter();
+    }
+
+    // ----- Game Instance Functions -----
+    function updateNumberDisplay(game) {
+      const boxes = game.querySelectorAll(".number-container .number-box");
+      for (let i = 0; i < 5; i++) {
+        boxes[i].textContent = game.selectedNumbers[i] || '';
+      }
+    }
+
+    // Disable edit icon if game numbers were generated or incomplete
+    function updateEditButton(game) {
+      const editIcon = game.querySelector(".edit-icon");
+      if (!game.selectedNumbers || game.selectedNumbers.length !== 5 || game.isGenerated) {
+        editIcon.style.pointerEvents = "none";
+        editIcon.style.opacity = "0.5";
+      } else {
+        editIcon.style.pointerEvents = "auto";
+        editIcon.style.opacity = "1";
+      }
+    }
+
+    function generateLuckyNumbers(trigger) {
+      const game = trigger.closest(".game-instance");
+      let arr = [];
+      while (arr.length < 5) {
+        const rand = Math.floor(Math.random() * 21) + 1;
+        if (!arr.includes(rand)) arr.push(rand);
+      }
+      arr.sort((a, b) => a - b);
+      game.selectedNumbers = arr;
+      game.isGenerated = true;
+      updateNumberDisplay(game);
+      updateEditButton(game);
+      updateCounter();
+    }
+
+    function resetNumbers(trigger) {
+      const game = trigger.closest(".game-instance");
+      game.selectedNumbers = [];
+      game.isGenerated = false;
+      updateNumberDisplay(game);
+      updateEditButton(game);
+      updateCounter();
+      document.querySelectorAll("#uniNumberGrid button").forEach(btn => btn.classList.remove("selected"));
+      updateUniversalProgress();
+    }
+
+    // Delete a game instance (only if more than one exists)
+    function deleteGame(trigger) {
+      const container = document.getElementById("gamesContainer");
+      if (container.children.length <= 1) {
+        alert("You must have at least one game.");
+        return;
+      }
+      const game = trigger.closest(".game-instance");
+      container.removeChild(game);
+      updateCounter();
+      updateDeleteButtons();
+    }
+
+    // Update the counter display – count only games with complete (5-number) selections
+    function updateCounter() {
+      const container = document.getElementById("gamesContainer");
+      let count = 0;
+      for (let game of container.children) {
+        if (game.selectedNumbers && game.selectedNumbers.length === 5) {
+          count++;
+        }
+      }
+      document.getElementById("gamesCount").textContent = count;
+      document.getElementById("amountTotal").textContent = "₦" + (count * 100);
+    }
+
+    // Create a new game instance from the template and append it
+    function addGameInstance() {
+      const template = document.getElementById("gameTemplate");
+      const instance = template.content.cloneNode(true);
+      const gameDiv = instance.querySelector(".game-instance");
+      // Initialize properties for the game instance
+      gameDiv.selectedNumbers = [];
+      gameDiv.isGenerated = false;
+      document.getElementById("gamesContainer").appendChild(gameDiv);
+      updateCounter();
+      updateDeleteButtons();
+    }
+
+    // Ensure delete buttons are visible only if more than one game exists
+    function updateDeleteButtons() {
+      const container = document.getElementById("gamesContainer");
+      const games = container.children;
+      for (let game of games) {
+        const delBtn = game.querySelector(".delete-btn");
+        if (games.length === 1) {
+          delBtn.style.display = "none";
+        } else {
+          delBtn.style.display = "inline-block";
+        }
+      }
+    }
+
+    // ----- Universal Receipt and Payment -----
+    function universalPlay() {
+      const container = document.getElementById("gamesContainer");
+      const games = container.children;
+      // Check that every game has a complete selection
+      for (let game of games) {
+        if (!game.selectedNumbers || game.selectedNumbers.length !== 5) {
+          alert("Please complete selections for all games before playing!");
+          return;
+        }
+      }
+      // Populate the universal receipt overlay with each game's details
+      const receiptList = document.getElementById("universalReceiptList");
+      receiptList.innerHTML = "";
+      let count = 0;
+      let gameIndex = 1;
+      for (let game of games) {
+        if (game.selectedNumbers && game.selectedNumbers.length === 5) {
+          count++;
+          const entry = document.createElement("div");
+          entry.className = "game-entry";
+          const label = document.createElement("span");
+          label.textContent = "Ticket " + gameIndex + ": ";
+          entry.appendChild(label);
+          // Container for round-box numbers
+          const numbersContainer = document.createElement("div");
+          numbersContainer.style.display = "flex";
+          numbersContainer.style.gap = "5px";
+          game.selectedNumbers.forEach(num => {
+            const numDiv = document.createElement("div");
+            numDiv.className = "receipt-number";
+            numDiv.textContent = num;
+            numbersContainer.appendChild(numDiv);
+          });
+          entry.appendChild(numbersContainer);
+          receiptList.appendChild(entry);
+          gameIndex++;
+        }
+      }
+      const totalCost = count * 100;
+      document.getElementById("totalCostDisplay").textContent = totalCost;
+      document.getElementById("receiptSummary").textContent = "Total Tickets: " + count + ", Total Amount: ₦" + totalCost;
+      document.getElementById("universalReceipt").style.display = "flex";
+    }
+
+    function closeUniversalReceipt() {
+      document.getElementById("universalReceipt").style.display = "none";
+    }
+
+    function closeUniversalReceiptOnClick(event) {
+      if (event.target.id === "universalReceipt") {
+        closeUniversalReceipt();
+      }
+    }
+
+    // Confirm universal play: deduct amount if funds are sufficient; else alert user to fund wallet.
+    function confirmAllGames() {
+      const container = document.getElementById("gamesContainer");
+      const games = container.children;
+      let count = 0;
+      for (let game of games) {
+        if (game.selectedNumbers && game.selectedNumbers.length === 5) {
+          count++;
+        }
+      }
+      const totalCost = count * 100;
+      if (wallet < totalCost) {
+        alert("Insufficient funds. Please fund your wallet.");
+        return;
+      }
+      wallet -= totalCost;
+      alert("Payment successful! ₦" + totalCost + " has been deducted from your wallet.");
+      location.reload();
+    }
+
+    // Event Listeners for universal buttons
+    document.getElementById("universalPlayButton").addEventListener("click", universalPlay);
+    document.getElementById("moreGamesButton").addEventListener("click", function() {
+      addGameInstance();
+      updateDeleteButtons();
+    });
+
+    // Add one initial game instance on page load
+    addGameInstance();
+  </script>
+
+   <!-- Audio -->
+   <audio id="playSound" src="play-sound.mp3" preload="auto"></audio>
+
+
+   
+  <!-- Lotto Price Tiers -->
+
+  <div class="lotto-price-tiers">
+    <div class="wrap" role="main">
+      <header class="top" aria-label="page header">
+        <div class="brand">
+          <!-- <div class="logo-price">NR</div> -->
+          <div>
+            <h1>Rapid Game Price tiers</h1>
+            <p class="lead">Prize amounts for matching 1 → 5 numbers</p>
+          </div>
+        </div>
+  
+        <!-- Static currency label (Naira only) -->
+        <div class="Currency" aria-hidden="true">
+          <div class="currency-label">₦ Naira</div>
+          <div class="currency-label2">₦100 Naira Play Amount</div>
+        </div>
+      </header>
+  
+      <table class="tiers" aria-label="Lottery price tiers table">
+        <thead>
+          <tr>
+            <th>Match</th>
+            <th style="width:52%">Numbers</th>
+            <th style="width:28%;text-align:right">Price</th>
+          </tr>
+        </thead>
+  
+        <tbody>
+          <!-- 5 MAIN NUMBER -->
+          <tr>
+            <td>
+              <div class="match-title">5 MAIN NUMBERS</div>
+              <!-- <div class="match-sub">Naira Ball</div> -->
+            </td>
+            <td>
+              <div class="balls" aria-hidden="true">
+                <div class="ball large"></div>
+                <div class="ball large"></div>
+                <div class="ball large"></div>
+                <div class="ball large"></div>
+                <div class="ball large"></div>                
+              </div>
+            </td>
+            <td>
+              <div class="jackpot">₦150,000.00</div>
+              <!-- <div class="note">Progressive</div> -->
+            </td>
+          </tr>
+  
+          <!-- 4 main NUMBERS -->
+          <tr>
+            <td>
+              <div class="match-title">4 MAIN NUMBERS</div>
+            </td>
+            <td>
+              <div class="balls" aria-hidden="true">
+                <div class="ball large"></div>
+                <div class="ball large"></div>
+                <div class="ball large"></div>
+                <div class="ball large"></div>               
+              </div>
+            </td>
+            <td><div class="prize">₦1,500.00</div></td>
+          </tr>
+  
+          
+  
+          <!-- 3 main NUMBER -->
+          <tr>
+            <td>
+              <div class="match-title">3 MAIN NUMBERS</div>              
+            </td>
+            <td>
+              <div class="balls" aria-hidden="true">
+                <div class="ball"></div>
+                <div class="ball"></div>
+                <div class="ball"></div>                             
+              </div>
+            </td>
+            <td><div class="prize">₦75.00</div></td>
+          </tr>
+  
+          <!-- 2 main NUMBERS  -->
+          <tr>
+            <td>
+              <div class="match-title">2 MAIN NUMBERS</div>            
+            </td>
+            <td>
+              <div class="balls" aria-hidden="true">
+                <div class="ball"></div>
+                <div class="ball"></div>                             
+              </div>
+            </td>
+            <td><div class="prize">₦30.00</div></td>
+          </tr>
+  
+          <!-- 1 main NUMBER -->
+          <tr>
+            <td>
+              <div class="match-title">1 MAIN NUMBERS</div>              
+            </td>
+            <td>
+              <div class="balls" aria-hidden="true">
+                <div class="ball"></div>                              
+              </div>
+            </td>
+            <td><div class="prize">₦6.00</div></td>
+          </tr>   
+        </tbody>
+      </table>
+    </div>    
+  </div>
+
+
+
+
+
+
+   <!-- FOOTER DESIGN -->    
+ <footer class="">
+  <div class="Social">        
+      <a href="/"><i class="fa-brands fa-square-instagram fa-bounce"></i></a>
+      <a href="/"><i class="fa-brands fa-square-x-twitter fa-bounce"></i></a>
+      <a href="/"><i class="fa-brands fa-square-facebook fa-bounce"></i></a>
+  </div>
+  <ul class="ItemList">
+    <li><a href="./userlogin.html">Home</a></li>                  
+    <li><a href="./AboutUs.html">About Us</a></li>          
+    <li><a href="./Support.html">Support</a></li>
+    <li><a href="./FAQ.html">FAQs</a></li>  
+    <li><a href="./Rules.html">Terms</a></li>
+    <li><a href="./Privacy.html">Privacy Policy</a></li>
+    <li><a href="./ContactUs.html">Contact Us</a></li>
+    <li><a href="./Community.html">Community</a></li>
+  </ul>
+  <div class="FooterList">
+      <img src="./image/Naira rain lotto.png" alt="" class="">
+      <p class=""><a href="https://www.gambleaware.org/" target="_blank">begambleawear.org</a></p>
+      <p class="">© 2023 NairaRain Lotto | 18+</p>
+  </div>
+</footer>
+
+</body>
+</html>

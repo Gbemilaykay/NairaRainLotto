@@ -1,0 +1,189 @@
+ /* Reset & Base Styles */
+ * { 
+    margin: 0; 
+    padding: 0; 
+    box-sizing: border-box; 
+}
+ body { 
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; 
+    background: #f4f7fa; 
+    color: #333; 
+    line-height: 1.6; 
+    padding-top: 40px;
+}
+ a { 
+    color: #008304; 
+    text-decoration: none; 
+}
+ a:hover { 
+    text-decoration: underline; 
+}
+
+ /* Container */
+ .privacy-container { 
+    max-width: 800px; 
+    margin: 40px auto; 
+    padding: 20px; 
+    background: #fff; 
+    border-radius: 12px; 
+    box-shadow: 0 4px 8px rgba(0,0,0,0.05); 
+}
+@media screen and (max-width: 600px){
+    .privacy-container { 
+        max-width: 400px;        
+        padding: 15px;        
+        border-radius: 10px;       
+    }
+
+}
+
+ /* Header */
+.privacy-head { 
+    text-align: center; 
+    margin-bottom: 20px; 
+}
+.privacy-head h1 { 
+    font-size: 30pt; 
+    color: #009b05; 
+    margin-bottom: 10px; 
+}
+/* .privacy-head p { 
+    font-size: 1rem; 
+    color: #555; 
+} */
+
+ /* Accordion */
+ .accordion-item { 
+    border-bottom: 1px solid #e4e7eb; 
+}
+ .accordion-header {
+   cursor: pointer;
+   padding: 15px;
+   display: flex;
+   justify-content: space-between;
+   align-items: center;
+   transition: background 0.3s ease;
+ }
+ .accordion-header:hover { 
+    background: #f1f5f9; 
+}
+ .icon { 
+    width: 20px; 
+    height: 20px; 
+    flex-shrink: 0;
+    stroke: #009b05;   
+}
+ .icon.minus { 
+    display: none; 
+}
+ .accordion-header.active .icon.plus { 
+    display: none; 
+}
+ .accordion-header.active .icon.minus { 
+    display: block;    
+}
+
+ .accordion-content { 
+    max-height: 0; 
+    overflow: hidden; 
+    transition: max-height 0.5s ease; 
+    padding: 0 15px; 
+}
+ .accordion-content p { 
+    font-size: 12pt;
+    padding: 15px 0; 
+}
+
+
+ /* FOOTER DESIGN  */ 
+ footer{    
+    background-color: black; 
+    display:flex;       
+    flex-direction: column;
+    padding: 20px; 
+    justify-content: center; 
+    margin-top: 50px;
+    bottom: 0;    
+  }
+  .Social{
+    display:flex; 
+    gap: 32px; 
+    justify-content: center;       
+  }
+  .Social i {
+    color: #21c401;
+    font-size:xx-large; 
+    animation-iteration-count:initial;    
+  }
+  .Social i:hover {
+    color: rgb(255, 255, 255);
+    transform: scale(1.5);
+    transition: all .1s ease-in-out;
+  }
+  .ItemList {
+    display: flex; 
+    flex-wrap: wrap;
+    justify-content: center;    
+    font-size: 13pt; 
+    gap: 18px; 
+    color: white; 
+    margin-top:20px; 
+    margin-bottom:40px; 
+    padding: 0 28px 0px 28px;
+  }
+  .ItemList li{
+    list-style-type: none;     
+  }
+  .ItemList a{
+    list-style-type: none;   
+    text-decoration: none;
+    color: white;
+  }
+  .ItemList :hover{
+    color: #d5d80d;
+    border-bottom:  #d5d80d 1px solid ;
+    text-decoration: double;
+    cursor:pointer;
+    /* transform: scale(1.5);
+    transition: all .1s ease-in-out; */
+  }
+  .FooterList{
+    display: flex; 
+    flex-direction: column; 
+    justify-content: center; color: white; 
+    gap:17px; 
+  }
+  .FooterList img {
+    width: 80px; 
+    margin: auto;
+  }
+  .FooterList p a{
+    font-size: 10pt; 
+    letter-spacing:1px; 
+    margin: auto;
+    color: white;
+    text-decoration: none;
+  }
+  
+  @media screen and (max-width: 600px){
+    footer{
+      /* position:absolute;          */
+      /* bottom: 0; */
+      margin-top: 30%;    
+  } 
+  
+  .ItemList {            
+      font-size: 10pt;       
+  }
+  .FooterList img {
+    width: 70px;        
+}
+.FooterList p a{
+    font-size: 8pt;  
+    letter-spacing: 1px;      
+}
+.FooterList p{
+  font-size: 8pt; 
+  letter-spacing:1px; 
+} 
+  }

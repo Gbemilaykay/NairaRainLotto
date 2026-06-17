@@ -1,0 +1,241 @@
+/* Base Styling */
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: #f7f9fc;
+    color: #333;
+    width: 100%;
+    height: auto;
+  }
+  .trans-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center; 
+    max-width: 1200px;
+    width: 100%;
+    height: 100%;    
+    margin: 20px auto;
+    padding: 20px;
+    background: #fff;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+  }
+  /* Player Profile Header */
+  .profile-header {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    background: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    margin-bottom: 30px;
+  }
+  .profile-header img {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    margin-right: 10px;
+  }
+  .profile-infop {
+    /* display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align:left; */
+  }
+  .profile-infop h1 {
+    margin: 0 0 5px 0 ;
+    font-size: 13pt;
+    color: #000000;
+    text-align: left;
+  }
+  .profile-infop p {
+    /* margin: 0px 0 0; */
+    color: #777;
+    font-size: 10pt;
+  }
+  /* Transaction Cards Layout */
+  h1 {
+    text-align:center;
+    font-size: 15pt;
+    margin-bottom: 20px;
+    color: #067200;
+  }
+  .transactions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+  }
+  .transaction-card {
+    background: #fff;
+    border-left: 5px solid #067200;
+    padding: 15px 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    /* width: 350px; */
+    height: auto;
+    width: calc(33.333% - 20px);
+    transition: transform 0.2s ease;
+    cursor: pointer;
+  }
+  .transaction-card:hover {
+    transform: translateY(-5px);
+  }
+  .transaction-card h3 {
+    margin: 0 0 8px;
+    font-size: 12pt;
+    color: #067200;
+  }
+  .transaction-card p {
+    margin: 8px 0;
+    font-size: 10pt;
+    line-height: 1.4;
+  }
+  .transaction-card span {
+    display: block;
+    font-size: 9pt;
+    color: #838383;
+    margin-top: 5px;
+  }
+
+  .transaction-card .txn-type {
+    font-weight: bold;
+    color: #555;
+  }
+  /* Responsive Design */
+  @media (max-width: 600px) {
+    .transactions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 7px;
+      justify-content: center;
+    }
+    
+  .trans-container {  
+    margin: 10px auto;
+    padding: 5px;
+    background: #fff;
+    border-radius: 5px;
+    box-shadow: none;
+  }
+   .transaction-card {
+      border-left: 3px solid #067200;
+      padding: 15px 5px;
+      height: auto;
+      width: calc(50% - 10px);
+    }
+    .transaction-card h3 {
+      font-size: 10pt;
+    }
+    .transaction-card p {
+      font-size: 8pt;
+    }
+    .transaction-card span {
+      font-size: 8pt;
+    }
+  }
+  @media (max-width: 480px) {
+    .transaction-card {
+      /* width: 100%; */
+    }
+    .profile-header {
+      flex-direction: column;
+      text-align: center;
+    }
+    .profile-header img {
+      margin-right: 0;
+      margin-bottom: 10px;
+    }
+    
+  }
+  
+
+  /* FOOTER DESIGN  */   
+  
+  .Social{
+    display:flex; 
+    gap: 32px; 
+    justify-content: center;       
+  }
+  .Social i {
+    color: #21c401;
+    font-size:xx-large; 
+    animation-iteration-count:initial;    
+  }
+  .Social i:hover {
+    color: rgb(255, 255, 255);
+    transform: scale(1.5);
+    transition: all .1s ease-in-out;
+  }
+  .ItemList {
+    display: flex; 
+    flex-wrap: wrap;
+    justify-content: center;    
+    font-size: 13pt; 
+    gap: 18px; 
+    color: white; 
+    margin-top:20px; 
+    margin-bottom:40px; 
+    padding: 0 28px 0px 28px;
+  }
+  .ItemList li{
+    list-style-type: none;     
+  }
+  .ItemList a{
+    list-style-type: none;   
+    text-decoration: none;
+    color: white;
+  }
+  .ItemList :hover{
+    color: #d5d80d;
+    border-bottom:  #d5d80d 1px solid ;
+    text-decoration: double;
+    cursor:pointer;
+    /* transform: scale(1.5);
+    transition: all .1s ease-in-out; */
+  }
+  .FooterList{
+    display: flex; 
+    flex-direction: column; 
+    justify-content: center; color: white; 
+    gap:17px; 
+  }
+  .FooterList img {
+    width: 80px; 
+    margin: auto;
+  }
+  .FooterList p a{
+    font-size: 10pt; 
+    letter-spacing:1px; 
+    margin: auto;
+    color: white;
+    text-decoration: none;
+  }
+  
+  @media screen and (max-width: 600px){
+    footer{
+      position:relative;         
+      bottom: 0;
+      /* margin-top: 30%;     */
+  } 
+  
+  .ItemList {            
+      font-size: 10pt;       
+  }
+  .FooterList img {
+    width: 70px;        
+}
+.FooterList p a{
+    font-size: 8pt;  
+    letter-spacing: 1px;      
+}
+.FooterList p{
+  font-size: 8pt; 
+  letter-spacing:1px; 
+} 
+  }

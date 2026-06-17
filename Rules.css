@@ -1,0 +1,230 @@
+  /* Base styles */
+  body {
+    margin: 0;
+    padding-top: 20px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: #f5f7fa;
+    color: #333;
+  }
+
+  .rules-container {
+    width: 100%;
+    max-width: 800px;
+    margin: 40px auto;
+    padding: 20px;
+    background: #fff;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+  }
+
+  .rules-header {
+    text-align: center;
+    margin: 5px 0 20px 0;
+  }
+
+  .rules-header h1 {
+    margin: 0;
+    font-size: 20pt;
+    color: #009b05;
+    text-shadow: 1px 1px rgba(0,0,0,0.1);
+  }
+
+  /* Accordion styles */
+  .accordion {
+    width: 100%;
+    max-width: 800px;
+    margin: auto;
+  }
+
+  .rule {
+    background: #fff;
+    margin-bottom: 10px;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    overflow: hidden;
+    transition: transform 0.2s;
+  }
+
+  .rule:hover {
+    transform: translateY(-2px);
+  }
+
+  .rule-title {
+    margin: 0;
+    padding: 15px 20px;
+    font-size: 1.25rem;
+    cursor: pointer;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: #009b05;
+    color: #fff;
+  }
+  .rule-title:hover{
+    background: #9b0000;
+  }
+
+  .rule-title::after {
+    content: '+';
+    font-size: 1.5rem;
+    transition: transform 0.3s;
+  }
+
+  .rule.active .rule-title::after {
+    transform: rotate(45deg);
+  }
+
+  .rule-content {
+    max-height: 0;
+    padding: 0 20px;
+    background: #fafafa;
+    transition: max-height 0.3s ease;
+  }
+
+  .rule.active .rule-content {
+    max-height: 500px;
+    padding: 15px 20px;
+  }
+
+  .rule-content p {
+    margin-top: 0;
+    line-height: 1.6;
+  }
+
+  /* Responsive */
+  @media (max-width: 600px) {
+    .rules-container {
+        max-width: 400px;
+        margin: 40px auto;
+        padding: 15px;
+        border-radius: 15px;       
+      }
+    .rules-header {
+        margin: 0 0 10px 0;
+      }    
+      .rules-header h1 {
+        font-size: 15pt;
+      }    
+      /* Accordion styles */
+      .accordion {
+        max-width: 400px;
+      }    
+      .rule {
+        background: #fff;
+        margin-bottom: 7px;
+        border-radius: 15px;
+      }    
+      .rule:hover {
+        transform: translateY(-2px);
+      }    
+      .rule-title {
+        padding: 10px 15px;
+        font-size: 12pt;
+      }    
+      .rule-title::after {
+        content: '+';
+        font-size: 14pt;
+      }    
+      .rule.active .rule-title::after {
+        transform: rotate(45deg);
+      }
+    
+      .rule.active .rule-content {
+        max-height: 400px;
+        padding: 15px 20px;
+      }
+  }
+
+  /* FOOTER DESIGN  */ 
+ footer{    
+    background-color: black; 
+    display:flex;       
+    flex-direction: column;
+    padding: 20px; 
+    justify-content: center; 
+    margin-top: 50px;
+    bottom: 0;    
+  }
+  .Social{
+    display:flex; 
+    gap: 32px; 
+    justify-content: center;       
+  }
+  .Social i {
+    color: #21c401;
+    font-size:xx-large; 
+    animation-iteration-count:initial;    
+  }
+  .Social i:hover {
+    color: rgb(255, 255, 255);
+    transform: scale(1.5);
+    transition: all .1s ease-in-out;
+  }
+  .ItemList {
+    display: flex; 
+    flex-wrap: wrap;
+    justify-content: center;    
+    font-size: 13pt; 
+    gap: 18px; 
+    color: white; 
+    margin-top:20px; 
+    margin-bottom:40px; 
+    padding: 0 28px 0px 28px;
+  }
+  .ItemList li{
+    list-style-type: none;     
+  }
+  .ItemList a{
+    list-style-type: none;   
+    text-decoration: none;
+    color: white;
+  }
+  .ItemList :hover{
+    color: #d5d80d;
+    border-bottom:  #d5d80d 1px solid ;
+    text-decoration: double;
+    cursor:pointer;
+    /* transform: scale(1.5);
+    transition: all .1s ease-in-out; */
+  }
+  .FooterList{
+    display: flex; 
+    flex-direction: column; 
+    justify-content: center; color: white; 
+    gap:17px; 
+  }
+  .FooterList img {
+    width: 80px; 
+    margin: auto;
+  }
+  .FooterList p a{
+    font-size: 10pt; 
+    letter-spacing:1px; 
+    margin: auto;
+    color: white;
+    text-decoration: none;
+  }
+  
+  
+  @media screen and (max-width: 600px){
+    footer{
+      /* position:absolute;          */
+      /* bottom: 0; */
+      /* margin-top: 30%;     */
+  } 
+  
+  .ItemList {            
+      font-size: 10pt;       
+  }
+  .FooterList img {
+    width: 70px;        
+}
+.FooterList p a{
+    font-size: 8pt;  
+    letter-spacing: 1px;      
+}
+.FooterList p{
+  font-size: 8pt; 
+  letter-spacing:1px; 
+} 
+  }

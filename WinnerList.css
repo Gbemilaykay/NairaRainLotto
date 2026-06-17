@@ -1,0 +1,353 @@
+*,
+:after,
+:before {
+    /* border: 0 solid #e5e7eb; */
+    box-sizing: border-box
+}
+body { 
+    margin: 0;
+    font-family:Arial, Helvetica, sans-serif;   
+    text-align: center;
+    background-color: #ffffff;    
+    justify-content: center;   
+    align-items: center;
+    height: 100vh;  
+    padding: 0;  
+}
+
+.headerImagesS{  
+    display:flex;
+    flex-direction: column;       
+    justify-content: center; 
+    align-content: center;    
+    border-bottom: 4px solid #d3d3d3;     
+    width: 100%; 
+    overflow: hidden;        
+}
+
+.containerList {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+    opacity: 0;
+    animation: fadeIn 1s forwards; /* Page fade-in animation */
+}
+
+.containerList .h1 {
+    text-align:left;
+    /* margin-bottom: 50px; */
+    color: #000000;
+    font-size: 20pt;
+    font-weight: 600;
+    margin-top: 30px;
+}
+
+.profilerow {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));    
+    grid-gap: 20px;
+    justify-items: center;
+    align-items: center;
+    margin-top: 20px;     
+}
+
+.Win-card {   
+    display: flex;
+    flex-direction: column; 
+    /* justify-content:space-around; */
+    align-items: center;
+    text-align: center;
+    gap: 12px;     
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    text-align: center;
+    transition: transform 0.5s ease;
+    /* opacity: 0; */
+    animation: fadeInUp 1s forwards; /* Card fade-up animation */
+    border-bottom: #696969 5px solid;
+    padding: 20px;   
+}
+
+
+/* Scale-up effect on hover */
+/* .card:hover {
+    transform: scale(1.05); 
+} */
+
+.Win-card img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    opacity: 0.2;
+}
+.Win-card h3 {
+    /* margin: 15px 0; */
+    font-size: 17pt;
+    color: #333;    
+}
+.Win-card p {
+    font-size: 12pt;
+    color: #000000;
+}
+
+/* Flex container for amount and game side-by-side */
+.Win-info {
+    display: flex;
+    justify-content:center;
+    align-items: center;
+}
+
+.Win-card .amount, .Win-card .game {    
+    /* flex: 1; */
+    display: flex;
+    padding: 10px;
+    justify-content: center;
+    align-items: center;
+    font-weight: bold;
+    text-align: center;
+    font-size: 16px;
+    color: #fff;
+    transition: background-color 0.3s ease;
+}
+
+.Win-card .amount {
+    background-color: #009124; 
+    margin-right: 10px;
+    border-radius: 8px;
+    animation: bounce 1.5s infinite; /* Bounce effect for amount won */
+}
+
+.Win-card .game {
+    background-color: #4b4b4a;
+    border-radius: 8px;
+    animation: bounce 1.5s infinite 0.5s; /* Bounce effect for the game with delay */
+}
+
+/* Add hover effects to the amount won and game sections */
+.Win-card .amount:hover {
+    background-color: #005716 ; /* Dark orange on hover */
+}
+
+.Win-card .game:hover {
+    background-color: rgb(167, 0, 0); /* Royal Blue on hover */
+}
+
+/* Keyframe animation for fade-in effect */
+@keyframes fadeIn {
+    0% { opacity: 0; }
+    100% { opacity: 1; }
+}
+
+/* Keyframe animation for fade-up effect (cards) */
+@keyframes fadeInUp {
+    0% {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+
+.btn{
+    display: flex;    
+    color: white;
+    background-color: #006909;
+    padding: 18px;
+    border-radius: 15px;
+    font-size: 13pt;
+    font-weight: 600;    
+    cursor: pointer;
+    border: 3px solid #ffffff;    
+    margin: 30px auto; 
+    width: 200px; 
+    text-align: center;
+    justify-content: center;
+}
+.btn:hover{
+    background-color: #003004;
+    border: 3px solid #00b80f;
+}
+@media screen and (max-width: 600px){ 
+    .containerList {       
+        margin: 10px;
+        padding: 20px;
+        /* opacity: 0; */
+        animation: fadeIn 1ms forwards;
+    }
+    .profilerow {
+        grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));    
+        grid-gap: 10px;
+        margin-top: 1px;     
+    }   
+    .Win-card {   
+        gap: 5px;     
+        background-color: white;
+        transition: transform 0.5s ease;
+        animation:none;  
+    } 
+    .Win-card img {
+        width: 80px;
+        height: 80px;
+        object-fit: cover;
+        opacity: unset;
+    } 
+    .Win-card h3 {
+        /* margin: 15px 0; */
+        font-size: 10pt;
+        color: #333;    
+    }
+    .Win-card p {
+        font-size: 10pt;
+        color: #000000;
+    }
+    .Win-card .amount, .Win-card .game {    
+        padding: 5px;
+        font-size: 9pt;
+        transition: background-color 0.3s ease;
+    }
+    
+    .Win-card .amount {
+        margin-right: 0px;
+        border-radius: 3px;
+        animation:none;
+    }
+    
+    .Win-card .game {
+        border-radius: 3px;
+        animation:none;
+    }
+}
+
+
+/* FOOTER DESIGN  */ 
+footer{
+    background-color: black; 
+    display: grid;    
+    flex-direction: column;
+    padding: 20px; 
+    justify-content: center; 
+    margin-top: 50px;
+    
+  }
+  .Social{
+    display:flex; 
+    gap: 32px; 
+    justify-content: center;
+       
+  }
+  .Social i {
+    color: #21c401;
+    font-size:xx-large; 
+    animation-iteration-count:initial;    
+  }
+  .Social i:hover {
+    color: rgb(255, 255, 255);
+    transform: scale(1.5);
+    transition: all .1s ease-in-out;
+  }
+  .ItemList {
+    display: flex; 
+    flex-wrap: wrap;
+    justify-content: center;    
+    font-size: 13pt; 
+    gap: 18px; 
+    color: white; 
+    margin-top:20px; 
+    margin-bottom:40px; 
+    padding: 0 28px 0px 28px;
+  }
+  .ItemList li{
+    list-style-type: none;     
+  }
+  .ItemList a{
+    list-style-type: none;   
+    text-decoration: none;
+    color: white;
+  }
+  .ItemList :hover{
+    color: #d5d80d;
+    border-bottom:  #d5d80d 1px solid ;
+    text-decoration: double;
+    cursor:pointer;
+    /* transform: scale(1.5);
+    transition: all .1s ease-in-out; */
+  }
+  .FooterList{
+    display: flex; 
+    flex-direction: column; 
+    justify-content: center; color: white; 
+    gap:17px; 
+  }
+  .FooterList img {
+    width: 80px; 
+    margin: auto;
+  }
+  .FooterList p a{
+    font-size: 10pt; 
+    letter-spacing:1px; 
+    margin: auto;
+    color: white;
+    text-decoration: none;
+  }
+
+  @media screen and (max-width: 600px) {
+    h1 {
+        text-align:center;
+        margin-bottom: 10px;
+        font-size: 15pt;        
+    }
+    .grid {
+        grid-template-columns: 1fr;
+    }
+    
+    /* Make amount and game stack on top of each other on smaller screens */
+    .Win-info {
+        flex-direction: column;
+    }
+    
+    .Win-card .amount, .Win-card .game {
+        margin-right: 0;
+        margin-bottom: 10px;
+    }
+
+    .container h1 {
+        font-size: 14pt;        
+        background-color: #04701d;
+        padding: 10px;         
+        width: 100%; 
+        margin-bottom: 30px;               
+    }
+    .lucky-numbers{
+        width: 100%;        
+        border-radius: 10px;
+        border: 3px solid #dbdbdb;
+        padding: 10px; 
+        gap: 5px;
+    }
+    #number-rounds{
+        padding: 1px;
+    }
+    #super-number{
+        padding: 1px;
+    }
+    .ItemList {            
+        font-size: 10pt;       
+    }
+    .FooterList img {
+        width: 70px;        
+    }
+    .FooterList p a{
+        font-size: 8pt;  
+        letter-spacing: 1px;      
+    }
+    .FooterList p{
+      font-size: 8pt; 
+      letter-spacing:1px; 
+    } 
+}
+  

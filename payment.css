@@ -1,0 +1,345 @@
+* {
+    box-sizing: border-box;
+  }
+  body {    
+    margin: 0;
+    font-family: 'Roboto', sans-serif;
+    background: linear-gradient(1.1deg, rgb(7, 129, 7) 2.9%, rgb(12, 151, 24) 90.3%);
+    color: #333;
+    min-height: 100vh;
+    width: 100%;    
+    padding: 0;
+  }
+  .payment-container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* height: 100vh; */
+    margin: 10px auto;
+    padding: 20px;
+  }
+  .contained {   
+    background: #fff;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 800px;
+    padding: 50px;
+    /* animation: fadeIn 0.3s ease-in; */
+  }
+  @keyframes fadeIn {
+    from { opacity: 0; transform: translateY(-10px); }
+    to { opacity: 1; transform: translateY(0px); }
+  }
+  .contained h1 {
+    text-align:left;
+    margin-bottom: 20px;
+    color: #009b05;
+  }
+  /* Payment Method Buttons */
+  .btn-group {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    margin-bottom: 20px;
+    gap: 10px;
+  }
+  .btn-group button {
+    flex: 1 1 48%;
+    margin: 5px 0;
+    padding: 12px;
+    background-color: #009b05;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.5s ease, transform 0.2s ease;
+  }
+  .btn-group button:hover,
+  .btn-group button.active {
+    background-color: #000000;
+    transform: scale(1.00);
+  }
+  /* Form Styles */
+  form {
+    display: none;
+    transition: background-color 0.5s ease, transform 0.2s ease;
+    /* animation: fadeIn 0.3s ease-in-out; */
+  }
+  form.active {
+    display: block;
+  }
+  label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: 500;
+    font-size: 11pt;
+  }
+  input, select {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    /* border: none; */
+    border: 1px solid #ccc;
+    /* box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1); */
+    border-radius: 6px;
+    transition: border-color 0.3s ease;
+  }
+  
+  input:focus, select:focus {
+    border-color: #009b05;
+    outline: none;
+  }
+  
+  input::placeholder {
+    color: #d8d8d8;
+  }
+  
+  /* Button Container for Payment and Cancel Buttons */
+  .form-buttons {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 15px;
+  }
+  .form-buttons button {
+    flex: 1;
+    padding: 12px;
+    font-size: 14pt;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    letter-spacing: 1px;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+  }
+  .pay-btn {
+    background-color: #009b05;
+    color: #fff;
+  }
+  .pay-btn:hover {
+    background-color: #005303;
+    transform: scale(1.02);
+  }
+  .cancel-btn {
+    background-color: #ff1900;
+    color: #fff;
+  }
+  .cancel-btn:hover {
+    background-color: #b31200;
+    transform: scale(1.02);
+  }
+  /* Expiration Date and CVV on the Same Line */
+  .expiry-cvv-container {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 15px;
+  }
+  .expiry-cvv-container > div {
+    flex: 1;
+  }
+  .expiry-container {
+    display: flex;
+    gap: 10px;
+  }
+  .expiry-container input {
+    flex: 1;
+  }
+
+   /* Mobile Wallet Options Styling */
+   #mobileMoneyForm .wallet-header {
+    font-weight: 600;
+    font-size: 12pt;
+   }
+   .wallet-options {
+    display: flex;
+    /* justify-content: space-around; */
+    align-items: center;
+    justify-content:left;
+    gap: 40px;
+    margin: 15px 0 15px 0;
+  }
+  .wallet-option {
+    display: flex;
+    align-items: center;
+    gap: 2px;
+  }
+  .wallet-option label {
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+    white-space: nowrap;
+    font-weight: 600;
+    cursor: pointer;
+  }
+  .wallet-option input {
+    margin-right: 5px;
+  }
+  .wallet-option img {
+    width: 40px;
+    /* vertical-align: middle; */
+  }
+
+
+  /* Feedback Message Box */
+  .messageBox {
+    margin-bottom: 15px;
+    padding: 10px;
+    border-radius: 4px;
+    display: none;
+    font-weight: bold;
+    text-align: center;
+  }
+  .messageBox.error {
+    background-color: #ffdddd;
+    color: #d8000c;
+    border: 1px solid #d8000c;
+  }
+  .messageBox.success {
+    background-color: #ddffdd;
+    color: #000000;
+    border: 1px solid #4f8a10;
+  }
+  /* Instructions Section */
+  .instructions {
+    margin-top: 30px;
+    background-color: #f9f9f9;
+    padding: 15px;
+    border-left: 4px solid #009b05;
+    border-radius: 4px;
+    font-size: 11pt;
+    line-height: 1.6;
+  }
+  
+  
+  @media (max-width: 600px) {
+    .btn-group {
+      gap: 0px;
+    }
+    .btn-group button {
+      flex: 1 1 100%;
+    }
+    /* .expiry-cvv-container {
+      flex-direction: column;
+      flex-direction: row;
+    } */
+    #mobileMoneyForm .wallet-header {
+      font-weight: 600;
+      font-size: 11pt;
+     }
+     .wallet-options {
+      /* align-items: center;
+      justify-content:left; */
+      gap: 2px;
+      margin: 10px auto 10px auto;
+    }
+    .wallet-option {
+      gap: 5px;
+    }
+    .wallet-option label {
+      gap: 5px;
+      white-space: wrap;
+      font-weight: 500;
+      font-size: 9pt;
+    }
+    .wallet-option input {
+      margin-right: 0px;
+    }
+    .wallet-option img {
+      width: 30px;
+      /* vertical-align:0px; */
+    }
+  }
+
+
+  /* FOOTER DESIGN  */ 
+  footer{    
+    background-color: black; 
+    display:flex;       
+    flex-direction: column;
+    padding: 20px; 
+    justify-content: center; 
+    margin-top: 50px;
+    bottom: 0;    
+  }
+  .Social{
+    display:flex; 
+    gap: 32px; 
+    justify-content: center;       
+  }
+  .Social i {
+    color: #21c401;
+    font-size:xx-large; 
+    animation-iteration-count:initial;    
+  }
+  .Social i:hover {
+    color: rgb(255, 255, 255);
+    transform: scale(1.5);
+    transition: all .1s ease-in-out;
+  }
+  .ItemList {
+    display: flex; 
+    flex-wrap: wrap;
+    justify-content: center;    
+    font-size: 13pt; 
+    gap: 18px; 
+    color: white; 
+    margin-top:20px; 
+    margin-bottom:40px; 
+    padding: 0 28px 0px 28px;
+  }
+  .ItemList li{
+    list-style-type: none;     
+  }
+  .ItemList a{
+    list-style-type: none;   
+    text-decoration: none;
+    color: white;
+  }
+  .ItemList :hover{
+    color: #d5d80d;
+    border-bottom:  #d5d80d 1px solid ;
+    text-decoration: double;
+    cursor:pointer;
+    /* transform: scale(1.5);
+    transition: all .1s ease-in-out; */
+  }
+  .FooterList{
+    display: flex; 
+    flex-direction: column; 
+    justify-content: center; color: white; 
+    gap:17px; 
+  }
+  .FooterList img {
+    width: 80px; 
+    margin: auto;
+  }
+  .FooterList p a{
+    font-size: 10pt; 
+    letter-spacing:1px; 
+    margin: auto;
+    color: white;
+    text-decoration: none;
+  }
+  
+  @media screen and (max-width: 600px){
+    footer{
+      /* position:absolute;          */
+      /* bottom: 0; */
+      margin-top: 30%;    
+  } 
+  
+  .ItemList {            
+      font-size: 10pt;       
+  }
+  .FooterList img {
+    width: 70px;        
+}
+.FooterList p a{
+    font-size: 8pt;  
+    letter-spacing: 1px;      
+}
+.FooterList p{
+  font-size: 8pt; 
+  letter-spacing:1px; 
+} 
+  }

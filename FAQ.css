@@ -1,0 +1,329 @@
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #ffffff;
+    color: #ffffff;
+    margin: 0;
+    padding: 0;
+}
+
+.headerImagerX {  
+    display:flex; 
+    flex-direction: column;   
+    justify-content: center; 
+    align-content: center;    
+    border-bottom: 4px solid #000000;     
+    /* width: 100%;  */
+    overflow: hidden;        
+}
+@media screen and (max-width: 600px){
+    .headerImagerX {
+      padding-top: 20px;
+    }
+}
+@media screen and (max-width: 360px){
+    .headerImagerX {
+        padding-top: 20px;
+      }
+}
+
+.faq-containerd {
+    max-width: 1600px;    
+    margin: 20px auto;
+    padding: 30px;
+    /* background-color: rgba(0, 0, 0, 0.8); */
+    border-radius: 15px;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.2);
+}
+
+.faq-headerd h1 {
+    text-align:left;
+    margin-bottom: 20px;
+    font-size: 15pt;
+    color: #070707;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+.faq-gridd {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+}
+
+.faqq {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    background: linear-gradient(145deg, #3c4e88, #1b2640);
+    border-radius: 10px;
+    padding: 40px;
+    transition: transform 0.3s, box-shadow 0.3s;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.4);
+}
+
+.faqq:hover {
+    background: linear-gradient( #3c4e88, #1b2640);
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.6);
+}
+
+.faqq h3 {
+    margin: 0 0 1rem 0;
+    font-size: 15pt;
+    color: #f0f0f0;
+    text-align: center;
+    margin-bottom: 15px;
+}
+
+.faqq p {
+    margin: 0;
+    line-height: 1.6;
+    font-size: 0.9rem;
+    color: #d1d1d1;
+    text-align: center;
+}
+
+@media (max-width: 992px) {
+    .faq-gridd {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 600px) {
+    .faq-gridd {
+        grid-template-columns: 1fr;
+    }
+    .faq-headerd h1 {
+        font-size: 13pt;
+        text-align: center;
+    }
+}
+
+
+
+
+
+.faq-containered {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+    margin-top: 20px;
+    /* background-color: #ececec; */
+    /* border-radius: 10px; */
+    /* box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3); */
+}
+
+.faq-header {
+    /* text-align:center; */
+    /* margin-bottom: 2rem; */
+}
+
+.faq-headered h1 {
+    color: #000000;
+    font-size:15pt;
+    font-weight: 500;
+    margin-bottom: 10px;
+}
+
+.faq-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+}
+
+.faq {
+    display: flex;   
+    flex-direction: column;
+    justify-content:space-around;
+    align-items: center;
+    /* border: 1px solid #272727; */    
+    border-radius: 5px;
+    background-color: #ffffff;
+    overflow: hidden;
+    transition: transform 0.3s, box-shadow 0.3s;
+    color: black;
+}
+.faq:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.4);
+}
+
+.faq-title {
+    display: flex;  
+    justify-content:center;
+    align-items: center;
+    cursor: pointer;
+    padding: 20px;
+    width: 100%; 
+    background: linear-gradient(180deg, #29ad24, #185e17);  
+    /* background-color: #059200;    */
+    border: none;      
+    transition: background-color 0.3s;
+}
+
+.faq-title:hover {
+    /* background-color: #910202; */
+    background: linear-gradient(90deg, #29ad24, #185e17); 
+    color: white;
+}
+
+.faq-title h3 {
+    margin: 0;
+    font-size: 13pt;
+    color: white;
+}
+
+.faq-content {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.4s ease-in-out, opacity 0.4s ease-in-out;
+    padding: 0 30px;
+}
+
+.faq-content p {
+    margin: 20px;
+    line-height: 1.4;
+    text-align: center;
+}
+
+.faq.open .faq-content {
+    max-height: 300px;
+    /* opacity: 1; */
+}
+
+.faq-title svg {
+    transition: transform 0.3s;
+}
+
+.faq.open .faq-title svg {
+    transform: rotate(180deg);
+}
+
+/* FOOTER DESIGN  */ 
+/* footer{    
+    background-color: black; 
+    display:flex;       
+    flex-direction: column;
+    padding: 20px; 
+    justify-content: center; 
+    margin-top: 50px;
+    bottom: 0;    
+  } */
+  .Social{
+    display:flex; 
+    gap: 32px; 
+    justify-content: center;       
+  }
+  .Social i {
+    color: #21c401;
+    font-size:xx-large; 
+    animation-iteration-count:initial;    
+  }
+  .Social i:hover {
+    color: rgb(255, 255, 255);
+    transform: scale(1.5);
+    transition: all .1s ease-in-out;
+  }
+  .ItemList {
+    display: flex; 
+    flex-wrap: wrap;
+    justify-content: center;    
+    font-size: 13pt; 
+    gap: 18px; 
+    color: white; 
+    margin-top:20px; 
+    margin-bottom:40px; 
+    padding: 0 28px 0px 28px;
+  }
+  .ItemList li{
+    list-style-type: none;     
+  }
+  .ItemList a{
+    list-style-type: none;   
+    text-decoration: none;
+    color: white;
+  }
+  .ItemList :hover{
+    color: #d5d80d;
+    border-bottom:  #d5d80d 1px solid ;
+    text-decoration: double;
+    cursor:pointer;
+    /* transform: scale(1.5);
+    transition: all .1s ease-in-out; */
+  }
+  .FooterList{
+    display: flex; 
+    flex-direction: column; 
+    justify-content: center; color: white; 
+    gap:17px; 
+  }
+  .FooterList img {
+    width: 80px; 
+    margin: auto;
+  }
+  .FooterList p a{
+    font-size: 10pt; 
+    letter-spacing:1px; 
+    margin: auto;
+    color: white;
+    text-decoration: none;
+  }
+
+@media (max-width: 992px) {    
+    .faq-header h1 {
+        text-align:center;
+        color: #000000;
+        font-size:15pt;
+        font-weight: 500;
+        margin-bottom: 20px;
+    }
+    .faq-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .faq-title h3 {
+        font-size: 0.9rem;
+    }
+}
+
+@media (max-width: 600px) {
+    .faq-grid {
+        grid-template-columns: 1fr;
+    }
+    .faq-headered h1 {        
+        font-size:13pt;
+        font-weight: 600;
+        text-align: center;       
+    }
+
+    footer{
+        /* position:absolute;          */
+        /* bottom: 0; */
+        /* margin-top: 20%; */
+        /* margin-top: 50px; */
+    }
+    
+    .container h1 {
+        font-size: 14pt;        
+        background-color: #04701d;
+        padding: 10px;         
+        width: 100%; 
+        margin-bottom: 30px;               
+    }
+    .ItemList {            
+        font-size: 10pt;       
+    }
+    .FooterList img {
+        width: 70px;        
+    }
+    .FooterList p a{
+        font-size: 8pt;  
+        letter-spacing: 1px;      
+    }
+    .FooterList p{
+      font-size: 8pt; 
+      letter-spacing:1px; 
+    } 
+}

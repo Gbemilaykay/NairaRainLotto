@@ -1,0 +1,217 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+  }
+  body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: #f7f7f7;
+    /* display: flex;
+    justify-content: center;
+    align-items: center; */
+    /* padding: 20px; */
+    min-height: 100vh;
+  }
+  .withdraw-container {
+    background: #ffffff;
+    margin: 20px auto;
+    max-width: 900px;
+    width: 100%;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  }
+  /* Header with Player Profile */
+  .header {
+    text-align:left;
+    margin-bottom: 25px;
+  }
+  .profile2 {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 15px;
+    margin-bottom: 10px;
+    background-color: #ffffff;
+    padding: 10px;
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  }
+  .profile2 img {
+    width: 70px;
+    height: 70px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 2px solid #067200;
+  }
+  .profile-info h1 {
+    font-size: 14pt;
+    color: #333;
+  }
+  .profile-info p {
+    font-size: 10pt;
+    color: #575757;
+  }
+  
+  /* Withdrawal Form Styling */
+  .withdrawal-form {
+    background: #f5f5f5;
+    padding: 20px;
+    border-radius: 8px;
+    border: 1px solid #d6d6d6;
+    margin-bottom: 20px;
+  }
+  .withdrawal-form h2 {
+    margin-bottom: 20px;
+    color: #067200;
+    text-align:left;
+  }
+  .form-group {
+    margin-bottom: 20px;
+  }
+  .form-group label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: 500;
+    color: #555;
+  }
+  .form-group input::placeholder {
+    font-size: 9pt;
+    color: #b1b1b1;
+    letter-spacing: 0.5px;    
+  }
+  
+  .form-group input,
+  .form-group select {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 9pt;
+    color: #8d8d8d;
+    letter-spacing: 0.5px
+  }
+  .form-group input:focus,
+  .form-group select:focus {
+    border-color: #067200;
+    outline: none;
+  }
+  .form-button {
+    width: 100%;
+    background: #067200;
+    color: #ffffff;
+    padding: 12px;
+    border: none;
+    border-radius: 5px;
+    font-size: 12pt;
+    letter-spacing: 1px;
+    cursor: pointer;
+    transition: background 0.3s ease;
+  }
+  .form-button:hover {
+    background: #b30000;
+  }
+  
+  /* Responsive adjustments */
+  @media (max-width: 480px) {
+    .profile2 {
+      flex-direction: column;
+    }
+    .profile-info h1 {
+      font-size: 1.3em;
+    }
+  }
+
+  /* FOOTER DESIGN  */ 
+  footer{    
+    background-color: black; 
+    display:flex;       
+    flex-direction: column;
+    padding: 20px; 
+    justify-content: center; 
+    margin-top: 50px;
+    bottom: 0;
+    /* width: 100%;     */
+  }
+  .Social{
+    display:flex; 
+    gap: 32px; 
+    justify-content: center;       
+  }
+  .Social i {
+    color: #21c401;
+    font-size:xx-large; 
+    animation-iteration-count:initial;    
+  }
+  .Social i:hover {
+    color: rgb(255, 255, 255);
+    transform: scale(1.5);
+    transition: all .1s ease-in-out;
+  }
+  .ItemList {
+    display: flex; 
+    flex-wrap: wrap;
+    justify-content: center;    
+    font-size: 13pt; 
+    gap: 18px; 
+    color: white; 
+    margin-top:20px; 
+    margin-bottom:40px; 
+    padding: 0 28px 0px 28px;
+  }
+  .ItemList li{
+    list-style-type: none;     
+  }
+  .ItemList a{
+    list-style-type: none;   
+    text-decoration: none;
+    color: white;
+  }
+  .ItemList :hover{
+    color: #d5d80d;
+    border-bottom:  #d5d80d 1px solid ;
+    text-decoration: double;
+    cursor:pointer;
+    /* transform: scale(1.5);
+    transition: all .1s ease-in-out; */
+  }
+  .FooterList{
+    display: flex; 
+    flex-direction: column; 
+    justify-content: center; color: white; 
+    gap:17px; 
+  }
+  .FooterList img {
+    width: 80px; 
+    margin: auto;
+  }
+  .FooterList p a{
+    font-size: 10pt; 
+    letter-spacing:1px; 
+    margin: auto;
+    color: white;
+    text-decoration: none;
+  }
+  
+  @media screen and (max-width: 600px){
+    footer{
+      /* position:absolute;          */
+      /* bottom: 0; */
+      margin-top: 30%;    
+  } 
+  
+  .ItemList {            
+      font-size: 10pt;       
+  }
+  .FooterList img {
+    width: 70px;        
+}
+.FooterList p a{
+    font-size: 8pt;  
+    letter-spacing: 1px;      
+}
+.FooterList p{
+  font-size: 8pt; 
+  letter-spacing:1px; 
+} 
+  }

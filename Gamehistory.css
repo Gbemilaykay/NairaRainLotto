@@ -1,0 +1,258 @@
+/* Reset & Base Styling */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  body {
+    font-family: Arial, sans-serif;
+    background: #f9f9f9;
+    /* padding: 20px; */
+    color: #333;
+  }
+  .game-his-container {
+    background: #ffffff;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    max-width: 1200px;
+    margin: 20px auto 30px auto;
+    padding: 20px;
+    border-radius: 8px;
+  }
+  /* Player Profile Section */
+  .profile-header {
+    display: flex;
+    align-items: center;justify-content: center;
+    margin-bottom: 10px;
+    background: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+  }
+  .profile-header img {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    margin-right: 10px;
+    object-fit: cover;
+  }
+  .profile-header .profile-info {
+    font-size: 10pt;
+  }
+  .profile-header .profile-info h2 {
+    /* margin-bottom: 5px; */
+    color: #444;
+  }
+  /* Page Title */
+  .game-card-container{
+    background-color: white;   
+    padding: 30px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    border-radius: 8px;
+  }
+  h1 {
+    text-align:center;
+    font-size: 15pt;
+    margin-bottom: 10px;
+    color: #444;
+  }
+  /* Card Container */
+  .card-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    justify-content: center;
+    /* background-color: white; */
+    padding: 20px;
+  }
+  /* Game Card Styling */
+  .game-card {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 500px;
+    background: #fff;
+    border-radius: 8px;
+    padding: 15px;
+    /* box-shadow: 0 4px 8px rgba(0,0,0,0.1); */
+    transition: transform 0.3s;
+    border-left: 8px solid transparent;
+  }
+  .game-card:hover {
+    transform: translateY(-5px);
+  }
+  /* Outcome Colors */
+  .game-card.win {
+    border-left-color: #28a745;
+    background: #e9f8ee;
+  }
+  .game-card.lost {
+    border-left-color: #dc3545;
+    background: #fcebea;
+  }
+  .game-card.inprogress {
+    border-left-color: #ffc107;
+    background: #fff8e1;
+  }
+  /* Game Details */
+  .game-details {
+    flex: 2;
+  }
+  .game-details h3 {
+    font-size: 12pt;
+    margin-bottom: 5px;
+    color: #555;
+  }
+  .game-details p {
+    font-size: 11pt;
+    margin-bottom: 8px;
+    color: #666;
+  }
+  /* Draw Numbers Section */
+  .game-numbers {
+    flex: 2;
+    display: flex;
+    flex-direction: column;
+    align-items:center;
+    justify-content: center;
+  }
+  .draw-title {
+    font-size: 10pt;
+    font-weight: bold;
+    margin-bottom: 10px;
+    color: #333;
+  }
+  .number-row {
+    display: flex;
+    gap: 3px;
+    /* flex-wrap: wrap; */
+  }
+  .number-box {
+    width: 35px;
+    height: 35px;
+    background: #007BFF;
+    color: #fff;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+    font-size: 11pt;
+  }
+  .number-box.super {
+    background: #ff5722;
+  }
+
+  /* Responsive Styling */
+  @media (max-width: 600px) {
+    .game-card {
+      width: 100%;
+      flex-direction: column;
+      align-items: flex-start;
+    }
+    .game-numbers {
+      width: 100%;
+      align-items: flex-start;
+      margin-top: 10px;
+    }
+    .profile-header {
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+    }
+    .profile-header img {
+      margin-bottom: 10px;
+    }
+    .number-row {
+      gap: 1px;
+      flex-wrap: wrap;
+    }
+    .number-box {
+      width: 30px;
+      height: 30px;      
+      font-size: 9pt;
+    }
+  }
+
+  /* FOOTER DESIGN  */ 
+ 
+  .Social{
+    display:flex; 
+    gap: 32px; 
+    justify-content: center;       
+  }
+  .Social i {
+    color: #21c401;
+    font-size:xx-large; 
+    animation-iteration-count:initial;    
+  }
+  .Social i:hover {
+    color: rgb(255, 255, 255);
+    transform: scale(1.5);
+    transition: all .1s ease-in-out;
+  }
+  .ItemList {
+    display: flex; 
+    flex-wrap: wrap;
+    justify-content: center;    
+    font-size: 13pt; 
+    gap: 18px; 
+    color: white; 
+    margin-top:20px; 
+    margin-bottom:40px; 
+    padding: 0 28px 0px 28px;
+  }
+  .ItemList li{
+    list-style-type: none;     
+  }
+  .ItemList a{
+    list-style-type: none;   
+    text-decoration: none;
+    color: white;
+  }
+  .ItemList :hover{
+    color: #d5d80d;
+    border-bottom:  #d5d80d 1px solid ;
+    text-decoration: double;
+    cursor:pointer;
+    /* transform: scale(1.5);
+    transition: all .1s ease-in-out; */
+  }
+  .FooterList{
+    display: flex; 
+    flex-direction: column; 
+    justify-content: center; color: white; 
+    gap:17px; 
+  }
+  .FooterList img {
+    width: 80px; 
+    margin: auto;
+  }
+  .FooterList p a{
+    font-size: 10pt; 
+    letter-spacing:1px; 
+    margin: auto;
+    color: white;
+    text-decoration: none;
+  }
+  
+  @media screen and (max-width: 600px){        
+    footer {  
+      /* position:relative;        */
+      bottom: 0;
+    }      
+    .ItemList {            
+        font-size: 10pt;       
+    }
+    .FooterList img {
+      width: 70px;        
+  }
+  .FooterList p a{
+      font-size: 8pt;  
+      letter-spacing: 1px;      
+  }
+  .FooterList p{
+    font-size: 8pt; 
+    letter-spacing:1px; 
+  } 
+
+}

@@ -1,0 +1,226 @@
+ /* Reset and Base Styling */
+ * {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+  }
+  body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: #f7f7f7;
+    color: #333;
+    min-height: 100vh; 
+  }
+  
+  .reset-container {
+    background: #fff;
+    width: 100%;
+    margin: 30px auto;
+    max-width: 900px;
+    border-radius: 10px;
+    padding: 30px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    text-align: center;
+  }
+   /* Header with Player Profile */
+   .reset-header {
+    text-align:left;
+    margin-bottom: 25px;
+  }
+  .reset-profile{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 15px;
+    margin-bottom: 10px;
+    background-color: #ffffff;
+    padding: 10px;
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  }
+  .reset-profile img {
+    width: 70px;
+    height: 70px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 2px solid #067200;
+  }
+  .profile-info h1 {
+    font-size: 14pt;
+    color: #333;
+  }
+  .profile-info p {
+    font-size: 10pt;
+    color: #575757;
+  }
+  /* Form Styling */
+  #resetForm {
+    background: #f7f7f7;
+    padding: 20px;
+    border-radius: 8px;
+    border: 1px solid #d6d6d6;
+    margin-bottom: 20px;
+  }
+  #resetForm h2 {
+    font-size: 14pt;
+    color: #067200;
+    margin-bottom: 10px;
+  }
+  #resetForm p {
+    font-size: 13pt;
+    color: #3d3d3d;
+    margin-bottom: 25px;
+  }
+  
+  form {
+    text-align: left;
+  }
+  .form-group {
+    margin-bottom: 20px;
+  }
+  .form-group label {
+    display: block;
+    margin-bottom: 8px;
+    font-size: 12pt;
+    font-weight: 500;
+    color: #3d3d3d;
+  }
+  .form-group input {
+    width: 100%;
+    padding: 12px 15px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 10pt;
+    transition: border 0.3s;  
+  }
+  .form-group input::placeholder {
+    color: #999;
+  }
+  .form-group input:focus {
+    border-color: #067200;
+    outline: none;
+  }
+  .form-button {
+    width: 100%;
+    background: #067200;
+    color: #fff;
+    padding: 15px;
+    font-size: 12pt;
+    letter-spacing: 1px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background 0.3s;
+  }
+  .form-button:hover {
+    background: #ad0000;
+  }
+  /* Responsive */
+  @media (max-width: 480px) {
+    .reset-container {
+      padding: 20px;
+    }
+    .profile-info h1 {
+      font-size: 1.3em;
+    }
+  }
+  /* Success Message */
+  .message {
+    text-align: center;
+    margin-top: 15px;
+    font-size: 1em;
+    color: #28a745;
+  }
+
+  /* FOOTER DESIGN  */ 
+  footer{    
+    background-color: black; 
+    display:flex;       
+    flex-direction: column;
+    padding: 20px; 
+    justify-content: center; 
+    margin-top: 50px;
+    bottom: 0;    
+  }
+  .Social{
+    display:flex; 
+    gap: 32px; 
+    justify-content: center;       
+  }
+  .Social i {
+    color: #21c401;
+    font-size:xx-large; 
+    animation-iteration-count:initial;    
+  }
+  .Social i:hover {
+    color: rgb(255, 255, 255);
+    transform: scale(1.5);
+    transition: all .1s ease-in-out;
+  }
+  .ItemList {
+    display: flex; 
+    flex-wrap: wrap;
+    justify-content: center;    
+    font-size: 13pt; 
+    gap: 18px; 
+    color: white; 
+    margin-top:20px; 
+    margin-bottom:40px; 
+    padding: 0 28px 0px 28px;
+  }
+  .ItemList li{
+    list-style-type: none;     
+  }
+  .ItemList a{
+    list-style-type: none;   
+    text-decoration: none;
+    color: white;
+  }
+  .ItemList :hover{
+    color: #d5d80d;
+    border-bottom:  #d5d80d 1px solid ;
+    text-decoration: double;
+    cursor:pointer;
+    /* transform: scale(1.5);
+    transition: all .1s ease-in-out; */
+  }
+  .FooterList{
+    display: flex; 
+    flex-direction: column; 
+    justify-content: center; color: white; 
+    gap:17px; 
+  }
+  .FooterList img {
+    width: 80px; 
+    margin: auto;
+  }
+  .FooterList p a{
+    font-size: 10pt; 
+    letter-spacing:1px; 
+    margin: auto;
+    color: white;
+    text-decoration: none;
+  }
+  
+  
+  @media screen and (max-width: 600px){
+    footer{
+      /* position:absolute;          */
+      /* bottom: 0; */
+      margin-top: 30%;    
+  } 
+  
+  .ItemList {            
+      font-size: 10pt;       
+  }
+  .FooterList img {
+    width: 70px;        
+}
+.FooterList p a{
+    font-size: 8pt;  
+    letter-spacing: 1px;      
+}
+.FooterList p{
+  font-size: 8pt; 
+  letter-spacing:1px; 
+} 
+  }

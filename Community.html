@@ -1,0 +1,756 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover" />
+  <title>Community</title>
+  <meta name="description" content="Community hub for NairaRain players"/>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css">
+  <link rel="stylesheet" href="./style.css">
+  <link rel="stylesheet" href="./Community.css">
+
+  <style></style>
+</head>
+<body>
+
+    <header class="header-navbar" >
+        <!-- <div class="mobile-menu-icon" id="mobileMenuIcon"> -->
+            <div class="mobile-menu-base" >
+                <div class="MenuCom">
+                    <p class="mobile-menu-icon" id="openMobile" aria-label="Open menu" >Menu<span><i class="fa-solid fa-ellipsis-vertical"></i></span></p>
+                    <div class="mobile-nav" id="mobileNav">
+                        <div class="mobileModal">
+                            <!-- <span class="close-menu">✖</span> -->
+                            <button aria-label="close" class="close-menu" id="closeMobile">✖</button>
+                            <nav class="mobile-links" aria-label="mobile-links">
+                                <a class="mobile-list"  href="./index.html">Home</a>
+                                <div>
+                                  <button class="mobile-list"   onclick="toggleMobileSub('gamesMobile')">Games ▾</button>
+                                  <div class="mobile-submenu" id="gamesMobile">
+                                    <a id="NairaRain-dropdown" href="./GamesPage.html">NairaRain Lotto <span>₦2,000,000</span></a>
+                                    <a id="Rapid500" href="./RapidGame3.html">NRL Rapid Game <span>₦500,000</span></a>
+                                    <a id="Rapid250" href="./RapidGame2.html">NRL Rapid Game <span>₦250,000</span></a>
+                                    <a id="Rapid150" href="./RapidGame1.html">NRL Rapid Game <span>₦150,000</span></a>
+                                  </div>
+                                </div>
+                        
+                                <div>
+                                  <button  class="mobile-list"  onclick="toggleMobileSub('resultsMobile')">Results ▾</button>
+                                  <div class="mobile-submenu" id="resultsMobile">
+                                    <a id="NairaRain-dropdown" href="./Result.html">NairaRain Lotto <span>Result</span></a>
+                                    <a id="Rapid500" href="./ResultRapid5.html">NRL Rapid Game <span>Result</span></a>                               
+                                  </div>
+                                </div>                            
+                                <a class="mobile-list"  href="./Community.html">Community</a>
+                                <a class="mobile-list"  href="./FAQ.html">FAQs</a>
+                                <!-- <a class="mobile-list"  href="#winners">Winners</a> -->
+                            </nav>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="profile" >
+                    <div class="profile-icon" onclick="toggleProfileDropdown()">My account<i class="fa-solid fa-user"></i></div>
+                    <!-- <a href="./loginPage.html"><span class="profile-icon">My account<i class="fa-solid fa-user"></i></span></a> -->
+                    <div class="profileDropdown" id="profileDropdown" onclick="toggleProfileDropdown()">
+                        <div class="profile-dropdownModal">
+                            <div class="dropdown" >
+                                <a href="#">Wallet Amount: ₦100,000</a>
+                                <a href="./profilepage.html">My Profile</a> 
+                                <a href="./payment.html">Deposit</a>                        
+                                <a href="./Gamehistory.html">Games History</a>
+                                <a href="./transactionhis.html">Transactions</a>
+                                <a href="./withdrawpage.html">Withdrawal</a>
+                                <a href="./profilepage.html">User Profile</a>
+                                <a href="#" onclick="logout()">Logout</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>               
+            </div>                
+        <!-- </div> -->  
+                   
+        <div class="navbar">
+            <div class="logo"> <a href="./index.html"><img src="./image/Naira rain lotto.png" alt="Logo"></a>
+            </div>            
+            <div class="nav-center" aria-label="Primary">
+                <div class="nav-item"><a class="nav-button" href="./index.html">Home</a></div>
+                <div class="nav-item"><a class="nav-button"  href="#games" onclick="toggleCenterDropdown(event,'games')">Games ▾</a>
+                    <div class="drop-it">
+                        <div class="center-dropdown" id="gamesDropdown">
+                            <div class="dropdown-games">
+                                <a id="NairaRain-dropdown" href="./GamesPage.html">NairaRain Lotto <span>₦2,000,000</span> </a>
+                                <a id="Rapid500" href="./RapidGame3.html">Rapid Game <span>₦500,000</span></a>
+                                <a id="Rapid250" href="./RapidGame2.html">Rapid Game <span>₦250,000</span></a>
+                                <a id="Rapid150" href="./RapidGame1.html">Rapid Game <span>₦150,000</span></a>
+                            </div>                          
+                        </div>
+                    </div>
+                </div>
+                <div class="nav-item"><a class="nav-button" href="./payment.html">Deposit</a></div>
+                <div class="nav-item"><a class="nav-button" href="#results" onclick="toggleCenterDropdown(event,'results')">Results ▾</a>  
+                    <div class="drop-it">                    
+                        <div class="center-dropdown" id="resultsDropdown">
+                            <div class="dropdown-games" id="dropdown-result" >
+                                <a id="NairaRain-dropdown" href="./Result.html">NairaRain Lotto <span>Result</span></a>
+                                <a id="Rapid500"  href="./ResultRapid5.html">NRL Rapid Game <span>Result</span></a>                                
+                            </div>                                
+                        </div>
+                    </div>                        
+                </div>                   
+                <!-- <div class="nav-item"><a class="nav-button" href="#testimonials">Testimonials</a></div> -->
+                                  
+            </div>
+        
+            <div class="actions">
+                <div class="nav-logsign" >
+                    <a href="./loginPage.html"><button id="nav-login" class="active">Login</button></a> 
+                    <a href="./SignupPage.html"><button id="nav-signup" class="active">Sign Up</button></a>
+                </div>                
+                <div class="pro-wallet">
+                    <div class="profile" onclick="toggleProfileDropdownx()">
+                        <!-- <div class="profile-icon"><i class="fa-solid fa-user"></i></div> -->
+                        <div class="profileDropdown1" id="profileDropdown1"> 
+                            <div class="profileDropdown1-modal">                               
+                                <div class="dropdown">
+                                    <a href="#">Wallet Amount: ₦100,000</a>
+                                    <a href="./profilepage.html">My Profile</a>
+                                    <a href="./payment.html">Deposit</a>                         
+                                    <a href="./Gamehistory.html">Games History</a>
+                                    <a href="./transactionhis.html">Transactions</a>
+                                    <a href="./withdrawpage.html">Result</a>
+                                    <a href="./profilepage.html">User Profile</a>
+                                    <a href="#" onclick="logout()">Logout</a>
+                                </div>
+                            </div>                               
+                        </div>
+                    </div>                       
+    
+                    <!-- <div class="wallet" onclick="toggleWalletDropdown()">
+                        <i class="fa-solid fa-wallet"></i> <span id="walletAmount">₦12,000.00</span>
+                        <div class="wallet-dropdown" id="walletDropdown">
+                        <p>Available Balance: <span id="availableBalance">₦12,000.00</span></p>                            
+                    </div> -->
+                </div>                     
+            </div>
+        </div>
+    </header>          
+        
+    <script>
+          
+    function toggleProfileDropdown() {
+      var dropdown = document.getElementById("profileDropdown");
+      dropdown.style.display = dropdown.style.display === "flex" ? "none" : "flex";
+    }
+    function toggleProfileDropdownx() {
+      var dropdown = document.getElementById("profileDropdown1");
+      dropdown.style.display = dropdown.style.display === "flex" ? "none" : "flex";
+    } 
+      // Toggle the profile dropdown visibility
+      function toggleMobileNav() {
+            const mobileNav = document.getElementById('mobileNav');
+            mobileNav.style.display = mobileNav.style.display === 'flex' ? 'none' : 'flex';
+          }              
+    
+        //   function toggleMobileNavS() {
+        //     const mobileNavS = document.getElementById('mobileNavS');
+        //     mobileNavS.style.display = mobileNavS.style.display === 'flex' ? 'none' : 'flex';
+        //   }
+    
+        // Center dropdown toggles (desktop)
+        
+    // Center dropdown toggles (desktop)
+    function toggleCenterDropdown(e, which){
+    e.preventDefault();
+    const games = document.getElementById('gamesDropdown');
+    const results = document.getElementById('resultsDropdown');
+    if(which === 'games'){
+    const show = games.style.display !== 'block';
+    games.style.display = show ? 'block' : 'none';
+    results.style.display = 'none';
+    }else if(which === 'results'){
+    const show = results.style.display !== 'block';
+    results.style.display = show ? 'block' : 'none';
+    games.style.display = 'none';
+    }
+    }
+    
+    // Close dropdowns when clicking outside
+    document.addEventListener('click', function(e){
+    const isNav = e.target.closest('.nav-center');
+    const isBtn = e.target.closest('.nav-button');
+    if(!isNav && !isBtn){
+    document.getElementById('gamesDropdown').style.display = 'none';
+    document.getElementById('resultsDropdown').style.display = 'none';
+    }
+    });
+    
+    // Mobile panel controls & submenus
+    document.getElementById('openMobile').addEventListener('click', ()=>{
+    document.getElementById('mobileNav').style.display = 'block';
+    });
+    document.getElementById('closeMobile').addEventListener('click', ()=>{
+    document.getElementById('mobileNav').style.display = 'none';
+    });
+    
+    function toggleMobileSub(id){
+    const el = document.getElementById(id);
+    el.style.display = el.style.display === 'block' ? 'none' : 'block';
+    }     
+          
+    
+          function toggleWalletDropdown() {
+    const walletDropdown = document.getElementById('walletDropdown');
+    walletDropdown.style.display = walletDropdown.style.display === 'block' ? 'none' : 'block';
+    }
+    
+    function updateWallet(amount, pending) {
+    document.getElementById('walletAmount').textContent = `₦${amount.toFixed(2)}`;
+    document.getElementById('availableBalance').textContent = `₦${amount.toFixed(2)}`;
+    // document.getElementById('pendingWinnings').textContent = `₦${pending.toFixed(2)}`;
+    }
+    
+    // Example update (this would be dynamically set based on real user data)
+    //   updateWallet(1200.50, 250.00);
+    
+    // Close mobile nav when clicking outside the panel or pressing Escape
+    document.getElementById('mobileNav').addEventListener('click', function(e){
+    // if click target is the overlay (not the inner panel), close
+    if(e.target === this) {
+    this.style.display = 'none';
+    }
+    });
+    document.addEventListener('keydown', function(e){
+    if(e.key === 'Escape'){
+    document.getElementById('mobileNav').style.display = 'none';
+    closeAllPopups();
+    }
+    });
+    </script> 
+
+
+
+  <div class="wrap fade-in" id="pageContent" aria-hidden="false">
+    <div class="header-mainer">
+        <div class="header-actions">
+            <div class="chip">NairaRain Lotto Community</div>
+        </div>
+
+        <div class="brand">
+            <!-- <div class="logo" aria-hidden>₦</div>
+            <div>
+            <h1>NairaRain Community</h1>
+            <p class="muted">News • Live Weather • Player Feed</p>
+            </div> -->
+
+            <div class="datetime-panel" aria-hidden>
+            <div class="dt-card" role="note" aria-label="Current date and time">
+                <div class="dt-left">
+                <div class="num" id="dateNum">8</div>
+                <div class="mon" id="dateMon">Dec</div>
+                </div>
+                <div class="dt-right">
+                <div class="time" id="dateTime">14:00:00</div>
+                <div class="weekday" id="dateWeek">Mon — Dec 8, 2025</div>
+                </div>
+            </div>
+            </div>
+        </div>      
+    </div>
+
+    <main class="main-grid">
+      <section>
+        <div class="panel" aria-labelledby="newsTitle">
+          <h2 id="newsTitle">Latest News</h2>
+          <div id="newsList" class="news-list" aria-live="polite"></div>
+          <div class="news-controls" style="justify-content:center;margin-top:12px;display:flex">
+            <button id="loadMoreNews" class="cta" style="padding:8px 12px">Load More</button>
+          </div>
+        </div>
+
+        <div style="height:14px"></div>
+
+        <div class="panel">
+          <h2>Community Feed</h2>
+          <div class="feed" id="feed" aria-live="polite"></div>
+
+          <div style="margin-top:12px;display:flex;gap:8px">
+            <input id="postInput" placeholder="Share a tip, a win, or a hello..." style="flex:1;padding:10px;border-radius:10px;border:1px solid #eef6ff;background:transparent" />
+            <button class="cta" id="postBtn">Post</button>
+          </div>
+        </div>
+
+        <div style="height:14px"></div>
+
+        <div class="panel notice">
+          <h3>Responsible Play</h3>
+          <p>NairaRain Lotto is intended for entertainment and lottery only. Participation is only for individuals <strong>aged 18 years and above</strong>. Playing the lottery involves risk, never play with money you cannot afford to lose.</p>
+          <!-- <p style="margin:6px 0">If you or someone you care about is experiencing problems with gambling, help is available. Below are resources and helplines (local and international) you can contact for free support.</p> -->
+          <!-- <div class="help-list">
+            <a href="https://findahelpline.com/countries/ng/topics/gambling" target="_blank" rel="noopener">Find a Helpline — Gambling (Nigeria)</a>
+            <a href="https://gamblersanonymous.org/" target="_blank" rel="noopener">Gamblers Anonymous — international meetings & resources</a>
+            <a href="https://gamblingtherapy.org/" target="_blank" rel="noopener">Gambling Therapy — online support & forums</a>
+            <a href="https://responsiblegambling.org.za/" target="_blank" rel="noopener">Responsible Gambling Foundation (South Africa)</a>
+            <a href="https://www.psychgam.com/" target="_blank" rel="noopener">PsychGam — addiction services in Nigeria</a>
+          </div> -->
+        </div>
+
+        <div style="height:14px"></div>
+
+        <div class="panel">
+          <h3>How NairaRain lotto proceeds help communities</h3>
+          <p>Proceeds from NairaRain Lotto often support public programs and community services. Below are examples showing how player participation can benefit society.</p>
+
+          <div class="impact-grid" id="impactGrid">
+            <div class="impact-card">
+              <img class="impact-media" src="./image/healthcare.jpg" alt="Medical clinic" />
+              <div class="impact-body">
+                <h4>Health Programs</h4>
+                <p>Funds support clinics, immunisations and medical outreach that improve community health outcomes.</p>
+              </div>
+            </div>
+
+            <div class="impact-card">
+              <img class="impact-media" src="./image/Education card.jpg" alt="Students in classroom" />
+              <div class="impact-body">
+                <h4>Education & Scholarships</h4>
+                <p>Scholarships, school supplies and classroom upgrades help young people reach their potential.</p>
+              </div>
+            </div>
+
+            <div class="impact-card">
+              <img class="impact-media" src="./image/sport card.jpg" alt="Young athletes" />
+              <div class="impact-body">
+                <h4>Sports & Youth Development</h4>
+                <p>Sponsorships, local tournaments and facilities encourage healthy lifestyles and talent development.</p>
+              </div>
+            </div>
+
+            <div class="impact-card">
+              <img class="impact-media" src="./image/community infrastructure card.jpg" alt="Community centre" />
+              <div class="impact-body">
+                <h4>Community Infrastructure</h4>
+                <p>Local projects — from community centres to small infrastructure — strengthen neighbourhoods relationship.</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- <p style="margin:8px 0 0 0;font-size:13px;color:var(--muted)">For transparency, check our official <a href="#" target="_blank" rel="noopener">Proceeds & Impact</a> page (link your accounting/CSR page here)</p> -->
+        </div>
+
+      </section>
+
+      <aside>
+        <div class="side-card">
+          <div class="panel weather-card">
+            <div style="display:flex;justify-content:space-between;align-items:center">
+              <div>
+                <h3 style="margin:0">Live Weather</h3>
+                <div id="weatherLocation" class="muted" style="font-size:10pt">Enter a city, or use my location</div>
+              </div>
+              <div style="text-align:right">
+                <div id="temp" class="temp">--°C</div>
+                <div id="weatherDesc" class="muted">—</div>
+              </div>
+            </div>
+
+            <div style="height:12px"></div>
+
+            <div class="weather-row">
+              <div class="weather-col">
+                <div class="muted">Humidity</div>
+                <div id="humidity">--%</div>
+              </div>
+              <div class="weather-col">
+                <div class="muted">Wind</div>
+                <div id="wind">-- m/s</div>
+              </div>
+              <div class="weather-col">
+                <div class="muted">Feels</div>
+                <div id="feels">--°C</div>
+              </div>
+            </div>
+
+            <div style="height:12px"></div>
+
+            <div class="forecast" id="forecast" aria-hidden="false"></div>
+
+            <div class="controls">
+              <button class="cta" id="cityBtn" style="padding:8px 10px">Get weather</button>
+              <button id="geoBtn" style="padding:8px;border-radius:8px;border:1px solid #e6eef6;background:transparent">Use my location</button>
+              <select id="unitToggle" title="Units">
+                <option value="metric">°C</option>
+                <option value="imperial">°F</option>
+              </select>
+            </div>
+
+            <!-- <small class="muted" style="display:block;margin-top:8px">Add your OpenWeatherMap API Key in the top of the file (OWM_API_KEY) for live data. The forecast shows 5-day summary.</small> -->
+          </div>
+
+          <div class="panel">
+            <h3>Quick Links</h3>
+            <div class="links-grid" id="linksGrid">
+              <!-- Result Checker card (expands inline) -->
+              <div class="link-card" id="checkerCard" tabindex="0" aria-expanded="false" role="button" aria-controls="checkerSub">
+                <div class="icon">RC</div>
+                <div class="meta">
+                  <div class="title">Result Checker</div>
+                  <div class="desc">Check latest game results</div>
+                </div>
+                <div class="action" aria-hidden>▾</div>
+              </div>
+
+              <!-- This submenu appears inline under the checker card and pushes the other cards down -->
+              <div class="inline-submenu" id="checkerSub" aria-hidden="true">
+                <a href="./Result.html" target="_self">NairaRain Lotto Result</a>
+                <a href="./ResultRapid5.html" target="_self">Rapid Games Result</a>
+              </div>
+
+              <!-- Other quick link cards (rows) -->
+              <a class="link-card" href="./AboutUs.html">
+                <div class="icon">ℹ</div>
+                <div class="meta">
+                  <div class="title">How to Play</div>
+                  <div class="desc">Learn rules and tips</div>
+                </div>
+                <div class="action" aria-hidden>›</div>
+              </a>
+
+              <a class="link-card" href="./Support.html">
+                <div class="icon">✉</div>
+                <div class="meta">
+                  <div class="title">Support</div>
+                  <div class="desc">Contact us for help and questions</div>
+                </div>
+                <div class="action" aria-hidden>›</div>
+              </a>
+
+              <a class="link-card" href="./payment.html">
+                <div class="icon">P</div>
+                <div class="meta">
+                  <div class="title">Payment</div>
+                  <div class="desc">See where player fund their wallet</div>
+                </div>
+                <div class="action" aria-hidden>›</div>
+              </a>
+
+            </div>
+          </div>
+
+          <div class="panel notice">
+            <h3>Quick Safety Reminders</h3>
+            <ul>
+              <li>Only play if you are 18 years or older.</li>
+              <li>Set a budget and stick to it.</li>
+              <li>If gambling is causing harm, seek help, free support is available.</li>
+            </ul>
+          </div>
+        </div>
+      </aside>
+    </main>
+
+    <div style="height:18px"></div>
+
+    <div class="subscribe-panel" role="region" aria-label="Subscribe for updates">
+      <div class="subscribe-left">
+        <strong>Subscribe for updates</strong>
+        <div class="muted">Get winners announcements, community tips and impact news.</div>
+      </div>
+      <input id="emailSub" placeholder="games@example.com" aria-label="email address" />
+      <button class="cta" id="subBtn">Subscribe</button>
+    </div>
+
+    <!-- <div class="playRes">
+      <div class="muted">Play responsibly — 18+</div>
+    </div> -->
+
+  </div>
+
+  <div class="thanks-bar" aria-hidden>
+    <div class="thanks-inner">
+        <div class="thanks-left">
+            <h3>Thanks for Playing</h3> 
+            <img src="./image/Naira rain lotto.png" alt="">
+        </div>
+      <p>Because of you, communities grow. Thank you for playing responsibly and supporting local causes.</p>
+      <!-- <button class="thanks-cta" onclick="document.getElementById('pageContent').scrollIntoView({behavior:'smooth'})" style="margin-top:8px;padding:10px 18px;border-radius:10px;background:rgba(255,255,255,0.12);border:1px solid rgba(255,255,255,0.12);cursor:pointer">See Community Impact</button> -->
+    </div>
+  </div>
+
+  <script>
+    /* --------------------
+       Settings & sample data
+       -------------------- */
+    const OWM_API_KEY = ''; // <-- Insert OpenWeatherMap API key here for live weather
+    let UNIT = localStorage.getItem('nairac_unit') || 'metric';
+
+    const sampleNews = [
+      {title:"Weekly Jackpot Update — ₦2,500,000 Won!",desc:"A lucky player from Ibadan matched 5 numbers on Friday draw.",time:"2025-11-28", img: 'https://images.unsplash.com/photo-1542314831-068cd1dbfeeb?q=80&w=1400&auto=format&fit=crop&ixlib=rb-4.0.3&s=1a9b3f7b3a7e0f2b'},
+      {title:"Tips: Balanced Picks",desc:"Player guide with stats and number ideas.",time:"2025-11-25", img: 'https://images.unsplash.com/photo-1515378791036-0648a3ef77b2?q=80&w=1400&auto=format&fit=crop&ixlib=rb-4.0.3&s=2b8c3d9a'},
+      {title:"Play on Mobile",desc:"You can play and get quicker checks and notifications.",time:"2025-11-14", img: 'https://images.unsplash.com/photo-1511707171634-5f897ff02aa9?q=80&w=1400&auto=format&fit=crop&ixlib=rb-4.0.3&s=3c7d9b5f'}
+    ];
+
+    const sampleMore = [
+      {title:"Community Spotlight: Winner story",desc:"Hear from a recent winner who donated part of their prize to a school.",time:"2025-10-20", img: 'http://127.0.0.1:5502/image/community%20infrastructure%20card.jpg'},
+      {title:"Feature: Responsible play tips",desc:"Simple budgeting techniques shared by our community leaders.",time:"2025-09-12", img: 'https://images.unsplash.com/photo-1515879218367-8466d910aaa4?q=80&w=1400&auto=format&fit=crop&ixlib=rb-4.0.3&s=5e6b7c8d'}
+    ];
+
+    const sampleFeed = [
+      {user:"Ada",msg:"Just tried the new quick checker — it's neat! Good luck all."},
+      {user:"Chike",msg:"Anyone playing the 5/27 combo tonight?"},
+      {user:"Ngozi",msg:"Booked 3 tickets. Feeling lucky"}
+    ];
+
+    /* --------------------
+       Render helpers
+       -------------------- */
+    function renderNews(list = sampleNews){
+      const el = document.getElementById('newsList');el.innerHTML='';
+      list.forEach(n=>{
+        const node = document.createElement('div');node.className='news-item';
+        const img = `<img class="news-thumb" src="${escapeHtml(n.img)}" alt="${escapeHtml(n.title)}">`;
+        node.innerHTML = `${img}<div class="news-body"><h3>${escapeHtml(n.title)}</h3><p>${escapeHtml(n.desc)}</p><div class="news-meta muted">${formatDate(n.time)}</div></div>`;
+        el.appendChild(node);
+      })
+    }
+
+    function addMoreNews(){ sampleMore.forEach(i=> sampleNews.push(i)); renderNews(); }
+    document.addEventListener('click', function(e){ if(e.target && e.target.id === 'loadMoreNews') addMoreNews(); });
+
+    function renderFeed(){
+      const el = document.getElementById('feed');el.innerHTML='';
+      sampleFeed.forEach(p=>{
+        const node = document.createElement('div');node.className='post';
+        node.innerHTML = `<div class="avatar">${p.user[0]}</div><div><h5 style="margin:0">${escapeHtml(p.user)}</h5><p class="muted" style="margin:6px 0 0 0">${escapeHtml(p.msg)}</p></div>`;
+        el.appendChild(node);
+      })
+    }
+
+    function formatDate(iso){try{return new Date(iso).toLocaleDateString(undefined,{year:'numeric',month:'short',day:'numeric'})}catch(e){return iso}}
+    function escapeHtml(s){return String(s).replace(/[&<>\\"]/g,m=>({"&":"&amp;","<":"&lt;",">":"&gt;","\"":"&quot;"})[m]||m)}
+
+    /* --------------------
+       Checker card behavior: toggle inline submenu with smooth animation (pushes cards down)
+       Add subtle chevron bounce animation on open
+       -------------------- */
+    const checkerCard = document.getElementById('checkerCard');
+    const checkerSub = document.getElementById('checkerSub');
+    const checkerAction = checkerCard.querySelector('.action');
+
+    function openCheckerSub(){
+      checkerSub.style.display = 'block';
+      checkerSub.offsetHeight;
+      checkerSub.classList.add('open');
+      checkerSub.style.maxHeight = checkerSub.scrollHeight + 'px';
+      checkerSub.setAttribute('aria-hidden','false');
+      checkerCard.setAttribute('aria-expanded','true');
+
+      // trigger chevron bounce
+      if(checkerAction){
+        checkerAction.classList.remove('bounce');
+        // allow reflow to restart animation
+        void checkerAction.offsetWidth;
+        checkerAction.classList.add('bounce');
+        // remove bounce class after animation completes
+        checkerAction.addEventListener('animationend', function _clean(){ checkerAction.classList.remove('bounce'); checkerAction.removeEventListener('animationend', _clean); });
+      }
+    }
+
+    function closeCheckerSub(){
+      checkerSub.style.maxHeight = checkerSub.scrollHeight + 'px';
+      requestAnimationFrame(()=>{
+        checkerSub.style.maxHeight = '0';
+        checkerSub.classList.remove('open');
+        checkerSub.setAttribute('aria-hidden','true');
+        checkerCard.setAttribute('aria-expanded','false');
+      });
+      checkerSub.addEventListener('transitionend', function _hide(){ checkerSub.style.display='none'; checkerSub.removeEventListener('transitionend', _hide); });
+    }
+
+    function toggleChecker(e){
+      const isOpen = checkerSub.classList.contains('open');
+      if(isOpen) closeCheckerSub(); else openCheckerSub();
+    }
+
+    checkerCard.addEventListener('click', toggleChecker);
+    checkerCard.addEventListener('keydown', (e)=>{ if(e.key === 'Enter' || e.key === ' ') { e.preventDefault(); toggleChecker(); } });
+
+    // close submenu if click outside
+    document.addEventListener('click', (e)=>{
+      if(!checkerCard.contains(e.target) && !checkerSub.contains(e.target)){
+        if(checkerSub.classList.contains('open')) closeCheckerSub();
+      }
+    });
+
+    /* --------------------
+       Drawer functions (kept if you decide to use them later)
+       -------------------- */
+    const drawer = document.getElementById('resultDrawer');
+    const backdrop = document.getElementById('drawerBackdrop');
+
+    /* --------------------
+       Subscribe
+       -------------------- */
+    document.getElementById('subBtn').addEventListener('click',()=>{
+      const email = document.getElementById('emailSub').value.trim();
+      if(!email||!email.includes('@')) return alert('Please enter a valid email');
+      alert('Thanks — ' + email + ' has been subscribed.');
+      document.getElementById('emailSub').value='';
+      document.querySelector('.subscribe-panel').animate([{transform:'scale(1)'},{transform:'scale(.98)'}],{duration:140,iterations:1,fill:'both'});
+    })
+
+    /* --------------------
+       Posting in feed
+       -------------------- */
+    document.getElementById('postBtn').addEventListener('click',()=>{
+      const v = document.getElementById('postInput').value.trim();
+      if(!v) return alert('Write something to post.');
+      sampleFeed.unshift({user:'You',msg:v});renderFeed();document.getElementById('postInput').value='';
+    })
+
+    /* --------------------
+       Date & time
+       -------------------- */
+    function updateDateTime(){
+      const now = new Date();
+      document.getElementById('dateNum').textContent = now.getDate();
+      document.getElementById('dateMon').textContent = now.toLocaleString(undefined,{month:'short'});
+      document.getElementById('dateTime').textContent = now.toLocaleTimeString(undefined,{hour:'2-digit',minute:'2-digit',second:'2-digit'});
+      document.getElementById('dateWeek').textContent = now.toLocaleString(undefined,{weekday:'short',month:'short',day:'numeric',year:'numeric'});
+      
+    }
+    setInterval(updateDateTime,1000);updateDateTime();
+
+    /* --------------------
+       Weather functions (current + 5-day)
+       -------------------- */
+    document.getElementById('cityBtn').addEventListener('click',()=>{const city = document.getElementById('weatherLocation').dataset.city || 'Lagos';getWeatherCity(city)});
+    document.getElementById('geoBtn').addEventListener('click',()=>{useGeo()});
+    document.getElementById('unitToggle').value = UNIT;
+    document.getElementById('unitToggle').addEventListener('change',e=>{UNIT = e.target.value;localStorage.setItem('nairac_unit',UNIT);const cityText = document.getElementById('weatherLocation').dataset.city || 'Lagos';getWeatherCity(cityText)});
+
+    async function getWeatherCity(city){
+      document.getElementById('weatherLocation').textContent = city + ' — fetching...';
+      if(!OWM_API_KEY){setWeatherDemo(city);return}
+      try{
+        const [curr,fore] = await Promise.all([
+          fetch(`https://api.openweathermap.org/data/2.5/weather?q=${encodeURIComponent(city)}&units=${UNIT}&appid=${OWM_API_KEY}`),
+          fetch(`https://api.openweathermap.org/data/2.5/forecast?q=${encodeURIComponent(city)}&units=${UNIT}&appid=${OWM_API_KEY}`)
+        ]);
+        if(!curr.ok || !fore.ok) throw new Error('Fetch failed');
+        const jCurr = await curr.json();
+        const jFor = await fore.json();
+        applyWeather(jCurr);applyForecast(jFor);
+        document.getElementById('weatherLocation').textContent = `${jCurr.name} — ${jCurr.sys && jCurr.sys.country ? jCurr.sys.country : ''}`;
+        document.getElementById('weatherLocation').dataset.city = city;
+      }catch(err){console.warn(err);alert('Could not fetch live weather. Make sure your OpenWeatherMap API key is valid and you have CORS/network access. Falling back to demo.');setWeatherDemo(city)}
+    }
+
+    async function getWeatherCoords(lat,lon){
+      if(!OWM_API_KEY){setWeatherDemo('Your location');return}
+      try{
+        const [curr,fore] = await Promise.all([
+          fetch(`https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&units=${UNIT}&appid=${OWM_API_KEY}`),
+          fetch(`https://api.openweathermap.org/data/2.5/forecast?lat=${lat}&lon=${lon}&units=${UNIT}&appid=${OWM_API_KEY}`)
+        ]);
+        const jCurr = await curr.json();
+        const jFor = await fore.json();
+        applyWeather(jCurr);applyForecast(jFor);
+        document.getElementById('weatherLocation').textContent = `${jCurr.name} — ${jCurr.sys && jCurr.sys.country ? jCurr.sys.country : ''}`;
+        document.getElementById('weatherLocation').dataset.city = jCurr.name || 'Your location';
+      }catch(e){console.warn(e);setWeatherDemo('Your location')}
+    }
+
+    function applyWeather(data){
+      if(!data || !data.main) return setWeatherDemo();
+      document.getElementById('temp').textContent = Math.round(data.main.temp) + (UNIT==='metric'?'°C':'°F');
+      document.getElementById('weatherDesc').textContent = capitalize(data.weather?.[0]?.description || '—');
+      document.getElementById('humidity').textContent = (data.main.humidity ?? '--') + '%';
+      document.getElementById('wind').textContent = ((data.wind && data.wind.speed) || '--') + (UNIT==='metric'?' m/s':' mph');
+      document.getElementById('feels').textContent = Math.round(data.main.feels_like || 0) + (UNIT==='metric'?'°C':'°F');
+    }
+
+    function applyForecast(data){
+      const container = document.getElementById('forecast');container.innerHTML='';
+      if(!data || !data.list){container.innerHTML = '<div class="muted">No forecast available</div>';return}
+      const days = {};
+      data.list.forEach(item=>{
+        const d = new Date(item.dt * 1000);
+        const key = d.toISOString().split('T')[0];
+        if(!days[key]) days[key] = [];
+        days[key].push(item);
+      });
+      const keys = Object.keys(days).slice(0,5);
+      keys.forEach(k=>{
+        const items = days[k];
+        let best = items.reduce((acc,it)=>{const hour = new Date(it.dt*1000).getHours();const diff = Math.abs(hour - 12);return (acc.diff === undefined || diff < acc.diff) ? {it,diff} : acc;},{}).it || items[0];
+        const d = new Date(best.dt * 1000);
+        const dayName = d.toLocaleDateString(undefined,{weekday:'short',month:'short',day:'numeric'});
+        const icon = best.weather?.[0]?.icon;
+        const maxTemp = Math.round(Math.max(...items.map(i=>i.main.temp_max)));
+        const minTemp = Math.round(Math.min(...items.map(i=>i.main.temp_min)));
+        const node = document.createElement('div');node.className='day';
+        node.innerHTML = `<div class="d">${dayName}</div><img src="https://openweathermap.org/img/wn/${icon}@2x.png" alt="${escapeHtml(best.weather?.[0]?.description||'')}"><div class="t">${maxTemp}/${minTemp} ${UNIT==='metric'?'°C':'°F'}</div>`;
+        container.appendChild(node);
+      });
+    }
+
+    function setWeatherDemo(city){
+      const demo = {name: city || 'Lagos',main:{temp:28,feels_like:30,humidity:78},wind:{speed:3},weather:[{description:'Partly cloudy',icon:'03d'}]};
+      applyWeather(demo);
+      const today = new Date();
+      const demoData = {list:[]};
+      for(let i=0;i<5;i++){const d = new Date(today);d.setDate(d.getDate()+i);demoData.list.push({dt:Math.floor(d.getTime()/1000),main:{temp_max:28+i,temp_min:22+i},weather:[{description:'Partly cloudy',icon:'03d'}]});}
+      const fakeList = demoData.list.map(it=>({dt:it.dt, main:{temp: (it.main.temp_max+it.main.temp_min)/2, temp_max:it.main.temp_max, temp_min:it.main.temp_min}, weather:it.weather}));
+      applyForecast({list:fakeList});
+      document.getElementById('weatherLocation').textContent = city + ' — demo';
+      document.getElementById('weatherLocation').dataset.city = city;
+    }
+
+    function capitalize(s){return s ? s.charAt(0).toUpperCase()+s.slice(1) : s}
+
+    function useGeo(){
+      if(!navigator.geolocation){alert('Geolocation not supported');return}
+      document.getElementById('weatherLocation').textContent = 'Detecting location...';
+      navigator.geolocation.getCurrentPosition(pos=>{getWeatherCoords(pos.coords.latitude,pos.coords.longitude)},err=>{alert('Location failed, falling back to Lagos Weather.');setWeatherDemo('Lagos')})
+    }
+
+    /* --------------------
+       Init
+       -------------------- */
+    function renderAll(){renderNews();renderFeed();}
+    renderAll();
+
+    if(OWM_API_KEY) useGeo(); else setWeatherDemo('Lagos');
+
+    document.getElementById('cityBtn').addEventListener('click',()=>{const city = document.getElementById('weatherLocation').dataset.city || 'Lagos';getWeatherCity(city)});
+
+  </script>
+
+  <!-- FOOTER DESIGN -->    
+<footer class="">
+    <div class="Social">        
+        <a href="/"><i class="fa-brands fa-square-instagram fa-bounce"></i></a>
+        <a href="/"><i class="fa-brands fa-square-x-twitter fa-bounce"></i></a>
+        <a href="/"><i class="fa-brands fa-square-facebook fa-bounce"></i></a>
+    </div>
+    <ul class="ItemList">
+      <li><a href="./userlogin.html">Home</a></li>                  
+      <li><a href="./AboutUs.html">About Us</a></li>          
+      <li><a href="./Support.html">Support</a></li>
+      <li><a href="./FAQ.html">FAQs</a></li>  
+      <li><a href="./Rules.html">Terms</a></li>
+      <li><a href="./Privacy.html">Privacy Policy</a></li>
+      <li><a href="./ContactUs.html">Contact Us</a></li>
+      <li><a href="./Community.html">Community</a></li>
+    </ul>
+    <div class="FooterList">
+        <img src="./image/Naira rain lotto.png" alt="" class="">
+        <p class=""><a href="https://www.gambleaware.org/" target="_blank">begambleawear.org</a></p>
+        <p class="">© 2023 NairaRain Lotto | 18+</p>
+    </div>
+  </footer>
+
+
+</body>
+</html>

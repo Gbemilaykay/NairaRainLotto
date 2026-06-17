@@ -1,0 +1,886 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Salary4Life</title>
+    <link rel="stylesheet" href="./style.css">
+    <link rel="stylesheet" href="./tailwindstyle.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"/>   
+    <script src="https://kit.fontawesome.com/yourcode.js" crossorigin="anonymous"></script>
+</head>
+<body data-new-gr-c-s-check-loaded="14.1045.0" data-gr-ext-installed=""> 
+    <div id="root"><div class="App">
+
+        <header class="header-navbar" >
+            <!-- <div class="mobile-menu-icon" id="mobileMenuIcon"> -->
+                <div class="mobile-menu-base" >
+                    <div class="MenuCom">
+                        <p class="mobile-menu-icon" id="openMobile" aria-label="Open menu" >Menu<span><i class="fa-solid fa-ellipsis-vertical"></i></span></p>
+                        <div class="mobile-nav" id="mobileNav">
+                            <div class="mobileModal">
+                                <!-- <span class="close-menu">✖</span> -->
+                                <button aria-label="close" class="close-menu" id="closeMobile">✖</button>
+                                <nav class="mobile-links" aria-label="mobile-links">
+                                    <a class="mobile-list"  href="./index.html">Home</a>
+                                    <div>
+                                      <button class="mobile-list"   onclick="toggleMobileSub('gamesMobile')">Games ▾</button>
+                                      <div class="mobile-submenu" id="gamesMobile">
+                                        <a id="NairaRain-dropdown" href="./GamesPage.html">NairaRain Lotto <span>₦2,000,000</span></a>
+                                        <a id="Rapid500" href="./RapidGame3.html">NRL Rapid Game <span>₦500,000</span></a>
+                                        <a id="Rapid250" href="./RapidGame2.html">NRL Rapid Game <span>₦250,000</span></a>
+                                        <a id="Rapid150" href="./RapidGame1.html">NRL Rapid Game <span>₦150,000</span></a>
+                                      </div>
+                                    </div>
+                            
+                                    <div>
+                                      <button  class="mobile-list"  onclick="toggleMobileSub('resultsMobile')">Results ▾</button>
+                                      <div class="mobile-submenu" id="resultsMobile">
+                                        <a id="NairaRain-dropdown" href="./Result.html">NairaRain Lotto <span>Result</span></a>
+                                        <a id="Rapid500" href="./ResultRapid5.html">NRL Rapid Game <span>Result</span></a>                               
+                                      </div>
+                                    </div>                            
+                                    <a class="mobile-list"  href="./Community.html">Community</a>
+                                    <a class="mobile-list"  href="./FAQ.html">FAQs</a>
+                                    <!-- <a class="mobile-list"  href="#winners">Winners</a> -->
+                                </nav>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="profile" >
+                        <div class="profile-icon" onclick="toggleProfileDropdown()">My account<i class="fa-solid fa-user"></i></div>
+                        <!-- <a href="./loginPage.html"><span class="profile-icon">My account<i class="fa-solid fa-user"></i></span></a> -->
+                        <div class="profileDropdown" id="profileDropdown" onclick="toggleProfileDropdown()">
+                            <div class="profile-dropdownModal">
+                                <div class="dropdown" >
+                                    <a href="#">Wallet Amount: ₦100,000</a>
+                                    <a href="./profilepage.html">My Profile</a> 
+                                    <a href="./payment.html">Deposit</a>                        
+                                    <a href="./Gamehistory.html">Games History</a>
+                                    <a href="./transactionhis.html">Transactions</a>
+                                    <a href="./withdrawpage.html">Withdrawal</a>
+                                    <a href="./profilepage.html">User Profile</a>
+                                    <a href="#" onclick="logout()">Logout</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>               
+                </div>                
+            <!-- </div> -->  
+                       
+            <div class="navbar">
+                <div class="logo"> <a href="./index.html"><img src="./image/Naira rain lotto.png" alt="Logo"></a>
+                </div>            
+                <div class="nav-center" aria-label="Primary">
+                    <div class="nav-item"><a class="nav-button" href="./index.html">Home</a></div>
+                    <div class="nav-item"><a class="nav-button"  href="#games" onclick="toggleCenterDropdown(event,'games')">Games ▾</a>
+                        <div class="drop-it">
+                            <div class="center-dropdown" id="gamesDropdown">
+                                <div class="dropdown-games">
+                                    <a id="NairaRain-dropdown" href="./GamesPage.html">NairaRain Lotto <span>₦2,000,000</span> </a>
+                                    <a id="Rapid500" href="./RapidGame3.html">Rapid Game <span>₦500,000</span></a>
+                                    <a id="Rapid250" href="./RapidGame2.html">Rapid Game <span>₦250,000</span></a>
+                                    <a id="Rapid150" href="./RapidGame1.html">Rapid Game <span>₦150,000</span></a>
+                                </div>                          
+                            </div>
+                        </div>
+                    </div>
+                    <div class="nav-item"><a class="nav-button" href="./payment.html">Deposit</a></div>
+                    <div class="nav-item"><a class="nav-button" href="#results" onclick="toggleCenterDropdown(event,'results')">Results ▾</a>  
+                        <div class="drop-it">                    
+                            <div class="center-dropdown" id="resultsDropdown">
+                                <div class="dropdown-games" id="dropdown-result" >
+                                    <a id="NairaRain-dropdown" href="./Result.html">NairaRain Lotto <span>Result</span></a>
+                                    <a id="Rapid500"  href="./ResultRapid5.html">NRL Rapid Game <span>Result</span></a>                                
+                                </div>                                
+                            </div>
+                        </div>                        
+                    </div>                   
+                    <!-- <div class="nav-item"><a class="nav-button" href="#testimonials">Testimonials</a></div> -->
+                                      
+                </div>
+            
+                <div class="actions">
+                    <!-- <div class="nav-logsign" >
+                        <a href="./loginPage.html"><button id="nav-login" class="active">Login</button></a> 
+                        <a href="./SignupPage.html"><button id="nav-signup" class="active">Sign Up</button></a>
+                    </div>                 -->
+                    <div class="pro-wallet">
+                        <div class="profile" onclick="toggleProfileDropdownx()">
+                            <div class="profile-icon"><i class="fa-solid fa-user"></i></div>
+                            <div class="profileDropdown1" id="profileDropdown1"> 
+                                <div class="profileDropdown1-modal">                               
+                                    <div class="dropdown">
+                                        <a href="#">Wallet Amount: ₦100,000</a>
+                                        <a href="./profilepage.html">My Profile</a>
+                                        <a href="./payment.html">Deposit</a>                         
+                                        <a href="./Gamehistory.html">Games History</a>
+                                        <a href="./transactionhis.html">Transactions</a>
+                                        <a href="./withdrawpage.html">Result</a>
+                                        <a href="./profilepage.html">User Profile</a>
+                                        <a href="#" onclick="logout()">Logout</a>
+                                    </div>
+                                </div>                               
+                            </div>
+                        </div>                       
+        
+                        <div class="wallet" onclick="toggleWalletDropdown()">
+                            <i class="fa-solid fa-wallet"></i> <span id="walletAmount">₦12,000.00</span>
+                            <div class="wallet-dropdown" id="walletDropdown">
+                            <p>Available Balance: <span id="availableBalance">₦12,000.00</span></p>                            
+                        </div>
+                    </div>                     
+                </div>
+            </div>
+        </header>          
+            
+        <script>
+              
+        function toggleProfileDropdown() {
+          var dropdown = document.getElementById("profileDropdown");
+          dropdown.style.display = dropdown.style.display === "flex" ? "none" : "flex";
+        }
+        function toggleProfileDropdownx() {
+          var dropdown = document.getElementById("profileDropdown1");
+          dropdown.style.display = dropdown.style.display === "flex" ? "none" : "flex";
+        } 
+          // Toggle the profile dropdown visibility
+          function toggleMobileNav() {
+                const mobileNav = document.getElementById('mobileNav');
+                mobileNav.style.display = mobileNav.style.display === 'flex' ? 'none' : 'flex';
+              }              
+        
+            //   function toggleMobileNavS() {
+            //     const mobileNavS = document.getElementById('mobileNavS');
+            //     mobileNavS.style.display = mobileNavS.style.display === 'flex' ? 'none' : 'flex';
+            //   }
+        
+            // Center dropdown toggles (desktop)
+            
+        // Center dropdown toggles (desktop)
+        function toggleCenterDropdown(e, which){
+        e.preventDefault();
+        const games = document.getElementById('gamesDropdown');
+        const results = document.getElementById('resultsDropdown');
+        if(which === 'games'){
+        const show = games.style.display !== 'block';
+        games.style.display = show ? 'block' : 'none';
+        results.style.display = 'none';
+        }else if(which === 'results'){
+        const show = results.style.display !== 'block';
+        results.style.display = show ? 'block' : 'none';
+        games.style.display = 'none';
+        }
+        }
+        
+        // Close dropdowns when clicking outside
+        document.addEventListener('click', function(e){
+        const isNav = e.target.closest('.nav-center');
+        const isBtn = e.target.closest('.nav-button');
+        if(!isNav && !isBtn){
+        document.getElementById('gamesDropdown').style.display = 'none';
+        document.getElementById('resultsDropdown').style.display = 'none';
+        }
+        });
+        
+        // Mobile panel controls & submenus
+        document.getElementById('openMobile').addEventListener('click', ()=>{
+        document.getElementById('mobileNav').style.display = 'block';
+        });
+        document.getElementById('closeMobile').addEventListener('click', ()=>{
+        document.getElementById('mobileNav').style.display = 'none';
+        });
+        
+        function toggleMobileSub(id){
+        const el = document.getElementById(id);
+        el.style.display = el.style.display === 'block' ? 'none' : 'block';
+        }     
+              
+        
+              function toggleWalletDropdown() {
+        const walletDropdown = document.getElementById('walletDropdown');
+        walletDropdown.style.display = walletDropdown.style.display === 'block' ? 'none' : 'block';
+        }
+        
+        function updateWallet(amount, pending) {
+        document.getElementById('walletAmount').textContent = `₦${amount.toFixed(2)}`;
+        document.getElementById('availableBalance').textContent = `₦${amount.toFixed(2)}`;
+        // document.getElementById('pendingWinnings').textContent = `₦${pending.toFixed(2)}`;
+        }
+        
+        // Example update (this would be dynamically set based on real user data)
+        //   updateWallet(1200.50, 250.00);
+        
+        // Close mobile nav when clicking outside the panel or pressing Escape
+        document.getElementById('mobileNav').addEventListener('click', function(e){
+        // if click target is the overlay (not the inner panel), close
+        if(e.target === this) {
+        this.style.display = 'none';
+        }
+        });
+        document.addEventListener('keydown', function(e){
+        if(e.key === 'Escape'){
+        document.getElementById('mobileNav').style.display = 'none';
+        closeAllPopups();
+        }
+        });
+        </script> 
+    
+        
+
+        <!-- moving words -->
+        <!-- <div  class="marquee-container"aria-hidden="true">
+            <div class="marquee">
+                <span> Pale from Ogun just won ₦2,000,000 </span> 
+                <span> Amaka from Enugu just won ₦500,000 </span>
+                <span> Ibrahim from Kaduna just won ₦250,000 </span>
+                <span> Wale from Ikorodu just won ₦150,000 </span>
+                <span> Chima from Edo just won ₦150,000 </span>
+                <span> Aminu from Kaduna just won ₦250,000 </span>
+            </div> 
+            <div class=" marquee" aria-hidden="true"> 
+                <span> Bade from Lagos just won ₦150,000 </span>
+                <span> Chioma from Abia just won ₦150,000 </span>
+                <span> Aminu from Yobe just won ₦250,000 </span>
+                <span> Tolu from Kwara just won ₦150,000 </span>
+                <span> Chioma from Abia just won ₦150,000 </span>
+                <span> Amina from Kastina just won ₦250,000 </span>
+            </div>
+        </div> -->
+
+        
+         
+         <!-- banner Slider -->
+           
+         <!-- banner Slider -->
+         <div>           
+            <section class="banner-container">
+              <!-- <div class="arrow left-arrow" onclick="prevSlide()">&#10094;</div> -->
+              <div class="banner-slide">                
+                <a href="./GamesPage.html"><img src="./image/heroImage1.png" alt="Promotion 1"></a>
+                <a href="./GamesPage.html"><img src="./image/heroImage2.png" alt="Promotion 2"></a>
+                <a href="./GamesPage.html"><img src="./image/heroImage3.png" alt="Promotion 3"></a>
+                <a href="./GamesPage.html"><img src="./image/heroImage4.png" alt="Promotion 4"></a>
+                <a href="./GamesPage.html"><img src="./image/heroImage5.png" alt="Promotion 5"></a>
+                <a href="./GamesPage.html"><img src="./image/heroImage50.png" alt="Promotion 6"></a>
+              </div>
+              <!-- <div class="arrow right-arrow" onclick="nextSlide()">&#10095;</div> -->
+            </section> 
+           
+            <script>
+              let currentIndex = 0;
+                const slideInterval = 30000; // Time between slides
+
+                function showSlide(index) {
+                    const slides = document.querySelector('.banner-slide');
+                    const totalSlides = slides.children.length;
+                    
+                    if (index >= totalSlides) {
+                        currentIndex = 0;
+                        slides.style.transition = 'none'; // Temporarily remove transition
+                        slides.style.transform = 'translateX(10%)'; // Reset to the first slide
+                        setTimeout(() => {
+                            slides.style.transition = 'transform 0.1s linear'; // Restore the transition
+                        }, 50); // Slight delay to ensure the reset happens
+                    } else if (index < 0) {
+                        currentIndex = totalSlides - 1;
+                    } else {
+                        currentIndex = index;
+                    }
+                    
+                    const offset = -currentIndex * 100 / totalSlides;
+                    slides.style.transform = `translateX(${offset}%)`;
+                }
+
+                function nextSlide() {
+                    showSlide(currentIndex + 1);
+                }
+
+                function prevSlide() {
+                    showSlide(currentIndex - 1);
+                }
+
+                setInterval(() => {
+                    nextSlide();
+                }, slideInterval);
+
+            </script>  
+            
+
+
+           
+          <!-- Game card header -->        
+                    <div class="play_Header" >
+                        <div class="gamer" id="gamer" >
+                            <img class="" src="./image/lightning.230234f5a334bebc8e29fae6b956219f.svg"  alt="" >
+                            <p class="">PLAY RAPID GAMES</p>                                                
+                        </div> 
+                    </div>
+                    <div class="wholeday-Game">                                                
+                        <div class="GameBoard" id="GameBoard" >                    
+                            <div class="Gamer">
+                                <div class="countdown-container">
+                                    <div class="clockdaytag">
+                                        <h1>NEXT GAME DRAWS IN</h1>
+                                        <div class="countdownX">
+                                            <div class="time-section" id="hoursX">
+                                                <span class="time-value">00</span>
+                                                <span class="time-label">HRS.</span>
+                                            </div>
+                                            <div class="time-section" id="minutesX">
+                                                <span class="time-value">00</span>
+                                                <span class="time-label">MINS.</span>
+                                            </div>
+                                            <div class="time-section" id="secondsX">
+                                                <span class="time-value">00</span>
+                                                <span class="time-label">SECS.</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>                                                                            
+                                                          
+                                <div class="GameCard">
+                                    <h1>WIN</h1>
+                                    <p class=""><span>₦500,000</span><br> <p>Daily Winnings</p></p>
+                                    <a href="./RapidGame3.html"><button>PLAY NOW</button></a>
+                                    <!-- <img src="./image/heroImage13.png" alt="">   -->
+                                </div>
+                            </div>
+                            
+                            <div class="Gamer"> 
+                                <div class="countdown-container">
+                                    <div class="clockdaytag">
+                                        <h1>NEXT GAME DRAWS IN</h1>
+                                        <div class="countdownX">
+                                            <div class="time-section" id="hoursX">
+                                                <span class="time-value">00</span>
+                                                <span class="time-label">HRS.</span>
+                                            </div>
+                                            <div class="time-section" id="minutesX">
+                                                <span class="time-value">00</span>
+                                                <span class="time-label">MINS.</span>
+                                            </div>
+                                            <div class="time-section" id="secondsX">
+                                                <span class="time-value">00</span>
+                                                <span class="time-label">SECS.</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>                                            
+                                    <!-- <script>
+                                        function initializeCountdown() {
+                                            const now = new Date();
+                                            const nextDrawTime = new Date();
+                                            
+                                            // Set the draw time to 6:30 PM today
+                                            nextDrawTime.setHours(18, 30, 0, 0);
+                                
+                                            // If it's past 6:30 PM, set the draw time to 6:30 PM the next day
+                                            if (now > nextDrawTime) {
+                                                nextDrawTime.setDate(nextDrawTime.getDate() + 1);
+                                            }
+                                
+                                            // Save nextDrawTime timestamp in localStorage
+                                            localStorage.setItem('nextGameTime', nextDrawTime.getTime());
+                                        }
+                                
+                                        function updateCountdown() {
+                                            const now = new Date().getTime();
+                                            let nextGameTime = localStorage.getItem('nextGameTime');
+                                
+                                            // Initialize countdown if no next game time is set
+                                            if (!nextGameTime) {
+                                                initializeCountdown();
+                                                nextGameTime = localStorage.getItem('nextGameTime');
+                                            }
+                                
+                                            const distance = nextGameTime - now;
+                                
+                                            // If countdown ends, reset to the next day at 6:30 PM
+                                            if (distance < 0) {
+                                                initializeCountdown();
+                                                return updateCountdown();
+                                            }
+                                
+                                            // Calculate hours, minutes, and seconds
+                                            const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+                                            const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+                                            const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+                                
+                                            // Display results
+                                            document.getElementById('hoursX').querySelector('.time-value').textContent = String(hours).padStart(2, '0');
+                                            document.getElementById('minutesX').querySelector('.time-value').textContent = String(minutes).padStart(2, '0');
+                                            document.getElementById('secondsX').querySelector('.time-value').textContent = String(seconds).padStart(2, '0');
+                                        }
+                                
+                                        // Update countdown every second
+                                        setInterval(updateCountdown, 1000);
+                                
+                                        // Initialize countdown when page loads
+                                        window.onload = updateCountdown;
+                                    </script>                       -->
+                                <div class="GameCard" >
+                                    <h1>WIN</h1>
+                                    <p><span>₦250,000</span><br> <p>Daily Winnings</p></p>
+                                    <a href="./RapidGame2.html"><button>PLAY NOW</button></a> 
+                                </div>
+                            </div>
+                            <div class="Gamer">
+                                <div class="countdown-container">
+                                    <div class="clockdaytag">
+                                        <h1>NEXT GAME DRAWS IN</h1>
+                                        <div class="countdownX">
+                                            <div class="time-section" id="hoursX">
+                                                <span class="time-value">00</span>
+                                                <span class="time-label">HRS.</span>
+                                            </div>
+                                            <div class="time-section" id="minutesX">
+                                                <span class="time-value">00</span>
+                                                <span class="time-label">MINS.</span>
+                                            </div>
+                                            <div class="time-section" id="secondsX">
+                                                <span class="time-value">00</span>
+                                                <span class="time-label">SECS.</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                                                          
+                                                        
+                                <div class="GameCard" >
+                                    <h1>WIN</h1>
+                                    <p><span>₦150,000</span><br> <p>Daily Winnings</p></p>
+                                    <a href="./RapidGame1.html"><button>PLAY NOW</button></a> 
+                                </div>
+                            </div>
+                        </div>
+                        <script src="./RapidgameTime.js"></script> 
+                    </div>
+              
+            <!-- </div> -->
+
+             <!-- WEEKLY Games cards -->
+     
+
+            <div class="play_Header" id="Weekly">
+                <div class="gamer">
+                    <img src="./image/daily.a9c91d27da2910e303912af1bc94eca3.svg" alt="" >
+                    <p>PLAY NAIRARAIN LOTTO</p>                                            
+                </div>                              
+            </div>          
+            <div class="wholeweek-Game" >          
+                
+                <div class="GameBoard">                  
+                    <div class="Gamer" id="Gamer">
+                        <div class="clockTab" >
+                            <div class="containerX">
+                                <div class="title">NEXT GAME DRAWS IN</div>
+                                <div class="countdownP">
+                                    <div class="days">
+                                        <span id="days">00</span>
+                                        <div class="label">DAYS</div>
+                                    </div>
+                                    <div class="hours">
+                                        <span id="hours">00</span>
+                                        <div class="label">HOURS</div>
+                                    </div>
+                                    <div class="minutes">
+                                        <span id="minutes">00</span>
+                                        <div class="label">MINUTES</div>
+                                    </div>
+                                    <div class="seconds">
+                                        <span id="seconds">00</span>
+                                        <div class="label">SECONDS</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>                
+        
+                        <script>
+                            function getNextThursday() {
+                                const now = new Date();
+                                const nextThursday = new Date(now);
+                                nextThursday.setDate(now.getDate() + ((4 - now.getDay() + 7) % 7 || 7));
+                                nextThursday.setHours(19, 30, 0, 0);  // Set time to 7:30 PM (19:30:00)
+                                return nextThursday;
+                            }
+        
+                            function startCountdown() {
+                                const countdownInterval = setInterval(() => {
+                                    const now = new Date().getTime();
+                                    let nextThursday = localStorage.getItem("nextThursday") || getNextThursday().getTime();
+                                    nextThursday = new Date(parseInt(nextThursday));
+                                    
+                                    // Calculate time difference
+                                    let distance = nextThursday - now;
+        
+                                    // If Thursday has passed, calculate for the next one
+                                    if (distance <= 0) {
+                                        nextThursday = getNextThursday().getTime();
+                                        localStorage.setItem("nextThursday", nextThursday);
+                                        distance = nextThursday - now;
+                                    }
+        
+                                    const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+                                    const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+                                    const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+                                    const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+        
+                                    // Display the results
+                                    document.getElementById("days").textContent = days;
+                                    document.getElementById("hours").textContent = hours;
+                                    document.getElementById("minutes").textContent = minutes;
+                                    document.getElementById("seconds").textContent = seconds;
+                                }, 1000);
+                            }
+        
+                            // Start the countdown
+                            startCountdown();
+                        </script>
+
+                        <div class="GameCard" id="GameCard">
+                            <div class="gameCard-week" >
+                                <img src="./image/Naira rain lotto.png" alt="">
+                                <h1 id="Rapid">WIN</h1>
+                                <h2>₦25,000,000</h2> 
+                                <p>can make your dreams come through</p>                            
+                                <a href="./GamesPage.html" class="play-button"><button>PLAY NOW</button></a>
+                            </div> 
+                        </div>
+                    </div>                 
+                </div>
+            </div>            
+        
+
+        <div class="midImagerX" >        
+            <img src="./image/heroImage15.png" alt="">        
+        </div>    
+        
+    </div>
+
+<!-- TESTIMONIAL HTML & CSS -->
+<div class="testimonial-container">
+  <h1>CHANGING LIVES</h1> 
+    <div class="testimonial-slider-icons">
+        <h3 class="salaryword" >Salary for life games are touching lives and changing stories around us.</h3> 
+        <!-- Navigation Buttons -->
+        <div class="control-btn">
+            <button class="nav-button prev" onclick="moveSlide(-1)">&#10094;</button>
+            <button class="nav-button next" onclick="moveSlide(1)">&#10095;</button>
+        </div>
+    </div>
+  
+  <div class="testimonial-slider" id="slider">
+      <div class="testimonial">
+          <div class="profile" >
+              <img src="./image/profile testimonal.png" alt="Person 1" class="testimonial-img">                
+              <div  class="Names">
+                  <h2>Adewale Mark</h2>
+                  <p>Lagos state</p>
+              </div>
+          </div>               
+          <p class="testimonial-text">"This lottery games is a life changer! It's amazing."</p>
+          <!-- <p class="testimonial-name">- Person 1</p> -->
+      </div>
+      <div class="testimonial">
+          <div class="profile" >
+              <img src="./image/profile testimonal.png" alt="Person 2" class="testimonial-img">                
+              <div  class="Names">
+                  <h2>Adepoju Ade</h2>
+                  <p>Oyo state</p>
+              </div>
+          </div>
+          <p class="testimonial-text">"I would recommend this to everyone I know. come play and win"</p>
+          <!-- <p class="testimonial-name">- Person 2</p> -->
+      </div>
+      <div class="testimonial">
+          <div class="profile" >
+              <img src="./image/profile testimonal.png" alt="Person 3" class="testimonial-img">                
+              <div  class="Names">
+                  <h2>Mary Ifanyi</h2>
+                  <p>Imo state</p>
+              </div>
+          </div>
+          <p class="testimonial-text">"Outstanding experience, top-notch games!"</p>
+          <!-- <p class="testimonial-name">- Person 3</p> -->
+      </div>
+      <div class="testimonial">
+          <div class="profile" >
+              <img src="./image/profile testimonal.png" alt="Person 4" class="testimonial-img">                
+              <div  class="Names">
+                  <h2>Adamu Balla</h2>
+                  <p>Kano state</p>
+              </div>
+          </div>
+          <p class="testimonial-text">"I love the results I'm getting from this games!"</p>
+          <!-- <p class="testimonial-name">- Person 4</p> -->
+      </div>
+      <div class="testimonial">
+          <div class="profile" >
+              <img src="./image/profile testimonal.png" alt="Person 5" class="testimonial-img">                
+              <div  class="Names">
+                  <h2>Femi Smart</h2>
+                  <p>Lagos state</p>
+              </div>
+          </div>
+          <p class="testimonial-text">"Superb quality and amazing customer service. Sure gaming and winning"</p>
+          <!-- <p class="testimonial-name">- Person 5</p> -->
+      </div>
+      <div class="testimonial">
+          <div class="profile" >
+              <img src="./image/profile testimonal.png" alt="Person 6" class="testimonial-img">                
+              <div  class="Names">
+                  <h2>Timothy John</h2>
+                  <p>Abuja</p>
+              </div>
+          </div>
+          <p class="testimonial-text">"I'm so happy I found this gaming platform! whao what a wonderful experience"</p>
+          <!-- <p class="testimonial-name">- Person 6</p> -->
+      </div>
+      <div class="testimonial">
+        <div class="profile" >
+            <img src="./image/profile testimonal.png" alt="Person 7" class="testimonial-img">                
+            <div  class="Names">
+                <h2>Timo Jona</h2>
+                <p>Kano</p>
+            </div>
+        </div>
+        <p class="testimonial-text">"I'm so happy I found this gaming platform! whao what a wonderful experience"</p>
+        <!-- <p class="testimonial-name">- Person 6</p> -->
+    </div>
+  </div>
+
+  <button class="btn_test">
+      <a href="./testimonial.html"> View More<i class="fa-solid fa-arrow-up-right-from-square"></i></a>
+  </button>        
+  
+</div>
+<script>
+  let slideIndex = 0; // Start at the first slide
+  const totalTestimonials = document.querySelectorAll('.testimonial').length;
+  let itemsPerSlide = 3; // Default for larger screens
+  let autoplayInterval;
+
+  // Adjust the number of testimonials visible based on screen size
+  function setItemsPerSlide() {
+      if (window.innerWidth <= 600) {
+          itemsPerSlide = 1; // Show 1 item on mobile
+      } else if (window.innerWidth <= 992) {
+          itemsPerSlide = 2; // Show 2 items on tablets
+      } else {
+          itemsPerSlide = 3; // Show 3 items on desktops
+      }
+  }
+
+  // Function to move to a specific slide
+  function moveSlide(direction) {
+      const slider = document.getElementById('slider');
+      const indicators = document.querySelectorAll('.indicator');
+
+      // Update the current slide index
+      slideIndex += direction;
+
+      // Circular logic for infinite loop
+      if (slideIndex < 0) {
+          slideIndex = totalTestimonials - itemsPerSlide;
+      } else if (slideIndex > totalTestimonials - itemsPerSlide) {
+          slideIndex = 0;
+      }
+
+      // Update slider position
+      slider.style.transition = 'transform 0.5s ease-in-out';
+      slider.style.transform = `translateX(-${slideIndex * (100 / itemsPerSlide)}%)`;
+
+      // Update the indicators
+      indicators.forEach((indicator, index) => {
+          if (index === Math.floor(slideIndex / itemsPerSlide)) {
+              indicator.classList.add('active');
+          } else {
+              indicator.classList.remove('active');
+          }
+      });
+  }
+
+  // Function to go to a specific slide when an indicator is clicked
+  function goToSlide(index) {
+      const slider = document.getElementById('slider');
+      const indicators = document.querySelectorAll('.indicator');
+
+      // Update slide index based on the indicator clicked
+      slideIndex = index * itemsPerSlide;
+
+      // Move the slider to the corresponding slide
+      slider.style.transition = 'transform 0.5s ease-in-out';
+      slider.style.transform = `translateX(-${slideIndex * (100 / itemsPerSlide)}%)`;
+
+      // Update the indicators
+      indicators.forEach((indicator, i) => {
+          indicator.classList.remove('active');
+          if (i === index) {
+              indicator.classList.add('active');
+          }
+      });
+  }
+
+  // Start autoplay
+  function startAutoplay() {
+      autoplayInterval = setInterval(() => {
+          moveSlide(1); // Move to the next slide every 3 seconds
+      }, 5000);
+  }
+
+  // Stop autoplay on hover
+  document.querySelector('.testimonial-container').addEventListener('mouseover', () => {
+      clearInterval(autoplayInterval);
+  });
+
+  // Resume autoplay when not hovering
+  document.querySelector('.testimonial-container').addEventListener('mouseout', startAutoplay);
+
+  // Start autoplay when the page loads
+  startAutoplay();
+
+  // Set items per slide based on screen size
+  window.addEventListener('resize', setItemsPerSlide);
+  setItemsPerSlide();
+</script>
+
+
+<div class="midImagerX" >        
+    <img src="./image/heroImage17.png" alt="">        
+</div> 
+
+
+    <!-- Frequently  -->  
+  
+    <div class="containerFre" id="containerFre">
+        <div class="faq-container">
+          <h1>Frequently Asked Questions</h1>
+  
+          <div class="faq-item">
+              <div class="faq-question">
+                <span><p>What is the Salary for life Lottery?</p></span>
+                  <span class="icon">+</span>
+              </div>
+              <div class="faq-answer">
+                  <p>The Salary for life Lottery is a lottery game where winners receive regular monthly payments over a long period rather than a single lump sum. In most cases, this is a "life-changing" prize given over many years.
+                  </p>
+              </div>
+          </div>
+  
+          <div class="faq-item">
+              <div class="faq-question">
+                  <span><p>How much can I win?</p></span>
+                  <span class="icon">+</span>
+              </div>
+              <div class="faq-answer">
+                  <p>The top prize in Salary for life is typically a set monthly payment over a long period, such as 2 million naira per month for 30 years. There may also be smaller prizes for matching fewer numbers.</p>
+              </div>
+          </div>
+  
+          <div class="faq-item">
+              <div class="faq-question">
+                  <span><p>How do I play Salary for life?</p></span>
+                  <span class="icon">+</span>
+              </div>
+              <div class="faq-answer">
+                  <p>To play, select a set number of main numbers (usually five) from a range (e.g., 1-49) and an additional "bonus" number from a smaller range. You can pick your own numbers or use a quick-pick option for random selections.</p>
+              </div>
+          </div>
+          <div class="faq-item">
+              <div class="faq-question">
+                  <span><p>What are the odds of winning?</p></span>
+                  <span class="icon">+</span>
+              </div>
+              <div class="faq-answer">
+                  <p>The odds vary based on the specific lottery provider and the number of numbers to match. Generally, the odds of winning the top prize are lower due to the life-changing nature of the payout.</p>
+              </div>
+          </div>
+          <div class="faq-item">
+              <div class="faq-question">
+                  <span><p>How are winnings paid out?</p></span>
+                  <span class="icon">+</span>
+              </div>
+              <div class="faq-answer">
+                  <p>If you win the top prize, payments are usually made monthly over a fixed number of years. Smaller prizes may be paid as a one-time sum.</p>
+              </div>
+          </div>
+          <div class="faq-item">
+            <div class="faq-question">
+                <span><p>How old do I have to be to play?</p></span>
+                <span class="icon">+</span>
+            </div>
+            <div class="faq-answer">
+                <p>The minimum age to play Salary for life varies by country and state, typically ranging from 18 to 21 years.</p>
+            </div>           
+        </div>
+        <button><a href="./FAQ.html">More FAQ</a></button>  
+      </div>
+  </div>
+  
+      <script>
+          const faqItems = document.querySelectorAll('.faq-item');
+  
+          faqItems.forEach(item => {
+              const question = item.querySelector('.faq-question');
+              const answer = item.querySelector('.faq-answer');
+              const icon = item.querySelector('.icon');
+  
+              question.addEventListener('click', () => {
+                  const isOpen = answer.style.display === 'block';
+  
+                  // Close all open answers
+                  faqItems.forEach(faq => {
+                      faq.querySelector('.faq-answer').style.display = 'none';
+                      faq.querySelector('.icon').textContent = '+';
+                  });
+  
+                  // Toggle the current one
+                  if (!isOpen) {
+                      answer.style.display = 'block';
+                      icon.textContent = '-';
+                  }
+              });
+          });
+      </script>
+
+
+  <!-- FOOTER DESIGN -->    
+  <footer class="">
+    <div class="Social">        
+        <a href="/"><i class="fa-brands fa-square-instagram fa-bounce"></i></a>
+        <a href="/"><i class="fa-brands fa-square-x-twitter fa-bounce"></i></a>
+        <a href="/"><i class="fa-brands fa-square-facebook fa-bounce"></i></a>
+    </div>
+    <ul class="ItemList">
+        <li><a href="./userlogin.html">Home</a></li>                  
+        <li><a href="./AboutUs.html">About Us</a></li>          
+        <li><a href="./Support.html">Support</a></li>
+        <li><a href="./FAQ.html">FAQs</a></li>  
+        <li><a href="./Rules.html">Terms</a></li>
+        <li><a href="./Privacy.html">Privacy Policy</a></li>
+        <li><a href="./ContactUs.html">Contact Us</a></li>
+        <li><a href="./Community.html">Community</a></li>
+    </ul>
+    <div class="FooterList">
+        <img src="./image/Naira rain lotto.png" alt="" class="">
+        <p class=""><a href="https://www.gambleaware.org/" target="_blank">begambleawear.org</a></p>
+        <p class="">© 2023 NairaRain Lotto | 18+</p>
+    </div>
+  </footer>
+    </div>
+    </div>
+    </div>
+    <div id="floating-ui-root">
+    </div>
+    
+    <grammarly-desktop-integration data-grammarly-shadow-root="true"></grammarly-desktop-integration>
+
+    <script  src="./script.js" ></script>
+
+
+</body>
+    
+
+</html>
