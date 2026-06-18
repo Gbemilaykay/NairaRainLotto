@@ -1067,7 +1067,7 @@ color: #ffffff; }
     }
     .profile-dropdownModal {
       position: absolute;
-      top: 65px;
+      top: 50px;
       right: 0;
       background-color: #ffffff;
       color: #333;
@@ -1102,7 +1102,7 @@ color: #ffffff; }
     position: absolute;           
     background-color: rgba(255, 255, 255);
     padding: 20px;
-    top: 65px;
+    top: 50px;
     left: 0;
     min-width: 200px;
     height: auto;
@@ -1711,7 +1711,7 @@ color: #ffffff; }
   } 
 }
 
-@media (max-width:600px){s
+@media (max-width:600px){
   .slider .play-below{
     gap:5px;
     margin-top:5px;
@@ -1735,6 +1735,7 @@ color: #ffffff; }
     /* cursor:pointer; */
   }
 }
+
 @media screen and (max-width: 360px){
   .slider .play-below{
     gap:5px;
@@ -2102,8 +2103,8 @@ color: #ffffff; }
 @media (max-width:600px){
   .slider .ticket-panel{
     width:clamp(200px,15vw,200px);
-    left:20px;
-    top:calc(30% + 350px);  
+    left:30px;
+    top:calc(30% + 320px);  
     max-width:44vw;
     min-width:100px;
     border:1px solid rgba(255,255,255,0.2);
@@ -2371,11 +2372,11 @@ color: #ffffff; }
 
   @media (max-width:600px){
     .slider .draw-timer{
-      right:20px;
+      right:40px;
       /* bottom:65px; */
       margin-bottom: 70px;
       z-index:60;
-      width:160px;  
+      width:200px;  
       /* min-width:100px; */
       border:2px solid rgba(255,255,255,0.3);
       padding:13px;
