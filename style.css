@@ -1218,7 +1218,7 @@ color: #ffffff; }
       display:flex;
       align-items: center;
       justify-content:space-between;
-      padding: 5px;
+      padding: 0px;
       width: 100%;
       max-width: 100%;
       /* background-color: #00a827; */
@@ -1552,7 +1552,7 @@ color: #ffffff; }
   /* slide artwork right */
   .slider .slide-art{
     position:absolute;
-    right:10%;
+    right:3%;
     top:38%;
     transform:translateY(-50%);
     z-index:35;
@@ -2104,7 +2104,7 @@ color: #ffffff; }
   .slider .ticket-panel{
     width:clamp(200px,15vw,200px);
     left:30px;
-    top:calc(30% + 320px);  
+    top:calc(30% + 350px);  
     max-width:44vw;
     min-width:100px;
     border:1px solid rgba(255,255,255,0.2);
@@ -2374,9 +2374,9 @@ color: #ffffff; }
     .slider .draw-timer{
       right:40px;
       /* bottom:65px; */
-      margin-bottom: 70px;
+      margin-bottom: 50px;
       z-index:60;
-      width:200px;  
+      width:170px;  
       /* min-width:100px; */
       border:2px solid rgba(255,255,255,0.3);
       padding:13px;
