@@ -1486,7 +1486,7 @@ color: #ffffff; }
 
 @media screen and (max-width: 768px){
   .slider{
-    height:80vh;
+    height:75vh;
     }   
   /* slide artwork right */
   .slider .slide-art{
@@ -2038,10 +2038,10 @@ color: #ffffff; }
 
 @media screen and (max-width: 768px){
   .slider .ticket-panel{
-    width:clamp(200px,15vw,200px);
+    width:clamp(150px,18vw,150px);
     left:18px;
-    top:calc(30% + 300px);  
-    max-width:44vw;
+    top:calc(30% + 200px); 
+    max-width:40vw;
     min-width:100px;
     border:1px solid rgba(255,255,255,0.2);
     padding:10px;
@@ -2104,8 +2104,8 @@ color: #ffffff; }
   .slider .ticket-panel{
     width:clamp(150px,18vw,150px);
     left:18px;
-    top:calc(35% + 200px); 
-    max-width:44vw;
+    top:calc(30% + 200px); 
+    max-width:40vw;
     min-width:100px;
     border:1px solid rgba(255,255,255,0.2);
     padding:10px;
@@ -2337,7 +2337,7 @@ color: #ffffff; }
     .slider .draw-timer{
       right:20px;
       /* bottom:65px; */
-      margin-bottom: 70px;
+      margin-bottom: 50px;
       z-index:60;
       width:160px;  
       /* min-width:100px; */
@@ -2372,11 +2372,11 @@ color: #ffffff; }
 
   @media (max-width:600px){
     .slider .draw-timer{
-      right:40px;
+      right:20px;
       /* bottom:65px; */
-      margin-bottom: 70px;
+      margin-bottom: 50px;
       z-index:60;
-      width:170px;  
+      width:160px;  
       /* min-width:100px; */
       border:2px solid rgba(255,255,255,0.3);
       padding:13px;
