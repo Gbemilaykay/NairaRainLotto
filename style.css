@@ -1495,7 +1495,7 @@ color: #ffffff; }
     top:38%;
     transform:translateY(-50%);
     z-index:35;
-    width:400px;
+    width:300px;
     height:auto;
     /* opacity:0; */
     transition:opacity .5s ease,transform .6s cubic-bezier(.22,.9,.3,1);
@@ -1528,7 +1528,7 @@ color: #ffffff; }
     margin-bottom:10px;
   }
   .slider .overlay h2{
-    font-size: 45pt;
+    font-size: 40pt;
     line-height:1.02;
     font-weight:700;
     color: rgb(255, 255, 255);
@@ -1539,7 +1539,7 @@ color: #ffffff; }
     color: #ffffff;
     width: 300px;
     line-height:1.02;
-    font-size: 16pt;
+    font-size: 11pt;
     text-shadow: #000000 0px 0px 5px;
   }
 }
@@ -1552,11 +1552,11 @@ color: #ffffff; }
   /* slide artwork right */
   .slider .slide-art{
     position:absolute;
-    right:3%;
-    top:38%;
+    right:2%;
+    top:40%;
     transform:translateY(-50%);
     z-index:35;
-    width:400px;
+    width:300px;
     /* height:auto; */
     /* opacity:0; */
     transition:opacity .5s ease,transform .6s cubic-bezier(.22,.9,.3,1);
@@ -1573,7 +1573,7 @@ color: #ffffff; }
     margin: auto;
     right:0;
     left:10%;
-    top:90%;
+    top:87%;
     transform:translateY(-50%);
     transform-origin:left center;
     transition:opacity .36s ease,transform .52s cubic-bezier(.22,.9,.3,1);
@@ -1590,7 +1590,7 @@ color: #ffffff; }
     margin-bottom:10px;
   }
   .slider .overlay h2{
-    font-size: 45pt;
+    font-size: 40pt;
     line-height:1.02;
     font-weight:700;
     color: rgb(255, 255, 255);
@@ -1601,7 +1601,7 @@ color: #ffffff; }
     color: #ffffff;
     width: 300px;
     line-height:1.02;
-    font-size: 16pt;
+    font-size: 11pt;
     text-shadow: #000000 0px 0px 5px;
   }
 }
@@ -2040,7 +2040,7 @@ color: #ffffff; }
   .slider .ticket-panel{
     width:clamp(200px,15vw,200px);
     left:20px;
-    top:calc(30% + 350px);  
+    top:calc(30% + 300px);  
     max-width:44vw;
     min-width:100px;
     border:1px solid rgba(255,255,255,0.2);
@@ -2104,7 +2104,7 @@ color: #ffffff; }
   .slider .ticket-panel{
     width:clamp(200px,15vw,200px);
     left:30px;
-    top:calc(30% + 350px);  
+    top:calc(35% + 200px); 
     max-width:44vw;
     min-width:100px;
     border:1px solid rgba(255,255,255,0.2);
@@ -2374,7 +2374,7 @@ color: #ffffff; }
     .slider .draw-timer{
       right:40px;
       /* bottom:65px; */
-      margin-bottom: 50px;
+      margin-bottom: 70px;
       z-index:60;
       width:170px;  
       /* min-width:100px; */
