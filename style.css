@@ -1486,7 +1486,7 @@ color: #ffffff; }
 
 @media screen and (max-width: 768px){
   .slider{
-    height:90vh;
+    height:80vh;
     }   
   /* slide artwork right */
   .slider .slide-art{
@@ -1546,7 +1546,7 @@ color: #ffffff; }
 
 @media (max-width:600px){
   .slider{  
-  height:80vh;  
+  height:70vh;  
   }  
     
   /* slide artwork right */
@@ -1844,7 +1844,7 @@ color: #ffffff; }
       .slider .top-schedule-line{
         left:5%;
         top:30px;
-        padding:8px 10px;
+        padding:8px 6px;
         border-radius:10px;
         border:2px solid rgba(255,255,255,0.1);
         backdrop-filter:blur(8px);
@@ -1866,7 +1866,7 @@ color: #ffffff; }
   .slider .top-schedule-line{
     left:5%;
     top:30px;
-    padding:8px 10px;
+    padding:8px 6px;
     border-radius:10px;
     border:2px solid rgba(255,255,255,0.1);
     backdrop-filter:blur(8px);
@@ -2039,7 +2039,7 @@ color: #ffffff; }
 @media screen and (max-width: 768px){
   .slider .ticket-panel{
     width:clamp(200px,15vw,200px);
-    left:20px;
+    left:18px;
     top:calc(30% + 300px);  
     max-width:44vw;
     min-width:100px;
@@ -2102,8 +2102,8 @@ color: #ffffff; }
 
 @media (max-width:600px){
   .slider .ticket-panel{
-    width:clamp(200px,15vw,200px);
-    left:30px;
+    width:clamp(150px,18vw,150px);
+    left:18px;
     top:calc(35% + 200px); 
     max-width:44vw;
     min-width:100px;
