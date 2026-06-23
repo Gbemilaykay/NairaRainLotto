@@ -2374,7 +2374,7 @@ color: #ffffff; }
     .slider .draw-timer{
       right:20px;
       /* bottom:65px; */
-      bottom: 18%;
+      bottom: 15%;
       z-index:60;
       width:160px;  
       /* min-width:100px; */
@@ -2411,7 +2411,7 @@ color: #ffffff; }
     .slider .draw-timer{
       right:20px;
       /* margin-bottom: 50px; */
-      bottom: 10%;
+      bottom: 9%;
       width:160px;  
       /* min-width:100px; */
       border:2px solid rgba(255,255,255,0.3);
