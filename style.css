@@ -2337,7 +2337,7 @@ color: #ffffff; }
     .slider .draw-timer{
       right:20px;
       /* bottom:65px; */
-      margin-bottom: 50px;
+      bottom: 18%;
       z-index:60;
       width:160px;  
       /* min-width:100px; */
@@ -2374,7 +2374,7 @@ color: #ffffff; }
     .slider .draw-timer{
       right:20px;
       /* bottom:65px; */
-      margin-bottom: 50px;
+      bottom: 18%;
       z-index:60;
       width:160px;  
       /* min-width:100px; */
@@ -2410,8 +2410,8 @@ color: #ffffff; }
   @media screen and (max-width: 360px){
     .slider .draw-timer{
       right:20px;
-      /* bottom:65px; */
-      margin-bottom: 50px;
+      /* margin-bottom: 50px; */
+      bottom: 11%;
       width:160px;  
       /* min-width:100px; */
       border:2px solid rgba(255,255,255,0.3);
