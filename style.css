@@ -2374,7 +2374,7 @@ color: #ffffff; }
     .slider .draw-timer{
       right:20px;
       /* bottom:65px; */
-      bottom: 15%;
+      bottom: 10%;
       z-index:60;
       width:160px;  
       /* min-width:100px; */
