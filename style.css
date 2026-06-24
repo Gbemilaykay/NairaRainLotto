@@ -2043,7 +2043,7 @@ color: #ffffff; }
   .slider .ticket-panel{
     width:clamp(150px,18vw,150px);
     left:18px;
-    top:calc(30% + 210px); 
+    top:calc(27% + 210px); 
     max-width:40vw;
     min-width:100px;
     border:1px solid rgba(255,255,255,0.2);
@@ -2107,7 +2107,7 @@ color: #ffffff; }
   .slider .ticket-panel{
     width:clamp(150px,18vw,150px);
     left:18px;
-    top:calc(30% + 210px); 
+    top:calc(27% + 210px); 
     max-width:40vw;
     min-width:100px;
     border:1px solid rgba(255,255,255,0.2);
@@ -2340,7 +2340,7 @@ color: #ffffff; }
     .slider .draw-timer{
       right:20px;
       /* bottom:65px; */
-      bottom: 4%;
+      bottom: 5%;
       z-index:60;
       width:160px;  
       /* min-width:100px; */
@@ -2377,7 +2377,7 @@ color: #ffffff; }
     .slider .draw-timer{
       right:20px;
       /* bottom:65px; */
-      bottom: 4%;
+      bottom: 5%;
       z-index:60;
       width:160px;  
       /* min-width:100px; */
