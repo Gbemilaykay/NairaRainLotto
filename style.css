@@ -1943,7 +1943,8 @@ color: #ffffff; }
 .slider .ticket-panel:before{
   content:'';
   position:absolute;
-  left:0;top:0;
+  left:0;
+  top:0;
   height:100%;
   width:6px;
   background:linear-gradient(180deg,var(--accent),var(--accent-2));
@@ -1987,7 +1988,9 @@ color: #ffffff; }
   background:rgba(255,255,255,0.15);
 }
 .slider .tp-btn[disabled]
-{opacity:.38;cursor:not-allowed;}
+{opacity:.38;cursor:not-allowed;
+}
+
 .slider .tp-qty{
   min-width:90px;
   text-align:center;
@@ -2316,7 +2319,7 @@ color: #ffffff; }
   border-color:rgba(33, 199, 0, 0.9);
   box-shadow:0 30px 90px rgba(255,122,89,0.08);
   transform:translateY(-2px)}
-  .slider .draw-timer.urgent .dt-unit .num{color:#fff}
+.slider .draw-timer.urgent .dt-unit .num{color:#fff}
 
 @media (max-width:920px){ 
   .slider .draw-timer{
@@ -2337,7 +2340,7 @@ color: #ffffff; }
     .slider .draw-timer{
       right:20px;
       /* bottom:65px; */
-      bottom: 10%;
+      bottom: 4%;
       z-index:60;
       width:160px;  
       /* min-width:100px; */
@@ -2374,7 +2377,7 @@ color: #ffffff; }
     .slider .draw-timer{
       right:20px;
       /* bottom:65px; */
-      bottom: 10%;
+      bottom: 4%;
       z-index:60;
       width:160px;  
       /* min-width:100px; */
