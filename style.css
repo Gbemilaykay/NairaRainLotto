@@ -2043,7 +2043,7 @@ color: #ffffff; }
   .slider .ticket-panel{
     width:clamp(150px,18vw,150px);
     left:18px;
-    top:calc(27% + 210px); 
+    top:calc(30% + 2550px); 
     max-width:40vw;
     min-width:100px;
     border:1px solid rgba(255,255,255,0.2);
@@ -2107,7 +2107,7 @@ color: #ffffff; }
   .slider .ticket-panel{
     width:clamp(150px,18vw,150px);
     left:18px;
-    top:calc(27% + 210px); 
+    top:calc(30% + 250px); 
     max-width:40vw;
     min-width:100px;
     border:1px solid rgba(255,255,255,0.2);
