@@ -251,353 +251,767 @@
 
          
          <!-- banner Slider --> 
-         <div class="slider" id="slider" aria-roledescription="carousel" aria-label="Promotions">
-            <div class="slides" id="slides">
-              <!-- slides: jackpot = ₦25,000,000 on every overlay -->
-              <div class="slide" role="group" aria-roledescription="slide" aria-label="Slide 1" data-anim="slide" style="background-color:#0f172a;">
-                    <div class="slide-art"><img src="./image/image1.png" alt="Promotional art 1"></div>
-                    <div class="overlay">
-                    <!-- <div class="tag">Hot Jackpot</div> -->
-                    <h2>₦25,000,000</h2>
-                    <p>Big Jackpot This Week. Small stake, Big smile</p>
-                    <!-- <p>Play now, the next draw could be yours</p> -->
-                    <!-- <div class="jackpot">₦25,000,000</div> -->
-                    <!-- <div class="meta">Tuesdays &amp; Fridays • 7:30 PM</div> -->
-                        <a href="./GamesPage.html">
-                            <div class="play-below">                        
-                                <div class="play-tag">Play amount</div>
-                                <div class="play-price">₦100</div>                   
-                            </div>
-                        </a>
+
+         <section class="banner-section">
+            <div class="slider" id="slider" aria-roledescription="carousel" aria-label="Promotions">
+              <div class="slides" id="slides">
+                <div class="slide" role="group" aria-roledescription="slide" aria-label="Slide 1" data-anim="slide">
+                  <section class="promo-section">
+                    <div class="top-schedule-line" aria-live="polite" role="status">
+                      <div class="ts-badge" aria-hidden="true"><svg width="16" height="16" viewBox="0 0 24 24" fill="none"><rect x="3" y="5" width="18" height="16" rx="2" stroke="currentColor" stroke-width="1.5"/></svg><span class="ts-label">This Tuesday</span></div>
+                      <div class="ts-meta">—</div>
                     </div>
+        
+                    <div class="hero-row">
+                      <div class="overlay">
+                        <h2>₦25,000,000</h2>
+                        <p>Big Jackpot This Week. Small stake, Big smile</p>
+                        <!-- <div class="jackpot">₦25,000,000</div>
+                        <div class="meta">Tuesdays &amp; Fridays • 7:30 PM</div> -->
+                        <div class="play-below">
+                          <span class="play-tag">Play amount</span>
+                          <a class="play-price" href="/new-game" aria-label="Go to game page">₦100</a>
+                        </div>
+                      </div>
+                      <div class="slide-art"><img src="./image/image1.png" alt="Promotional art 1"></div>
+                    </div>
+        
+                    <div class="controls-stack">
+                      <div class="ticket-panel" data-price="100" aria-live="polite">
+                        <div class="ticket-top">
+                          <div>
+                            <div class="tp-title">How many Tickets</div>
+                            <!-- <div class="tp-sub">Select how many tickets to play</div> -->
+                          </div>
+                          <!-- <div style="text-align:right">
+                            <div style="font-size:12px;color:rgba(255,255,255,.86)">Per ticket</div>
+                            <div style="font-weight:900;font-size:16px;">₦100</div>
+                          </div> -->
+                        </div>
+                        <div class="tp-controls" role="group" aria-label="Ticket quantity">
+                          <button class="tp-btn tp-minus" aria-label="Decrease">−</button>
+                          <div class="tp-qty">0</div>
+                          <button class="tp-btn tp-plus" aria-label="Increase">+</button>
+                        </div>
+                        <div class="tp-bottom tp-row">
+                          <div class="tp-total">
+                            <div class="label">Total</div>
+                            <div class="amount">₦0</div>
+                          </div>
+                          <div>
+                            <button class="tp-play" disabled>Play Now</button>
+                            <!-- <div class="tp-note">Max <strong>10</strong> tickets. Click Play to proceed.</div> -->
+                          </div>
+                        </div>                
+                      </div>
+        
+                      <!-- Draw timer (bottom-right) -->
+                      <div class="draw-timer" aria-live="polite" aria-atomic="true">
+                        <div class="dt-header">
+                          <div class="dt-title">Time left to buy ticket</div>
+                          <!-- <div class="dt-next">Next draw: —</div> -->
+                        </div>
+                        <div class="dt-grid" role="status" aria-label="Countdown">
+                          <div class="dt-unit">
+                            <div class="num">00</div>
+                            <div class="label">Days</div>
+                          </div>
+                          <div class="dt-unit">
+                            <div class="num">00</div>
+                            <div class="label">Hours</div>
+                          </div>
+                          <div class="dt-unit">
+                            <div class="num">00</div>
+                            <div class="label">Min</div>
+                          </div>
+                          <div class="dt-unit">
+                            <div class="num">00</div>
+                            <div class="label">Sec</div>
+                          </div>
+                        </div>
+                        <!-- <div class="dt-actions">
+                          <button class="dt-buy" aria-label="Buy ticket">Buy ticket</button>
+                        </div> -->
+                      </div>
+                    </div>
+                  </section>
                 </div>
         
-              <div class="slide" role="group" aria-roledescription="slide" aria-label="Slide 2" data-anim="fade" style="background-color:#813b02;">
-                <div class="slide-art"><img src="./image/image2.png" alt="Promotional art 2"></div>
-                <div class="overlay">
-                  <!-- <div class="tag">Weekly Special</div> -->
-                  <h2>₦25,000,000</h2>
-                  <p>One ticket. Endless possibilities</p>
-                  <!-- <p>Join millions of winning players now.</p> -->
-                  <!-- <div class="jackpot">₦25,000,000</div>
-                  <div class="meta">Tuesdays &amp; Fridays • 7:30 PM</div> -->
-                    <a href="./GamesPage.html">
-                        <div class="play-below">
-                            <div class="play-tag">Play amount</div>
-                            <div class="play-price">₦100</div>
-                        </div>
-                    </a>
-                </div>
-              </div>
+                <div class="slide" role="group" aria-roledescription="slide" aria-label="Slide 2" data-anim="fade">
+                  <section class="promo-section">
+                    <div class="top-schedule-line" aria-live="polite" role="status">
+                      <div class="ts-badge" aria-hidden="true">
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none">
+                          <rect x="3" y="5" width="18" height="16" rx="2" stroke="currentColor" stroke-width="1.5"/>
+                        </svg>
+                        <span class="ts-label">This Tuesday</span>
+                      </div>
+                      <div class="ts-meta">—</div>
+                    </div>
         
-              <div class="slide" role="group" aria-roledescription="slide" aria-label="Slide 3" data-anim="pop" style="background-color:rgb(255, 230, 0);">
-                <div class="slide-art"><img src="./image/image3.png" alt="Promotional art 3"></div>
-                <div class="overlay">
-                  <!-- <div class="tag">Fast Payouts</div> -->
-                  <h2>₦25,000,000</h2>
-                  <p>Small money today, big money tomorrow</p>
-                  <!-- <p>Your winnings delivered quickly and safely.</p> -->
-                  <!-- <div class="jackpot">₦25,000,000</div>
-                  <div class="meta">Tuesdays &amp; Fridays • 7:30 PM</div> -->
-                    <a href="./GamesPage.html">
+                    <div class="hero-row">
+                      <div class="overlay">
+                        <h2>₦25,000,000</h2>
+                        <p>One ticket. Endless possibilities</p>
+                        <!-- <div class="jackpot">₦25,000,000</div>
+                        <div class="meta">Tuesdays &amp; Fridays • 7:30 PM</div> -->
                         <div class="play-below">
-                            <div class="play-tag">Play amount</div>
-                            <div class="play-price">₦100</div>
+                          <span class="play-tag">Play amount</span>
+                          <a class="play-price" href="/new-game">₦100</a>
                         </div>
-                    </a>
-                </div>
-              </div>
-        
-              <div class="slide" role="group" aria-roledescription="slide" aria-label="Slide 4" data-anim="slide" style="background-color:#3b103b;">
-                <div class="slide-art"><img src="./image/image4.png" alt="Promotional art 4"></div>
-                <div class="overlay">
-                  <!-- <div class="tag">Promo</div> -->
-                  <h2>₦25,000,000</h2>
-                  <p>Play now. Thank yourself later!</p>
-                  <!-- <p>Extra entries when you play now.</p> -->
-                  <!-- <div class="jackpot">₦25,000,000</div>
-                  <div class="meta">Tuesdays &amp; Fridays • 7:30 PM</div> -->
-                    <a href="./GamesPage.html">
-                        <div class="play-below">
-                            <div class="play-tag">Play amount</div>
-                            <div class="play-price">₦100</div>
-                        </div>
-                    </a>
-                </div>
-              </div>
-        
-              <div class="slide" role="group" aria-roledescription="slide" aria-label="Slide 5" data-anim="fade" style="background-color:#063a5a;">
-                <div class="slide-art"><img src="./image/image5.png" alt="Promotional art 5"></div>
-                <div class="overlay">
-                  <!-- <div class="tag">Referral</div> -->
-                  <h2>₦25,000,000</h2>
-                  <!-- <p>Referral Bonus</p> -->
-                  <p>No dulling. Play now, cash out BIG!</p>
-                  <!-- <div class="jackpot">₦25,000,000</div>
-                  <div class="meta">Tuesdays &amp; Fridays • 7:30 PM</div> -->
-                    <a href="./GamesPage.html">
-                        <div class="play-below">
-                            <div class="play-tag">Play amount</div>
-                            <div class="play-price">₦100</div>
-                        </div>
-                    </a>
-                </div>
-              </div>
-        
-              <div class="slide" role="group" aria-roledescription="slide" aria-label="Slide 6" data-anim="pop" style="background-color:#2a1d0f;">
-                <div class="slide-art"><img src="./image/image6.png" alt="Promotional art 6"></div>
-                <div class="overlay">
-                  <!-- <div class="tag">More Chances</div> -->
-                  <h2>₦25,000,000</h2>
-                  <!-- <p>More Chances to Win</p> -->
-                  <p>Japa plans? This ticket fit fund am.</p>
-                    <!-- <div class="jackpot">₦25,000,000</div>
-                    <div class="meta">Tuesdays &amp; Fridays • 7:30 PM</div> -->
-                    <a href="./GamesPage.html">
-                        <div class="play-below">
-                            <div class="play-tag">Play amount</div>
-                            <div class="play-price">₦100</div>
-                        </div>
-                    </a>
+                      </div>
+                    <div class="slide-art">
+                      <img src="./image/image2.png" alt="Promotional art 2">
+                    </div>
                   </div>
+        
+                    <div class="controls-stack">
+                      <div class="ticket-panel" data-price="100" aria-live="polite">
+                        <div class="ticket-top">
+                          <div>
+                            <div class="tp-title">How many Tickets</div>
+                            <!-- <div class="tp-sub">Select how many tickets to play</div> -->
+                          </div>
+                          <!-- <div style="text-align:right">
+                            <div style="font-size:12px;color:rgba(255,255,255,.86)">Per ticket</div>
+                            <div style="font-weight:900;font-size:16px;">₦100</div>
+                          </div> -->
+                        </div>
+                        <div class="tp-controls" role="group" aria-label="Ticket quantity">
+                          <button class="tp-btn tp-minus" aria-label="Decrease">−</button>
+                          <div class="tp-qty">0</div>
+                          <button class="tp-btn tp-plus" aria-label="Increase">+</button>
+                        </div>
+                        <div class="tp-bottom tp-row">
+                          <div class="tp-total">
+                            <div class="label">Total</div>
+                            <div class="amount">₦0</div>
+                          </div>
+                          <div>
+                            <button class="tp-play" disabled>Play Now</button>
+                            <!-- <div class="tp-note">Max <strong>10</strong> tickets. Click Play to proceed.</div> -->
+                          </div>
+                        </div>                
+                      </div>
+        
+                      <!-- Draw timer (bottom-right) -->
+                      <div class="draw-timer" aria-live="polite" aria-atomic="true">
+                        <div class="dt-header">
+                          <div class="dt-title">Time left to buy ticket</div>
+                          <!-- <div class="dt-next">Next draw: —</div> -->
+                        </div>
+                        <div class="dt-grid" role="status" aria-label="Countdown">
+                          <div class="dt-unit">
+                            <div class="num">00</div>
+                            <div class="label">Days</div>
+                          </div>
+                          <div class="dt-unit">
+                            <div class="num">00</div>
+                            <div class="label">Hours</div>
+                          </div>
+                          <div class="dt-unit">
+                            <div class="num">00</div>
+                            <div class="label">Min</div>
+                          </div>
+                          <div class="dt-unit">
+                            <div class="num">00</div>
+                            <div class="label">Sec</div>
+                          </div>
+                        </div>
+                        <!-- <div class="dt-actions">
+                          <button class="dt-buy" aria-label="Buy ticket">Buy ticket</button>
+                        </div> -->
+                      </div>
+                    </div>
+                  </section>
                 </div>
-            </div>
         
-            <button class="nav left" id="prev" aria-label="Previous slide"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><polyline points="15 18 9 12 15 6"/></svg></button>
-            <button class="nav right" id="next" aria-label="Next slide"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><polyline points="9 18 15 12 9 6"/></svg></button>
+                <div class="slide" role="group" aria-roledescription="slide" aria-label="Slide 3" data-anim="pop">
+                  <section class="promo-section">
+                    <div class="top-schedule-line" aria-live="polite" role="status">
+                      <div class="ts-badge" aria-hidden="true">
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none">
+                          <rect x="3" y="5" width="18" height="16" rx="2" stroke="currentColor" stroke-width="1.5"/>
+                        </svg>
+                        <span class="ts-label">This Tuesday</span>
+                      </div>
+                      <div class="ts-meta">—</div>
+                    </div>
         
-            <!-- top-left one-line schedule -->
-            <div class="top-schedule-line" id="topScheduleLine" aria-live="polite" role="status">
-              <div class="ts-badge" aria-hidden="true">
-                <svg class="ts-icon" viewBox="0 0 24 24" fill="none">
-                  <rect x="3" y="5" width="18" height="16" rx="2" stroke="currentColor" stroke-width="1.5"/>
-                </svg>
-                <span id="tsLabel" class="ts-day">This Tuesday</span>
+                    <div class="hero-row">
+                      <div class="overlay">
+                        <h2>₦25,000,000</h2>
+                        <p>Small money today, big money tomorrow</p>
+                        <!-- <div class="jackpot">₦25,000,000</div>
+                        <div class="meta">Tuesdays &amp; Fridays • 7:30 PM</div> -->
+                        <div class="play-below">
+                          <span class="play-tag">Play amount</span>
+                          <a class="play-price" href="/new-game">₦100</a>
+                        </div>
+                      </div>
+                      <div class="slide-art">
+                        <img src="./image/image3.png" alt="Promotional art 3">
+                      </div>
+                    </div>
+        
+                    <div class="controls-stack">
+                      <div class="ticket-panel" data-price="100" aria-live="polite">
+                        <div class="ticket-top">
+                          <div>
+                            <div class="tp-title">How many Tickets</div>
+                            <!-- <div class="tp-sub">Select how many tickets to play</div> -->
+                          </div>
+                          <!-- <div style="text-align:right">
+                            <div style="font-size:12px;color:rgba(255,255,255,.86)">Per ticket</div>
+                            <div style="font-weight:900;font-size:16px;">₦100</div>
+                          </div> -->
+                        </div>
+                        <div class="tp-controls" role="group" aria-label="Ticket quantity">
+                          <button class="tp-btn tp-minus" aria-label="Decrease">−</button>
+                          <div class="tp-qty">0</div>
+                          <button class="tp-btn tp-plus" aria-label="Increase">+</button>
+                        </div>
+                        <div class="tp-bottom tp-row">
+                          <div class="tp-total">
+                            <div class="label">Total</div>
+                            <div class="amount">₦0</div>
+                          </div>
+                          <div>
+                            <button class="tp-play" disabled>Play Now</button>
+                            <!-- <div class="tp-note">Max <strong>10</strong> tickets. Click Play to proceed.</div> -->
+                          </div>
+                        </div>                
+                      </div>
+        
+                      <!-- Draw timer (bottom-right) -->
+                      <div class="draw-timer" aria-live="polite" aria-atomic="true">
+                        <div class="dt-header">
+                          <div class="dt-title">Time left to buy ticket</div>
+                          <!-- <div class="dt-next">Next draw: —</div> -->
+                        </div>
+                        <div class="dt-grid" role="status" aria-label="Countdown">
+                          <div class="dt-unit">
+                            <div class="num">00</div>
+                            <div class="label">Days</div>
+                          </div>
+                          <div class="dt-unit">
+                            <div class="num">00</div>
+                            <div class="label">Hours</div>
+                          </div>
+                          <div class="dt-unit">
+                            <div class="num">00</div>
+                            <div class="label">Min</div>
+                          </div>
+                          <div class="dt-unit">
+                            <div class="num">00</div>
+                            <div class="label">Sec</div>
+                          </div>
+                        </div>
+                        <!-- <div class="dt-actions">
+                          <button class="dt-buy" aria-label="Buy ticket">Buy ticket</button>
+                        </div> -->
+                      </div>
+                    </div>
+                  </section>
+                </div>
+        
+                <div class="slide" role="group" aria-roledescription="slide" aria-label="Slide 4" data-anim="slide">
+                  <section class="promo-section">
+                    <div class="top-schedule-line" aria-live="polite" role="status">
+                      <div class="ts-badge" aria-hidden="true">
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none">
+                          <rect x="3" y="5" width="18" height="16" rx="2" stroke="currentColor" stroke-width="1.5"/>
+                        </svg>
+                        <span class="ts-label">This Tuesday</span>
+                      </div>
+                      <div class="ts-meta">—</div>
+                    </div>
+        
+                    <div class="hero-row">
+                      <div class="overlay">
+                        <h2>₦25,000,000</h2>
+                        <p>Play now. Thank yourself later!</p>
+                        <!-- <div class="jackpot">₦25,000,000</div>
+                        <div class="meta">Tuesdays &amp; Fridays • 7:30 PM</div> -->
+                        <div class="play-below">
+                          <span class="play-tag">Play amount</span>
+                          <a class="play-price" href="/new-game">₦100</a>
+                        </div>
+                      </div>
+                      <div class="slide-art">
+                        <img src="./image/image4.png" alt="Promotional art 4">
+                      </div>
+                    </div>
+        
+                    <div class="controls-stack">
+                      <div class="ticket-panel" data-price="100" aria-live="polite">
+                        <div class="ticket-top">
+                          <div>
+                            <div class="tp-title">How many Tickets</div>
+                            <!-- <div class="tp-sub">Select how many tickets to play</div> -->
+                          </div>
+                          <!-- <div style="text-align:right">
+                            <div style="font-size:12px;color:rgba(255,255,255,.86)">Per ticket</div>
+                            <div style="font-weight:900;font-size:16px;">₦100</div>
+                          </div> -->
+                        </div>
+                        <div class="tp-controls" role="group" aria-label="Ticket quantity">
+                          <button class="tp-btn tp-minus" aria-label="Decrease">−</button>
+                          <div class="tp-qty">0</div>
+                          <button class="tp-btn tp-plus" aria-label="Increase">+</button>
+                        </div>
+                        <div class="tp-bottom tp-row">
+                          <div class="tp-total">
+                            <div class="label">Total</div>
+                            <div class="amount">₦0</div>
+                          </div>
+                          <div>
+                            <button class="tp-play" disabled>Play Now</button>
+                            <!-- <div class="tp-note">Max <strong>10</strong> tickets. Click Play to proceed.</div> -->
+                          </div>
+                        </div>                
+                      </div>
+        
+                      <!-- Draw timer (bottom-right) -->
+                      <div class="draw-timer" aria-live="polite" aria-atomic="true">
+                        <div class="dt-header">
+                          <div class="dt-title">Time left to buy ticket</div>
+                          <!-- <div class="dt-next">Next draw: —</div> -->
+                        </div>
+                        <div class="dt-grid" role="status" aria-label="Countdown">
+                          <div class="dt-unit">
+                            <div class="num">00</div>
+                            <div class="label">Days</div>
+                          </div>
+                          <div class="dt-unit">
+                            <div class="num">00</div>
+                            <div class="label">Hours</div>
+                          </div>
+                          <div class="dt-unit">
+                            <div class="num">00</div>
+                            <div class="label">Min</div>
+                          </div>
+                          <div class="dt-unit">
+                            <div class="num">00</div>
+                            <div class="label">Sec</div>
+                          </div>
+                        </div>
+                        <!-- <div class="dt-actions">
+                          <button class="dt-buy" aria-label="Buy ticket">Buy ticket</button>
+                        </div> -->
+                      </div>
+                    </div>
+                  </section>
+                </div>
+        
+                <div class="slide" role="group" aria-roledescription="slide" aria-label="Slide 5" data-anim="fade">
+                  <section class="promo-section">
+                    <div class="top-schedule-line" aria-live="polite" role="status">
+                      <div class="ts-badge" aria-hidden="true">
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none">
+                          <rect x="3" y="5" width="18" height="16" rx="2" stroke="currentColor" stroke-width="1.5"/>
+                        </svg>
+                        <span class="ts-label">This Tuesday</span>
+                      </div>
+                      <div class="ts-meta">—</div>
+                    </div>
+                    <div class="hero-row">
+                      <div class="overlay">
+                        <h2>₦25,000,000</h2>
+                        <p>No dulling. Play now, cash out BIG!</p>
+                        <!-- <div class="jackpot">₦25,000,000</div>
+                        <div class="meta">Tuesdays &amp; Fridays • 7:30 PM</div> -->
+                        <div class="play-below">
+                          <span class="play-tag">Play amount</span>
+                          <a class="play-price" href="/new-game">₦100</a>
+                        </div>
+                      </div>
+                      <div class="slide-art">
+                        <img src="./image/image5.png" alt="Promotional art 5">
+                      </div>
+                    </div>
+        
+                   <div class="controls-stack">
+                      <div class="ticket-panel" data-price="100" aria-live="polite">
+                        <div class="ticket-top">
+                          <div>
+                            <div class="tp-title">How many Tickets</div>
+                            <!-- <div class="tp-sub">Select how many tickets to play</div> -->
+                          </div>
+                          <!-- <div style="text-align:right">
+                            <div style="font-size:12px;color:rgba(255,255,255,.86)">Per ticket</div>
+                            <div style="font-weight:900;font-size:16px;">₦100</div>
+                          </div> -->
+                        </div>
+                        <div class="tp-controls" role="group" aria-label="Ticket quantity">
+                          <button class="tp-btn tp-minus" aria-label="Decrease">−</button>
+                          <div class="tp-qty">0</div>
+                          <button class="tp-btn tp-plus" aria-label="Increase">+</button>
+                        </div>
+                        <div class="tp-bottom tp-row">
+                          <div class="tp-total">
+                            <div class="label">Total</div>
+                            <div class="amount">₦0</div>
+                          </div>
+                          <div>
+                            <button class="tp-play" disabled>Play Now</button>
+                            <!-- <div class="tp-note">Max <strong>10</strong> tickets. Click Play to proceed.</div> -->
+                          </div>
+                        </div>                
+                      </div>
+        
+                      <!-- Draw timer (bottom-right) -->
+                      <div class="draw-timer" aria-live="polite" aria-atomic="true">
+                        <div class="dt-header">
+                          <div class="dt-title">Time left to buy ticket</div>
+                          <!-- <div class="dt-next">Next draw: —</div> -->
+                        </div>
+                        <div class="dt-grid" role="status" aria-label="Countdown">
+                          <div class="dt-unit">
+                            <div class="num">00</div>
+                            <div class="label">Days</div>
+                          </div>
+                          <div class="dt-unit">
+                            <div class="num">00</div>
+                            <div class="label">Hours</div>
+                          </div>
+                          <div class="dt-unit">
+                            <div class="num">00</div>
+                            <div class="label">Min</div>
+                          </div>
+                          <div class="dt-unit">
+                            <div class="num">00</div>
+                            <div class="label">Sec</div>
+                          </div>
+                        </div>
+                        <!-- <div class="dt-actions">
+                          <button class="dt-buy" aria-label="Buy ticket">Buy ticket</button>
+                        </div> -->
+                      </div>
+                    </div>
+                  </section>
+                </div>
+        
+                <div class="slide" role="group" aria-roledescription="slide" aria-label="Slide 6" data-anim="pop">
+                  <section class="promo-section">
+                    <div class="top-schedule-line" aria-live="polite" role="status">
+                      <div class="ts-badge" aria-hidden="true">
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none">
+                          <rect x="3" y="5" width="18" height="16" rx="2" stroke="currentColor" stroke-width="1.5"/>
+                        </svg>
+                        <span class="ts-label">This Tuesday</span>
+                      </div>
+                      <div class="ts-meta">—</div>
+                    </div>
+                    <div class="hero-row">
+                      <div class="overlay">
+                        <h2>₦25,000,000</h2>
+                        <p>Japa plans? This ticket fit fund am</p>
+                        <!-- <div class="jackpot">₦25,000,000</div>
+                        <div class="meta">Tuesdays &amp; Fridays • 7:30 PM</div> -->
+                        <div class="play-below">
+                          <span class="play-tag">Play amount</span>
+                          <a class="play-price" href="/new-game">₦100</a>
+                        </div>
+                      </div>
+                      <div class="slide-art">
+                        <img src="./image/image6.png" alt="Promotional art 6">
+                      </div>
+                    </div>
+        
+                    <div class="controls-stack">
+                      <div class="ticket-panel" data-price="100" aria-live="polite">
+                        <div class="ticket-top">
+                          <div>
+                            <div class="tp-title">How many Tickets</div>
+                            <!-- <div class="tp-sub">Select how many tickets to play</div> -->
+                          </div>
+                          <!-- <div style="text-align:right">
+                            <div style="font-size:12px;color:rgba(255,255,255,.86)">Per ticket</div>
+                            <div style="font-weight:900;font-size:16px;">₦100</div>
+                          </div> -->
+                        </div>
+                        <div class="tp-controls" role="group" aria-label="Ticket quantity">
+                          <button class="tp-btn tp-minus" aria-label="Decrease">−</button>
+                          <div class="tp-qty">0</div>
+                          <button class="tp-btn tp-plus" aria-label="Increase">+</button>
+                        </div>
+                        <div class="tp-bottom tp-row">
+                          <div class="tp-total">
+                            <div class="label">Total</div>
+                            <div class="amount">₦0</div>
+                          </div>
+                          <div>
+                            <button class="tp-play" disabled>Play Now</button>
+                            <!-- <div class="tp-note">Max <strong>10</strong> tickets. Click Play to proceed.</div> -->
+                          </div>
+                        </div>                
+                      </div>
+        
+                      <!-- Draw timer (bottom-right) -->
+                      <div class="draw-timer" aria-live="polite" aria-atomic="true">
+                        <div class="dt-header">
+                          <div class="dt-title">Time left to buy ticket</div>
+                          <!-- <div class="dt-next">Next draw: —</div> -->
+                        </div>
+                        <div class="dt-grid" role="status" aria-label="Countdown">
+                          <div class="dt-unit">
+                            <div class="num">00</div>
+                            <div class="label">Days</div>
+                          </div>
+                          <div class="dt-unit">
+                            <div class="num">00</div>
+                            <div class="label">Hours</div>
+                          </div>
+                          <div class="dt-unit">
+                            <div class="num">00</div>
+                            <div class="label">Min</div>
+                          </div>
+                          <div class="dt-unit">
+                            <div class="num">00</div>
+                            <div class="label">Sec</div>
+                          </div>
+                        </div>
+                        <!-- <div class="dt-actions">
+                          <button class="dt-buy" aria-label="Buy ticket">Buy ticket</button>
+                        </div> -->
+                      </div>
+                    </div>
+                  </section>
+                </div>
               </div>
-              <div id="tsMeta" class="ts-meta">—</div>
+        
+              <button class="nav left" id="prev" aria-label="Previous slide">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                  <polyline points="15 18 9 12 15 6"/>
+                </svg>
+              </button>
+              <button class="nav right" id="next" aria-label="Next slide">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                  <polyline points="9 18 15 12 9 6"/>
+                </svg>
+              </button>
+              <div class="controls-bottom">
+                <div class="dots" id="dots" role="tablist" aria-label="Slides">
+                </div>
+              </div>
             </div>
-
-
-            <div class="base-panel" >
-                <!-- Ticket Panel -->
-                <div class="ticket-panel" id="ticketPanel" data-price="100" aria-live="polite">
-                <div class="ticket-top">
-                    <div>
-                    <div class="tp-title">How many Tickets</div>
-                    <!-- <div class="tp-sub">Select how many tickets to play</div> -->
-                    </div>
-                    <!-- <div style="text-align:right">
-                    <div style="font-size:12px;color:rgba(255,255,255,0.85)">Per ticket</div>
-                    <div style="font-weight:900;font-size:16px;">₦100</div>
-                    </div> -->
-                    <div class="tp-controls" role="group" aria-label="Ticket quantity">
-                    <button class="tp-btn" id="tp-minus" aria-label="Decrease">−</button>
-                    <div id="tp-qty" class="tp-qty">0</div>
-                    <button class="tp-btn" id="tp-plus" aria-label="Increase">+</button>
-                    </div>
-                </div> 
-            
-                <div class="tp-bottom tp-row">
-                    <div class="tp-total">
-                    <div class="label">Total</div>
-                    <div class="amount" id="tp-total">₦0</div>
-                    </div>
-                    <div>
-                    <button id="tp-play" class="tp-play" disabled>Play Now</button>
-                    <!-- <div class="tp-note">Max <strong>10</strong> tickets. Click Play to proceed.</div> -->
-                    </div>
-                </div>
-                </div>
-            
-            
-                <!-- Draw timer (bottom-right) -->
-                <div class="draw-timer" id="drawTimer" aria-live="polite" aria-atomic="true">
-                <div class="dt-header">
-                    <div class="dt-title">Time left to buy tickets</div>
-                    <!-- <div id="dtNext" class="dt-next">Next draw: —</div> -->
-                </div>
-            
-                <div class="dt-grid" role="status" aria-label="Countdown">
-                    <div class="dt-unit"><div id="dtDays" class="num">00</div><div class="label">Days</div></div>
-                    <div class="dt-unit"><div id="dtHours" class="num">00</div><div class="label">Hours</div></div>
-                    <div class="dt-unit"><div id="dtMinutes" class="num">00</div><div class="label">Min.</div></div>
-                    <div class="dt-unit"><div id="dtSeconds" class="num">00</div><div class="label">Sec.</div></div>
-                </div>      
-                </div>
-            </div>
-        
-            <div class="controls-bottom"><div class="dots" id="dots" role="tablist" aria-label="Slides"></div></div>
-        
-          </div>
-        
-          <!-- <noscript style="position:fixed;left:12px;bottom:12px;background:#fff;color:#000;padding:8px;border-radius:6px;box-shadow:0 6px 20px rgba(0,0,0,0.25)">This page requires JavaScript for full functionality.</noscript> -->
+          </section>
         
           <script>
           (function(){
             'use strict';
         
-            // destination when max tickets selected
+             // destination when max tickets selected
             const GAME_URL = '/GamesPage.html';
-        
-            // slider setup
             const slider = document.getElementById('slider');
             const track = document.getElementById('slides');
             const prev = document.getElementById('prev');
             const next = document.getElementById('next');
             const dotsWrap = document.getElementById('dots');
         
+            document.querySelectorAll('.play-price').forEach(a => { a.href = GAME_URL; });
+        
             let slides = Array.from(track.children);
-            if(!slides.length) return;
-            // clone for seamless loop
             const firstClone = slides[0].cloneNode(true);
-            const lastClone = slides[slides.length-1].cloneNode(true);
+            const lastClone = slides[slides.length - 1].cloneNode(true);
             track.appendChild(firstClone);
             track.insertBefore(lastClone, track.firstChild);
             slides = Array.from(track.children);
-        
-            // mark presets
-            slides.forEach(s=>{ const anim = s.getAttribute('data-anim') || 'slide'; s.classList.add('anim-'+anim); });
+            slides.forEach(s => s.classList.add('anim-' + (s.dataset.anim || 'slide')));
         
             let slideW = slider.clientWidth;
-            window.addEventListener('resize', ()=>{ slideW = slider.clientWidth; setPosition(false); });
+            let index = 1;
+            let transitioning = false;
+            let autoTimer = null;
+            let paused = false;
+            const INTERVAL = 30000;
         
-            let index = 1; const INTERVAL = 30000; let autoTimer = null; let transitioning=false; let paused=false;
-        
-            function setPosition(animate=true){ track.style.transition = animate ? '' : 'none'; track.style.transform = `translateX(-${slideW * index}px)`; if(!animate) requestAnimationFrame(()=>{ track.style.transition=''; }); }
-        
-            function nextSlide(){ if(transitioning) return; transitioning=true; index++; setPosition(true); }
-            function prevSlide(){ if(transitioning) return; transitioning=true; index--; setPosition(true); }
-            function goTo(i){ if(transitioning) return; transitioning=true; index = i; setPosition(true); }
-        
-            track.addEventListener('transitionend', ()=>{ transitioning=false; const real = slides.length-2; if(index === slides.length-1){ index = 1; setPosition(false); } if(index === 0){ index = real; setPosition(false); } updateDots(); playCurrentAnimations(); });
-        
-            // dots
-            function buildDots(){ dotsWrap.innerHTML=''; const real = slides.length-2; for(let i=0;i<real;i++){ const b=document.createElement('button'); b.className='dot'; b.setAttribute('data-index', i+1); b.setAttribute('aria-pressed','false'); b.addEventListener('click', ()=>{ goTo(i+1); resetAuto(); }); dotsWrap.appendChild(b); } updateDots(); }
-            function updateDots(){ const buttons = Array.from(dotsWrap.children); buttons.forEach(btn=>btn.setAttribute('aria-pressed','false')); const realIndex = Math.min(Math.max(1,index), slides.length-2); const el = buttons[realIndex-1]; if(el) el.setAttribute('aria-pressed','true'); }
-        
-            prev.addEventListener('click', ()=>{ prevSlide(); resetAuto(); });
-            next.addEventListener('click', ()=>{ nextSlide(); resetAuto(); });
-        
-            slider.addEventListener('mouseenter', ()=>{ paused=true; });
-            slider.addEventListener('mouseleave', ()=>{ paused=false; });
-        
-            function startAuto(){ stopAuto(); autoTimer = setInterval(()=>{ if(!paused) nextSlide(); }, INTERVAL); }
-            function stopAuto(){ if(autoTimer) clearInterval(autoTimer); autoTimer=null; }
-            function resetAuto(){ stopAuto(); startAuto(); }
-        
-            // animations play once
-            const played = new WeakSet();
-            function playCurrentAnimations(){ slides.forEach(s=>{ const ov=s.querySelector('.overlay'); const art=s.querySelector('.slide-art'); if(ov) ov.classList.remove('visible'); if(art) art.classList.remove('visible'); });
-              const cur = slides[index]; if(!cur) return; if(played.has(cur)){ const ov=cur.querySelector('.overlay'); const art=cur.querySelector('.slide-art'); if(ov) ov.classList.add('visible'); if(art) art.classList.add('visible'); return; }
-              const ov=cur.querySelector('.overlay'); const art=cur.querySelector('.slide-art'); if(ov) setTimeout(()=>ov.classList.add('visible'),80); if(art) setTimeout(()=>art.classList.add('visible'),160); played.add(cur);
+            function setPosition(animate = true){
+              track.style.transition = animate ? '' : 'none';
+              track.style.transform = `translateX(-${slideW * index}px)`;
+              if(!animate) requestAnimationFrame(() => { track.style.transition = ''; });
             }
         
-            // init
-            buildDots(); setPosition(false); updateDots(); startAuto(); playCurrentAnimations();
+            function nextSlide(){ if(transitioning) return; transitioning = true; index++; setPosition(true); }
+            function prevSlide(){ if(transitioning) return; transitioning = true; index--; setPosition(true); }
+            function goTo(i){ if(transitioning) return; transitioning = true; index = i; setPosition(true); }
         
-            // ===== ticket panel =====
-            const panel = document.getElementById('ticketPanel'); const minus = document.getElementById('tp-minus'); const plus = document.getElementById('tp-plus'); const qtyEl = document.getElementById('tp-qty'); const totalEl = document.getElementById('tp-total'); const play = document.getElementById('tp-play');
-            let qty = 0; const MIN = 0, MAX = 10; // users can pick up to 10 tickets
-            function unitPrice(){ return Number(panel.getAttribute('data-price')) || 100; }
-            function fmt(n){ return '₦' + Number(n).toLocaleString(); }
+            function setVisible(){
+              slides.forEach(s => s.classList.remove('visible'));
+              const cur = slides[index];
+              if(cur) cur.classList.add('visible');
+            }
         
-            function refreshPanel(){ qtyEl.textContent = String(qty); totalEl.textContent = fmt(qty * unitPrice()); minus.disabled = qty <= MIN; plus.disabled = qty >= MAX; play.disabled = qty === 0; }
-            minus.addEventListener('click', ()=>{ if(qty > MIN){ qty--; refreshPanel(); } });
-            plus.addEventListener('click', ()=>{ if(qty < MAX){ qty++; refreshPanel(); } });
-        
-            play.addEventListener('click', ()=>{
-              if(play.disabled) return;
-              const payload = { tickets: qty, total: qty * unitPrice() };
-              document.dispatchEvent(new CustomEvent('lottery:play',{ detail: payload }));
-              // if reached max, navigate to new page
-              if(qty === MAX){ const q = `?tickets=${payload.tickets}`; window.location.href = GAME_URL + q; return; }
-              play.disabled = true; const old = play.textContent; play.textContent = 'Processing...'; setTimeout(()=>{ play.textContent = old; play.disabled = false; alert(`Submitted ${payload.tickets} ticket(s) — ${fmt(payload.total)}`); }, 900);
+            track.addEventListener('transitionend', () => {
+              transitioning = false;
+              const real = slides.length - 2;
+              if(index === slides.length - 1){ index = 1; setPosition(false); }
+              if(index === 0){ index = real; setPosition(false); }
+              updateDots();
+              setVisible();
+              updateSharedPanels();
+              updateScheduleAndTimer();
             });
         
-            // ===== countdown =====
+            function buildDots(){
+              dotsWrap.innerHTML = '';
+              const real = slides.length - 2;
+              for(let i = 0; i < real; i++){
+                const b = document.createElement('button');
+                b.className = 'dot';
+                b.setAttribute('data-index', String(i + 1));
+                b.setAttribute('aria-pressed', 'false');
+                b.addEventListener('click', () => { goTo(i + 1); resetAuto(); });
+                dotsWrap.appendChild(b);
+              }
+              updateDots();
+            }
+            function updateDots(){
+              const buttons = Array.from(dotsWrap.children);
+              buttons.forEach(btn => btn.setAttribute('aria-pressed', 'false'));
+              const realIndex = Math.min(Math.max(1, index), slides.length - 2);
+              const el = buttons[realIndex - 1];
+              if(el) el.setAttribute('aria-pressed', 'true');
+            }
+        
+            function startAuto(){ stopAuto(); autoTimer = setInterval(() => { if(!paused) nextSlide(); }, INTERVAL); }
+            function stopAuto(){ if(autoTimer) clearInterval(autoTimer); autoTimer = null; }
+            function resetAuto(){ stopAuto(); startAuto(); }
+        
+            prev.addEventListener('click', () => { prevSlide(); resetAuto(); });
+            next.addEventListener('click', () => { nextSlide(); resetAuto(); });
+            slider.addEventListener('mouseenter', () => { paused = true; });
+            slider.addEventListener('mouseleave', () => { paused = false; });
+            slider.tabIndex = 0;
+            slider.addEventListener('keydown', (e) => {
+              if(e.key === 'ArrowLeft'){ prevSlide(); resetAuto(); }
+              if(e.key === 'ArrowRight'){ nextSlide(); resetAuto(); }
+            });
+        
+            const MAX = Number(getComputedStyle(document.documentElement).getPropertyValue('--max-tickets')) || 10;
+            let qty = 0;
+            const fmt = n => '₦' + Number(n).toLocaleString();
+            const priceOf = panel => Number(panel.getAttribute('data-price')) || 100;
+        
+            function updatePanel(panel){
+              const minus = panel.querySelector('.tp-minus');
+              const plus = panel.querySelector('.tp-plus');
+              const qtyEl = panel.querySelector('.tp-qty');
+              const totalEl = panel.querySelector('.amount');
+              const play = panel.querySelector('.tp-play');
+              const price = priceOf(panel);
+              if(qtyEl) qtyEl.textContent = String(qty);
+              if(totalEl) totalEl.textContent = fmt(qty * price);
+              if(minus) minus.disabled = qty <= 0;
+              if(plus) plus.disabled = qty >= MAX;
+              if(play) play.disabled = qty === 0;
+            }
+            function updateSharedPanels(){ document.querySelectorAll('.ticket-panel').forEach(updatePanel); }
+        
+            document.querySelectorAll('.ticket-panel').forEach(panel => {
+              const minus = panel.querySelector('.tp-minus');
+              const plus = panel.querySelector('.tp-plus');
+              const play = panel.querySelector('.tp-play');
+              if(minus) minus.addEventListener('click', () => { if(qty > 0){ qty--; updateSharedPanels(); } });
+              if(plus) plus.addEventListener('click', () => { if(qty < MAX){ qty++; updateSharedPanels(); } });
+              if(play) play.addEventListener('click', () => {
+                if(play.disabled) return;
+                const payload = { tickets: qty, total: qty * priceOf(panel) };
+                document.dispatchEvent(new CustomEvent('lottery:play', { detail: payload }));
+                if(qty === MAX){ window.location.href = GAME_URL + `?tickets=${payload.tickets}`; return; }
+                play.disabled = true;
+                const old = play.textContent;
+                play.textContent = 'Processing...';
+                setTimeout(() => { play.textContent = old; play.disabled = false; alert(`Submitted ${payload.tickets} ticket(s) — ${fmt(payload.total)}`); }, 900);
+              });
+              const buy = panel.closest('.controls-stack')?.querySelector('.dt-buy');
+              if(buy) buy.addEventListener('click', () => panel.scrollIntoView({ behavior:'smooth', block:'center' }));
+            });
+        
             const daysToName = ['Sunday','Monday','Tuesday','Wednesday','Thursday','Friday','Saturday'];
-            function nextWeekdayDate(fromDate, weekday){ const d=new Date(fromDate.getTime()); 
-              const current=d.getDay(); let daysToAdd=(weekday-current+7) % 7; 
-              if(daysToAdd===0){ const after=(d.getHours()>19)||(d.getHours()===19&&d.getMinutes()>=30); if(after) daysToAdd=7; } 
-              d.setDate(d.getDate()+daysToAdd); 
-              d.setHours(19,30,0,0); // draws at 7:30 PM
-              return d; }
-            function getNextDraw(now){ const target=[2,5]; // Tue=2, Fri=5
-              for(let i=0;i<14;i++){ 
-                const d=new Date(now.getTime()); d.setDate(now.getDate()+i); 
-                d.setHours(19,30,0,0); 
-                if(target.includes(d.getDay())&&d.getTime()>now.getTime()) return d; } 
-                return nextWeekdayDate(now,2); }
+            const pad = n => String(n).padStart(2,'0');
+            function nextWeekdayDate(fromDate, weekday){
+              const d = new Date(fromDate.getTime());
+              const current = d.getDay();
+              let daysToAdd = (weekday - current + 7) % 7;
+              if(daysToAdd === 0){ const after = (d.getHours() > 19) || (d.getHours() === 19 && d.getMinutes() >= 30); if(after) daysToAdd = 7; }
+              d.setDate(d.getDate() + daysToAdd); d.setHours(19,30,0,0); // draws at 7:30 PM
+              return d;}
+            function getNextDraw(now){
+              const target = [2,5];    // Tue=2, Fri=5
+              for(let i = 0; i < 14; i++){
+                const d = new Date(now.getTime()); d.setDate(now.getDate() + i); d.setHours(19,30,0,0);
+                if(target.includes(d.getDay()) && d.getTime() > now.getTime()) return d;
+              }
+              return nextWeekdayDate(now, 2);
+            }
         
-            function pad(n){ return String(n).padStart(2,'0'); }
+            function updateScheduleAndTimer(){
+              const now = new Date();
+              const nextDraw = getNextDraw(now);
+              const diff = Math.max(0, nextDraw.getTime() - now.getTime());
+              const sec = Math.floor(diff / 1000);
+              const days = Math.floor(sec / 86400);
+              const hours = Math.floor((sec % 86400) / 3600);
+              const minutes = Math.floor((sec % 3600) / 60);
+              const seconds = sec % 60;
+              const nextText = 'Next draw: ' + daysToName[nextDraw.getDay()] + ', ' + nextDraw.toLocaleString(undefined, { month:'short', day:'numeric', year:'numeric', hour:'numeric', minute:'2-digit' });
         
-            (function createCountdownAndTopLine(){ 
-              const elDays=document.getElementById('dtDays'); 
-              const elHours=document.getElementById('dtHours'); 
-              const elMinutes=document.getElementById('dtMinutes'); 
-              const elSeconds=document.getElementById('dtSeconds'); 
-              const elNext=document.getElementById('dtNext'); 
-              const elLabel=document.getElementById('tsLabel'); 
-              const elMeta=document.getElementById('tsMeta'); 
-              
-              let prev={days:null,hours:null,minutes:null,
-                seconds:null,nextText:null,topLabel:null,topMeta:null}; 
-                
-                function tickOnce(){ 
-                  const now=new Date(); 
-                  const next=getNextDraw(now); 
-                  const diff=Math.max(0,next.getTime()-now.getTime()); 
-                  const sec=Math.floor(diff/1000); 
-                  const days=Math.floor(sec/86400); 
-                  const hours=Math.floor((sec%86400)/3600); 
-                  const minutes=Math.floor((sec%3600)/60); 
-                  const seconds=sec % 60; 
-                  
-                  const nextText='Next draw: '+ daysToName[next.getDay()]+', '+next.toLocaleString(undefined,{month:'short',day:'numeric',year:'numeric',hour:'numeric',minute:'2-digit'}); 
-                  
-                  if(elNext && prev.nextText!==nextText){ elNext.textContent=nextText; prev.nextText=nextText; } 
-                  if(elDays && prev.days!==days){ elDays.textContent=pad(days); prev.days=days; } 
-                  if(elHours && prev.hours!==hours){ elHours.textContent=pad(hours); prev.hours=hours; } 
-                  if(elMinutes && prev.minutes!==minutes){ elMinutes.textContent=pad(minutes); prev.minutes=minutes; } 
-                  if(elSeconds && prev.seconds!==seconds){ elSeconds.textContent=pad(seconds); prev.seconds=seconds; }
-                  
-                  const weekday=daysToName[next.getDay()]; 
-                  let labelText=`This ${weekday}`; 
-                  if(now.getDay()===next.getDay()&&now.getTime()<next.getTime()) labelText='Tonight'; 
-                  
-                  const hoursTo=diff/(1000*3600); 
-                  let metaHTML=''; 
-                  if(hoursTo<1){ 
-                    
-                    const minsLeft=Math.floor(diff/60000); 
-                    const secsLeft=Math.floor((diff%60000)/1000); 
-                    const mm=String(minsLeft).padStart(2,'0'); 
-                    const ss=String(secsLeft).padStart(2,'0'); 
-                    metaHTML=`<svg class="clock-svg" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><circle cx="12" cy="12" r="9" stroke="currentColor" stroke-width="1.2" opacity="0.95"/><path class="clock-hand" d="M12 6v6l4 2" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg>${mm}:${ss} to go`; } 
-                    else if(hoursTo<=12){ 
-                      const hrs=Math.max(1,Math.ceil(hoursTo)); 
-                      metaHTML=`<svg class="clock-svg" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><circle cx="12" cy="12" r="9" stroke="currentColor" stroke-width="1.2" opacity="0.95"/><path class="clock-hand" d="M12 7v5l4 2" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg>`+(hrs===1?`${hrs} hour to go`:`${hrs} hours to go`); } 
-                      else { 
-                        metaHTML=`${weekday}, ${next.toLocaleDateString(undefined,{month:'short',day:'numeric'})} • 7:30 PM`; } 
-                        
-                        if(elLabel&&prev.topLabel!==labelText){ elLabel.textContent=labelText; prev.topLabel=labelText; } 
-                        if(elMeta&&prev.topMeta!==metaHTML){ elMeta.innerHTML=metaHTML; prev.topMeta=metaHTML; } const drawEl=document.getElementById('drawTimer'); 
+              document.querySelectorAll('.top-schedule-line').forEach(line => {
+                const label = line.querySelector('.ts-label');
+                const meta = line.querySelector('.ts-meta');
+                if(label){
+                  let labelText = `This ${daysToName[nextDraw.getDay()]}`;
+                  if(now.getDay() === nextDraw.getDay() && now.getTime() < nextDraw.getTime()) labelText = 'Tonight';
+                  label.textContent = labelText;
+                }
+                if(meta){
+                  const hoursTo = diff / (1000 * 3600);
+                  if(hoursTo < 1){
+                    meta.innerHTML = `<svg width="16" height="16" viewBox="0 0 24 24" fill="none" style="vertical-align:-3px;margin-right:6px"><circle cx="12" cy="12" r="9" stroke="currentColor" stroke-width="1.2" opacity="0.95"/><path d="M12 6v6l4 2" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg>${pad(minutes)}:${pad(seconds)} to go`;
+                  } else if(hoursTo <= 12){
+                    const hrs = Math.max(1, Math.ceil(hoursTo));
+                    meta.textContent = hrs === 1 ? `${hrs} hour to go` : `${hrs} hours to go`;
+                  } else {
+                    meta.textContent = nextText;
+                  }
+                }
+                diff <= 3600000 ? line.classList.add('urgent') : line.classList.remove('urgent');
+              });
         
-                        // urgent state when under 1 hour
-                        const topEl=document.getElementById('topScheduleLine'); 
-                        if(drawEl){ if(diff<=3600000) drawEl.classList.add('urgent'); else drawEl.classList.remove('urgent'); } if(topEl){ if(diff<=3600000) topEl.classList.add('urgent'); 
-                        else topEl.classList.remove('urgent'); } } 
+              document.querySelectorAll('.draw-timer').forEach(timer => {
+                const nums = timer.querySelectorAll('.dt-grid .num');
+                const nextEl = timer.querySelector('.dt-next');
+                if(nums[0]) nums[0].textContent = pad(days);
+                if(nums[1]) nums[1].textContent = pad(hours);
+                if(nums[2]) nums[2].textContent = pad(minutes);
+                if(nums[3]) nums[3].textContent = pad(seconds);
+                if(nextEl) nextEl.textContent = nextText;
+                diff <= 3600000 ? timer.classList.add('urgent') : timer.classList.remove('urgent');
+              });
+            }
         
-                        // schedule ticks aligned to system second (efficient)
-                        function scheduleTick(){ tickOnce(); 
-                          const now=Date.now(); 
-                          const delay=1000-(now%1000)+6; // small buffer
+            function tick(){
+              updateScheduleAndTimer();
+              const now = Date.now();
+              const delay = 1000 - (now % 1000) + 8;
+              setTimeout(tick, delay);
+            }
         
-                          setTimeout(scheduleTick, delay); } 
-                          scheduleTick(); })();
+            buildDots();
+            setPosition(false);
+            startAuto();
+            setVisible();
+            updateSharedPanels();
+            updateScheduleAndTimer();
+            tick();
         
           })();
-          </script>          
+          </script>
+
+
+                
                 
             
 
