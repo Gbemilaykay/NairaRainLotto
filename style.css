@@ -1662,7 +1662,7 @@ color: #ffffff; }
 }
 
 .slider .overlay{
-  max-width:300px;
+  max-width:400px;
   margin-top: 70px;
   /* padding:clamp(18px,2.8vw,34px);
   max-width: 100%; */ 
