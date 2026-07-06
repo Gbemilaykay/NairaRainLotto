@@ -1492,32 +1492,32 @@ color: #ffffff; }
   transition:opacity .36s ease, transform .5s cubic-bezier(.22,.9,.3,1);
   z-index: 10;
 }
-.slider .overlay.visible{
+/* .slider .overlay.visible{
   opacity:1;
   transform:translateY(0) scale(1);
-}
+} */
 
-.slider .overlay h2,
+/* .slider .overlay h2,
 .overlay p,
 .overlay .jackpot,
 .overlay .meta,
 .overlay .play-below{
   opacity:0;
   transform:translateY(10px);
-}
-.slide.visible .overlay h2{animation:textRise .65s cubic-bezier(.2,.9,.2,1) .08s forwards}
-.slide.visible .overlay p{animation:textRise .65s cubic-bezier(.2,.9,.2,1) .18s forwards}
-.slide.visible .overlay .jackpot{animation:textRise .65s cubic-bezier(.2,.9,.2,1) .28s forwards}
-.slide.visible .overlay .meta{animation:textRise .65s cubic-bezier(.2,.9,.2,1) .36s forwards}
-.slide.visible .overlay .play-below{animation:textRise .65s cubic-bezier(.2,.9,.2,1) .45s forwards}
+} */
+.slider .slide.visible .overlay h2{animation:textRise .65s cubic-bezier(.2,.9,.2,1) .08s forwards}
+.slider .slide.visible .overlay p{animation:textRise .65s cubic-bezier(.2,.9,.2,1) .18s forwards}
+.slider .slide.visible .overlay .jackpot{animation:textRise .65s cubic-bezier(.2,.9,.2,1) .28s forwards}
+.slider .slide.visible .overlay .meta{animation:textRise .65s cubic-bezier(.2,.9,.2,1) .36s forwards}
+.slider .slide.visible .overlay .play-below{animation:textRise .65s cubic-bezier(.2,.9,.2,1) .45s forwards}
 
 .slider .overlay h2{
-  margin:0 0 10px;
+  /* margin:0 0 10px; */
   /* font-size:clamp(26px,4.6vw,60pt); */
   font-size: 85pt;
   line-height:1.02;
   font-weight:700;
-  max-width:14ch;
+  /* max-width:14ch; */
   /* letter-spacing: 0.1px; */
   /* background:linear-gradient(180deg,#ffffff 0%, #eaf1ff 100%);
   -webkit-background-clip:text; */
@@ -1581,7 +1581,7 @@ color: #ffffff; }
   right: 0;
   bottom: 0; */
   /* width:min(430px,34vw); */
-  max-width:clamp(700px,22vw,400px);
+  max-width:clamp(650px,20vw,400px);
   /* opacity:0; */
   transform:translateY(12px) scale(.96) rotate(-1deg);
   transition:opacity .48s ease, transform .55s cubic-bezier(.2,.9,.2,1);
@@ -2121,7 +2121,7 @@ color: #ffffff; }
 .slider .dot[aria-pressed='true']{
   background:linear-gradient(90deg,var(--accent-2),var(--accent));
   transform:scale(1.15)}
-  
+
 
   @media screen and (max-width: 768px){      
     .slider .controls-stack{
@@ -2424,13 +2424,13 @@ color: #ffffff; }
   }
 
 /* Motion variants per slide */
-.slide.anim-slide .overlay{transform:translateX(-26px) translateY(12px)}
-.slide.anim-slide .slide-art{transform:translateX(22px) translateY(12px) scale(.96) rotate(-2deg)}
-.slide.anim-fade .overlay{transform:translateY(18px) scale(.985)}
-.slide.anim-fade .slide-art{transform:translateY(16px) scale(.95)}
-.slide.anim-pop .overlay{transform:scale(.96) translateY(12px)}
-.slide.anim-pop .slide-art{transform:scale(.92) translateY(14px) rotate(1deg)}
-.slide.visible.anim-slide .overlay,
+.slider .slide.anim-slide .overlay{transform:translateX(-26px) translateY(12px)}
+.slider .slide.anim-slide .slide-art{transform:translateX(22px) translateY(12px) scale(.96) rotate(-2deg)}
+.slider .slide.anim-fade .overlay{transform:translateY(18px) scale(.985)}
+.slider .slide.anim-fade .slide-art{transform:translateY(16px) scale(.95)}
+.slider .slider .slide.anim-pop .overlay{transform:scale(.96) translateY(12px)}
+.slider .slide.anim-pop .slide-art{transform:scale(.92) translateY(14px) rotate(1deg)}
+.slider .slide.visible.anim-slide .overlay,
 .slide.visible.anim-fade .overlay,
 .slide.visible.anim-pop .overlay,
 .slide.visible.anim-slide .slide-art,
