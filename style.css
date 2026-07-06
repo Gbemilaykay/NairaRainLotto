@@ -1581,7 +1581,7 @@ color: #ffffff; }
   right: 0;
   bottom: 0; */
   /* width:min(430px,34vw); */
-  max-width:clamp(650px,20vw,400px);
+  max-width:clamp(650px,18vw,400px);
   /* opacity:0; */
   transform:translateY(12px) scale(.96) rotate(-1deg);
   transition:opacity .48s ease, transform .55s cubic-bezier(.2,.9,.2,1);
@@ -1920,7 +1920,7 @@ color: #ffffff; }
   transition:opacity .35s ease, transform .45s cubic-bezier(.2,.9,.2,1);
 }
 .slider .slide.visible .ticket-panel,
-.slide.visible .draw-timer{opacity:1;transform:translateY(0)}
+.slider .slide.visible .draw-timer{opacity:1;transform:translateY(0)}
 
 .slider .ticket-panel{
   display:flex;
@@ -1991,7 +1991,7 @@ color: #ffffff; }
   transform:translateY(-2px);
   box-shadow:0 14px 28px rgba(2,6,23,.32);
 }
-.slider .slider .tp-btn[disabled]
+.slider .tp-btn[disabled]
 {opacity:.38;cursor:not-allowed;
 }
 .slider .tp-qty{
@@ -2428,14 +2428,14 @@ color: #ffffff; }
 .slider .slide.anim-slide .slide-art{transform:translateX(22px) translateY(12px) scale(.96) rotate(-2deg)}
 .slider .slide.anim-fade .overlay{transform:translateY(18px) scale(.985)}
 .slider .slide.anim-fade .slide-art{transform:translateY(16px) scale(.95)}
-.slider .slider .slide.anim-pop .overlay{transform:scale(.96) translateY(12px)}
+.slider .slide.anim-pop .overlay{transform:scale(.96) translateY(12px)}
 .slider .slide.anim-pop .slide-art{transform:scale(.92) translateY(14px) rotate(1deg)}
 .slider .slide.visible.anim-slide .overlay,
-.slide.visible.anim-fade .overlay,
-.slide.visible.anim-pop .overlay,
-.slide.visible.anim-slide .slide-art,
-.slide.visible.anim-fade .slide-art,
-.slide.visible.anim-pop .slide-art{opacity:1;transform:translateY(0) scale(1) rotate(0deg)}
+.slider .slide.visible.anim-fade .overlay,
+.slider .slide.visible.anim-pop .overlay,
+.slider .slide.visible.anim-slide .slide-art,
+.slider .slide.visible.anim-fade .slide-art,
+.slider .slide.visible.anim-pop .slide-art{opacity:1;transform:translateY(0) scale(1) rotate(0deg)}
 
 @keyframes textRise{
   0%{opacity:0;transform:translateY(12px);filter:blur(4px)}
@@ -2521,7 +2521,7 @@ color: #ffffff; }
   .slider .slide-art img{animation:none!important}
 }
 
-:focus{outline:3px solid rgba(255,255,255,.08);outline-offset:3px}
+/* :focus{outline:3px solid rgba(255,255,255,.08);outline-offset:3px} */
 
 
 
