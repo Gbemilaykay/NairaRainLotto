@@ -232,204 +232,722 @@ closeAllPopups();
 
 
 
+<div class="payment-Main">
+
+   <!-- ─── DECORATIVE PARTICLES ─── -->
+   <div class="particles" id="particles"></div>
+
+   <!-- ─── TOAST ─── -->
+   <div class="toast" id="toast">
+       <i class="fas fa-check-circle"></i>
+       <span id="toastMsg">Payment Successfully!</span>
+       <button class="toast-close" id="toastClose">&times;</button>
+   </div>
+
+   <!-- ─── MAIN CONTAINER ─── -->
+   <div class="payment-container">
+
+       <!-- HEADER -->
+       <!-- <header class="header">
+           <div class="logo-area">
+               <div class="logo-icon">
+                   <i class="fas fa-trophy"></i>
+               </div>
+               <div class="logo-text">
+                   <h1>Lucky<span>Draw</span></h1>
+                   <div class="sub">Secure Payment Portal</div>
+               </div>
+           </div>
+       </header> -->
+
+       <!-- PAYMENT METHODS -->
+       <div class="section-title">
+           <i class="fas fa-credit-card"></i> Select Payment Method
+       </div>
+
+       <div class="methods-grid" id="methodsGrid">
+           <!-- Card Payment -->
+           <button class="method-btn" data-method="card">
+               <span class="check-mark"><i class="fas fa-check"></i></span>
+               <i class="fas fa-credit-card"></i>
+               <span class="method-label">Card Payment <small>Visa / Mastercard</small></span>
+           </button>
+           <!-- Bank Transfer -->
+           <button class="method-btn" data-method="bank">
+               <span class="check-mark"><i class="fas fa-check"></i></span>
+               <i class="fas fa-university"></i>
+               <span class="method-label">Bank Transfer <small>direct deposit</small></span>
+           </button>
+           <!-- Mobile Money -->
+           <button class="method-btn" data-method="mobilemoney">
+               <span class="check-mark"><i class="fas fa-check"></i></span>
+               <i class="fas fa-mobile-alt"></i>
+               <span class="method-label">Mobile Money <small>MTN &amp; Airtel</small></span>
+           </button>
+           <!-- Airtime -->
+           <button class="method-btn" data-method="airtime">
+               <span class="check-mark"><i class="fas fa-check"></i></span>
+               <i class="fas fa-phone-alt"></i>
+               <span class="method-label">Airtime Payment <small>via phone credit</small></span>
+           </button>
+           <!-- OPAY -->
+           <button class="method-btn" data-method="opay">
+               <span class="check-mark"><i class="fas fa-check"></i></span>
+               <i class="fas fa-wallet"></i>
+               <span class="method-label">OPAY <small>wallet</small></span>
+           </button>
+           <!-- PALMPAY -->
+           <button class="method-btn" data-method="palmpay">
+               <span class="check-mark"><i class="fas fa-check"></i></span>
+               <i class="fas fa-hand-holding-usd"></i>
+               <span class="method-label">PALMPAY <small>wallet</small></span>
+           </button>
+       </div>
+
+       <!-- FORM AREA -->
+       <div class="form-area" id="formArea">
+           <div id="formContent">
+               <!-- Default: no method selected -->
+               <div class="select-hint">
+                   <i class="fas fa-hand-pointer"></i> Please select a payment method above to continue.
+               </div>
+           </div>
+       </div>
+
+       <!-- PAY BUTTON -->
+       <button class="pay-btn" id="payBtn" disabled>
+           <i class="fas fa-lock"></i> Pay Now
+       </button>
+
+       <!-- <div style="text-align:center;margin-top:18px;font-size:12px;color:#445566;">
+           <i class="fas fa-shield-alt" style="margin-right:6px;color:#f7c948;"></i>
+           Secured &bull; NairaRain Lotto
+       </div> -->
+   </div>
 
 
-<div class="payment-container">
-    <div class="contained">
-            <h1>Payment Methods</h1>
-            
-            <!-- Message Box for Feedback -->
-            <div id="messageBox" class="messageBox"></div>
-            
-            <!-- Payment Method Selection -->
-            <div class="btn-group" id="paymentMethods">
-            <button id="btn-card" onclick="toggleForm('cardForm', this)">Card Payment</button>
-            <button id="btn-transfer" onclick="toggleForm('transferForm', this)">Bank Transfer</button>
-            <button id="btn-mobile-money" onclick="toggleForm('mobileMoneyForm', this)">Mobile Money</button>
-            <button id="btn-airtime" onclick="toggleForm('airtimeForm', this)">Airtime Payment</button>
-            <button id="btn-ussd" onclick="toggleForm('ussdForm', this)">USSD Payment</button>            
-            </div>
-            
-            <!-- Airtime Payment Form -->
-            <form id="airtimeForm">
-            <label for="airtimeNumber">Phone Number</label>
-            <input type="text" id="airtimeNumber" placeholder="Enter phone number">
-            
-            <label for="airtimeAmount">Amount</label>
-            <input type="number" id="airtimeAmount" placeholder="Enter amount">
-            
-            <div class="form-buttons">
-                <button type="button" class="pay-btn" onclick="processPayment('airtime')">Pay</button>
-                <button type="button" class="cancel-btn" onclick="cancelPayment()">Cancel</button>
-            </div>
-            </form>
-
-            <!-- USSD Payment Form -->
-            <form id="ussdForm">
-            <label for="ussdAmount">Amount</label>
-            <input type="number" id="ussdAmount" placeholder="Enter amount">
-            
-            <label for="ussdCode">USSD Code</label>
-            <input type="text" id="ussdCode" placeholder="e.g., *123*456#">
-            
-            <div class="form-buttons">
-                <button type="button" class="pay-btn" onclick="processPayment('ussd')">Pay</button>
-                <button type="button" class="cancel-btn" onclick="cancelPayment()">Cancel</button>
-            </div>
-            </form>
-
-            <!-- Bank Card Payment Form -->
-            <form id="cardForm">
-            <label for="cardNumber">Card Number</label>
-            <input type="text" id="cardNumber" placeholder="Enter card number">
-            
-            <label for="cardName">Card Holder Name</label>
-            <input type="text" id="cardName" placeholder="Enter name on card">
-            
-            <!-- Expiration Date and CVV on the same line -->
-            <div class="expiry-cvv-container">
-                <div class="expiry">
-                <label>Expiration Date</label>
-                <div class="expiry-container">
-                    <input type="text" id="expiryMonth" placeholder="MM">
-                    <input type="text" id="expiryYear" placeholder="YYYY">
-                </div>
-                </div>
-                <div class="cvv">
-                <label for="cvv">CVV</label>
-                <input type="text" id="cvv" placeholder="Enter CVV">
-                </div>
-            </div>
-            
-            <label for="cardAmount">Amount</label>
-            <input type="number" id="cardAmount" placeholder="Enter amount">
-            
-            <div class="form-buttons">
-                <button type="button" class="pay-btn" onclick="processPayment('card')">Pay</button>
-                <button type="button" class="cancel-btn" onclick="cancelPayment()">Cancel</button>
-            </div>
-            </form>
-
-            <!-- Bank Transfer Payment Form -->
-            <form id="transferForm">
-            <label for="bankName">Select Bank</label>
-            <select id="bankName">
-                <option value="">Select your bank</option>
-                <option value="Bank 1">Access Bank plc</option>
-                <option value="Bank 2">Ecobank Nigeria Plc</option>
-                <option value="Bank 3">Fidelity Bank Plc</option>
-                <option value="Bank 4">First Bank Nigeria</option>
-                <option value="Bank 5">Guaranty Trust Bank</option>
-                <option value="Bank 6">Keystone Bank</option>
-                <option value="Bank 7">Providus Bank</option>
-                <option value="Bank 8">Stanbic IBTC</option>
-                <option value="Bank 9">Sterling Bank</option>
-                <option value="Bank 10">Union Bank</option>
-                <option value="Bank 11">United Bank For Africa</option>
-                <option value="Bank 12">Wema Bank</option>
-                <option value="Bank 13">Zenith Bank</option>
-                <option value="Bank 14">Opay</option>
-                <option value="Bank 15">Palmpay</option>
-                <option value="Bank 16">Moniepoint</option>
-            </select>
-            
-            <label for="accountNumber">Account Number</label>
-            <input type="text" id="accountNumber" placeholder="Enter your account number">
-            
-            <label for="transferAmount">Amount</label>
-            <input type="number" id="transferAmount" placeholder="Enter amount">
-            
-            <div class="form-buttons">
-                <button type="button" class="pay-btn" onclick="processPayment('transfer')">Pay</button>
-                <button type="button" class="cancel-btn" onclick="cancelPayment()">Cancel</button>
-            </div>
-            </form>
-
-            <!-- Mobile Money Payment Form -->
-            <form id="mobileMoneyForm">
-              <label class="wallet-header">Select Mobile Wallet</label>
-              <div class="wallet-options">
-                <div class="wallet-option">
-                  <input type="radio" id="wallet-mtn" name="wallet" value="MTN Momo">
-                  <label for="wallet-mtn">
-                    <img src="./image/MTN logo.png" alt="MTN Momo">MTN Momo                    
-                  </label>
-                </div>
-                <div class="wallet-option">
-                  <input type="radio" id="wallet-airtel" name="wallet" value="Airtel Smartcash">
-                  <label for="wallet-airtel">
-                    <img src="./image/Airtel logo.png" alt="Airtel Smartcash">Airtel Smartcash                    
-                  </label>
-                </div>
-              </div>
-              
-              <label for="mobileMoneyNumber">Mobile Number</label>
-              <input type="text" id="mobileMoneyNumber" placeholder="Enter mobile number">
-              
-              <label for="mobileMoneyAmount">Amount</label>
-              <input type="number" id="mobileMoneyAmount" placeholder="Enter amount">
-              
-              <div class="form-buttons">
-                <button type="button" class="pay-btn" onclick="processPayment('mobileMoney')">Pay</button>
-                <button type="button" class="cancel-btn" onclick="cancelPayment()">Cancel</button>
-              </div>
-            </form>
-            
-            <!-- Instructions -->
-            <div class="instructions">
-            <h3>How to Pay</h3>
-            <p>1. Click one of the payment method buttons above. Clicking an active button will also close the form.</p>
-            <p>2. Minimum deposit amount is ₦100.00 to play a game. You can deposit at least ₦100.00 in one transaction.</p>
-            <!-- <p>3. Maximum deposit amount is ₦1000.00 - you can deposit at most ₦1000.00 in one transaction.</p> -->
-            <p>3. You can deposit multiple times to reach your desired amount.</p>    
-            <p>4. A form will appear for the selected payment method. Fill in the required details.</p>
-            <p>5. Click the "Pay" button to process your payment or "Cancel" if you want to choose a different payment method.</p>
-            <p>6. Once the payment is successfully processed into our wallet, you can play any game.</p>
-            </div>
-    </div>
 </div>
-  
+
 <script>
-  function toggleForm(formId, btn) {
-    if (btn.classList.contains('active')) { cancelPayment(); return; }
-    cancelPayment();
-    document.getElementById(formId).classList.add('active');
-    btn.classList.add('active');
-    clearMessage();
+  // ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+  //  DATA
+  // ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+  // Nigerian banks list
+  const NIGERIAN_BANKS = [
+      'Access Bank',
+      'Access Bank (Diamond)',
+      'ALAT by Wema',
+      'Citibank Nigeria',
+      'Ecobank Nigeria',
+      'Fidelity Bank',
+      'First Bank of Nigeria',
+      'First City Monument Bank (FCMB)',
+      'Globus Bank',
+      'Guaranty Trust Bank (GTBank)',
+      'Heritage Bank',
+      'Jaiz Bank',
+      'Keystone Bank',
+      'Kuda Bank',
+      'Mint Bank',
+      'Optimus Bank',
+      'Polaris Bank',
+      'PremiumTrust Bank',
+      'Providus Bank',
+      'Stanbic IBTC Bank',
+      'Standard Chartered Bank',
+      'Sterling Bank',
+      'Suntrust Bank',
+      'TajBank',
+      'Titan Bank',
+      'Union Bank of Nigeria',
+      'United Bank for Africa (UBA)',
+      'Unity Bank',
+      'Wema Bank',
+      'Zenith Bank'
+  ];
+
+  // Currency symbol
+  const CURRENCY = '₦';
+
+  const METHODS = {
+      card: {
+          label: 'Card Payment',
+          icon: 'fa-credit-card',
+          desc: 'Pay securely with your Visa, Mastercard, or other supported cards.',
+          fields: [
+              { id: 'card_amount', label: `Amount (${CURRENCY})`, type: 'number', placeholder: 'e.g. 1000',
+                  required: true, naira: true },
+              { id: 'card_number', label: 'Card Number', type: 'text', placeholder: '1234 5678 9012 3456',
+                  required: true },
+          ],
+          // Expiry Month, Expiry Year, CVV in one row (3 columns)
+          fieldsRow3: [
+              { id: 'card_expiry_month', label: 'Expiry (MM)', type: 'text', placeholder: 'MM',
+              required: true, maxlength: 2 },
+              { id: 'card_expiry_year', label: 'Expiry (YY)', type: 'text', placeholder: 'YY',
+              required: true, maxlength: 2 },
+              { id: 'card_cvv', label: 'CVV', type: 'password', placeholder: '•••', required: true,
+                  maxlength: 4 },
+          ],
+          extraFields: [
+              { id: 'card_name', label: 'Cardholder Name', type: 'text', placeholder: 'Tolu Dare',
+                  required: true },
+          ],
+          instructions: [
+              `Enter the amount you wish to pay.`,
+              'Enter your card number without spaces or dashes.',
+              'Provide the expiry month (MM), expiry year (YY), and the 3-digit CVV number at the back of your card.',
+              'Type the full name as it appears on the card.',
+              'Click "Pay Now" to process your secure payment.'
+          ]
+      },
+      bank: {
+          label: 'Bank Transfer',
+          icon: 'fa-university',
+          desc: 'Pay via direct bank transfer. Select your bank and enter your account details.',
+          fields: [
+              { id: 'bank_amount', label: `Amount (${CURRENCY})`, type: 'number', placeholder: 'e.g. 1000',
+                  required: true, naira: true },
+              { id: 'bank_name', label: 'Bank Name', type: 'select', options: NIGERIAN_BANKS,
+                  required: true },
+              { id: 'bank_account', label: 'Account Number', type: 'text', placeholder: '0123456789',
+                  required: true },
+              { id: 'bank_holder', label: 'Account Holder Name', type: 'text', placeholder: 'Ade Fela',
+                  required: true },
+          ],
+          instructions: [
+              `Enter the amount you wish to pay.`,
+              'Select your bank from the list of Banks.',
+              'Enter your account number and the account holder name.',
+              'Transfer the exact amount to NairaRain lotto bank account.',
+              // 'Use your phone number as the transaction reference.',
+              'After imputing all correct details, click "Pay Now" to confirm your payment.'
+          ]
+      },
+      mobilemoney: {
+          label: 'Mobile Money',
+          icon: 'fa-mobile-alt',
+          desc: 'Pay using MTN Momo or Airtel Smartcash. Select your network below.',
+          fields: [
+              { id: 'mm_amount', label: `Amount (${CURRENCY})`, type: 'number', placeholder: 'e.g. 1000',
+                  required: true, naira: true },
+              { id: 'mm_phone', label: 'Mobile Money Number', type: 'tel', placeholder: 'e.g. 08012345678',
+                  required: true },
+              { id: 'mm_pin', label: 'PIN (optional for some networks)', type: 'password',
+                  placeholder: 'Enter your PIN', required: false },
+          ],
+          instructions: [
+              'Select your network (MTN Momo or Airtel Smartcash) using the buttons above.',
+              `Enter the amount you wish to pay.`,
+              'Enter your Mobile Money registered phone number.',
+              'Enter your PIN (if required by your network).',
+              'Click "Pay Now", you will receive a prompt on your phone.',
+              'Confirm the transaction on your mobile device to complete payment.'
+          ]
+      },
+      airtime: {
+          label: 'Airtime Payment',
+          icon: 'fa-phone-alt',
+          desc: 'Pay using your mobile airtime balance. Supported networks: MTN, Airtel, Glo, 9mobile.',
+          fields: [
+              { id: 'airtime_amount', label: `Amount (${CURRENCY})`, type: 'number', placeholder: 'e.g. 1000',
+                  required: true, naira: true },
+              { id: 'airtime_phone', label: 'Phone Number', type: 'tel', placeholder: 'e.g. 08012345678',
+                  required: true },
+              { id: 'airtime_network', label: 'Network Provider', type: 'select', options: ['MTN', 'Airtel',
+                      'Glo', '9mobile'
+                  ], required: true },
+          ],
+          instructions: [
+              `Enter the amount you wish to pay using airtime.`,
+              'Enter your active phone number registered with the network.',
+              'Select your network provider from the dropdown.',
+              'Click "Pay Now" and follow the on-screen confirmation.',
+              'Airtime will be deducted from your balance instantly.'
+          ]
+      },
+      opay: {
+          label: 'OPAY',
+          icon: 'fa-wallet',
+          desc: 'Pay using your OPAY wallet. Fast and secure.',
+          fields: [
+              { id: 'opay_amount', label: `Amount (${CURRENCY})`, type: 'number', placeholder: 'e.g. 1000',
+                  required: true, naira: true },
+              { id: 'opay_phone', label: 'OPAY Phone Number', type: 'tel', placeholder: 'e.g. 08012345678',
+                  required: true },
+              { id: 'opay_pin', label: 'OPAY PIN (optional)', type: 'password',
+                  placeholder: 'Enter your 4-digit PIN', required: false },
+          ],
+          instructions: [
+              `Enter the amount you wish to pay.`,
+              'Enter your OPAY-registered phone number.',
+              'Enter your OPAY PIN for faster verification.',
+              'Click "Pay Now", you will receive a confirmation in your OPAY app.',
+              'Your payment will be processed instantly.'
+          ]
+      },
+      palmpay: {
+          label: 'PALMPAY',
+          icon: 'fa-hand-holding-usd',
+          desc: 'Pay using your PALMPAY wallet. Quick and reliable.',
+          fields: [
+              { id: 'palmpay_amount', label: `Amount (${CURRENCY})`, type: 'number', placeholder: 'e.g. 1000',
+                  required: true, naira: true },
+              { id: 'palmpay_phone', label: 'PALMPAY Phone Number', type: 'tel',
+                  placeholder: 'e.g. 08012345678', required: true },
+              { id: 'palmpay_pin', label: 'PALMPAY PIN (optional)', type: 'password',
+                  placeholder: 'Enter your 4-digit PIN', required: false },
+          ],
+          instructions: [
+              `Enter the amount you wish to pay.`,
+              'Enter your PALMPAY-registered phone number.',
+              'Enter your PALMPAY PIN for faster verification.',
+              'Click "Pay Now", you will receive a confirmation in your PALMPAY app.',
+              'Your payment will be processed instantly.'
+          ]
+      }
+  };
+
+  // ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+  //  STATE
+  // ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+  let currentMethod = null;
+  let selectedNetwork = 'MTN';
+
+  // ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+  //  DOM REFS
+  // ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+  const formContent = document.getElementById('formContent');
+  const payBtn = document.getElementById('payBtn');
+  const toast = document.getElementById('toast');
+  const toastMsg = document.getElementById('toastMsg');
+  const toastClose = document.getElementById('toastClose');
+  const methodBtns = document.querySelectorAll('.method-btn');
+
+  // ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+  //  RENDER FUNCTIONS
+  // ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+  function renderForm(methodKey) {
+      const method = METHODS[methodKey];
+      if (!method) {
+          formContent.innerHTML = `
+              <div class="select-hint">
+                  <i class="fas fa-hand-pointer"></i> Please select a payment method above to continue.
+              </div>
+          `;
+          payBtn.disabled = true;
+          return;
+      }
+
+      const isMM = methodKey === 'mobilemoney';
+      const isCard = methodKey === 'card';
+
+      // Build fields
+      let fieldsHTML = '';
+
+      // Regular fields
+      if (method.fields) {
+          method.fields.forEach(f => {
+              let inputHTML = '';
+              if (f.type === 'select') {
+                  const opts = f.options.map(o =>
+                      `<option value="${o}" ${o === (f.default || '') ? 'selected' : ''}>${o}</option>`
+                  ).join('');
+                  inputHTML = `<select id="${f.id}" ${f.required ? 'required' : ''}>${opts}</select>`;
+              } else {
+                  const attrs = f.required ? 'required' : '';
+                  const type = f.type || 'text';
+                  const maxAttr = f.maxlength ? `maxlength="${f.maxlength}"` : '';
+                  let inputTag =
+                      `<input type="${type}" id="${f.id}" placeholder="${f.placeholder || ''}" ${attrs} ${maxAttr} />`;
+
+                  // Wrap with naira prefix if needed
+                  if (f.naira) {
+                      inputTag = `
+                          <div class="input-with-prefix">
+                              <span class="prefix">${CURRENCY}</span>
+                              ${inputTag}
+                          </div>
+                      `;
+                  }
+                  inputHTML = inputTag;
+              }
+              fieldsHTML += `
+                  <div class="form-group">
+                      <label for="${f.id}">${f.label} ${f.required ? '<span class="required">*</span>' : ''}</label>
+                      ${inputHTML}
+                  </div>
+              `;
+          });
+      }
+
+      // Card: row for Expiry Month, Expiry Year, CVV (3 columns)
+      if (isCard && method.fieldsRow3) {
+          let rowHTML = '';
+          method.fieldsRow3.forEach(f => {
+              const attrs = f.required ? 'required' : '';
+              const maxAttr = f.maxlength ? `maxlength="${f.maxlength}"` : '';
+              rowHTML += `
+                  <div class="form-group">
+                      <label for="${f.id}">${f.label} ${f.required ? '<span class="required">*</span>' : ''}</label>
+                      <input type="${f.type}" id="${f.id}" placeholder="${f.placeholder || ''}" ${attrs} ${maxAttr} />
+                  </div>
+              `;
+          });
+          fieldsHTML += `<div class="form-row-3">${rowHTML}</div>`;
+      }
+
+      // Card: extra fields (cardholder name)
+      if (isCard && method.extraFields) {
+          method.extraFields.forEach(f => {
+              const attrs = f.required ? 'required' : '';
+              fieldsHTML += `
+                  <div class="form-group">
+                      <label for="${f.id}">${f.label} ${f.required ? '<span class="required">*</span>' : ''}</label>
+                      <input type="${f.type}" id="${f.id}" placeholder="${f.placeholder || ''}" ${attrs} />
+                  </div>
+              `;
+          });
+      }
+
+      // Mobile Money: network toggle
+      let networkToggleHTML = '';
+      if (isMM) {
+          networkToggleHTML = `
+              <div class="network-toggle" id="networkToggle">
+                  <button class="net-btn active" data-net="MTN">                    
+                    <img src="./image/MTN logo.png" alt="MTN Momo">
+                    MTN Momo
+                    </button>
+                  <button class="net-btn" data-net="Airtel">                    
+                    <img src="./image/Airtel logo.png" alt="Airtel Smartcash"> 
+                    Airtel Smartcash
+                    </button>
+              </div>
+          `;
+      }
+
+      // Instructions
+      const instructionsHTML = method.instructions.map(item =>
+          `<li>${item}</li>`
+      ).join('');
+
+      // Close button
+      const closeBtn = `
+          <button class="close-form-btn" id="closeFormBtn" title="Close this payment method">
+              <i class="fas fa-times"></i>
+          </button>
+      `;
+
+      const html = `
+          <div class="method-name">
+              <span class="left">
+                  <i class="fas ${method.icon}"></i> ${method.label}
+              </span>
+              ${closeBtn}
+          </div>
+          <div class="method-desc">${method.desc}</div>
+
+          ${networkToggleHTML}
+
+          <div class="form-scroll">
+              ${fieldsHTML}
+          </div>
+
+          <div class="instructions-box">
+              <div class="inst-title"><i class="fas fa-lightbulb"></i> How to use ${method.label}</div>
+              <ul>${instructionsHTML}</ul>
+          </div>
+      `;
+
+      formContent.innerHTML = html;
+      payBtn.disabled = false;
+
+      // ── Wire up close button ──
+      const closeBtnEl = document.getElementById('closeFormBtn');
+      if (closeBtnEl) {
+          closeBtnEl.addEventListener('click', function(e) {
+              e.stopPropagation();
+              closeCurrentMethod();
+          });
+      }
+
+      // ── Wire up network toggle for MM ──
+      if (isMM) {
+          const netBtns = document.querySelectorAll('.net-btn');
+          netBtns.forEach(btn => {
+              btn.addEventListener('click', function(e) {
+                  e.stopPropagation();
+                  netBtns.forEach(b => b.classList.remove('active'));
+                  this.classList.add('active');
+                  selectedNetwork = this.dataset.net;
+                  const instBox = document.querySelector('.instructions-box ul');
+                  if (instBox) {
+                      const items = instBox.querySelectorAll('li');
+                      if (items.length >= 1) {
+                          items[0].textContent =
+                              `Select your network (${selectedNetwork}) using the buttons above.`;
+                      }
+                  }
+              });
+          });
+      }
+
+      // ── Auto-focus first input ──
+      const firstInput = formContent.querySelector('input, select');
+      if (firstInput) setTimeout(() => firstInput.focus(), 150);
   }
-  function displayMessage(msg, type) {
-    var box = document.getElementById('messageBox');
-    box.textContent = msg; box.className = 'messageBox ' + type; box.style.display='block';
-    setTimeout(()=>box.style.display='none',3000);
+
+  function closeCurrentMethod() {
+      // Deselect all method buttons
+      methodBtns.forEach(btn => btn.classList.remove('active'));
+      currentMethod = null;
+      renderForm(null);
   }
-  function clearMessage() {
-    var box = document.getElementById('messageBox'); box.textContent=''; box.style.display='none'; box.className='messageBox';
+
+  function setActiveMethod(methodKey) {
+      methodBtns.forEach(btn => {
+          btn.classList.toggle('active', btn.dataset.method === methodKey);
+      });
+      currentMethod = methodKey;
+      renderForm(methodKey);
   }
-  function clearForm(method) {
-    if(method==='mobileMoney'){
-      document.getElementsByName('wallet').forEach(o=>o.checked=false);
-      document.getElementById('mobileMoneyNumber').value='';
-      document.getElementById('mobileMoneyAmount').value='';
-    }
+
+  // ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+  //  TOAST
+  // ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+  function showToast(msg, isSuccess = true) {
+      toastMsg.textContent = msg || 'Payment Successfully!';
+      toast.querySelector('i').className = isSuccess ? 'fas fa-check-circle' : 'fas fa-exclamation-circle';
+      toast.querySelector('i').style.color = isSuccess ? '#f7c948' : '#ff6b6b';
+      toast.classList.add('show');
+      clearTimeout(toast._timer);
+      toast._timer = setTimeout(() => toast.classList.remove('show'), 5000);
   }
-  function processPayment(method) {
-    clearMessage(); var valid=true, details='';
-    if(method==='mobileMoney'){
-      var w=document.querySelector('input[name="wallet"]:checked');
-      var num=document.getElementById('mobileMoneyNumber').value.trim();
-      var amt=document.getElementById('mobileMoneyAmount').value.trim();
-      if(!w||!num||!amt){ valid=false; displayMessage('Select wallet & enter number/amount.','error'); }
-      else details=`Wallet: ${w.value}\nMobile: ${num}\nAmount: $${amt}`;
-    }
-    if(valid){ displayMessage('Payment processed!\n'+details,'success'); clearForm(method);}    
+
+  toastClose.addEventListener('click', () => toast.classList.remove('show'));
+
+  // ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+  //  PAYMENT HANDLER
+  // ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+  function handlePayment(e) {
+      e.preventDefault();
+
+      if (!currentMethod) {
+          showToast('Please select a payment method first.', false);
+          return;
+      }
+
+      const form = formContent;
+      const inputs = form.querySelectorAll('input, select');
+      let data = {};
+      let valid = true;
+
+      inputs.forEach(el => {
+          const val = el.value.trim();
+          data[el.id] = val;
+          if (el.hasAttribute('required') && !val) {
+              valid = false;
+              el.style.borderColor = '#ff6b6b';
+              el.style.boxShadow = '0 0 0 4px rgba(255,107,107,0.10)';
+          } else {
+              el.style.borderColor = '';
+              el.style.boxShadow = '';
+          }
+      });
+
+      if (!valid) {
+          showToast('Please fill in all required fields.', false);
+          return;
+      }
+
+      // ── Card validation ──
+      if (currentMethod === 'card') {
+          const cardNum = data.card_number?.replace(/\s/g, '');
+          if (cardNum && !/^\d{13,19}$/.test(cardNum)) {
+              showToast('Invalid card number. Please enter 13–19 digits.', false);
+              return;
+          }
+          const month = data.card_expiry_month?.trim();
+          if (month && !/^\d{2}$/.test(month)) {
+              showToast('Invalid expiry month. Use MM format.', false);
+              return;
+          }
+          const year = data.card_expiry_year?.trim();
+          if (year && !/^\d{2}$/.test(year)) {
+              showToast('Invalid expiry year. Use YY format.', false);
+              return;
+          }
+          const cvv = data.card_cvv?.trim();
+          if (cvv && !/^\d{3,4}$/.test(cvv)) {
+              showToast('Invalid CVV. Enter 3 or 4 digits.', false);
+              return;
+          }
+          const amt = parseFloat(data.card_amount);
+          if (isNaN(amt) || amt <= 0) {
+              showToast('Please enter a valid amount.', false);
+              return;
+          }
+      }
+
+      // ── Mobile Money ──
+      if (currentMethod === 'mobilemoney') {
+          const phone = data.mm_phone?.replace(/\s/g, '');
+          if (phone && !/^\d{10,15}$/.test(phone)) {
+              showToast('Please enter a valid phone number (10–15 digits).', false);
+              return;
+          }
+          const amt = parseFloat(data.mm_amount);
+          if (isNaN(amt) || amt <= 0) {
+              showToast('Please enter a valid amount.', false);
+              return;
+          }
+      }
+
+      // ── Airtime ──
+      if (currentMethod === 'airtime') {
+          const phone = data.airtime_phone?.replace(/\s/g, '');
+          if (phone && !/^\d{10,15}$/.test(phone)) {
+              showToast('Please enter a valid phone number (10–15 digits).', false);
+              return;
+          }
+          const amt = parseFloat(data.airtime_amount);
+          if (isNaN(amt) || amt <= 0) {
+              showToast('Please enter a valid amount.', false);
+              return;
+          }
+      }
+
+      // ── Bank transfer ──
+      if (currentMethod === 'bank') {
+          const amt = parseFloat(data.bank_amount);
+          if (isNaN(amt) || amt <= 0) {
+              showToast('Please enter a valid amount.', false);
+              return;
+          }
+          const acc = data.bank_account?.replace(/\s/g, '');
+          if (acc && !/^\d{10}$/.test(acc)) {
+              showToast('Please enter a valid 10-digit account number.', false);
+              return;
+          }
+      }
+
+      // ── OPAY ──
+      if (currentMethod === 'opay') {
+          const phone = data.opay_phone?.replace(/\s/g, '');
+          if (phone && !/^\d{10,15}$/.test(phone)) {
+              showToast('Please enter a valid phone number (10–15 digits).', false);
+              return;
+          }
+          const amt = parseFloat(data.opay_amount);
+          if (isNaN(amt) || amt <= 0) {
+              showToast('Please enter a valid amount.', false);
+              return;
+          }
+      }
+
+      // ── PALMPAY ──
+      if (currentMethod === 'palmpay') {
+          const phone = data.palmpay_phone?.replace(/\s/g, '');
+          if (phone && !/^\d{10,15}$/.test(phone)) {
+              showToast('Please enter a valid phone number (10–15 digits).', false);
+              return;
+          }
+          const amt = parseFloat(data.palmpay_amount);
+          if (isNaN(amt) || amt <= 0) {
+              showToast('Please enter a valid amount.', false);
+              return;
+          }
+      }
+
+      // ── Simulate processing ──
+      payBtn.disabled = true;
+      payBtn.innerHTML = '<span class="spinner"></span> Processing...';
+
+      setTimeout(() => {
+          payBtn.disabled = false;
+          payBtn.innerHTML = '<i class="fas fa-lock"></i> Pay Now';
+
+          const methodLabel = METHODS[currentMethod]?.label || 'Payment';
+          showToast(`✅ ${methodLabel} completed successfully!`, true);
+
+          // Clear sensitive inputs
+          formContent.querySelectorAll('input').forEach(inp => {
+              if (inp.type !== 'password') inp.value = '';
+              else inp.value = '';
+          });
+          formContent.querySelectorAll('select').forEach(sel => {
+              if (sel.options.length > 0) sel.selectedIndex = 0;
+          });
+
+          // Re-render to show clean form
+          renderForm(currentMethod);
+
+      }, 2200);
   }
-  function cancelPayment(){
-    document.querySelectorAll('form').forEach(f=>f.classList.remove('active'));
-    document.querySelectorAll('.btn-group button').forEach(b=>b.classList.remove('active'));
-    clearMessage();
-    clearForm('mobileMoney');
-  }
+
+  // ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+  //  EVENT BINDING
+  // ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+  methodBtns.forEach(btn => {
+      btn.addEventListener('click', function() {
+          const method = this.dataset.method;
+          if (method && METHODS[method]) {
+              setActiveMethod(method);
+          }
+      });
+  });
+
+  payBtn.addEventListener('click', handlePayment);
+
+  // ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+  //  DECORATIVE PARTICLES
+  // ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+  (function createParticles() {
+      const container = document.getElementById('particles');
+      for (let i = 0; i < 24; i++) {
+          const p = document.createElement('div');
+          p.className = 'particle';
+          p.style.left = Math.random() * 100 + '%';
+          p.style.top = Math.random() * 100 + '%';
+          p.style.animationDelay = (Math.random() * 14) + 's';
+          p.style.animationDuration = (10 + Math.random() * 16) + 's';
+          p.style.width = p.style.height = (2 + Math.random() * 5) + 'px';
+          container.appendChild(p);
+      }
+  })();
+
+  // ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+  //  INIT — no default selection
+  // ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+  renderForm(null);
+
+  // Keyboard shortcut: Enter to pay
+  document.addEventListener('keydown', (e) => {
+      if (e.key === 'Enter' && e.target.closest('.form-area') && !payBtn.disabled) {
+          payBtn.click();
+      }
+      // Escape to close
+      if (e.key === 'Escape' && currentMethod) {
+          closeCurrentMethod();
+      }
+  });
+
+  console.log('🎰 Select a payment method to begin.');
 </script>
+  
+
+
+
 
    <!-- FOOTER DESIGN -->    
  <footer class="">
