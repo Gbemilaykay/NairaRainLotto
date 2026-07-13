@@ -582,7 +582,7 @@
     border-radius: 12px;
     color: #a3a3a3;
     font-weight: 600;
-    font-size: 13px;
+    font-size: 10pt;
     cursor: pointer;
     transition: all 0.2s;
     text-align: center;
@@ -620,6 +620,22 @@
 .inline-hint i {
     margin-right: 4px;
     color: #667799;
+}
+@media screen and (max-width: 600px){
+    .network-toggle .net-btn {
+        min-width: 50px;
+        padding: 8px;
+        letter-spacing: 0.3px;
+        border-radius: 8px;
+        color: #a3a3a3;
+        font-weight: 600;
+        font-size: 8pt;
+        gap: 5px;
+    }  
+    .network-toggle .net-btn img{
+        width: 25px ; 
+        opacity: 0.2; 
+      }
 }
 
 /* ───────────── Naira input prefix ───────────── */
