@@ -1581,7 +1581,7 @@ color: #ffffff; }
   right: 0;
   bottom: 0; */
   /* width:min(430px,34vw); */
-  max-width:clamp(650px,18vw,400px);
+  max-width:clamp(600px,20vw,400px);
   /* opacity:0; */
   transform:translateY(12px) scale(.96) rotate(-1deg);
   transition:opacity .48s ease, transform .55s cubic-bezier(.2,.9,.2,1);
@@ -1911,6 +1911,7 @@ color: #ffffff; }
   justify-content:space-between;
   width: 100%;
   min-width: 100%;
+  z-index: 20;
 }
 
 .slider .ticket-panel,
@@ -1928,6 +1929,7 @@ color: #ffffff; }
   position:relative;
   width: 350px;
   min-width:240px;
+  cursor: pointer;
   padding:16px;
   border-radius:10px;
   background:linear-gradient(180deg, rgba(255,255,255,.05), rgba(255,255,255,.018));
