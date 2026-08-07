@@ -2976,24 +2976,24 @@ div.grammarly-desktop-integration {
   .GameCard{  
     display: flex;
     flex-direction: column;
-    border-radius: 15px;   
+    border-radius: 10px;   
     padding: 20px;
     width: 100%;
     /* min-width: 350px;             */
     /* margin: 0 auto;       */
     /* background: linear-gradient(1.1deg, rgb(0, 22, 0) 2.9%, rgb(1, 111, 15) 90.3%);  */
     box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.8), 0px 0px 15px rgba(167, 167, 167, 0.9);
-    background-image: url(./image/heroImage14.png);   
-    background-size:cover; 
+    background-image: url(./image/heroimage18.png);   
+    background-size:contain; 
     background-blend-mode:multiply;
-    background-color: #12bd02; 
+    background-color: #217e18; 
     animation: slide-fwd-center 0.45s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;     
   }
   .GameCard h1 {
-    font-size: 15pt;
+    font-size: 18pt;
     font-weight: 600;
     letter-spacing: 1px;
-    color: rgb(93, 255, 48); 
+    color: rgb(255, 255, 255); 
   }
   
   #GameCard {       
@@ -3003,7 +3003,7 @@ div.grammarly-desktop-integration {
     background-image: url(./image/heroImage13.png);   
     background-size: cover; 
     background-blend-mode:multiply;
-    background-color: #131972; 
+    background-color: #06610e; 
     border-radius: 15px;  
   }
   #GameCard .gameCard-week {
@@ -3215,6 +3215,10 @@ div.grammarly-desktop-integration {
       background: none;     
       /* background-color: #a33939; */
     }
+    .GameCard h1 {
+      font-size: 9pt;
+      font-weight: 500;
+    }
     #Gamer{
       width: 100%;
       /* max-width: 500px; */
@@ -3241,14 +3245,14 @@ div.grammarly-desktop-integration {
       /* margin: 10PX 0 0 1px; */
     }
     #GameCard h2{
-      font-size: 35pt;      
+      font-size: 25pt;      
     }
     #GameCard p{
       font-size:10pt;
       font-weight: 500;
     }
     #Rapid{
-      font-size: 22pt;       
+      font-size: 16pt;       
     }     
     .GameCard span{
       font-size: 12pt; 
