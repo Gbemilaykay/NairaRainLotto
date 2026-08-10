@@ -1725,7 +1725,7 @@ color: #ffffff; }
   overflow:hidden;
 }
 .slider .promo-section{
-  padding-inline:7%;
+  padding-inline:4%;
   /* padding-block:10px; */
   display: flex;
   flex-direction: column;
