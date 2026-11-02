@@ -232,7 +232,7 @@
       <div id="container" class="container"> 
         <div class="topbar"> 
             <div class="top-actions">
-              <span class="top-prompt">New to NairaRain?</span>
+              <span class="top-prompt">New to NairaRain lotto?</span>
               <button class="btn btn-outline" id="topSignIn" aria-label="Create a NairaRain account">Create account</button>
             </div>
         </div>
@@ -356,7 +356,7 @@
             <div class="card-head">
               <span class="eyebrow">Welcome back</span>
               <h2>Good to see you again.</h2>
-              <p class="sub">Sign in phone number or username linked to your NairaRain Lotto account.</p>
+              <p class="sub">Login with phone number or username on your NairaRain Lotto account.</p>
             </div>
             <form id="signinForm" novalidate>
               <div class="field">
@@ -376,13 +376,13 @@
               <div style="text-align:right;margin:0 0 1px">
                 <button type="button" class="inline-link" id="forgotPassword" style="border:0;background:none;font-size: 10pt; cursor:pointer">Forgot password?</button>
               </div>
-              <button class="btn btn-primary submit" type="submit">Sign in →</button>
+              <button class="btn btn-primary submit" type="submit">Login →</button>
             </form>
             <!-- <div class="divider">NEW TO NAIRARAIN?</div> -->
             <p class="login-line">Create an account 
               <button type="button" id="backToSignup">Sign up</button>
             </p>
-            <p class="fineprint">Sign-in needs a secure authentication to access accounts.</p>
+            <p class="fineprint">Login needs a secure authentication to access accounts.</p>
           </div>
           
           <div class="step" id="phoneOtpStep">
@@ -486,7 +486,7 @@
               <!-- <div class="notice">Privacy reminder: this demo does not transmit your NIN or date of birth. Real validation must be completed through an authorized identity-verification provider.</div> -->
               <button class="btn btn-primary submit" type="submit">Verify now →</button>
             </form>
-            <button class="back-link" type="button" id="backToWelcome">← Back to welcome</button>
+            <button class="back-link" type="button" id="backToWelcome">← Back to welcome page</button>
           </div>
           </section>
           </main>
@@ -558,16 +558,16 @@
             const prompt=document.querySelector('.top-prompt');
             const button=$('topSignIn');
             const signingIn=id==='signinStep';
-            prompt.textContent=signingIn?'New to NairaRain?':'Already registered?';
-            button.textContent=signingIn?'Create account':'Sign in';
-            button.setAttribute('aria-label',signingIn?'Create a NairaRain account':'Sign in to NairaRain Lotto');
+            prompt.textContent=signingIn?'New to NairaRain lotto?':'Already registered?';
+            button.textContent=signingIn?'Create account':'Login';
+            button.setAttribute('aria-label',signingIn?'Create a NairaRain account':'Login to NairaRain Lotto');
             document.title=signingIn?'NairaRain Lotto | Sign In':id==='signupStep'?'NairaRain Lotto | Create Account':'NairaRain Lotto | Account Verification';
             const kicker=$('promoKicker'), title=$('promoTitle'), description=$('promoDescription');
             if(kicker&&title&&description){
               if(signingIn){
-                kicker.textContent='WELCOME BACK TO NAIRARAIN';
+                kicker.textContent='';
                 title.innerHTML='Your next chapter<br><span class="promo-accent">starts here.</span>';
-                description.textContent='Sign in to continue to your NairaRain Lotto account. Keep your details secure and play responsibly.';
+                description.textContent='Login to continue with your NairaRain Lotto account. Keep your details secure and play responsibly.';
               } else {
                 kicker.textContent='A LITTLE HOPE. A BIG POSSIBILITY.';
                 title.innerHTML='Make room for<br><span class="promo-accent">good fortune.</span>';
