@@ -226,218 +226,418 @@ closeAllPopups();
 });
 </script> 
 
+
+
+          <!-- Main Container with Two Panels -->
+          <div id="container" class="container">
+            
+              <div class="topbar">
+                <!-- <a class="brand" href="#" aria-label="NairaRain Lotto home" onclick="return false">
+                  <span class="logo">₦</span>
+                  <span>NAIRARAIN<small>LOTTO · CHANGING LIVES</small></span>
+                </a> -->
+                <div class="top-actions">
+                  <span class="top-prompt">Already have an account?</span>
+                  <button class="btn btn-outline" id="topSignIn">Sign in</button>
+                </div>
+              </div>
+              <main class="layout" id="mainLayout">
+              <section class="promo" aria-label="NairaRain Lotto promotion">
+                <div class="promo-main">
+                  <span class="pill"><span class="spark" aria-hidden="true">●</span> WELCOME TO THE NAIRARAIN LOTTO</span>
+                  <div class="promo-message">
+                    <p class="promo-kicker">A LITTLE HOPE. A BIG POSSIBILITY.</p>
+                    <h1>Make room for<br><span class="promo-accent">good fortune.</span></h1>
+                    <p>Set up your player account with a few details. Keep your account secure, play responsibly, and check official game rules before you play.</p>
+                  </div>
+                  <div class="jackpot">
+                    <span class="jackpot-label">NAIRARAIN STARTING JACKPOT</span>
+                    <strong>₦25,000,000</strong>
+                    <div class="jackpot-divider" aria-hidden="true"></div>
+                    <div class="jackpot-footer">
+                      <p>The jackpot rolls over until it is won.<br>All prizes are subject to official game rules.</p>
+                      <span class="jackpot-coin" aria-hidden="true">₦</span>
+                    </div>
+                  </div>
+                </div>
+                <div class="promo-bottom">
+                  <div class="promo-feature">
+                    <span class="promo-feature-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="4.5" y="10" width="15" height="11" rx="2.2"/><path d="M8 10V7a4 4 0 0 1 8 0v3"/></svg></span>
+                    <div><strong>Security first</strong><small>Protect your sign-in details</small></div>
+                  </div>
+                  <div class="promo-feature">
+                    <span class="promo-feature-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3 20 6v5.5c0 4.3-3.2 7.6-8 9.5-4.8-1.9-8-5.2-8-9.5V6l8-3Z"/><path d="m8.5 12 2.2 2.2 4.8-5"/></svg></span>
+                    <div><strong>Play responsibly</strong><small>18+ only. Set limits and play for fun.</small></div>
+                  </div>
+                </div>
+                <div class="promo-copyright">© <span id="year">2026</span> NairaRain Lotto</div>
+              </section>
+
+              <section class="card" aria-live="polite">
+              <div class="progress-wrap" id="progressWrap" aria-label="Registration progress">
+                <div class="progress-heading">
+                  <span class="progress-kicker">YOUR REGISTRATION JOURNEY</span>
+                  <span class="progress-status" id="progressStatus">Step 1 of 3</span>
+                </div>
+                <div class="progress-map">
+                  <div class="progress-track" aria-hidden="true">
+                    <span id="progressFill"></span>
+                  </div>
+                  <ol class="progress-steps" id="progressSteps" aria-label="Registration steps">
+                    <li class="progress-step is-active" data-progress-step="1" aria-current="step">
+                      <span class="progress-node" aria-hidden="true">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="3.4"/><path d="M5.5 20a6.5 6.5 0 0 1 13 0"/>
+                        </svg>
+                      </span>
+                      <span class="progress-label">Account</span>
+                      <span class="progress-description">Your details</span>
+                    </li>
+                    <li class="progress-step" data-progress-step="2">
+                      <span class="progress-node" aria-hidden="true">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="2.8" width="14" height="18.4" rx="2.5"/><path d="M9 6.5h6M10 17.5h4"/>
+                        </svg>
+                      </span>
+                      <span class="progress-label">Contact</span>
+                      <span class="progress-description">Verify phone or email</span>
+                    </li>
+                    <li class="progress-step" data-progress-step="3">
+                      <span class="progress-node" aria-hidden="true">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3 19 6v5.3c0 4.2-2.8 7.4-7 9.7-4.2-2.3-7-5.5-7-9.7V6l7-3Z"/><path d="m8.8 12 2.1 2.1 4.4-4.5"/>
+                        </svg>
+                      </span>
+                      <span class="progress-label">Identity</span>
+                      <span class="progress-description">NIN & date of birth</span>
+                    </li>
+                  </ol>
+                </div>
+              </div>
+
+              <div class="step active" id="signupStep">
+                <div class="card-head">
+                  <span class="eyebrow">YOUR NEXT CHAPTER STARTS HERE</span>
+                  <h2>Create your account.<br>
+                    <span class="green-heading">Let Naira rain.</span>
+                  </h2>
+                  <p class="sub">Join NairaRain Lotto in a few simple steps. Register with your phone number, verify your account, and unlock your player dashboard.</p>
+                </div>
+              <div class="section-caption">
+                <h3>Your details</h3>
+                <!-- <span>Required fields unless marked optional</span> -->
+              </div>
+              <form id="signupForm" novalidate>
+                <div class="field">
+                  <label for="phone">Phone number</label>
+                  <div class="phone-row">
+                    <select id="dialCode" aria-label="Country code">
+                      <option value="+234">🇳🇬 +234</option>
+                      <!-- <option value="+233">🇬🇭 +233</option>
+                      <option value="+254">🇰🇪 +254</option>
+                      <option value="+27">🇿🇦 +27</option> -->
+                    </select>
+                    <input id="phone" name="phone" type="tel" inputmode="numeric" autocomplete="tel-national" placeholder="801 234 5678" required>
+                  </div>
+                  <div class="hint">Number will be used for account verification.</div>
+                  <div class="error" id="phoneError">Enter a valid phone number.</div>
+                </div>
+              <div class="field">
+                <label for="username">Username</label>
+                <input id="username" name="username" autocomplete="username" minlength="3" maxlength="24" placeholder="Choose a username" required>
+                <div class="error" id="usernameError">Use at least 3 characters for your username.</div>
+              </div>
+              <div class="field">
+                <label for="password">Password</label>
+                <div class="input-wrap with-toggle">
+                  <input id="password" name="password" type="password" autocomplete="new-password" minlength="8" placeholder="Create password" required>
+                  <button class="toggle eye-toggle" type="button" data-toggle="password" aria-label="Show password" title="Show password">
+                    <svg class="eye-icon" viewBox="0 0 24 24" width="20" height="20" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M2 12s3.6-7 10-7 10 7 10 7-3.6 7-10 7S2 12 2 12Z"/><circle cx="12" cy="12" r="3"/></svg>
+                  </button>
+                </div>
+                <div class="hint">Use at least 8 characters, including a number.</div>
+                <div class="error" id="passwordError">Use at least 8 characters and include at least one number.</div>
+              </div>
+              <div class="field">
+                <label for="confirmPassword">Confirm password</label>
+                <div class="input-wrap with-toggle">
+                  <input id="confirmPassword" name="confirmPassword" type="password" autocomplete="new-password" placeholder="Repeat password" required>
+                  <button class="toggle eye-toggle" type="button" data-toggle="confirmPassword" aria-label="Show confirm password" title="Show confirm password">
+                    <svg class="eye-icon" viewBox="0 0 24 24" width="20" height="20" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M2 12s3.6-7 10-7 10 7 10 7-3.6 7-10 7S2 12 2 12Z"/><circle cx="12" cy="12" r="3"/></svg>
+                  </button>
+                </div>
+                <div class="error" id="confirmError">Your passwords do not match.</div></div>
+              <div class="field">
+                <label for="referral">Referral code <span class="optional">OPTIONAL</span></label>
+                <input id="referral" name="referral" autocomplete="off" placeholder="Enter referral code">
+              </div>
+              <label class="terms">
+                <input id="terms" type="checkbox" required>
+                <span>I confirm that I am 18 or older and agree to the <a href="#terms" onclick="event.preventDefault();showToast('Connect this link to your official Terms and Conditions page.')">Terms & Conditions</a> and <a href="#privacy" onclick="event.preventDefault();showToast('Connect this link to your official Privacy Policy page.')">Privacy Policy</a>.</span>
+              </label>
+                <div class="error" id="termsError">You must confirm the age requirement and accept the terms.</div>
+              <button class="btn btn-primary submit" type="submit">Create account 
+                <span aria-hidden="true">→</span>
+              </button>
+              </form>
+              <!-- <div class="divider">OR</div> -->
+              <p class="login-line">Already registered? <button type="button" id="inlineSignIn">Sign in</button>
+              </p>
+              <p class="fineprint">Your information is protected and handled in line with applicable privacy requirements. Play responsibly. 18+ only.</p>
+              </div>
+
+              <!-- sign-in section -->
+              <div class="step" id="signinStep">
+                <div class="card-head">
+                  <span class="eyebrow">Welcome back</span>
+                  <h2>Sign in</h2>
+                  <p class="sub">Enter the phone number or username linked to your NairaRain Lotto account.</p>
+                </div>
+                <form id="signinForm" novalidate>
+                  <div class="field">
+                    <label for="loginId">Phone number or username</label>
+                    <input id="loginId" autocomplete="username" placeholder="Phone number or username" required>
+                  </div>
+                  <div class="field">
+                    <label for="loginPassword">Password</label>
+                    <div class="input-wrap with-toggle">
+                      <input id="loginPassword" type="password" autocomplete="current-password" placeholder="Enter your password" required>
+                      <button class="toggle eye-toggle" type="button" data-toggle="loginPassword" aria-label="Show password" title="Show password">
+                        <svg class="eye-icon" viewBox="0 0 24 24" width="20" height="20" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M2 12s3.6-7 10-7 10 7 10 7-3.6 7-10 7S2 12 2 12Z"/><circle cx="12" cy="12" r="3"/></svg>
+                      </button>
+                    </div>
+                  </div>
+                  <div style="text-align:right;margin:0 0 18px">
+                    <button type="button" class="inline-link" id="forgotPassword" style="border:0;background:none;cursor:pointer">Forgot password?</button>
+                  </div>
+                  <button class="btn btn-primary submit" type="submit">Sign in securely →</button>
+                </form>
+                <div class="divider">NEW TO NAIRARAIN?</div>
+                <p class="login-line">Create an account <button type="button" id="backToSignup">Sign up</button>
+                </p>
+                <p class="fineprint">Sign-in needs a secure authentication to access accounts.</p>
+              </div>
+
+              <div class="step" id="phoneOtpStep">
+                <div class="card-head">
+                  <span class="eyebrow">Step 2 of 3</span>
+                  <h2>Verify your phone</h2>
+                  <p class="sub">Enter the six-digit code sent to <strong id="phoneDisplay"></strong>.</p>
+                </div>
+                <div class="notice"> Use code <strong>123456</strong>. SMS is sent by this standalone file.
+                </div>
+                <form id="phoneOtpForm">
+                  <label for="phoneOtp1" style="font-size:.85rem;font-weight:800">6-digit verification code</label>
+                  <div class="otp-row" id="phoneOtpRow">
+                    <input id="phoneOtp1" inputmode="numeric" maxlength="1" aria-label="Digit 1" required>
+                    <input inputmode="numeric" maxlength="1" aria-label="Digit 2" required>
+                    <input inputmode="numeric" maxlength="1" aria-label="Digit 3" required>
+                    <input inputmode="numeric" maxlength="1" aria-label="Digit 4" required>
+                    <input inputmode="numeric" maxlength="1" aria-label="Digit 5" required>
+                    <input inputmode="numeric" maxlength="1" aria-label="Digit 6" required>
+                  </div>
+                  <div class="error" id="phoneOtpError">That code isn’t correct. Please try again.</div>
+                  <button class="btn btn-primary submit" type="submit">Verify phone number</button>
+                </form>
+                <section class="email-choice" aria-label="Alternative verification method">
+                  <p class="email-choice-title">Prefer not to use phone OTP?</p>
+                  <p class="email-choice-copy">Use your email address as an alternative way to verify your account.</p>
+                  <button class="btn email-alt" type="button" id="tryEmail">✉ Try email verification</button>
+                </section>
+                <button class="back-link" type="button" id="editPhone">← Use phone OTP instead</button>
+              </div>
+              <div class="step" id="emailStep">
+                <div class="card-head">
+                  <span class="eyebrow">Alternative verification</span>
+                  <h2>Verify by email</h2>
+                  <p class="sub">Enter your email address to continue with the email verification.</p>
+                </div>
+                <form id="emailForm" novalidate>
+                  <div class="field">
+                    <label for="email">Email address</label>
+                    <input id="email" type="email" autocomplete="email" placeholder="you@example.com" required>
+                    <div class="error" id="emailError">Enter a valid email address.</div>
+                  </div>
+                  <button class="btn btn-primary submit" type="submit">Continue with email →</button>
+                </form>
+                <!-- <div class="notice">Demo only: this page does not send emails. The next step uses the demo code <strong>123456</strong>.</div> -->
+                <button class="back-link" type="button" id="backToPhone">← Use phone OTP instead</button>
+              </div>
+              <div class="step" id="emailOtpStep">
+                <div class="card-head">
+                  <span class="eyebrow">Email verification</span>
+                  <h2>Check your email</h2>
+                  <p class="sub">Enter the six-digit code for <strong id="emailDisplay"></strong>.</p>
+                </div>
+                <div class="notice">Use code <strong>123456</strong>. For the email verification.</div>
+                <form id="emailOtpForm">
+                  <label for="emailOtp1" style="font-size:.85rem;font-weight:800">6-digit verification code</label>
+                  <div class="otp-row" id="emailOtpRow">
+                    <input id="emailOtp1" inputmode="numeric" maxlength="1" aria-label="Digit 1" required>
+                    <input inputmode="numeric" maxlength="1" aria-label="Digit 2" required>
+                    <input inputmode="numeric" maxlength="1" aria-label="Digit 3" required>
+                    <input inputmode="numeric" maxlength="1" aria-label="Digit 4" required>
+                    <input inputmode="numeric" maxlength="1" aria-label="Digit 5" required>
+                    <input inputmode="numeric" maxlength="1" aria-label="Digit 6" required>
+                  </div>
+                  <div class="error" id="emailOtpError">That code isn’t correct. Please try again.</div>
+                  <button class="btn btn-primary submit" type="submit">Verify email</button>
+                </form>
+                <button class="back-link" type="button" id="editEmail">← Change email address</button>
+              </div>
+              <div class="step" id="welcomeStep">
+                <div class="success-icon">✓</div>
+                <span class="eyebrow">Account setup · Step 3</span>
+                <h2>You’re in!</h2>
+                <h2 class="sub welcome-greeting">Welcome to NairaRain Lotto, <strong id="welcomeUsername">player</strong>!</h2>
+                <p class="sub" style="margin-top:10px">Your registration is complete. Verify your identity with your NIN to clam and get the full NairaRain lotto experience, it only takes few seconds.</p>
+                <div class="bonus">
+                  <strong>🎁 Unlock wonderful player experiences</strong>
+                  <p>Complete identity verification through the official, secure verification process.</p>
+                </div>
+                <button class="btn btn-primary submit" id="goToNin" type="button">Verify identity with NIN →</button>
+                <p class="fineprint">Never share your NIN or date of birth with an unverified person or website.</p>
+              </div>
+              <div class="step" id="ninStep">
+                <div class="card-head">
+                  <span class="eyebrow">Identity verification</span>
+                  <h2>Verify your identity</h2>
+                  <p class="sub">Enter your details to continue with the verification preview.</p>
+                </div>
+                <form id="ninForm" novalidate>
+                  <div class="field">
+                    <label for="nin">NIN number</label>
+                    <input id="nin" inputmode="numeric" autocomplete="off" maxlength="11" placeholder="Enter your 11-digit NIN" required>
+                    <div class="hint">Your NIN should contain 11 digits.</div>
+                    <div class="error" id="ninError">Enter a valid 11-digit NIN number.</div>
+                  </div>
+                  <div class="field">
+                    <label for="dob">Date of birth</label>
+                    <input id="dob" name="dob" type="date" autocomplete="bday" aria-describedby="dobHint dobError" required>
+                    <div class="hint" id="dobHint">Select your date of birth. Players must be at least 18 years old.</div>
+                    <div class="error" id="dobError">Enter a valid date of birth. You must be at least 18 years old.</div>
+                  </div>
+                  <!-- <div class="notice">Privacy reminder: this demo does not transmit your NIN or date of birth. Real validation must be completed through an authorized identity-verification provider.</div> -->
+                  <button class="btn btn-primary submit" type="submit">Verify now →</button>
+                </form>
+                <button class="back-link" type="button" id="backToWelcome">← Back to welcome</button>
+              </div>
+              </section>
+              </main>
+              <div class="modal-backdrop" id="verificationModal" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
+                <div class="modal">
+                  <div class="modal-badge">✓</div>
+                  <h3 id="modalTitle">VERIFICATION SUCCESSFUL!</h3>
+                  <p>Your details passed the on-page format and age checks. Your NIN has been successfully validated.</p>
+                  <button class="btn btn-primary" id="closeVerification" type="button">Close</button>
+                </div>
+              </div>
+              <div class="toast" id="toast" role="status"></div>
+
+              <script>
+
+              (()=>{'use strict';const $=id=>document.getElementById(id);
+              const steps=['signupStep','signinStep','phoneOtpStep','emailStep','emailOtpStep','welcomeStep','ninStep'];
+              let currentPhone='',currentEmail='';
+              function updateProgress(id){
+                const wrap=$('progressWrap');
+                if(!wrap)return;
+                const stageMap={signupStep:1,phoneOtpStep:2,emailStep:2,emailOtpStep:2,welcomeStep:3,ninStep:3,complete:3};
+                const stage=stageMap[id]||1;
+                const finished=id==='complete';
+                wrap.hidden=id==='signinStep';
+                $('progressStatus').textContent=finished?'Completed':`Step ${stage} of 3`;
+                $('progressFill').style.width=(stage===1?0:stage===2?50:100)+'%';
+                $('progressSteps').querySelectorAll('[data-progress-step]').forEach(item=>{
+                  const number=Number(item.dataset.progressStep);
+                  item.classList.toggle('is-active',!finished&&number===stage);
+                  item.classList.toggle('is-complete',number<stage||(finished&&number<=stage));
+                  if(!finished&&number===stage)item.setAttribute('aria-current','step');
+                  else item.removeAttribute('aria-current');
+                });
+              }
+              function addSectionIcons(){
+                const icons={
+                  signupStep:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="8" r="3.4"/><path d="M2.8 20a6.2 6.2 0 0 1 12.4 0M18 8v7M14.5 11.5h7"/></svg>',
+                  signinStep:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="4.5" y="10" width="15" height="11" rx="2.5"/><path d="M8 10V7a4 4 0 0 1 8 0v3M12 14v3"/></svg>',
+                  phoneOtpStep:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="6" y="2.5" width="12" height="19" rx="2.5"/><path d="M10 5.5h4M10 18.5h4"/><path d="m9 11 2 2 4-4"/></svg>',
+                  emailStep:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="2.5" y="4.5" width="19" height="15" rx="2.5"/><path d="m3.5 6 8.5 7 8.5-7"/></svg>',
+                  emailOtpStep:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="2.5" y="4.5" width="19" height="15" rx="2.5"/><path d="m3.5 6 8.5 7 8.5-7M8 15l2 2 5-5"/></svg>',
+                  ninStep:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3 19 6v5.3c0 4.2-2.8 7.4-7 9.7-4.2-2.3-7-5.5-7-9.7V6l7-3Z"/><path d="m8.8 12 2.1 2.1 4.4-4.5"/></svg>'
+                };
+                Object.entries(icons).forEach(([id,svg])=>{
+                  const head=$(id)?.querySelector('.card-head');
+                  if(!head||head.classList.contains('decorated-head'))return;
+                  const copy=document.createElement('div');
+                  copy.className='card-head-copy';
+                  while(head.firstChild)copy.appendChild(head.firstChild);
+                  const tile=document.createElement('span');
+                  tile.className='section-icon';
+                  tile.setAttribute('aria-hidden','true');
+                  tile.innerHTML=svg;
+                  head.classList.add('decorated-head');
+                  head.append(tile,copy);
+                });
+              }
+              function placeProgressForStep(id){
+                const wrap=$('progressWrap'), target=$(id);
+                if(!wrap||!target||id==='signinStep')return;
+                const head=target.querySelector('.card-head');
+                if(head)head.insertAdjacentElement('afterend',wrap);
+                else target.prepend(wrap);
+                wrap.hidden=false;
+              }
+              function showStep(id){steps.forEach(s=>$(s).classList.toggle('active',s===id));
+              placeProgressForStep(id);updateProgress(id);window.scrollTo({top:0,behavior:'smooth'});
+              } 
+
+              function showToast(msg){
+                const t=$('toast');t.textContent=msg;t.classList.add('show');
+                clearTimeout(showToast.timer);
+                showToast.timer=setTimeout(()=>t.classList.remove('show'),3200)}
+                window.showToast=showToast;
+              addSectionIcons();
+              placeProgressForStep('signupStep');updateProgress('signupStep');
+              if($('year')) $('year').textContent=new Date().getFullYear();$('topSignIn').addEventListener('click',()=>showStep('signinStep'));$('inlineSignIn').addEventListener('click',()=>showStep('signinStep'));$('backToSignup').addEventListener('click',()=>showStep('signupStep'));
+              document.querySelectorAll('[data-toggle]').forEach(btn=>btn.addEventListener('click',()=>{const input=$(btn.dataset.toggle);const showing=input.type==='password';input.type=showing?'text':'password';btn.setAttribute('aria-label',(showing?'Hide ':'Show ')+(input.id==='confirmPassword'?'confirm password':'password'));
+              btn.title=btn.getAttribute('aria-label');const svg=btn.querySelector('svg');if(svg){svg.innerHTML=showing?'<path d="M3 3l18 18"/><path d="M10.6 10.6a2 2 0 0 0 2.8 2.8"/><path d="M9.9 5.2A10.8 10.8 0 0 1 12 5c6.4 0 10 7 10 7a17 17 0 0 1-3.1 3.9"/><path d="M6.2 6.2C3.5 8 2 12 2 12s3.6 7 10 7a10.6 10.6 0 0 0 4-.8"/>':'<path d="M2 12s3.6-7 10-7 10 7 10 7-3.6 7-10 7S2 12 2 12Z"/><circle cx="12" cy="12" r="3"/>';}}));
+
+              function err(id,on){$(id).classList.toggle('show',!!on)}function validPhone(){const digits=$('phone').value.replace(/\D/g,'');
+              return digits.length>=10&&digits.length<=11}function validPassword(){return $('password').value.length>=8&&/\d/.test($('password').value)}
+
+              $('signupForm').addEventListener('submit',e=>{e.preventDefault();
+                let ok=true;
+                err('phoneError',!validPhone());
+              err('usernameError',$('username').value.trim().length<3);err('passwordError',!validPassword());
+              err('confirmError',$('confirmPassword').value!==$('password').value);
+              err('termsError',!$('terms').checked);
+              ok=validPhone()&&$('username').value.trim().length>=3&&validPassword()&&$('confirmPassword').value===$('password').value&&$('terms').checked;
+              if(!ok)return;currentPhone=$('dialCode').value+' '+$('phone').value.trim();$('phoneDisplay').textContent=currentPhone;$('welcomeUsername').textContent=$('username').value.trim();showStep('phoneOtpStep');$('phoneOtp1').focus();});
+
+              function setupOtp(rowId,formId,errorId,next)
+              {const row=$(rowId),inputs=[...row.querySelectorAll('input')];
+              inputs.forEach((inp,i)=>{inp.addEventListener('input',()=>{inp.value=inp.value.replace(/\D/g,'').slice(-1);
+              if(inp.value&&i<inputs.length-1)inputs[i+1].focus();});
+              inp.addEventListener('keydown',e=>{if(e.key==='Backspace'&&!inp.value&&i>0)inputs[i-1].focus();});
+              inp.addEventListener('paste',e=>{const val=(e.clipboardData||window.clipboardData).getData('text').replace(/\D/g,'').slice(0,6);if(val){e.preventDefault();
+                inputs.forEach((el,j)=>el.value=val[j]||'');inputs[Math.min(val.length,5)].focus();}})});$(formId).addEventListener('submit',e=>{e.preventDefault();const code=inputs.map(i=>i.value).join('');if(code!=='123456'){err(errorId,true);return}err(errorId,false);next();}
+              );}
+              setupOtp('phoneOtpRow','phoneOtpForm','phoneOtpError',()=>showStep('welcomeStep'));
+              setupOtp('emailOtpRow','emailOtpForm','emailOtpError',()=>showStep('welcomeStep'));
+              $('tryEmail').addEventListener('click',()=>showStep('emailStep'));$('editPhone').addEventListener('click',()=>showStep('signupStep'));$('emailForm').addEventListener('submit',e=>{e.preventDefault();const email=$('email').value.trim();const valid=/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);err('emailError',!valid);if(!valid)return;currentEmail=email;$('emailDisplay').textContent=email;showStep('emailOtpStep');$('emailOtp1').focus();});$('backToPhone').addEventListener('click',()=>showStep('phoneOtpStep'));$('editEmail').addEventListener('click',()=>showStep('emailStep'));
+              $('signinForm').addEventListener('submit',e=>{e.preventDefault();if(!$('loginId').value.trim()||!$('loginPassword').value){showToast('Enter your login details to continue.');return}showToast('Sign-in requires connection to the NairaRain authentication service.');});$('forgotPassword').addEventListener('click',()=>showToast('Password recovery requires a connected account service.'));
+              $('goToNin').addEventListener('click',()=>showStep('ninStep'));$('backToWelcome').addEventListener('click',()=>showStep('welcomeStep'));const today=new Date();$('dob').max=new Date(today.getFullYear()-18,today.getMonth(),today.getDate()).toISOString().slice(0,10);
+              function isAdult(value){if(!value)return false;const d=new Date(value+'T00:00:00');if(Number.isNaN(d.getTime())||d>new Date())return false;let age=today.getFullYear()-d.getFullYear();const m=today.getMonth()-d.getMonth();if(m<0||(m===0&&today.getDate()<d.getDate()))age--;return age>=18}
+              // CHANGE THIS URL to the page users should visit after successful verification.
+              const SUCCESS_REDIRECT_URL = './index.html';
+              function redirectAfterSuccess(){ window.location.href = SUCCESS_REDIRECT_URL; }
+              $('ninForm').addEventListener('submit',e=>{e.preventDefault();const nin=$('nin').value.replace(/\D/g,'');const dob=$('dob').value;const ninOk=/^\d{11}$/.test(nin);const dobOk=isAdult(dob);err('ninError',!ninOk);err('dobError',!dobOk);if(!ninOk||!dobOk)return;updateProgress('complete');$('verificationModal').classList.add('show');$('closeVerification').focus();});$('closeVerification').addEventListener('click',redirectAfterSuccess);$('verificationModal').addEventListener('click',e=>{if(e.target===$('verificationModal'))redirectAfterSuccess()});document.addEventListener('keydown',e=>{if(e.key==='Escape'&&$('verificationModal').classList.contains('show'))redirectAfterSuccess()});
+              })();
+              </script>          
+    
+    
+          </div>
+
     
       
-      <!-- Main Container with Two Panels -->
-      <div id="container" class="container">
-        <!-- Left Panel for Welcome Messages -->
-        <div class="left-panel">
-          <div class="left-slider">
-            <div class="panel">
-              <h2>Welcome!</h2>
-              <p>Create an account to join us and start your journey.</p>
-            </div>
-            <div class="panel">
-              <h2>Welcome Back!</h2>
-              <p>We are happy to see you again. Log in to continue.</p>
-            </div>            
-          </div>
-        </div>
-        
-        <!-- Right Panel for Form Contents -->
-        <div class="right-panel">
-          <div class="form-slider">
-            
-    
-            <div class="form signup-form">
-              <h2>Sign Up</h2>
-              <!-- <p class="sub">Create your account in a few steps.</p> -->    
-              <form id="signupForm" onsubmit="handleSignup(event)">
-                <div class="input-group">
-                  <input type="text" placeholder="First Name" required />
-                </div>
-    
-                <div class="input-group">
-                  <input type="text" placeholder="Last Name" required />
-                </div>
-    
-                <div class="input-group">
-                  <input type="tel" placeholder="Mobile Number" required />
-                </div>
-    
-                <div class="input-group">
-                  <select required>
-                    <option value="" disabled selected>Sex</option>
-                    <option value="male">Male</option>
-                    <option value="female">Female</option>                    
-                  </select>
-                </div>
-    
-                <div class="input-group">
-                  <input type="email" placeholder="Email" required />
-                </div>
-    
-                <div class="input-group">
-                  <input id="signup-password" type="password" minlength="6" placeholder="Password (min 6 characters)" required />
-                  <svg class="toggle-visibility" data-target="signup-password" viewBox="0 0 24 24" aria-hidden="true">
-                    <path fill="currentColor" d="M12 5c-7 0-11 7-11 7s4 7 11 7 11-7 11-7-4-7-11-7zm0 12a5 5 0 110-10 5 5 0 010 10z"/>
-                    <circle fill="currentColor" cx="12" cy="12" r="2.5"/>
-                  </svg>
-                </div>
-    
-                <div class="input-group">
-                  <input id="signup-confirm" type="password" placeholder="Confirm Password" required />
-                  <svg class="toggle-visibility" data-target="signup-confirm" viewBox="0 0 24 24" aria-hidden="true">
-                    <path fill="currentColor" d="M12 5c-7 0-11 7-11 7s4 7 11 7 11-7 11-7-4-7-11-7zm0 12a5 5 0 110-10 5 5 0 010 10z"/>
-                    <circle fill="currentColor" cx="12" cy="12" r="2.5"/>
-                  </svg>
-                </div>
-    
-                <div class="terms">
-                  <input type="checkbox" id="terms" required />
-                  <label for="terms">
-                    By creating an account, you accept the
-                    <a href="#" onclick="showTerms(event)">Terms and Conditions</a>.
-                  </label>
-                </div>
-    
-                <button type="submit">Sign Up</button>
-              </form>
-    
-              <p class="toggle-link">
-                Already have an account? <a href="#" onclick="toggleToSignup(event)">Login</a>
-              </p>
-            </div>
-
-            <div class="form login-form">
-              <h2>Login</h2>
-              <!-- <p class="sub">Access your account securely.</p> -->    
-              <form id="loginForm" onsubmit="handleLogin(event)">
-                <div class="input-group">
-                  <input type="text" placeholder="Username" required />
-                </div>
-    
-                <div class="input-group">
-                  <input id="login-password" type="password" placeholder="Password" required />
-                  <svg class="toggle-visibility" data-target="login-password" viewBox="0 0 24 24" aria-hidden="true">
-                    <path fill="currentColor" d="M12 5c-7 0-11 7-11 7s4 7 11 7 11-7 11-7-4-7-11-7zm0 12a5 5 0 110-10 5 5 0 010 10z"/>
-                    <circle fill="currentColor" cx="12" cy="12" r="2.5"/>
-                  </svg>
-                </div>    
-                <button type="submit">Login</button>
-              </form>
-    
-              <p class="forgot-link">
-                <a href="#" onclick="forgotPassword(event)">Forgot Password?</a>
-              </p>
-              <p class="toggle-link">
-                Don't have an account? <a href="#" onclick="toggleToLogin(event)">Sign Up</a>
-              </p>
-            </div>
-
-            
-          </div>
-        </div>
-      </div>
-
-      <div id="successBackdrop" class="modal-backdrop" role="dialog" aria-modal="true" aria-labelledby="successTitle">
-        <div class="modalX">
-          <div class="modal-badge">✓</div>
-          <h3 id="successTitle">Check your email</h3>
-          <p>
-            A registration link has been sent to your email address.
-            Please open your inbox and click the link to finish creating your account.
-          </p>
-          <div class="modal-actions">
-            <button type="button" onclick="closeSuccessModal()">Ok</button>
-          </div>
-        </div>
-      </div>
-    
       
-      <script>
-        const container = document.getElementById("container");
-    const navLogin = document.getElementById("nav-login");
-    const navSignup = document.getElementById("nav-signup");
-
-    const signupForm = document.getElementById("signupForm");
-    const loginForm = document.getElementById("loginForm");
-
-    const successBackdrop = document.getElementById("successBackdrop");
-    const signupPassword = document.getElementById("signup-password");
-    const signupConfirm = document.getElementById("signup-confirm");
-
-    function toggleToSignup(e) {
-      if (e) e.preventDefault();
-      container.classList.add("signup-active");
-      navSignup.classList.add("active");
-      navLogin.classList.remove("active");
-    }
-
-    function toggleToLogin(e) {
-      if (e) e.preventDefault();
-      container.classList.remove("signup-active");
-      navLogin.classList.add("active");
-      navSignup.classList.remove("active");
-    }
-
-    navLogin.addEventListener("click", toggleToLogin);
-    navSignup.addEventListener("click", toggleToSignup);
-
-    document.querySelectorAll(".toggle-visibility").forEach((icon) => {
-      icon.addEventListener("click", () => {
-        const input = document.getElementById(icon.dataset.target);
-        input.type = input.type === "password" ? "text" : "password";
-      });
-    });
-
-    function handleLogin(e) {
-      e.preventDefault();
-      alert("Login successful!");
-    }
-
-    function handleSignup(e) {
-      e.preventDefault();
-
-      const passwordValue = signupForm.querySelector("#signup-password").value;
-      const confirmValue = signupForm.querySelector("#signup-confirm").value;
-
-      if (passwordValue !== confirmValue) {
-        alert("Passwords do not match.");
-        return;
-      }
-
-      successBackdrop.classList.add("show");
-    }
-
-    function closeSuccessModal() {
-      successBackdrop.classList.remove("show");
-
-      signupForm.reset();
-      signupPassword.type = "password";
-      signupConfirm.type = "password";
-
-      container.classList.add("signup-active");
-      navSignup.classList.add("active");
-      navLogin.classList.remove("active");
-    }
-
-    function forgotPassword(e) {
-      e.preventDefault();
-      alert("Forgot password flow can be connected here.");
-    }
-
-    function showTerms(e) {
-      e.preventDefault();
-      alert("Terms and Conditions can be added here.");
-    }
-
-    successBackdrop.addEventListener("click", (e) => {
-      if (e.target === successBackdrop) {
-        closeSuccessModal();
-      }
-    });
-      </script>
 
        <!-- FOOTER DESIGN -->    
  <footer class="">
