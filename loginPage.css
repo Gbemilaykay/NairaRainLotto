@@ -83,12 +83,6 @@
   color: #0a8c52; 
   text-decoration: none;   
 }
-.inline-link {
-  border:0;
-  background:none;
-  font-size: 10pt; 
-  cursor:pointer;
-}
 .btn-outline{
   background:none;
   /* border:1px solid #cbd9d0; */
@@ -1373,6 +1367,12 @@ button{
 .toast{
   border:1px solid rgba(255,255,255,.1);
   backdrop-filter:blur(12px);
+}
+.inline-link {
+  border:0;
+  background:none;
+  font-size: 10pt; 
+  cursor:pointer;
 }
 /* Input icons are decorative; all original field IDs and validation remain unchanged. */
 #phone,#username,#password,#confirmPassword,#referral,#loginId,#loginPassword,#email,#nin,#dob{
