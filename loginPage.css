@@ -67,6 +67,28 @@
   background:linear-gradient(135deg,var(--green),#0b9b5b);
   box-shadow:0 8px 18px #087a4827;
 }
+#loginButton {
+  background:linear-gradient(360deg,black,#0b9b23);
+}
+#forgotPassword a{
+  border:0;
+  background:none;
+  cursor:pointer;
+  color: #06462f;
+  font-size: 9pt;
+  font-weight: 600;
+  text-decoration: none;
+}
+#forgotPassword a:hover {
+  color: #0a8c52; 
+  text-decoration: none;   
+}
+.inline-link {
+  border:0;
+  background:none;
+  font-size: 10pt; 
+  cursor:pointer;
+}
 .btn-outline{
   background:none;
   /* border:1px solid #cbd9d0; */
@@ -1187,7 +1209,7 @@ button{
   text-underline-offset:3px;
 }
 .terms a:hover,.inline-link:hover{
-  text-decoration:underline;
+  text-decoration:none;
   color:#064b30;
 }
 .submit{
@@ -1228,11 +1250,11 @@ button{
 }
 .login-line button:hover{
   color:#0c9960;
-  text-decoration:underline;
+  text-decoration:none;
   text-underline-offset:3px;
 }
 .fineprint{
-  margin-top:20px;
+  margin-top:10px;
   color:#89958d;
   font-size:7pt;
   line-height:1.65;

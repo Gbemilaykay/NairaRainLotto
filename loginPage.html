@@ -258,7 +258,7 @@
             <div class="promo-bottom">
               <div class="promo-feature">
                 <span class="promo-feature-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="4.5" y="10" width="15" height="11" rx="2.2"/><path d="M8 10V7a4 4 0 0 1 8 0v3"/></svg></span>
-                <div><strong>Security first</strong><small>Protect your sign-in details</small></div>
+                <div><strong>Security first</strong><small>Protect your Login details</small></div>
               </div>
               <div class="promo-feature">
                 <span class="promo-feature-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3 20 6v5.5c0 4.3-3.2 7.6-8 9.5-4.8-1.9-8-5.2-8-9.5V6l8-3Z"/><path d="m8.5 12 2.2 2.2 4.8-5"/></svg></span>
@@ -346,7 +346,7 @@
           </form>
           <!-- <div class="divider">OR</div> -->
           <p class="login-line">Already registered? 
-            <button type="button" id="inlineSignIn">Sign in</button>
+            <button type="button" id="inlineSignIn">Login</button>
           </p>
           <p class="fineprint">Your information is protected and handled in line with applicable privacy requirements. Play responsibly. 18+ only.</p>
           </div>
@@ -374,9 +374,9 @@
                 </div>
               </div>
               <div style="text-align:right;margin:0 0 1px">
-                <button type="button" class="inline-link" id="forgotPassword" style="border:0;background:none;font-size: 10pt; cursor:pointer">Forgot password?</button>
+                <button type="button" class="inline-link" id="forgotPassword"><a href="./ForgetPassword.html">Forgot password?</a></button>
               </div>
-              <button class="btn btn-primary submit" type="submit">Login →</button>
+              <button class="btn btn-primary submit" id="loginButton" type="submit">Login →</button>
             </form>
             <!-- <div class="divider">NEW TO NAIRARAIN?</div> -->
             <p class="login-line">Create an account 
@@ -561,7 +561,7 @@
             prompt.textContent=signingIn?'New to NairaRain lotto?':'Already registered?';
             button.textContent=signingIn?'Create account':'Login';
             button.setAttribute('aria-label',signingIn?'Create a NairaRain account':'Login to NairaRain Lotto');
-            document.title=signingIn?'NairaRain Lotto | Sign In':id==='signupStep'?'NairaRain Lotto | Create Account':'NairaRain Lotto | Account Verification';
+            document.title=signingIn?'NairaRain Lotto | LogIn':id==='signupStep'?'NairaRain Lotto | Create Account':'NairaRain Lotto | Account Verification';
             const kicker=$('promoKicker'), title=$('promoTitle'), description=$('promoDescription');
             if(kicker&&title&&description){
               if(signingIn){
@@ -585,7 +585,7 @@
           function setupOtp(rowId,formId,errorId,next){const row=$(rowId),inputs=[...row.querySelectorAll('input')];inputs.forEach((inp,i)=>{inp.addEventListener('input',()=>{inp.value=inp.value.replace(/\D/g,'').slice(-1);if(inp.value&&i<inputs.length-1)inputs[i+1].focus();});inp.addEventListener('keydown',e=>{if(e.key==='Backspace'&&!inp.value&&i>0)inputs[i-1].focus();});inp.addEventListener('paste',e=>{const val=(e.clipboardData||window.clipboardData).getData('text').replace(/\D/g,'').slice(0,6);if(val){e.preventDefault();inputs.forEach((el,j)=>el.value=val[j]||'');inputs[Math.min(val.length,5)].focus();}})});$(formId).addEventListener('submit',e=>{e.preventDefault();const code=inputs.map(i=>i.value).join('');if(code!=='123456'){err(errorId,true);return}err(errorId,false);next();});}
           setupOtp('phoneOtpRow','phoneOtpForm','phoneOtpError',()=>showStep('welcomeStep'));setupOtp('emailOtpRow','emailOtpForm','emailOtpError',()=>showStep('welcomeStep'));
           $('tryEmail').addEventListener('click',()=>showStep('emailStep'));$('editPhone').addEventListener('click',()=>showStep('signupStep'));$('emailForm').addEventListener('submit',e=>{e.preventDefault();const email=$('email').value.trim();const valid=/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);err('emailError',!valid);if(!valid)return;currentEmail=email;$('emailDisplay').textContent=email;showStep('emailOtpStep');$('emailOtp1').focus();});$('backToPhone').addEventListener('click',()=>showStep('phoneOtpStep'));$('editEmail').addEventListener('click',()=>showStep('emailStep'));
-          $('signinForm').addEventListener('submit',e=>{e.preventDefault();if(!$('loginId').value.trim()||!$('loginPassword').value){showToast('Enter your login details to continue.');return}showToast('Sign-in requires connection to the NairaRain service.');});$('forgotPassword').addEventListener('click',()=>showToast('Password recovery requires a connected account service.'));
+          $('signinForm').addEventListener('submit',e=>{e.preventDefault();if(!$('loginId').value.trim()||!$('loginPassword').value){showToast('Enter your login details to continue.');return}showToast('Login is connection to the NairaRain lotto.');});$('forgotPassword').addEventListener('click',()=>showToast('Password'));
           $('goToNin').addEventListener('click',()=>showStep('ninStep'));$('backToWelcome').addEventListener('click',()=>showStep('welcomeStep'));const today=new Date();$('dob').max=new Date(today.getFullYear()-18,today.getMonth(),today.getDate()).toISOString().slice(0,10);
           function isAdult(value){if(!value)return false;const d=new Date(value+'T00:00:00');if(Number.isNaN(d.getTime())||d>new Date())return false;let age=today.getFullYear()-d.getFullYear();const m=today.getMonth()-d.getMonth();if(m<0||(m===0&&today.getDate()<d.getDate()))age--;return age>=18}
           
