@@ -388,7 +388,7 @@ closeAllPopups();
                 <div class="card-head">
                   <span class="eyebrow">Welcome back</span>
                   <h2>Good to see you again.</h2>
-                  <p class="sub">Login with phone number or username on your NairaRain Lotto account.</p>
+                  <p class="sub">Login with mobile number or username to access your NairaRain Lotto account.</p>
                 </div>
                 <form id="signinForm" novalidate>
                   <div class="field">
@@ -622,7 +622,7 @@ closeAllPopups();
               setupOtp('phoneOtpRow','phoneOtpForm','phoneOtpError',()=>showStep('welcomeStep'));
               setupOtp('emailOtpRow','emailOtpForm','emailOtpError',()=>showStep('welcomeStep'));
               $('tryEmail').addEventListener('click',()=>showStep('emailStep'));$('editPhone').addEventListener('click',()=>showStep('signupStep'));$('emailForm').addEventListener('submit',e=>{e.preventDefault();const email=$('email').value.trim();const valid=/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);err('emailError',!valid);if(!valid)return;currentEmail=email;$('emailDisplay').textContent=email;showStep('emailOtpStep');$('emailOtp1').focus();});$('backToPhone').addEventListener('click',()=>showStep('phoneOtpStep'));$('editEmail').addEventListener('click',()=>showStep('emailStep'));
-              $('signinForm').addEventListener('submit',e=>{e.preventDefault();if(!$('loginId').value.trim()||!$('loginPassword').value){showToast('Enter your login details to continue.');return}showToast('Sign-in requires connection to the NairaRain authentication service.');});$('forgotPassword').addEventListener('click',()=>showToast('Password recovery requires a connected account service.'));
+              $('signinForm').addEventListener('submit',e=>{e.preventDefault();if(!$('loginId').value.trim()||!$('loginPassword').value){showToast('Enter your login details to continue.');return}showToast('Sign-in requires connects to the NairaRain authentication service.');});$('forgotPassword').addEventListener('click',()=>showToast('Password recovery requires a connected account service.'));
               $('goToNin').addEventListener('click',()=>showStep('ninStep'));$('backToWelcome').addEventListener('click',()=>showStep('welcomeStep'));const today=new Date();$('dob').max=new Date(today.getFullYear()-18,today.getMonth(),today.getDate()).toISOString().slice(0,10);
               function isAdult(value){if(!value)return false;const d=new Date(value+'T00:00:00');if(Number.isNaN(d.getTime())||d>new Date())return false;let age=today.getFullYear()-d.getFullYear();const m=today.getMonth()-d.getMonth();if(m<0||(m===0&&today.getDate()<d.getDate()))age--;return age>=18}
               // CHANGE THIS URL to the page users should visit after successful verification.

@@ -188,11 +188,13 @@ h1{
   margin-bottom:26px;
 }
 .eyebrow{
-  color:var(--green);
-  text-transform:uppercase;
-  letter-spacing:1.8px;
-  font-weight:900;
-  font-size:.72rem;
+  display:block;
+  color:#08784e;
+  font-size:11pt;
+  font-weight:800;
+  letter-spacing:.1em;
+  line-height:1;
+  /* text-transform:uppercase; */
 }
 .card h2{
   font-size:2rem;
@@ -901,15 +903,7 @@ button{
   width:22px;
   height:22px;
 }
-.eyebrow{
-  display:block;
-  color:#08784e;
-  font-size:8pt;
-  font-weight:800;
-  letter-spacing:.1em;
-  line-height:1.5;
-  text-transform:uppercase;
-}
+
 .card h2{
   margin:7px 0 9px;
   color:#17281f;

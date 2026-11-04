@@ -233,7 +233,7 @@
         <div class="topbar"> 
             <div class="top-actions">
               <span class="top-prompt">New to NairaRain lotto?</span>
-              <button class="btn btn-outline" id="topSignIn" aria-label="Create a NairaRain account">Create account</button>
+              <button class="btn btn-outline" id="topSignIn" aria-label="Create a NairaRain account">Sign up</button>
             </div>
         </div>
           <main class="layout" id="mainLayout">
@@ -356,7 +356,7 @@
             <div class="card-head">
               <span class="eyebrow">Welcome back</span>
               <h2>Good to see you again.</h2>
-              <p class="sub">Login with phone number or username on your NairaRain Lotto account.</p>
+              <p class="sub">Login with mobile number or username to access your NairaRain Lotto account.</p>
             </div>
             <form id="signinForm" novalidate>
               <div class="field">
@@ -559,7 +559,7 @@
             const button=$('topSignIn');
             const signingIn=id==='signinStep';
             prompt.textContent=signingIn?'New to NairaRain lotto?':'Already registered?';
-            button.textContent=signingIn?'Create account':'Login';
+            button.textContent=signingIn?'Sign up':'Login';
             button.setAttribute('aria-label',signingIn?'Create a NairaRain account':'Login to NairaRain Lotto');
             document.title=signingIn?'NairaRain Lotto | LogIn':id==='signupStep'?'NairaRain Lotto | Create Account':'NairaRain Lotto | Account Verification';
             const kicker=$('promoKicker'), title=$('promoTitle'), description=$('promoDescription');
