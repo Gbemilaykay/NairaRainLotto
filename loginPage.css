@@ -68,7 +68,7 @@
   box-shadow:0 8px 18px #087a4827;
 }
 #loginButton {
-  background:linear-gradient(360deg,black,#0b9b23);
+  background:linear-gradient(360deg,black,black);
 }
 #forgotPassword a{
   border:0;
