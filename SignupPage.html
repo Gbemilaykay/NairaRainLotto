@@ -6,7 +6,7 @@
     <title>Signup</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"/> 
     <link rel="stylesheet" href="./style.css">
-    <link rel="stylesheet" href="./loginPage.css">
+    <link rel="stylesheet" href="./SignupPage.css">
     <style></style>
 </head>
 <body>
@@ -230,410 +230,757 @@ closeAllPopups();
 
           <!-- Main Container with Two Panels -->
           <div id="container" class="container">
-            
-              <div class="topbar">
-                <!-- <a class="brand" href="#" aria-label="NairaRain Lotto home" onclick="return false">
-                  <span class="logo">₦</span>
-                  <span>NAIRARAIN<small>LOTTO · CHANGING LIVES</small></span>
+                          <!-- Reusable outline SVG icons -->
+              <svg class="svg-library" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                <symbol id="i-phone" viewBox="0 0 24 24"><rect x="5" y="2" width="14" height="20" rx="3"/><path d="M9 5h6M11 18h2"/></symbol>
+                <symbol id="i-user" viewBox="0 0 24 24"><circle cx="12" cy="8" r="4"/><path d="M4 21a8 8 0 0 1 16 0"/></symbol>
+                <symbol id="i-lock" viewBox="0 0 24 24"><rect x="4" y="10" width="16" height="12" rx="2"/><path d="M8 10V7a4 4 0 1 1 8 0v3M12 14v4"/></symbol>
+                <symbol id="i-shield" viewBox="0 0 24 24"><path d="M12 22s8-4 8-11V5l-8-3-8 3v6c0 7 8 11 8 11z"/><path d="m9 12 2 2 4-4"/></symbol>
+                <symbol id="i-gift" viewBox="0 0 24 24"><rect x="3" y="8" width="18" height="13" rx="2"/><path d="M12 8v13M3 12h18M12 8H7a3 3 0 1 1 3-3c0 2 2 3 2 3zM12 8h5a3 3 0 1 0-3-3c0 2-2 3-2 3z"/></symbol>
+                <symbol id="i-mail" viewBox="0 0 24 24"><rect x="2" y="4" width="20" height="16" rx="3"/><path d="m3 6 9 7 9-7"/></symbol>
+                <symbol id="i-id" viewBox="0 0 24 24"><rect x="2" y="4" width="20" height="16" rx="2"/><circle cx="8" cy="11" r="2.5"/><path d="M5 16a3 3 0 0 1 6 0M14 9h5M14 13h5M14 16h3"/></symbol>
+                <symbol id="i-calendar" viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="16" rx="2"/><path d="M16 3v4M8 3v4M3 10h18M8 14h.01M12 14h.01M16 14h.01M8 17h.01"/></symbol>
+                <symbol id="i-eye" viewBox="0 0 24 24"><path d="M2 12s3.5-7 10-7 10 7 10 7-3.5 7-10 7S2 12 2 12z"/><circle cx="12" cy="12" r="3"/></symbol>
+                <symbol id="i-eye-off" viewBox="0 0 24 24"><path d="M3 3 21 21M10.6 5.2A10.7 10.7 0 0 1 12 5c6.5 0 10 7 10 7a16 16 0 0 1-3 3.8M6.2 6.2C3.4 8 2 12 2 12s3.5 7 10 7c1.2 0 2.3-.2 3.3-.6M9.9 9.9a3 3 0 0 0 4.2 4.2"/></symbol>
+                <symbol id="i-check" viewBox="0 0 24 24"><path d="m5 12 4 4L19 6"/></symbol>
+                <symbol id="i-ticket" viewBox="0 0 24 24"><path d="M3 8a2 2 0 0 0 0 4v4a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-4a2 2 0 0 1 0-4V6a2 2 0 0 0-2-2H5a2 2 0 0 0-2 2z"/><path d="M13 5v2m0 4v2m0 4v2"/></symbol>
+              </svg>
+
+              <header class="site-header">
+                <!-- <a href="#" class="brand" aria-label="NairaRain Lotto home">
+                  <span class="brand-mark">NR</span>
+                  <span class="brand-copy">NAIRARAIN<small>LOTTO</small></span>
                 </a> -->
-                <div class="top-actions">
-                  <span class="top-prompt">Already have an account?</span>
-                  <button class="btn btn-outline" id="topSignIn">Login</button>
+                <div class="header-right">
+                  <span>Already have an account?</span>
+                  <a href="./loginPage.html">Login</a>
                 </div>
-              </div>
-              <main class="layout" id="mainLayout">
-              <section class="promo" aria-label="NairaRain Lotto promotion">
-                <div class="promo-main">
-                  <span class="pill"><span class="spark" aria-hidden="true">●</span> WELCOME TO THE NAIRARAIN LOTTO</span>
-                  <div class="promo-message">
-                    <p class="promo-kicker">A LITTLE HOPE. A BIG POSSIBILITY.</p>
-                    <h1>Make room for<br><span class="promo-accent">good fortune.</span></h1>
-                    <p>Set up your player account with a few details. Keep your account secure, play responsibly, and check official game rules before you play.</p>
-                  </div>
-                  <div class="jackpot">
-                    <span class="jackpot-label">NAIRARAIN STARTING JACKPOT</span>
-                    <strong>₦25,000,000</strong>
-                    <div class="jackpot-divider" aria-hidden="true"></div>
-                    <div class="jackpot-footer">
-                      <p>The jackpot rolls over until it is won.<br>All prizes are subject to official game rules.</p>
-                      <span class="jackpot-coin" aria-hidden="true">₦</span>
+              </header>
+
+              <main class="page-shell">
+                <div class="registration-layout">
+
+                  <aside class="brand-panel">
+                    <div class="brand-glow"></div>
+                    <span class="brand-kicker"><span class="kicker-dot"></span> WELCOME TO THE NAIRARAIN LOTTO</span>
+                    <h1>Your next big <span>opportunity</span> starts here.</h1>
+                    <p class="brand-intro">Set up your player account with a few details. Keep your account secure, play responsibly, and check official game rules before you play.</p>
+
+                    <div class="jackpot-card">
+                      <span class="jackpot-overline">NairaRain starting jackpot</span>
+                      <strong class="jackpot-amount">₦25,000,000</strong>
+                      <span class="jackpot-caption">The jackpot rolls over until it is won.</span>
+                      <div class="lotto-balls" aria-hidden="true">
+                        <span class="lotto-ball">08</span><span class="lotto-ball">14</span><span class="lotto-ball">22</span><span class="lotto-ball">31</span><span class="lotto-ball">46</span><span class="lotto-ball gold">06</span>
+                      </div>
                     </div>
-                  </div>
-                </div>
-                <div class="promo-bottom">
-                  <div class="promo-feature">
-                    <span class="promo-feature-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="4.5" y="10" width="15" height="11" rx="2.2"/><path d="M8 10V7a4 4 0 0 1 8 0v3"/></svg></span>
-                    <div><strong>Security first</strong><small>Protect your Login details</small></div>
-                  </div>
-                  <div class="promo-feature">
-                    <span class="promo-feature-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3 20 6v5.5c0 4.3-3.2 7.6-8 9.5-4.8-1.9-8-5.2-8-9.5V6l8-3Z"/><path d="m8.5 12 2.2 2.2 4.8-5"/></svg></span>
-                    <div><strong>Play responsibly</strong><small>18+ only. Set limits and play for fun.</small></div>
-                  </div>
-                </div>
-                <div class="promo-copyright">© <span id="year">2026</span> NairaRain Lotto</div>
-              </section>
 
-              <section class="card" aria-live="polite">
-              <div class="progress-wrap" id="progressWrap" aria-label="Registration progress">
-                <div class="progress-heading">
-                  <span class="progress-kicker">YOUR REGISTRATION JOURNEY</span>
-                  <span class="progress-status" id="progressStatus">Step 1 of 3</span>
-                </div>
-                <div class="progress-map">
-                  <div class="progress-track" aria-hidden="true">
-                    <span id="progressFill"></span>
-                  </div>
-                  <ol class="progress-steps" id="progressSteps" aria-label="Registration steps">
-                    <li class="progress-step is-active" data-progress-step="1" aria-current="step">
-                      <span class="progress-node" aria-hidden="true">
-                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="3.4"/><path d="M5.5 20a6.5 6.5 0 0 1 13 0"/>
-                        </svg>
-                      </span>
-                      <span class="progress-label">Account</span>
-                      <span class="progress-description">Your details</span>
-                    </li>
-                    <li class="progress-step" data-progress-step="2">
-                      <span class="progress-node" aria-hidden="true">
-                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="2.8" width="14" height="18.4" rx="2.5"/><path d="M9 6.5h6M10 17.5h4"/>
-                        </svg>
-                      </span>
-                      <span class="progress-label">Contact</span>
-                      <span class="progress-description">Verify phone or email</span>
-                    </li>
-                    <li class="progress-step" data-progress-step="3">
-                      <span class="progress-node" aria-hidden="true">
-                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3 19 6v5.3c0 4.2-2.8 7.4-7 9.7-4.2-2.3-7-5.5-7-9.7V6l7-3Z"/><path d="m8.8 12 2.1 2.1 4.4-4.5"/>
-                        </svg>
-                      </span>
-                      <span class="progress-label">Identity</span>
-                      <span class="progress-description">NIN & date of birth</span>
-                    </li>
-                  </ol>
-                </div>
-              </div>
-
-              <div class="step active" id="signupStep">
-                <div class="card-head">
-                  <span class="eyebrow">YOUR NEXT CHAPTER STARTS HERE</span>
-                  <h2>Create your account.<br>
-                    <span class="green-heading">Let Naira rain.</span>
-                  </h2>
-                  <p class="sub">Join NairaRain Lotto in a few simple steps. Register with your phone number, verify your account, and unlock your player dashboard.</p>
-                </div>
-              <div class="section-caption">
-                <h3>Your details</h3>
-                <!-- <span>Required fields unless marked optional</span> -->
-              </div>
-              <form id="signupForm" novalidate>
-                <div class="field">
-                  <label for="phone">Phone number</label>
-                  <div class="phone-row">
-                    <select id="dialCode" aria-label="Country code">
-                      <option value="+234">🇳🇬 +234</option>
-                      <!-- <option value="+233">🇬🇭 +233</option>
-                      <option value="+254">🇰🇪 +254</option>
-                      <option value="+27">🇿🇦 +27</option> -->
-                    </select>
-                    <input id="phone" name="phone" type="tel" inputmode="numeric" autocomplete="tel-national" placeholder="801 234 5678" required>
-                  </div>
-                  <div class="hint">Number will be used for account verification.</div>
-                  <div class="error" id="phoneError">Enter a valid phone number.</div>
-                </div>
-              <div class="field">
-                <label for="username">Username</label>
-                <input id="username" name="username" autocomplete="username" minlength="3" maxlength="24" placeholder="Choose a username" required>
-                <div class="error" id="usernameError">Use at least 3 characters for your username.</div>
-              </div>
-              <div class="field">
-                <label for="password">Password</label>
-                <div class="input-wrap with-toggle">
-                  <input id="password" name="password" type="password" autocomplete="new-password" minlength="8" placeholder="Create password" required>
-                  <button class="toggle eye-toggle" type="button" data-toggle="password" aria-label="Show password" title="Show password">
-                    <svg class="eye-icon" viewBox="0 0 24 24" width="20" height="20" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M2 12s3.6-7 10-7 10 7 10 7-3.6 7-10 7S2 12 2 12Z"/><circle cx="12" cy="12" r="3"/></svg>
-                  </button>
-                </div>
-                <div class="hint">Use at least 8 characters, including a number.</div>
-                <div class="error" id="passwordError">Use at least 8 characters and include at least one number.</div>
-              </div>
-              <div class="field">
-                <label for="confirmPassword">Confirm password</label>
-                <div class="input-wrap with-toggle">
-                  <input id="confirmPassword" name="confirmPassword" type="password" autocomplete="new-password" placeholder="Repeat password" required>
-                  <button class="toggle eye-toggle" type="button" data-toggle="confirmPassword" aria-label="Show confirm password" title="Show confirm password">
-                    <svg class="eye-icon" viewBox="0 0 24 24" width="20" height="20" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M2 12s3.6-7 10-7 10 7 10 7-3.6 7-10 7S2 12 2 12Z"/><circle cx="12" cy="12" r="3"/></svg>
-                  </button>
-                </div>
-                <div class="error" id="confirmError">Your passwords do not match.</div></div>
-              <div class="field">
-                <label for="referral">Referral code <span class="optional">OPTIONAL</span></label>
-                <input id="referral" name="referral" autocomplete="off" placeholder="Enter referral code">
-              </div>
-              <label class="terms">
-                <input id="terms" type="checkbox" required>
-                <span>I confirm that I am 18 or older and agree to the <a href="#terms" onclick="event.preventDefault();showToast('Connect this link to your official Terms and Conditions page.')">Terms & Conditions</a> and <a href="#privacy" onclick="event.preventDefault();showToast('Connect this link to your official Privacy Policy page.')">Privacy Policy</a>.</span>
-              </label>
-                <div class="error" id="termsError">You must confirm the age requirement and accept the terms.</div>
-              <button class="btn btn-primary submit" type="submit">Create account 
-                <span aria-hidden="true">→</span>
-              </button>
-              </form>
-              <!-- <div class="divider">OR</div> -->
-              <p class="login-line">Already registered? <button type="button" id="inlineSignIn">Login</button>
-              </p>
-              <p class="fineprint">Your information is protected and handled in line with applicable privacy requirements. Play responsibly. 18+ only.</p>
-              </div>
-
-              <!-- sign-in section -->
-              <div class="step" id="signinStep">
-                <div class="card-head">
-                  <span class="eyebrow">Welcome back</span>
-                  <h2>Good to see you again.</h2>
-                  <p class="sub">Login with your mobile number or username to access your NairaRain Lotto account.</p>
-                </div>
-                <form id="signinForm" novalidate>
-                  <div class="field">
-                    <label for="loginId">Phone number or username</label>
-                    <input id="loginId" autocomplete="username" placeholder="Phone number or username" required>
-                  </div>
-                  <div class="field">
-                    <label for="loginPassword">Password</label>
-                    <div class="input-wrap with-toggle">
-                      <input id="loginPassword" type="password" autocomplete="current-password" placeholder="Enter your password" required>
-                      <button class="toggle eye-toggle" type="button" data-toggle="loginPassword" aria-label="Show password" title="Show password">
-                        <svg class="eye-icon" viewBox="0 0 24 24" width="20" height="20" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M2 12s3.6-7 10-7 10 7 10 7-3.6 7-10 7S2 12 2 12Z"/><circle cx="12" cy="12" r="3"/></svg>
-                      </button>
+                    <div class="brand-benefits">
+                      <div class="benefit">
+                        <span class="benefit-icon">
+                          <svg class="icon"><use href="#i-shield"/></svg>
+                        </span>
+                        <span>Secure account verification</span>
+                      </div>
+                      <div class="benefit"><span class="benefit-icon"><svg class="icon"><use href="#i-ticket"/></svg></span><span>Access exciting lottery games</span></div>
+                      <div class="benefit"><span class="benefit-icon"><svg class="icon"><use href="#i-user"/></svg></span><span>Keep track of tickets and results</span></div>
+                      <div class="benefit"><span class="benefit-icon"><svg class="icon"><use href="#i-check"/></svg></span><span>Play responsibly</span></div>
                     </div>
-                  </div>
-                  <div style="text-align:right;margin:0 0 18px">
-                    <button type="button" class="inline-link" id="forgotPassword" ><a href="./ForgetPassword.html">Forgot password?</a></button>
-                  </div>
-                  <button class="btn btn-primary submit" id="loginButton"  type="submit">Login →</button>
-                </form>
-                <div class="divider">NEW TO NAIRARAIN?</div>
-                <p class="login-line">Create an account <button type="button" id="backToSignup">Sign up</button>
-                </p>
-                <p class="fineprint">Login needs a secure authentication to access accounts.</p>
-              </div>
 
-              <div class="step" id="phoneOtpStep">
-                <div class="card-head">
-                  <span class="eyebrow">Step 2 of 3</span>
-                  <h2>Verify your phone</h2>
-                  <p class="sub">Enter the six-digit code sent to <strong id="phoneDisplay"></strong>.</p>
+                    <div class="brand-bottom">18+ only. Play responsibly.</div>
+                  </aside>
+
+                  <section class="form-side">
+                    <div class="form-card">
+
+                      <div class="progress-wrap">
+                        <div class="progress-steps">
+                          <div class="progress-step active" data-step="1"><span class="step-circle">1</span><span>Account</span></div>
+                          <div class="progress-step" data-step="2"><span class="step-circle">2</span><span>Verify</span></div>
+                          <div class="progress-step" data-step="3"><span class="step-circle">3</span><span>Identity</span></div>
+                          <div class="progress-step" data-step="4"><span class="step-circle">4</span><span>Complete</span></div>
+                        </div>
+                      </div>
+
+                      <!-- STEP 1: ACCOUNT -->
+                      <section class="flow-panel" id="registrationView">
+                        <div class="card-heading">
+                          <span class="eyebrow"><span class="eyebrow-mark"></span> Create your account</span>
+                          <h2>Join NairaRain Lotto</h2>
+                          <p>Enter your details to create your personal player account.</p>
+                        </div>
+
+                        <form id="registerForm" novalidate>
+                          <div class="form-grid">
+                            <div class="form-group">
+                              <label for="phone">Phone number</label>
+                              <div class="phone-wrap">
+                                <select id="countryCode" aria-label="Country code">
+                                  <option value="+234">🇳🇬 +234</option>
+                                  <!-- <option value="+1">🇺🇸 +1</option>
+                                  <option value="+44">🇬🇧 +44</option> -->
+                                </select>
+                                <div class="input-wrap">
+                                  <svg class="icon field-icon"><use href="#i-phone"/></svg>
+                                  <input type="tel" id="phone" class="with-icon" placeholder="8012345678" autocomplete="tel-national" maxlength="14" required>
+                                </div>
+                              </div>
+                              <span class="input-error" id="phoneError"></span>
+                            </div>
+
+                            <div class="form-group">
+                              <label for="username">Username</label>
+                              <div class="input-wrap">
+                                <svg class="icon field-icon"><use href="#i-user"/></svg>
+                                <input type="text" id="username" class="with-icon" placeholder="Choose a username" autocomplete="username" minlength="3" maxlength="20" required>
+                              </div>
+                              <span class="input-error" id="usernameError"></span>
+                            </div>
+
+                            <div class="password-pair">
+                              <div class="form-group">
+                                <label for="password">Create password</label>
+                                <div class="input-wrap">
+                                  <svg class="icon field-icon"><use href="#i-lock"/></svg>
+                                  <input type="password" id="password" class="password-input with-icon" placeholder="Password" autocomplete="new-password" minlength="8" required>
+                                  <button type="button" class="password-toggle" data-target="password" aria-label="Show password"><svg class="icon"><use href="#i-eye"/></svg></button>
+                                </div>
+                                <div class="password-meter"><span></span><span></span><span></span><span></span></div>
+                                <p class="password-hint" id="passwordStrength">At least 8 characters.</p>
+                                <span class="input-error" id="passwordError"></span>
+                              </div>
+                              <div class="form-group">
+                                <label for="confirmPassword">Confirm password</label>
+                                <div class="input-wrap">
+                                  <svg class="icon field-icon"><use href="#i-shield"/></svg>
+                                  <input type="password" id="confirmPassword" class="password-input with-icon" placeholder="Confirm" autocomplete="new-password" required>
+                                  <button type="button" class="password-toggle" data-target="confirmPassword" aria-label="Show password"><svg class="icon"><use href="#i-eye"/></svg></button>
+                                </div>
+                                <span class="input-error" id="confirmError"></span>
+                              </div>
+                            </div>
+
+                            <div class="form-group">
+                              <label for="referral">Referral code <span class="optional">(Optional)</span></label>
+                              <div class="input-wrap">
+                                <svg class="icon field-icon"><use href="#i-gift"/></svg>
+                                <input type="text" id="referral" class="with-icon" placeholder="Enter referral code" maxlength="30">
+                              </div>
+                            </div>
+                          </div>
+
+                          <div class="consent-row">
+                            <input type="checkbox" id="terms" required>
+                            <label for="terms">I agree to the <a href="http://127.0.0.1:5501/terms" target="_blank" rel="noopener">Terms and Conditions</a> and <a href="http://127.0.0.1:5501/privacy" target="_blank" rel="noopener">Privacy Policy</a>, and confirm that I am 18 years or older and understand that lottery participation involves risk.</label>
+                          </div>
+
+                          <button type="submit" class="primary-btn" id="registerButton">Create my account <span class="button-arrow">→</span></button>
+                        </form>
+                        <p class="form-footnote">Your information is handled securely. Never share your password or verification codes.</p>
+                      </section>
+
+                      <!-- STEP 2: PHONE OR EMAIL VERIFICATION -->
+                      <section class="flow-panel" id="otpView" hidden>
+                        <div id="phoneVerificationPanel">
+                          <div class="card-heading center-content">
+                            <span class="verify-symbol"><svg class="icon icon-lg"><use href="#i-phone"/></svg></span>
+                            <span class="eyebrow"><span class="eyebrow-mark"></span> Phone verification</span>
+                            <h2>Verify your phone</h2>
+                            <p class="otp-intro">Enter the six-digit code sent to your registered phone number.</p>
+                            <p class="otp-destination" id="otpPhone"></p>
+                          </div>
+
+                          <div class="otp-demo-banner" id="phoneDemoBanner" hidden>
+                            <span class="otp-demo-label">Your phone verification code</span>
+                            <strong class="otp-demo-code" id="demoOtpCode"></strong>
+                            <span class="otp-demo-hint">Enter Code only</span>
+                          </div>
+
+                          <form id="otpForm" novalidate>
+                            <div class="otp-boxes phone-otp-boxes">
+                              <input type="text" inputmode="numeric" maxlength="1" autocomplete="one-time-code" aria-label="Phone OTP digit 1" required>
+                              <input type="text" inputmode="numeric" maxlength="1" aria-label="Phone OTP digit 2" required>
+                              <input type="text" inputmode="numeric" maxlength="1" aria-label="Phone OTP digit 3" required>
+                              <input type="text" inputmode="numeric" maxlength="1" aria-label="Phone OTP digit 4" required>
+                              <input type="text" inputmode="numeric" maxlength="1" aria-label="Phone OTP digit 5" required>
+                              <input type="text" inputmode="numeric" maxlength="1" aria-label="Phone OTP digit 6" required>
+                            </div>
+                            <span class="input-error center-content" id="otpError"></span>
+                            <button type="submit" class="primary-btn" id="verifyOtpButton">Verify phone number <span class="button-arrow">→</span></button>
+                          </form>
+
+                          <div class="otp-actions"><span>Didn't receive a code?</span><button type="button" class="text-btn" id="resendOtpButton" disabled>Resend OTP (60s)</button></div>
+                          <button type="button" class="secondary-btn" id="backToRegistration">← Back to registration</button>
+
+                          <div class="email-alternative">
+                            <div class="or-divider">OR</div>
+                            <h3>Prefer not to use phone OTP?</h3>
+                            <p>Use your email address as an alternative way to verify your account.</p>
+                            <button type="button" class="email-option-btn" id="showEmailVerification"><svg class="icon icon-sm"><use href="#i-mail"/></svg> Try email verification</button>
+                          </div>
+                        </div>
+
+                        <!-- This replaces the phone panel when email verification is selected. -->
+                        <div id="emailVerificationPanel" hidden>
+                          <div class="email-screen-top">
+                            <span class="email-screen-icon"><svg class="icon"><use href="#i-mail"/></svg></span>
+                            <span class="eyebrow"><span class="eyebrow-mark"></span> Alternative verification</span>
+                            <h2>Verify your email address</h2>
+                            <p>Use your email address to receive a six-digit verification code.</p>
+                          </div>
+
+                          <div id="emailEntryFormPanel">
+                            <form id="emailForm" novalidate>
+                              <div class="form-group">
+                                <label for="alternativeEmail">Email address</label>
+                                <div class="input-wrap">
+                                  <svg class="icon field-icon"><use href="#i-mail"/></svg>
+                                  <input type="email" id="alternativeEmail" class="with-icon" placeholder="Enter your email address" autocomplete="email" required>
+                                </div>
+                                <span class="input-error" id="alternativeEmailError"></span>
+                              </div>
+                              <button type="submit" class="primary-btn" id="sendEmailOtpButton">Send verification code <span class="button-arrow">→</span></button>
+                            </form>
+                          </div>
+
+                          <div id="emailOtpPanel" hidden>
+                            <p class="otp-intro center-content">Enter the code sent to <strong class="email-destination" id="emailDestination"></strong>.</p>
+                            <div class="otp-demo-banner" id="emailDemoBanner" hidden>
+                              <span class="otp-demo-label">Your email verification code</span>
+                              <strong class="otp-demo-code" id="demoEmailOtpCode"></strong>
+                              <span class="otp-demo-hint">Enter code only</span>
+                            </div>
+                            <form id="emailOtpForm" novalidate>
+                              <div class="otp-boxes email-otp-boxes">
+                                <input type="text" inputmode="numeric" maxlength="1" autocomplete="one-time-code" aria-label="Email OTP digit 1" required>
+                                <input type="text" inputmode="numeric" maxlength="1" aria-label="Email OTP digit 2" required>
+                                <input type="text" inputmode="numeric" maxlength="1" aria-label="Email OTP digit 3" required>
+                                <input type="text" inputmode="numeric" maxlength="1" aria-label="Email OTP digit 4" required>
+                                <input type="text" inputmode="numeric" maxlength="1" aria-label="Email OTP digit 5" required>
+                                <input type="text" inputmode="numeric" maxlength="1" aria-label="Email OTP digit 6" required>
+                              </div>
+                              <span class="input-error center-content" id="emailOtpError"></span>
+                              <button type="submit" class="primary-btn" id="verifyEmailOtpButton">Verify email address <span class="button-arrow">→</span></button>
+                            </form>
+                            <div class="otp-actions"><span>Didn't receive a code?</span><button type="button" class="text-btn" id="resendEmailOtpButton" disabled>Resend OTP (60s)</button></div>
+                            <button type="button" class="text-btn email-back" id="changeEmail">Use a different email address</button>
+                          </div>
+
+                          <button type="button" class="text-btn email-back" id="returnToPhone">← Back to phone verification</button>
+                        </div>
+                      </section>
+
+                      <!-- STEP 3: WELCOME -->
+                      <section class="flow-panel center-content" id="welcomeView" hidden>
+                        <div class="success-icon"><svg class="icon icon-lg"><use href="#i-check"/></svg></div>
+                        <span class="eyebrow"><span class="eyebrow-mark"></span> Registration successful</span>
+                        <h2 class="welcome-heading">Welcome to NairaRain Lotto, <span class="username-highlight" id="welcomeUsername">Player</span>!</h2>
+                        <p class="welcome-text" id="welcomeMessage">Your account verification was successful. You are now part of the NairaRain Lotto community.</p>
+                        <div class="welcome-panel">
+                          <h3>You're officially part of NairaRain Lotto!</h3>
+                          <p>Verify your identity using your National Identification Number (NIN) and date of birth to complete your player profile and access features that require identity verification.</p>
+                        </div>
+                        <button type="button" class="primary-btn" id="continueToVerify">Verify my identity <span class="button-arrow">→</span></button>
+                      </section>
+
+                      <!-- STEP 4: IDENTITY -->
+                      <section class="flow-panel" id="identityView" hidden>
+                        <div class="card-heading">
+                          <span class="eyebrow"><span class="eyebrow-mark"></span> Identity verification</span>
+                          <h2>Complete your profile</h2>
+                          <p>Provide your identification details to complete your player profile.</p>
+                        </div>
+
+                        <div class="identity-note"><svg class="icon"><use href="#i-shield"/></svg><p>Your NIN and date of birth must match your official identity records.</p></div>
+
+                        <form id="identityForm" novalidate>
+                          <div class="form-group">
+                            <label for="nin">National Identification Number (NIN)</label>
+                            <div class="input-wrap">
+                              <svg class="icon field-icon"><use href="#i-id"/></svg>
+                              <input type="text" id="nin" class="with-icon" inputmode="numeric" maxlength="11" placeholder="Enter your 11-digit NIN" autocomplete="off" required>
+                            </div>
+                            <span class="input-error" id="ninError"></span>
+                          </div>
+
+                          <div class="form-group">
+                            <label for="birthday">Date of birth</label>
+                            <div class="input-wrap">
+                              <svg class="icon field-icon"><use href="#i-calendar"/></svg>
+                              <input type="date" id="birthday" class="with-icon" required>
+                            </div>
+                            <span class="input-error" id="birthdayError"></span>
+                          </div>
+
+                          <button type="submit" class="primary-btn" id="identityButton">Verify now <span class="button-arrow">→</span></button>
+                        </form>
+                        <p class="privacy-note"></p>
+                      </section>
+
+                    </div>
+                    <div class="page-footer">© NairaRain Lotto.</div>
+                  </section>
                 </div>
-                <div class="notice"> Use code <strong>123456</strong>. SMS is sent by this standalone file.
-                </div>
-                <form id="phoneOtpForm">
-                  <label for="phoneOtp1" style="font-size:.85rem;font-weight:800">6-digit verification code</label>
-                  <div class="otp-row" id="phoneOtpRow">
-                    <input id="phoneOtp1" inputmode="numeric" maxlength="1" aria-label="Digit 1" required>
-                    <input inputmode="numeric" maxlength="1" aria-label="Digit 2" required>
-                    <input inputmode="numeric" maxlength="1" aria-label="Digit 3" required>
-                    <input inputmode="numeric" maxlength="1" aria-label="Digit 4" required>
-                    <input inputmode="numeric" maxlength="1" aria-label="Digit 5" required>
-                    <input inputmode="numeric" maxlength="1" aria-label="Digit 6" required>
-                  </div>
-                  <div class="error" id="phoneOtpError">That code isn’t correct. Please try again.</div>
-                  <button class="btn btn-primary submit" type="submit">Verify phone number</button>
-                </form>
-                <section class="email-choice" aria-label="Alternative verification method">
-                  <p class="email-choice-title">Prefer not to use phone OTP?</p>
-                  <p class="email-choice-copy">Use your email address as an alternative way to verify your account.</p>
-                  <button class="btn email-alt" type="button" id="tryEmail">✉ Try email verification</button>
-                </section>
-                <button class="back-link" type="button" id="editPhone">← Use phone OTP instead</button>
-              </div>
-              <div class="step" id="emailStep">
-                <div class="card-head">
-                  <span class="eyebrow">Alternative verification</span>
-                  <h2>Verify by email</h2>
-                  <p class="sub">Enter your email address to continue with the email verification.</p>
-                </div>
-                <form id="emailForm" novalidate>
-                  <div class="field">
-                    <label for="email">Email address</label>
-                    <input id="email" type="email" autocomplete="email" placeholder="you@example.com" required>
-                    <div class="error" id="emailError">Enter a valid email address.</div>
-                  </div>
-                  <button class="btn btn-primary submit" type="submit">Continue with email →</button>
-                </form>
-                <!-- <div class="notice">Demo only: this page does not send emails. The next step uses the demo code <strong>123456</strong>.</div> -->
-                <button class="back-link" type="button" id="backToPhone">← Use phone OTP instead</button>
-              </div>
-              <div class="step" id="emailOtpStep">
-                <div class="card-head">
-                  <span class="eyebrow">Email verification</span>
-                  <h2>Check your email</h2>
-                  <p class="sub">Enter the six-digit code for <strong id="emailDisplay"></strong>.</p>
-                </div>
-                <div class="notice">Use code <strong>123456</strong>. For the email verification.</div>
-                <form id="emailOtpForm">
-                  <label for="emailOtp1" style="font-size:.85rem;font-weight:800">6-digit verification code</label>
-                  <div class="otp-row" id="emailOtpRow">
-                    <input id="emailOtp1" inputmode="numeric" maxlength="1" aria-label="Digit 1" required>
-                    <input inputmode="numeric" maxlength="1" aria-label="Digit 2" required>
-                    <input inputmode="numeric" maxlength="1" aria-label="Digit 3" required>
-                    <input inputmode="numeric" maxlength="1" aria-label="Digit 4" required>
-                    <input inputmode="numeric" maxlength="1" aria-label="Digit 5" required>
-                    <input inputmode="numeric" maxlength="1" aria-label="Digit 6" required>
-                  </div>
-                  <div class="error" id="emailOtpError">That code isn’t correct. Please try again.</div>
-                  <button class="btn btn-primary submit" type="submit">Verify email</button>
-                </form>
-                <button class="back-link" type="button" id="editEmail">← Change email address</button>
-              </div>
-              <div class="step" id="welcomeStep">
-                <div class="success-icon">✓</div>
-                <span class="eyebrow">Account setup · Step 3</span>
-                <h2>You’re in!</h2>
-                <h2 class="sub welcome-greeting">Welcome to NairaRain Lotto, <strong id="welcomeUsername">player</strong>!</h2>
-                <p class="sub" style="margin-top:10px">Your registration is complete. Verify your identity with your NIN to clam and get the full NairaRain lotto experience, it only takes few seconds.</p>
-                <div class="bonus">
-                  <strong>🎁 Unlock wonderful player experiences</strong>
-                  <p>Complete identity verification through the official, secure verification process.</p>
-                </div>
-                <button class="btn btn-primary submit" id="goToNin" type="button">Verify identity with NIN →</button>
-                <p class="fineprint">Never share your NIN or date of birth with an unverified person or website.</p>
-              </div>
-              <div class="step" id="ninStep">
-                <div class="card-head">
-                  <span class="eyebrow">Identity verification</span>
-                  <h2>Verify your identity</h2>
-                  <p class="sub">Enter your details to continue with the verification preview.</p>
-                </div>
-                <form id="ninForm" novalidate>
-                  <div class="field">
-                    <label for="nin">NIN number</label>
-                    <input id="nin" inputmode="numeric" autocomplete="off" maxlength="11" placeholder="Enter your 11-digit NIN" required>
-                    <div class="hint">Your NIN should contain 11 digits.</div>
-                    <div class="error" id="ninError">Enter a valid 11-digit NIN number.</div>
-                  </div>
-                  <div class="field">
-                    <label for="dob">Date of birth</label>
-                    <input id="dob" name="dob" type="date" autocomplete="bday" aria-describedby="dobHint dobError" required>
-                    <div class="hint" id="dobHint">Select your date of birth. Players must be at least 18 years old.</div>
-                    <div class="error" id="dobError">Enter a valid date of birth. You must be at least 18 years old.</div>
-                  </div>
-                  <!-- <div class="notice">Privacy reminder: this demo does not transmit your NIN or date of birth. Real validation must be completed through an authorized identity-verification provider.</div> -->
-                  <button class="btn btn-primary submit" type="submit">Verify now →</button>
-                </form>
-                <button class="back-link" type="button" id="backToWelcome">← Back to welcome</button>
-              </div>
-              </section>
               </main>
-              <div class="modal-backdrop" id="verificationModal" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
-                <div class="modal">
-                  <div class="modal-badge">✓</div>
-                  <h3 id="modalTitle">VERIFICATION SUCCESSFUL!</h3>
-                  <p>Your details passed and your NIN has been successfully validated.</p>
-                  <button class="btn btn-primary" id="closeVerification" type="button">Close</button>
+
+              <!-- Identity success popup -->
+              <div class="success-modal" id="verificationSuccessModal" role="dialog" aria-modal="true" aria-labelledby="successModalTitle">
+                <div class="success-modal-card">
+                  <span class="modal-check"><svg class="icon"><use href="#i-check"/></svg></span>
+                  <h2 id="successModalTitle">VERIFICATION SUCCESSFUL!</h2>
+                  <p>Your details passed, and your NIN has been successfully validated.</p>
+                  <div class="demo-modal-note" id="demoModalNote">NIN verification was performed.</div>
+                  <button type="button" class="modal-close-btn" id="closeSuccessModal">Close</button>
                 </div>
               </div>
-              <div class="toast" id="toast" role="status"></div>
+
+              <div class="toast" id="toast" role="status" aria-live="polite"></div>
+      </div>
 
               <script>
+              const DEMO_MODE = true;
+              const SUCCESS_REDIRECT_URL = "./index.html";
+              const API_ENDPOINTS = {
+                register: "/api/auth/register",
+                sendOtp: "/api/auth/send-otp",
+                verifyOtp: "/api/auth/verify-otp",
+                sendEmailOtp: "/api/auth/send-email-otp",
+                verifyEmailOtp: "/api/auth/verify-email-otp",
+                verifyIdentity: "/api/identity/verify"
+              };
 
-              (()=>{'use strict';const $=id=>document.getElementById(id);
-              const steps=['signupStep','signinStep','phoneOtpStep','emailStep','emailOtpStep','welcomeStep','ninStep'];
-              let currentPhone='',currentEmail='';
-              function updateProgress(id){
-                const wrap=$('progressWrap');
-                if(!wrap)return;
-                const stageMap={signupStep:1,phoneOtpStep:2,emailStep:2,emailOtpStep:2,welcomeStep:3,ninStep:3,complete:3};
-                const stage=stageMap[id]||1;
-                const finished=id==='complete';
-                wrap.hidden=id==='signinStep';
-                $('progressStatus').textContent=finished?'Completed':`Step ${stage} of 3`;
-                $('progressFill').style.width=(stage===1?0:stage===2?50:100)+'%';
-                $('progressSteps').querySelectorAll('[data-progress-step]').forEach(item=>{
-                  const number=Number(item.dataset.progressStep);
-                  item.classList.toggle('is-active',!finished&&number===stage);
-                  item.classList.toggle('is-complete',number<stage||(finished&&number<=stage));
-                  if(!finished&&number===stage)item.setAttribute('aria-current','step');
-                  else item.removeAttribute('aria-current');
-                });
-              }
-              function addSectionIcons(){
-                const icons={
-                  signupStep:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="8" r="3.4"/><path d="M2.8 20a6.2 6.2 0 0 1 12.4 0M18 8v7M14.5 11.5h7"/></svg>',
-                  signinStep:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="4.5" y="10" width="15" height="11" rx="2.5"/><path d="M8 10V7a4 4 0 0 1 8 0v3M12 14v3"/></svg>',
-                  phoneOtpStep:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="6" y="2.5" width="12" height="19" rx="2.5"/><path d="M10 5.5h4M10 18.5h4"/><path d="m9 11 2 2 4-4"/></svg>',
-                  emailStep:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="2.5" y="4.5" width="19" height="15" rx="2.5"/><path d="m3.5 6 8.5 7 8.5-7"/></svg>',
-                  emailOtpStep:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="2.5" y="4.5" width="19" height="15" rx="2.5"/><path d="m3.5 6 8.5 7 8.5-7M8 15l2 2 5-5"/></svg>',
-                  ninStep:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3 19 6v5.3c0 4.2-2.8 7.4-7 9.7-4.2-2.3-7-5.5-7-9.7V6l7-3Z"/><path d="m8.8 12 2.1 2.1 4.4-4.5"/></svg>'
-                };
-                Object.entries(icons).forEach(([id,svg])=>{
-                  const head=$(id)?.querySelector('.card-head');
-                  if(!head||head.classList.contains('decorated-head'))return;
-                  const copy=document.createElement('div');
-                  copy.className='card-head-copy';
-                  while(head.firstChild)copy.appendChild(head.firstChild);
-                  const tile=document.createElement('span');
-                  tile.className='section-icon';
-                  tile.setAttribute('aria-hidden','true');
-                  tile.innerHTML=svg;
-                  head.classList.add('decorated-head');
-                  head.append(tile,copy);
-                });
-              }
-              function placeProgressForStep(id){
-                const wrap=$('progressWrap'), target=$(id);
-                if(!wrap||!target||id==='signinStep')return;
-                const head=target.querySelector('.card-head');
-                if(head)head.insertAdjacentElement('afterend',wrap);
-                else target.prepend(wrap);
-                wrap.hidden=false;
-              }
-              function showStep(id){steps.forEach(s=>$(s).classList.toggle('active',s===id));
-              placeProgressForStep(id);updateProgress(id);window.scrollTo({top:0,behavior:'smooth'});
-              } 
+              let generatedPhoneOtp = "";
+              let generatedEmailOtp = "";
+              let phoneTimer = null;
+              let emailTimer = null;
+              let registeredUser = null;
 
-              function showToast(msg){
-                const t=$('toast');t.textContent=msg;t.classList.add('show');
+              const $ = id => document.getElementById(id);
+              const phoneOtpInputs = [...document.querySelectorAll(".phone-otp-boxes input")];
+              const emailOtpInputs = [...document.querySelectorAll(".email-otp-boxes input")];
+              const successModal = $("verificationSuccessModal");
+
+              function showToast(message) {
+                const toast = $("toast");
+                toast.textContent = message;
+                toast.classList.add("show");
                 clearTimeout(showToast.timer);
-                showToast.timer=setTimeout(()=>t.classList.remove('show'),3200)}
-                window.showToast=showToast;
-              addSectionIcons();
-              placeProgressForStep('signupStep');updateProgress('signupStep');
-              if($('year')) $('year').textContent=new Date().getFullYear();$('topSignIn').addEventListener('click',()=>showStep('signinStep'));$('inlineSignIn').addEventListener('click',()=>showStep('signinStep'));$('backToSignup').addEventListener('click',()=>showStep('signupStep'));
-              document.querySelectorAll('[data-toggle]').forEach(btn=>btn.addEventListener('click',()=>{const input=$(btn.dataset.toggle);const showing=input.type==='password';input.type=showing?'text':'password';btn.setAttribute('aria-label',(showing?'Hide ':'Show ')+(input.id==='confirmPassword'?'confirm password':'password'));
-              btn.title=btn.getAttribute('aria-label');const svg=btn.querySelector('svg');if(svg){svg.innerHTML=showing?'<path d="M3 3l18 18"/><path d="M10.6 10.6a2 2 0 0 0 2.8 2.8"/><path d="M9.9 5.2A10.8 10.8 0 0 1 12 5c6.4 0 10 7 10 7a17 17 0 0 1-3.1 3.9"/><path d="M6.2 6.2C3.5 8 2 12 2 12s3.6 7 10 7a10.6 10.6 0 0 0 4-.8"/>':'<path d="M2 12s3.6-7 10-7 10 7 10 7-3.6 7-10 7S2 12 2 12Z"/><circle cx="12" cy="12" r="3"/>';}}));
+                showToast.timer = setTimeout(() => toast.classList.remove("show"), 3500);
+              }
 
-              function err(id,on){$(id).classList.toggle('show',!!on)}function validPhone(){const digits=$('phone').value.replace(/\D/g,'');
-              return digits.length>=10&&digits.length<=11}function validPassword(){return $('password').value.length>=8&&/\d/.test($('password').value)}
+              function setError(id, message) {
+                const field = $(id);
+                if (field) field.textContent = message;
+              }
 
-              $('signupForm').addEventListener('submit',e=>{e.preventDefault();
-                let ok=true;
-                err('phoneError',!validPhone());
-              err('usernameError',$('username').value.trim().length<3);err('passwordError',!validPassword());
-              err('confirmError',$('confirmPassword').value!==$('password').value);
-              err('termsError',!$('terms').checked);
-              ok=validPhone()&&$('username').value.trim().length>=3&&validPassword()&&$('confirmPassword').value===$('password').value&&$('terms').checked;
-              if(!ok)return;currentPhone=$('dialCode').value+' '+$('phone').value.trim();$('phoneDisplay').textContent=currentPhone;$('welcomeUsername').textContent=$('username').value.trim();showStep('phoneOtpStep');$('phoneOtp1').focus();});
+              function clearErrors() {
+                document.querySelectorAll(".input-error").forEach(item => item.textContent = "");
+              }
 
-              function setupOtp(rowId,formId,errorId,next)
-              {const row=$(rowId),inputs=[...row.querySelectorAll('input')];
-              inputs.forEach((inp,i)=>{inp.addEventListener('input',()=>{inp.value=inp.value.replace(/\D/g,'').slice(-1);
-              if(inp.value&&i<inputs.length-1)inputs[i+1].focus();});
-              inp.addEventListener('keydown',e=>{if(e.key==='Backspace'&&!inp.value&&i>0)inputs[i-1].focus();});
-              inp.addEventListener('paste',e=>{const val=(e.clipboardData||window.clipboardData).getData('text').replace(/\D/g,'').slice(0,6);if(val){e.preventDefault();
-                inputs.forEach((el,j)=>el.value=val[j]||'');inputs[Math.min(val.length,5)].focus();}})});$(formId).addEventListener('submit',e=>{e.preventDefault();const code=inputs.map(i=>i.value).join('');if(code!=='123456'){err(errorId,true);return}err(errorId,false);next();}
-              );}
-              setupOtp('phoneOtpRow','phoneOtpForm','phoneOtpError',()=>showStep('welcomeStep'));
-              setupOtp('emailOtpRow','emailOtpForm','emailOtpError',()=>showStep('welcomeStep'));
-              $('tryEmail').addEventListener('click',()=>showStep('emailStep'));$('editPhone').addEventListener('click',()=>showStep('signupStep'));$('emailForm').addEventListener('submit',e=>{e.preventDefault();const email=$('email').value.trim();const valid=/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);err('emailError',!valid);if(!valid)return;currentEmail=email;$('emailDisplay').textContent=email;showStep('emailOtpStep');$('emailOtp1').focus();});$('backToPhone').addEventListener('click',()=>showStep('phoneOtpStep'));$('editEmail').addEventListener('click',()=>showStep('emailStep'));
-              $('signinForm').addEventListener('submit',e=>{e.preventDefault();if(!$('loginId').value.trim()||!$('loginPassword').value){showToast('Enter your login details to continue.');return}showToast('Sign-in requires connects to the NairaRain authentication service.');});$('forgotPassword').addEventListener('click',()=>showToast('Password recovery requires a connected account service.'));
-              $('goToNin').addEventListener('click',()=>showStep('ninStep'));$('backToWelcome').addEventListener('click',()=>showStep('welcomeStep'));const today=new Date();$('dob').max=new Date(today.getFullYear()-18,today.getMonth(),today.getDate()).toISOString().slice(0,10);
-              function isAdult(value){if(!value)return false;const d=new Date(value+'T00:00:00');if(Number.isNaN(d.getTime())||d>new Date())return false;let age=today.getFullYear()-d.getFullYear();const m=today.getMonth()-d.getMonth();if(m<0||(m===0&&today.getDate()<d.getDate()))age--;return age>=18}
-              // CHANGE THIS URL to the page users should visit after successful verification.
-              const SUCCESS_REDIRECT_URL = './index.html';
-              function redirectAfterSuccess(){ window.location.href = SUCCESS_REDIRECT_URL; }
-              $('ninForm').addEventListener('submit',e=>{e.preventDefault();const nin=$('nin').value.replace(/\D/g,'');const dob=$('dob').value;const ninOk=/^\d{11}$/.test(nin);const dobOk=isAdult(dob);err('ninError',!ninOk);err('dobError',!dobOk);if(!ninOk||!dobOk)return;updateProgress('complete');$('verificationModal').classList.add('show');$('closeVerification').focus();});$('closeVerification').addEventListener('click',redirectAfterSuccess);$('verificationModal').addEventListener('click',e=>{if(e.target===$('verificationModal'))redirectAfterSuccess()});document.addEventListener('keydown',e=>{if(e.key==='Escape'&&$('verificationModal').classList.contains('show'))redirectAfterSuccess()});
-              })();
-              </script>          
+              function showView(viewId, step) {
+                document.querySelectorAll(".flow-panel").forEach(panel => panel.hidden = true);
+                $(viewId).hidden = false;
+                updateProgress(step);
+                window.scrollTo({ top: 0, behavior: "smooth" });
+              }
+
+              function updateProgress(currentStep) {
+                document.querySelectorAll(".progress-step").forEach(step => {
+                  const number = Number(step.dataset.step);
+                  step.classList.remove("active", "completed");
+                  if (number < currentStep) {
+                    step.classList.add("completed");
+                    step.querySelector(".step-circle").textContent = "✓";
+                  } else if (number === currentStep) {
+                    step.classList.add("active");
+                    step.querySelector(".step-circle").textContent = number;
+                  } else {
+                    step.querySelector(".step-circle").textContent = number;
+                  }
+                });
+              }
+
+              async function postToApi(endpoint, data) {
+                const response = await fetch(endpoint, {
+                  method: "POST",
+                  headers: { "Content-Type": "application/json" },
+                  credentials: "include",
+                  body: JSON.stringify(data)
+                });
+                const result = await response.json().catch(() => ({}));
+                if (!response.ok) throw new Error(result.message || "Something went wrong. Please try again.");
+                return result;
+              }
+
+              /* Password visibility */
+              document.querySelectorAll(".password-toggle").forEach(button => {
+                button.addEventListener("click", () => {
+                  const input = $(button.dataset.target);
+                  const use = button.querySelector("use");
+                  const showing = input.type === "text";
+                  input.type = showing ? "password" : "text";
+                  use.setAttribute("href", showing ? "#i-eye" : "#i-eye-off");
+                  button.setAttribute("aria-label", showing ? "Show password" : "Hide password");
+                });
+              });
+
+              /* Password strength indicator */
+              $("password").addEventListener("input", () => {
+                const value = $("password").value;
+                const bars = document.querySelectorAll(".password-meter span");
+                let score = 0;
+                if (value.length >= 8) score++;
+                if (/[a-z]/.test(value)) score++;
+                if (/[A-Z]/.test(value)) score++;
+                if (/[0-9]/.test(value)) score++;
+                bars.forEach((bar, index) => {
+                  bar.className = "";
+                  if (index < score) bar.classList.add(score <= 2 ? "weak" : score === 3 ? "medium" : "strong");
+                });
+                $("passwordStrength").textContent = ["At least 8 characters.", "Weak password", "Weak password", "Good password", "Strong password"][score];
+              });
+
+              function validateRegistration() {
+                clearErrors();
+                let valid = true;
+                const phone = $("phone").value.trim().replace(/\D/g, "");
+                const username = $("username").value.trim();
+                const password = $("password").value;
+                const confirm = $("confirmPassword").value;
+                if (!/^\d{7,14}$/.test(phone)) {
+                  setError("phoneError", "Enter a valid phone number."); valid = false;
+                }
+                if (!/^[a-zA-Z0-9_]{3,20}$/.test(username)) {
+                  setError("usernameError", "Use 3–10 letters, numbers or underscores."); valid = false;
+                }
+                if (password.length < 8 || !/[a-z]/.test(password) || !/[A-Z]/.test(password) || !/[0-9]/.test(password)) {
+                  setError("passwordError", "Use at least 8 characters with uppercase, lowercase and a number."); valid = false;
+                }
+                if (password !== confirm) {
+                  setError("confirmError", "Your passwords do not match."); valid = false;
+                }
+                if (!$ ("terms").checked) {
+                  showToast("Please accept the terms, privacy policy and age confirmation."); valid = false;
+                }
+                return valid;
+              }
+
+              function getFullPhoneNumber() {
+                const code = $("countryCode").value;
+                let phone = $("phone").value.replace(/\D/g, "");
+                if (code === "+234" && phone.startsWith("0")) phone = phone.slice(1);
+                return code + phone;
+              }
+
+              function createDemoOtp() {
+                const values = new Uint32Array(1);
+                crypto.getRandomValues(values);
+                return String(100000 + (values[0] % 900000));
+              }
+
+              function setupOtpInputs(inputs) {
+                inputs.forEach((input, index) => {
+                  input.addEventListener("input", () => {
+                    const digits = input.value.replace(/\D/g, "");
+                    if (digits.length > 1) {
+                      const pasted = digits.slice(0, 6).split("");
+                      pasted.forEach((digit, i) => { if (inputs[i]) inputs[i].value = digit; });
+                      inputs[Math.min(pasted.length, 5)].focus();
+                    } else {
+                      input.value = digits;
+                      if (input.value && index < inputs.length - 1) inputs[index + 1].focus();
+                    }
+                  });
+                  input.addEventListener("keydown", event => {
+                    if (event.key === "Backspace" && !input.value && index > 0) inputs[index - 1].focus();
+                    if (event.key === "ArrowLeft" && index > 0) inputs[index - 1].focus();
+                    if (event.key === "ArrowRight" && index < inputs.length - 1) inputs[index + 1].focus();
+                  });
+                });
+              }
+
+              function collectOtp(inputs) { return inputs.map(input => input.value).join(""); }
+              function clearOtp(inputs) { inputs.forEach(input => input.value = ""); }
+              setupOtpInputs(phoneOtpInputs);
+              setupOtpInputs(emailOtpInputs);
+
+              function startCountdown(buttonId, timerName, onExpire) {
+                clearInterval(timerName === "phone" ? phoneTimer : emailTimer);
+                let seconds = 60;
+                const button = $(buttonId);
+                button.disabled = true;
+                button.textContent = "Resend OTP (60s)";
+                const timer = setInterval(() => {
+                  seconds--;
+                  if (seconds <= 0) {
+                    clearInterval(timer);
+                    button.disabled = false;
+                    button.textContent = "Resend OTP";
+                    if (onExpire) onExpire();
+                  } else {
+                    button.textContent = `Resend OTP (${seconds}s)`;
+                  }
+                }, 1000);
+                if (timerName === "phone") phoneTimer = timer;
+                else emailTimer = timer;
+              }
+
+              async function sendPhoneOtp() {
+                if (DEMO_MODE) {
+                  generatedPhoneOtp = createDemoOtp();
+                  $("phoneDemoBanner").hidden = false;
+                  $("demoOtpCode").textContent = generatedPhoneOtp;
+                } else {
+                  await postToApi(API_ENDPOINTS.sendOtp, { phone: registeredUser.phone });
+                  $("phoneDemoBanner").hidden = true;
+                }
+                clearOtp(phoneOtpInputs);
+                startCountdown("resendOtpButton", "phone");
+              }
+
+              /* Create account */
+              $("registerForm").addEventListener("submit", async event => {
+                event.preventDefault();
+                if (!validateRegistration()) return;
+                const button = $("registerButton");
+                button.disabled = true;
+                button.textContent = "Creating account...";
+                try {
+                  const data = {
+                    phone: getFullPhoneNumber(),
+                    username: $("username").value.trim(),
+                    password: $("password").value,
+                    referralCode: $("referral").value.trim()
+                  };
+                  if (!DEMO_MODE) await postToApi(API_ENDPOINTS.register, data);
+                  registeredUser = { phone: data.phone, username: data.username };
+                  $("otpPhone").textContent = registeredUser.phone;
+                  $("phoneVerificationPanel").hidden = false;
+                  $("emailVerificationPanel").hidden = true;
+                  await sendPhoneOtp();
+                  showView("otpView", 2);
+                } catch (error) {
+                  showToast(error.message || "Unable to create your account.");
+                } finally {
+                  button.disabled = false;
+                  button.innerHTML = 'Create my account <span class="button-arrow">→</span>';
+                }
+              });
+
+              /* Switch to the dedicated email screen; phone OTP controls are hidden. */
+              $("showEmailVerification").addEventListener("click", () => {
+                $("phoneVerificationPanel").hidden = true;
+                $("emailVerificationPanel").hidden = false;
+                $("emailEntryFormPanel").hidden = false;
+                $("emailOtpPanel").hidden = true;
+                $("alternativeEmail").focus();
+              });
+
+              $("returnToPhone").addEventListener("click", () => {
+                $("emailVerificationPanel").hidden = true;
+                $("phoneVerificationPanel").hidden = false;
+              });
+
+              /* Send email OTP */
+              $("emailForm").addEventListener("submit", async event => {
+                event.preventDefault();
+                const email = $("alternativeEmail").value.trim();
+                setError("alternativeEmailError", "");
+                if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
+                  setError("alternativeEmailError", "Please enter a valid email address."); return;
+                }
+                const button = $("sendEmailOtpButton");
+                button.disabled = true;
+                button.textContent = "Sending code...";
+                try {
+                  if (DEMO_MODE) {
+                    generatedEmailOtp = createDemoOtp();
+                    $("emailDemoBanner").hidden = false;
+                    $("demoEmailOtpCode").textContent = generatedEmailOtp;
+                  } else {
+                    await postToApi(API_ENDPOINTS.sendEmailOtp, { email });
+                    $("emailDemoBanner").hidden = true;
+                  }
+                  registeredUser.email = email;
+                  $("emailDestination").textContent = email;
+                  $("emailEntryFormPanel").hidden = true;
+                  $("emailOtpPanel").hidden = false;
+                  clearOtp(emailOtpInputs);
+                  emailOtpInputs[0].focus();
+                  startCountdown("resendEmailOtpButton", "email");
+                } catch (error) {
+                  setError("alternativeEmailError", error.message);
+                } finally {
+                  button.disabled = false;
+                  button.innerHTML = 'Send verification code <span class="button-arrow">→</span>';
+                }
+              });
+
+              /* Resend codes */
+              $("resendOtpButton").addEventListener("click", async () => {
+                const button = $("resendOtpButton"); button.disabled = true;
+                try { await sendPhoneOtp(); showToast("A new phone verification code has been sent."); }
+                catch (error) { button.disabled = false; showToast(error.message); }
+              });
+
+              $("resendEmailOtpButton").addEventListener("click", async () => {
+                const button = $("resendEmailOtpButton"); button.disabled = true;
+                try {
+                  if (DEMO_MODE) {
+                    generatedEmailOtp = createDemoOtp();
+                    $("demoEmailOtpCode").textContent = generatedEmailOtp;
+                  } else {
+                    await postToApi(API_ENDPOINTS.sendEmailOtp, { email: registeredUser.email });
+                  }
+                  startCountdown("resendEmailOtpButton", "email");
+                  showToast("A new email verification code has been sent.");
+                } catch (error) { button.disabled = false; showToast(error.message); }
+              });
+
+              $("changeEmail").addEventListener("click", () => {
+                clearInterval(emailTimer);
+                clearOtp(emailOtpInputs);
+                $("emailOtpPanel").hidden = true;
+                $("emailEntryFormPanel").hidden = false;
+                $("alternativeEmail").focus();
+              });
+
+              $("backToRegistration").addEventListener("click", () => {
+                clearInterval(phoneTimer); clearInterval(emailTimer);
+                showView("registrationView", 1);
+              });
+
+              /* Verify phone OTP */
+              $("otpForm").addEventListener("submit", async event => {
+                event.preventDefault();
+                const otp = collectOtp(phoneOtpInputs);
+                setError("otpError", "");
+                if (!/^\d{6}$/.test(otp)) { setError("otpError", "Enter all six OTP digits."); return; }
+                const button = $("verifyOtpButton");
+                button.disabled = true; button.textContent = "Verifying...";
+                try {
+                  if (DEMO_MODE) {
+                    if (otp !== generatedPhoneOtp) throw new Error("Incorrect OTP. Please try again.");
+                  } else {
+                    await postToApi(API_ENDPOINTS.verifyOtp, { phone: registeredUser.phone, otp });
+                  }
+                  showWelcomeScreen("phone");
+                } catch (error) { setError("otpError", error.message); }
+                finally { button.disabled = false; button.innerHTML = 'Verify phone number <span class="button-arrow">→</span>'; }
+              });
+
+              /* Verify email OTP */
+              $("emailOtpForm").addEventListener("submit", async event => {
+                event.preventDefault();
+                const otp = collectOtp(emailOtpInputs);
+                setError("emailOtpError", "");
+                if (!/^\d{6}$/.test(otp)) { setError("emailOtpError", "Enter all six email OTP digits."); return; }
+                const button = $("verifyEmailOtpButton");
+                button.disabled = true; button.textContent = "Verifying email...";
+                try {
+                  if (DEMO_MODE) {
+                    if (otp !== generatedEmailOtp) throw new Error("Incorrect email OTP. Please try again.");
+                  } else {
+                    await postToApi(API_ENDPOINTS.verifyEmailOtp, { email: registeredUser.email, otp });
+                  }
+                  showWelcomeScreen("email");
+                } catch (error) { setError("emailOtpError", error.message); }
+                finally { button.disabled = false; button.innerHTML = 'Verify email address <span class="button-arrow">→</span>'; }
+              });
+
+              function showWelcomeScreen(method) {
+                clearInterval(phoneTimer); clearInterval(emailTimer);
+                $("welcomeUsername").textContent = registeredUser.username;
+                $("welcomeMessage").textContent = method === "email"
+                  ? "Your email address has been verified and your account is ready."
+                  : "Your phone number has been verified and your account is ready.";
+                showView("welcomeView", 3);
+              }
+
+              $("continueToVerify").addEventListener("click", () => showView("identityView", 3));
+
+              /* Date of birth: restrict to adults aged 18 or older. */
+              function isAtLeast18(value) {
+                if (!value) return false;
+                const birth = new Date(value + "T00:00:00");
+                if (Number.isNaN(birth.getTime())) return false;
+                const today = new Date();
+                let age = today.getFullYear() - birth.getFullYear();
+                const monthDifference = today.getMonth() - birth.getMonth();
+                if (monthDifference < 0 || (monthDifference === 0 && today.getDate() < birth.getDate())) age--;
+                return age >= 18;
+              }
+
+              const today = new Date();
+              const maxBirth = new Date(today.getFullYear() - 18, today.getMonth(), today.getDate());
+              $("birthday").max = [maxBirth.getFullYear(), String(maxBirth.getMonth()+1).padStart(2,"0"), String(maxBirth.getDate()).padStart(2,"0")].join("-");
+              $("birthday").min = "1900-01-01";
+
+              /* Successful identity validation opens the success dialog. */
+              function showVerificationSuccess() {
+                updateProgress(4);
+                $("demoModalNote").classList.toggle("show", DEMO_MODE);
+                successModal.classList.add("show");
+                document.body.style.overflow = "hidden";
+                $("closeSuccessModal").focus();
+              }
+
+              function closeSuccessModal() {
+                successModal.classList.remove("show");
+                document.body.style.overflow = "";
+                window.location.assign(SUCCESS_REDIRECT_URL);
+              }
+
+              $("closeSuccessModal").addEventListener("click", closeSuccessModal);
+              successModal.addEventListener("click", event => {
+                if (event.target === successModal) closeSuccessModal();
+              });
+              document.addEventListener("keydown", event => {
+                if (event.key === "Escape" && successModal.classList.contains("show")) closeSuccessModal();
+              });
+
+              /* Identity form */
+              $("identityForm").addEventListener("submit", async event => {
+                event.preventDefault();
+                const nin = $("nin").value.trim();
+                const birthday = $("birthday").value;
+                setError("ninError", ""); setError("birthdayError", "");
+                let valid = true;
+                if (!/^\d{11}$/.test(nin)) { setError("ninError", "NIN must contain exactly 11 digits."); valid = false; }
+                if (!birthday) { setError("birthdayError", "Please enter your date of birth."); valid = false; }
+                else if (!isAtLeast18(birthday)) { setError("birthdayError", "You must be at least 18 years old to register."); valid = false; }
+                if (!valid) return;
+
+                const button = $("identityButton");
+                button.disabled = true; button.textContent = "Validating your details...";
+                try {
+                  if (DEMO_MODE) {
+                    /* Demo only: no NIN or date of birth is transmitted or actually validated. */
+                    $("nin").value = ""; $("birthday").value = "";
+                    showVerificationSuccess();
+                  } else {
+                    const result = await postToApi(API_ENDPOINTS.verifyIdentity, { nin, dateOfBirth: birthday });
+                    if (result.verified !== true) throw new Error(result.message || "Your identity could not be verified. Please check your details.");
+                    $("nin").value = ""; $("birthday").value = "";
+                    showVerificationSuccess();
+                  }
+                } catch (error) {
+                  showToast(error.message || "Unable to verify your identity.");
+                } finally {
+                  button.disabled = false;
+                  button.innerHTML = 'Submit identity verification <span class="button-arrow">→</span>';
+                }
+              });
+
+              /* Keep phone and NIN fields numeric. */
+              $("phone").addEventListener("input", event => { event.target.value = event.target.value.replace(/\D/g, ""); });
+              $("nin").addEventListener("input", event => { event.target.value = event.target.value.replace(/\D/g, "").slice(0, 11); });
+              </script>
+            
+                      
     
     
-          </div>
+         
 
     
       
