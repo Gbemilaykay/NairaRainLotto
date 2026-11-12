@@ -702,11 +702,7 @@
       min-height:600px;
     }
   }
-  @media(max-width:560px){
-    .site-header{
-      width:calc(100% - 30px);
-      height:69px;
-    }
+  @media(max-width:600px){
     .brand-mark{
       width:39px;
       height:39px;
@@ -716,16 +712,17 @@
       font-size:13px;
     }
     .header-right{
-      font-size:10px;
+      font-size:9pt;
       gap:5px;
     }.header-right a{
-      padding:8px 11px;
+      padding:8px 10px;
     }
     .page-shell{
       width:calc(100% - 24px);
-      margin:9px auto 30px;
+      margin:5px auto 20px;
     }
     .brand-panel{
+      display: none;
       padding:25px 22px 27px;
       border-radius:20px;
     }
@@ -762,12 +759,12 @@
       font-size:9px;
     }
     .form-card{
-      min-height:570px;
+      min-height:550px;
       padding:27px 20px 24px;
       border-radius:20px;
     }
     .card-heading h2{
-      font-size:27px;
+      font-size:18pt;
     }
     .form-group input{
       height:48px;
@@ -776,7 +773,7 @@
       align-items:flex-start;
     }
     .remember,.forgot-link{
-      font-size:9px;
+      font-size:8pt;
     }
     .secure-strip{
       gap:10px;
@@ -789,6 +786,11 @@
       max-width:none
     ;
   }
+  }
+  @media(max-width:500px){
+    .brand-panel{
+      display: none;
+    }
   }
   @media(prefers-reduced-motion:reduce){
     *,*::before,*::after{
@@ -807,7 +809,7 @@
         flex-direction: column;
         padding: 20px; 
         justify-content: center; 
-        margin-top: 50px;
+        margin-top: 40px;
         bottom: 0;    
       }
       .Social{
@@ -874,7 +876,7 @@
         footer{
           /* position:absolute;          */
           /* bottom: 0; */
-          margin-top: 30%;    
+          margin-top: 10%;    
       } 
       
       .ItemList {            
