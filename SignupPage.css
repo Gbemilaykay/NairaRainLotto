@@ -81,22 +81,22 @@ a{
 .header-right{
   display:flex;
   align-items:center;
+  justify-content: center;
+  text-align: center;
+  margin-top: 20px;
   gap:9px;
   color:var(--muted);
-  font-size:10pt;
+  font-size:9pt;
 }
-.header-right a{
-  color:white;
+.header-right a{  
+  color:var(--green-800);
   font-weight:700;
-  padding:10px 15px;
-  border:1px solid #d4e5d9;
-  border-radius:10px;
-  background:var(--danger);
   transition:.2s;
 }
 .header-right a:hover{
-  background:var(--green-100);
-  border-color:var(--green-800);
+  background:none;
+  border:none;
+  color: black;
 }
 
 /* Main composition */
@@ -1240,5 +1240,5 @@ a{
   letter-spacing:1px; 
 } 
   }
-  
+
   
