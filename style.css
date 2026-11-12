@@ -75,6 +75,8 @@ a{text-decoration:none}
   border-bottom: #ffffff solid 2px;
 }
 
+
+
 .nav-center{
   display:flex; 
   gap:18px; 
@@ -82,11 +84,18 @@ a{text-decoration:none}
 .nav-item{
   position:relative;}
 .nav-button{
-  background:none;border:none;color:var(--white);
-  font-size:1rem;cursor:pointer;padding:8px 10px;border-radius:6px;
+  background:none;
+  border:none;
+  color:var(--white);
+  font-size:1rem;
+  cursor:pointer;
+  padding:8px 10px;
+  border-radius:6px;
   text-decoration: none;
 }
-.nav-button:hover{background:rgba(255,255,255,0.06)}
+.nav-button:hover{
+  background:rgba(255,255,255,0.06);
+}
 
 
 .center-dropdown{
@@ -197,20 +206,39 @@ a{text-decoration:none}
 
 .navbar .actions button {
   background: none;    
-  border-radius: 10px;
   border: 2px solid #0dd203; 
   color: #0dd203; 
   cursor: pointer;
   font-size: 10pt;
   font-weight: 600;
   padding: 5px 10px;
-  border-radius: 5px;
+  border-radius: 9px;
   transition: background 0.3s ease, color 0.3s ease;
 }
 
 .navbar .actions button:hover {
   background-color: rgb(0, 90, 23);
   color: #ffffff;
+}
+
+#nav-signup:active {
+  background-color: rgb(18, 90, 0);
+  color: #fff;
+  border-bottom: #ffffff solid 2px;
+}
+#nav-signup {
+  background-color: rgb(0, 0, 0);
+  color: #fff;
+}
+#nav-login {
+  background-color: rgb(44, 218, 0);
+  color: #000000;  
+}
+
+#nav-login:active {
+  background-color: rgb(0, 90, 23);
+  color: #fff;
+  border-bottom: #ffffff solid 2px;
 }
 
 .navbar .profile-icon i {
@@ -2986,7 +3014,7 @@ div.grammarly-desktop-integration {
     background-image: url(./image/heroimage18.png);   
     background-size:contain; 
     background-blend-mode:multiply;
-    background-color: #217e18; 
+    background-color: #13ad05; 
     animation: slide-fwd-center 0.45s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;     
   }
   .GameCard h1 {
@@ -3799,7 +3827,7 @@ footer{
     gap: 5px;
 }
 .ItemList {            
-    font-size: 10pt;       
+    font-size: 9pt;       
 }
 .FooterList img {
     width: 70px;        
@@ -3809,7 +3837,7 @@ footer{
     letter-spacing: 1px;      
 }
 .FooterList p{
-  font-size: 8pt; 
+  font-size: 7pt; 
   letter-spacing:1px; 
 } 
 }
@@ -3861,6 +3889,28 @@ footer{
 .float-footer li i {
     font-size: 11pt;
 }
+}
+@media screen and (max-width: 700px){
+  footer{
+    /* position:absolute;          */
+    /* bottom: 0; */
+    margin-top: 10%;    
+} 
+
+.ItemList {            
+    font-size: 9pt;       
+}
+.FooterList img {
+  width: 70px;        
+}
+.FooterList p a{
+  font-size: 8pt;  
+  letter-spacing: 1px;      
+}
+.FooterList p{
+font-size: 7pt; 
+letter-spacing:1px; 
+} 
 }
 
 
